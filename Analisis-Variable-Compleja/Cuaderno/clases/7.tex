@@ -1,0 +1,113 @@
+Clase: 02/08/2022
+
+\begin{ejemplo}
+    Sea $f(z)=e^z$; si $z=x+iy$. $\implies f(z)=e^x\cos y + ie^x \sin y\implies$
+    $$\frac{\partial u}{\partial x}=e^x\cos y;\qquad \frac{\partial v}{\partial y}=e^x\cos y$$
+    $$\frac{\partial u}{\partial y}=-e^x \sin y;\qquad \frac{\partial v}{\partial x}=e^x\sin y$$
+    $\implies$ se verifican las ecuaciones de C-R, $\forall(x,y)\in\mathbb{R}^2\implies f(z)=e^z$ es analítica en todo $\mathbb{C}$ (entera). Entonces $$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=e^x \cos y +ie^x \sin y = e^x(\cos y +i\sin y)=e^xe^{iy}=e^{x+iy}=e^z.$$
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $f(z)=\operatorname{Re}(z)$; sea $z=x+iy\implies f(x+iy)=\underbrace{x}_{u(x,y)}+i0$. Entonces:
+    $$\frac{\partial u}{\partial x}=1\neq \frac{\partial v}{\partial y}=0.$$
+    Por lo tanto, $f(z)=\operatorname{Re}$ no es analítica, $\forall z\in \mathbb{C}$.
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $f(z)=|z|^2$; sea $z=x+iy\implies f(x+iy)=x^2+y^2+i0$. Entonces: 
+    $$\frac{\partial u}{\partial x}=2x;\qquad \frac{\partial v}{\partial y}=0$$
+    $$\frac{\partial u}{\partial y}=2y; \qquad \frac{\partial v}{\partial x}=0$$
+    $\implies \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},$ si $x=0$; además $\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial y}$, si $y=0$. Las ecuaciones de C-R, se cumplen en $(0,0)$.
+\end{ejemplo}
+
+\subsubsection{Ecuaciones de Cauchy-Riemann en polares}
+
+Sea $f(z)=u(x,y)+iv(x,y)$, $x=r\cos \theta$ y $y=r\sin \theta$. 
+
+\begin{align*}
+    \frac{\partial u}{\partial r} &= \frac{\partial u}{\partial x}\cdot \frac{\partial x}{\partial r}+ \frac{\partial u}{\partial y}\frac{\partial y}{\partial y}\\
+    \frac{\partial u}{\partial \theta} &= \frac{\partial u}{\partial x}\frac{\partial x}{\partial \theta}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial \theta}
+\end{align*}
+$$\frac{\partial v}{\partial r}=\cos\theta \left(-\frac{\partial u}{\partial y}\right)+\sin \theta\left(\frac{\partial u}{\partial x}\right)$$
+
+$$\frac{\partial v}{\partial r}=- \cos\theta \left(\frac{\partial u}{\partial y}\right)+\sin \theta\left(\frac{\partial u}{\partial x}\right)$$
+
+y 
+
+$$\frac{\partial v}{\partial \theta}=-r\sin\theta \left(-\frac{\partial u}{\partial y}\right)+r\cos \theta\left(\frac{\partial u}{\partial x}\right)$$
+
+$$\frac{\partial v}{\partial \theta}=r\sin\theta \left(\frac{\partial u}{\partial y}\right)+r\cos \theta\left(\frac{\partial u}{\partial x}\right)$$
+
+De esto, se tiene: 
+
+$$\frac{\partial v}{\partial \theta}=r\frac{\partial u}{\partial r},\quad \frac{\partial u}{\partial \theta}=-r\frac{\partial v}{\partial r}$$
+
+$$\implies \frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial \theta}, \qquad \frac{\partial v}{\partial r}=-\frac{1}{r}\frac{\partial u}{\partial \theta }$$
+
+
+
+\begin{problema}
+    Pruébese que, si se cumple las ecuaciones de Cauchy-Riemann en polares, entonces $$f'(z)=e^{-i\theta}\left[\frac{\partial u}{\partial r}+i\frac{\partial v}{\partial r}\right]$$
+\end{problema}
+
+\begin{ejemplo}
+    Sea $f(z)=1/z$, sea $z=re^{i\theta}\implies f(z)=1/re^{i\theta}=\frac{1}{r}e^{-i\theta}=\frac{1}{r}\cos\theta -\frac{i}{r}\sin \theta \implies u(r,\theta)=(1/r)\cos\theta$ y $v=-(1/r)\sin \theta$. Entonces 
+    $$\frac{\partial u}{\partial r}=-\frac{1}{r^2}\cos\theta\qquad \frac{\partial v}{\partial \theta}=-\frac{1}{r}\cos\theta$$
+    $$\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial \theta }$$
+
+    $$\frac{\partial v}{\partial \theta}= -\frac{1}{r}\sin \theta \qquad \frac{\partial v}{\partial r}=\frac{1}{r^2}\sin \theta$$
+
+    $$-\frac{1}{r}\frac{\partial u}{\partial \theta}=\frac{\partial v}{\partial r}$$
+
+    Entonces: 
+    $$f(z)=\frac{1}{z},$$
+    es analítica, $\forall z\in \mathbb{C}-\{0\}$. Entonces:
+    \begin{align*}
+        f'(z)&=e^{-i\theta}\left[\frac{\partial u}{\partial r}+i\frac{\partial v}{\partial r}\right]\\
+        &= e^{-i\theta}\left[-\frac{1}{r^2}\cos\theta +i \frac{1}{r^2}\sin\theta\right]\\
+        &= -\frac{e^{-i\theta}}{r^2}e^{-i\theta}\\
+        &= -\frac{e^{-2i\theta}}{r^2}\\
+        &= -\frac{1}{(re^{i\theta})^2}\\
+        &= -\frac{1}{z^2}
+    \end{align*}
+
+
+\end{ejemplo}
+
+\begin{nota}
+    Sea $f=u+iv$ analítica en una región $D\subseteq\mathbb{C}\implies $ se cumples las ecuaciones de Cauchy-Riemman.
+    $$\frac{\partial u}{\partial x}\qquad \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}$$
+    $$\frac{\partial^2 u}{\partial x^2}\qquad \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}$$ (i.e. $u(x,y)$ es solución de la ecuación de Laplace en dos variables. $u(x,y)$ es una función armónica). Similarmente, $v(x,y)$ es una función armónica. 
+\end{nota}
+
+\begin{ejemplo}
+    Sabemos que $f(z)=e^z$ es analítica en todo $\mathbb{C}\implies u(x,y)=e^x\cos y$ y $v(x,y)=e^x\sin y$ son armónicas. 
+\end{ejemplo}
+
+\begin{nota}
+    Suponga que $u(x,y)$ (dada) es armónica. Se quiere encontrar una función $v(x,y)$ (?) tal que \begin{enumerate}
+        \item $v(x,y)$ es armónica. 
+        \item $f=u+iv$ es analítica. 
+    \end{enumerate} 
+    A la función $v(x,y)$ se le llama conjugada armónica de $u(x,y)$.
+\end{nota}
+
+\begin{ejemplo}
+    Sea $u(x,y)=xy^3-x^3y$. Nótese que $u$ es una función armónica. Como 
+
+    $$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\implies$$
+    si $u=xy^3-x^3y$
+
+    $$\implies \frac{\partial u}{\partial x}=y^3-3x^2y=\frac{\partial v}{\partial y}$$
+    Ahora 
+    $$v(x,y)=\int (y^3-2x^2y)dy = \frac{y^4}{3}-\frac{3}{2}x^2y^2+\phi(x)$$
+
+    Por otra parte 
+
+    $$\frac{\partial v}{\partial x}=-3xy^2 +\phi'(x)=-\frac{\partial u}{\partial y}$$
+    Entonces 
+    $$-3xy^2+\phi'(x)=-3x^2y^2+x^3$$
+    $$\phi'(x)=x^3\implies \phi(x)=\frac{x^4}{4}$$
+    Entonces 
+    $$v(x,y)=\frac{y^4}{4}-\frac{3}{2}x^2y^2+\frac{x^4}{4}$$
+\end{ejemplo}

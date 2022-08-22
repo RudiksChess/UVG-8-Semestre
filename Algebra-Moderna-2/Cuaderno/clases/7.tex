@@ -1,0 +1,57 @@
+Clase: 28/07/2022
+
+\begin{definicion}
+    Si $R$ es un anillo conmutativo y $r_1,r_2\in R$, entonces $d\in R$ es \textbf{Máximo Común Divisor} de $r_1$ y $r_2$ si: 
+    \begin{enumerate}
+        \item $d|r_1$ y $d|r_2$ ($d$ es divisor común de $r_1$ y $r_2$)
+        \item Si $c|r_1$ y $c|r_2\implies c|d$
+    \end{enumerate}
+\end{definicion}
+
+\begin{lema}[3.8]
+    Si $R$ es un anillo euclideano y $r_1,r_2\in R$, entonces un máximo común divisor $d\in R$ de $r_1$ y $r_2$. Además, existen $\alpha,\beta \in R$ tales que: 
+    $$d=\alpha r_1+\beta r_2$$
+    \begin{dem}
+        Sea $A=\{\delta r_1+ \gamma r_2:\delta, \gamma\in R \}$. Sean $\delta_1,\delta_2,\alpha_1,\alpha_2\in R\ni \delta_1r_1+\gamma_1r_2, \delta_2 r_1+\gamma_2r_2\in A$ y $(\delta_1r_1+\gamma_1r_2)-(\delta_2r_1+\delta_2r_2)=(\delta_1\delta_2)r_1 + (\gamma_1-\gamma_2)r_2\in A$, ya que $\delta_1-\delta_2,\gamma_1-\gamma_2\in R\implies$ por el corolario al lema 2.3 $(A,+)$ es un subgrupo de $(R,+)$. Además, si $\delta, \gamma,r\in R\implies \gamma r_1+\gamma r_2\in A$ y $(\delta r_1+\delta r_2)r=(\delta r_1)r+(\delta r_2)r=(\delta r)r_1+(\delta r)r_2\in A$, ya que $\delta r$ y $\gamma r\in R\implies A$ atrapa productos en $R\implies A$ es un ideal de $R$. Siendo $R$ un anillo euclideano, por el teorema 3D, $R$ es un anillo de ideales principales $\implies \exists a\in R\ni A=(a)\implies a|\delta r_1+\gamma r_2,\forall \delta, \gamma \in R$. Además, por el corolario al teorema 3D, $\exists 1\in R\ni 1$ es neutro multiplicativo de $R$. Entonces, en particular cuando $\delta=1$ y $\gamma=0\implies a|1\cdot r_1+0\cdot r_2=r_1$ y cuando $\delta =0$ y $\gamma =1\implies a|0\cdot r_1+1\cdot r_2=r_2\implies a$ es divisor común de $r_1$ y $r_2$. En particular, $a=a\cdot 1\in A\implies \exists \delta_a,\gamma_a\in R\ni a=\delta_ar_1+\delta_ar_2$. Si $c\in R\ni c|r_1$ y $c|r_2\implies c|\gamma_ar_1$ y $c|\delta_ar_2\implies c|\gamma_ar_1+\gamma_ar_2=a\implies a=\delta_ar_1+\gamma_ar_2$ es máximo común divisor de $r_1$ y $r_2$.  
+    \end{dem}
+\end{lema}
+
+\begin{definicion}
+    Sea $R$ un anillo con elemento neutro multiplicativo 1, entonces $a\in R$ es una \textbf{Unidad} de $R$ si existe $b\in R$ tal que $ab=1$. 
+\end{definicion}
+
+\begin{lema}[3.9]
+    Si $R$ es un dominio entero con elemento neutro multiplicativo $1$ y $r_1,r_2\in R-\{0\}$ tales que $r_1|r_2$ y $r_2|r_1$, entonces existe $u\in R$, unidad de $R$, tal que $r_1=ur_2$.
+    \begin{dem}
+        Si $r_1|r_2\implies \exists x_1\in R\ni r_2=x_1r_1$ y por otro lado $r_2|r_1\implies \exists x_2\ni r_1=x_2r_2\implies r_1=x_2(x_1r_1)=(x_2x_1)r_1\implies 0=r_1-(x_2x_1)r_1 = 1\cdot r_1-(x_2x_1)r_1= (1-x_1x_2)\cdot r_1 \implies$ siendo $R$ un dominio entero, y por ello carece de divisores de 0, y además $r_1\neq 0\implies 0=1-x_1x_2\implies x_1x_2=1\implies x_1,x_2$ son unidades de $R$. 
+    \end{dem} 
+\end{lema}
+
+
+\begin{definicion}
+    Si $R$ es un anillo conmutativo con elemento neutro multiplicativo, $r_1,r_2\in R$ y $u\in R$ es unidad de $R$ tales que $r_1=ur_2$, entonces $r_1$ y $r_2$ son elementos \textbf{asociados}.
+\end{definicion}
+
+\begin{prop}
+    En un anillo conmutativo con elemento neutro multiplicativo la relación \textit{ser asociado de} es de equivalencia. 
+    \begin{dem}
+        Sea $R$ un anillo conmutativo con neutro multiplicativo 1. Entonces, 
+        \begin{enumerate}
+            \item Si $r\in R\implies r=1\cdot r$, y como $1\cdot 1 =1$, i.e. es unidad de $R$, entonces $r$ es asociado de $r$, $\forall r\in R$
+            \item Si $r_1$ es asociado a $r_2\implies\exists u\in R$, unidad de $R\ni r_1=ur_2\implies u^{-1}\in R$ y también es unidad de $R\implies r_2=u^{-1}r_1\implies r_2$ es asociado a $r_1$. 
+            \item Si $r_1$ es asociado de $r_2$ y $r_2$ es asociado a $r_3\implies\exists u_1,u_2\in R$, unidades de $R\ni r_1=u_1r_2$ y $r_2=u_2r_3\implies r_1=u_1(u_2r_2)=(u_1u_2)r_3$. Pero $u_2^{-1}u_1^{-1}\in R\ni \cdots u_1u_2$ es unidad de $R\implies r_1$ es asociado a $r_3$ .  
+        \end{enumerate}
+    \end{dem}
+\end{prop}
+
+\begin{prop}
+    Si $R$ es un anillo conmutativo con el neutro multiplicativo 1, $r_1,r_2\in R$ y $d_1,d_2\in R$ son máximos comunes divisores de $r_1$ y $r_2$ entonces $d_1$ y $d_2$ son asociados. 
+    \begin{dem}
+        Si $d_1$ es máximo común divisor de $r_1$ y $r_2\implies d_1|r_1$ y $d_1|r_2$, pero como $d_2$ es máximo común divisor de $r_1$ y $r_2\implies d_1|d_2$. Un argumento simétrico verifica que $d_1|d_2\implies$ por el lema 2.9, $\exists u\in R$, unidad de $R\ni d_1=ud_2\implies d_1$ y $d_2$ son asociados. 
+    \end{dem}
+\end{prop}
+
+\begin{definicion}
+    Si $R$ es un anillo conmutativo con elemento neutro multiplicativo, $r_1$ y $r_2\in R$, entonces el \textbf{Máximo Común Divisor} de $r_1$ y $r_2$, denotado por $(r_1,r_2)$ es la clase de equivalencia a la asociación de cualesquiera máximo común divisor de $r_1$ y $r_2$. 
+\end{definicion}
+

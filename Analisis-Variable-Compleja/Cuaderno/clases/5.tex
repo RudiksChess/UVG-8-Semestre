@@ -1,0 +1,48 @@
+Clase: 19/07/2022
+
+\begin{cajita}
+    \begin{definicion}[Región]
+        Conexo (por trayectorias) y abierto. 
+    \end{definicion}
+    \begin{definicion}[Conexo]
+        No disconexo. 
+    \end{definicion}
+    \begin{definicion}[Disconexo]
+        $A$ es disconexo si existen abierto $G$ y $H$ en la topología $\mathcal{X}\ni G\cap A\neq0, H\cap A\neq\varnothing,G\cap H = \varnothing, (G\cap A)\cup (H\cap A)=A$. 
+    \end{definicion}
+    \begin{definicion}[Conexo por trayectorias]
+        $A$ es conexo por trayectorias si $\exists$ una curva $\gamma\ni \gamma: [a,b]\to A\ni \gamma(a)=x,\gamma(b)=y,\gamma([a,b])\subset A, \gamma$ es diferenciable. 
+    \end{definicion}
+\end{cajita}
+
+\begin{prop}
+    Sea $A\subset \mathbb{C}$ una región, y sea $f:A\to\mathbb{C}$ una función analítica. Si $f'(z)=0$ sobre $A$, entonces $f(z)$ es constante sobre $A$. 
+    \begin{dem}
+        Sean $z_1,z_2\in A\implies f(z_1)=f(z_2)$. Como $A$ es conexo por trayectorias $\implies$ existe una curva $\gamma(t)$ que une a $z_1$ con $z_2$. Entonces, 
+        $$\frac{d}{dz}f\left(\gamma(t)\right)= f'(\gamma(t))\cdot \gamma'(t)=0$$
+        Si $f=u+iv\implies \frac{d}{dt}u(\gamma(t))=0$ y $\frac{d}{dt}v(\gamma(t))=0$. $\implies u(\gamma(t))=\text{const}_1$ y $c(\gamma(t))=\text{const}_2$. Entonces, $f$ es una función constante.
+    \end{dem}
+\end{prop}
+
+\subsection{Ecuaciones de Cauchy-Riemann}
+
+\begin{nota}
+    \begin{enumerate}
+        \item Suponga que $f(z)$ es analítica en $z_0\in \mathbb{C}$. Entonces la medida de error de aproximación de $f'(z_0)$ se define: 
+        $$\frac{f(z)-f(z_0)}{z-z_0}-f'(z_0)$$
+        \item Como $f$ es analítica en $z_0$, entonces $z\to z_0\implies \varepsilon(z)\to 0$.
+        \item Despeje: 
+            $$f(z)=f(z_0)+f'(z_0)\cdot (z-z_0)+\varepsilon(z)\cdot (z-z_0),$$
+            i.e., cerca de $z_0$, $f(z)$ puede aproximarse por una función lineal.
+    \end{enumerate}
+    
+\end{nota}
+
+\begin{teorema}[Ecuaciones de Cauchy-Riemann (CR)]
+    Sea $U$ un abierto de $\mathbb{R}^2$ y sea $u$ y $v$ funciones de valores reales definidas de $U$. Entonces, la función 
+    $$f(z)=f(x+iy)=u(x,y)+iv(x,y)$$
+    es analítica sobre $U$ ssi se safisfacen:
+    
+    $$\frac{\partial u }{\partial x}(x,y)=\frac{\partial v}{\partial y}(x,y)\wedge\frac{\partial u }{\partial y}(x,y)=-\frac{\partial v}{\partial x}(x,y) $$
+    para cada $(x,y)\in U$. En este caso, se tiene que: $$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}= \frac{\partial v}{\partial y}+i\frac{\partial u}{\partial y}$$
+\end{teorema}

@@ -1,0 +1,48 @@
+Clase: 04/08/2022
+
+\begin{teorema}[3E (unicidad de la factorización)]
+    Si $R$ es un anillo euclideano y $r\in R-\{0\}$ que no es una unidad de $R$ y existen $m,n\in \mathbb{Z}^+n,\pi_1,\cdots, \pi_m,\pi'_1,\cdots, \pi'_n$ elementos primos de $R$ tales que 
+    $$r=\prod_{i=1}^m\pi_i=\prod_{j=1}^n\pi'_j,$$
+    entonces $m=n$ y cada $\pi_i$ es asociado de algún $\pi'_j$, para $1\leq i,j\leq m$ y recíprocamente cada $\pi'_k$ es asociado de algún $\pi_k$, $1\leq k,l\leq m$.
+    \begin{dem}
+        Sea
+        $$\pi_1\left(\prod_{i=2}^m \pi_i\right)=\prod_{i=1}^m \pi_i =\prod_{j=1}^m \pi'_j$$
+        \begin{align*}
+            \pi_1|\prod_{j=1}^n \pi'_j
+        \end{align*}
+        $\implies$ por el lema 3.13, $\exists j, 1\leq j \leq n\ni \pi_i|\pi'_j$. Pero, como $\pi_1$ y $\pi'_j$ son elementos primos de $R\implies \exists u_1$, unidad de $R\ni \pi'_j =u_1\pi_1$. 
+    \end{dem}
+\end{teorema}
+
+\begin{corolario}
+    Todo elemento de un anillo euclideano tiene una única factorización prima, salvo asociación. 
+\end{corolario}
+
+\begin{cajita}
+    \begin{nota}[Anillo euclideano]
+        Tenemos: 
+        \begin{enumerate}
+            \item Dominio entero
+                \begin{enumerate}
+                    \item Campo de cocientes 
+                    \item Anillo conmutativo 
+                    \item $\not\exists$ divisores de cero
+                \end{enumerate}
+            \item $d$-valor
+            \item Algoritmo de la división 
+            \item Neutro multiplicativo 
+            \item Anillo de ideales principales 
+            \item Máximo común divisor único, excepto asociación
+            \item Lema de Bezzóut 
+            \item $U$ es unidad y $r\in R\implies d(r)=d(ur)$
+            \item Propiedades aritméticas de la divisibilidad.
+            \item Es unidad $\iff d(u)=d(1)$ 
+            \item $r_1$ y $r_2$ asociados $\iff d(r_1)=d(r_2)$.
+        \end{enumerate}
+        
+    \end{nota}
+\end{cajita}
+
+\begin{lema}[3.14]
+    Si $R$ es un anillo euclideano y $r_0\in R$, entonces $(r_0)$ es un elemento primo de $R$. 
+\end{lema}

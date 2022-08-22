@@ -1,0 +1,79 @@
+Clase: 19/07/2022
+
+
+
+\begin{teorema}
+    Sea $(A,\leq)$ retículo con cota superior universal 1 y cota inferior universal 0. $\forall a\in A,$
+    $$a\vee 1 =1$$
+    $$a\vee 0 = a$$
+    $$a\wedge 1 =a$$
+    $$a\wedge 0 =0$$
+\end{teorema}
+
+\begin{definicion}[17]
+    Sea $(A,\leq)$ retículo con 0 y 1. $\forall a \in A$, un elemento $b$ es complemento de $a$ si cumple: 
+    $$a\vee b =1\quad \text{y}\quad  a\wedge b=0$$
+\end{definicion}
+
+\begin{definicion}[18]
+    Un retículo se dice que es complementado si cada elemento en él tiene complemento. 
+\end{definicion}
+
+\begin{teorema}
+    En un retículo distributivo, si un elemento tiene complemento. 
+    \begin{dem}
+        Sea $a,b,c\in A$, donde $b$ y $c$ son complementos de $a$. Es decir $a\vee b=1$ y $a\wedge b=0$; $a\vee c=1$ y $a\wedge c=0$.
+        \begin{align*}
+            b &= b\wedge 1 & \text{(por teorema 10)}\\
+            &= b\wedge (a\vee c) & \text{(por ser $c$ complemento de $a$)}\\
+            &= (b\wedge a)\vee (b\wedge c) & \text{(por distributividad de $\wedge$ respecto a $\vee$)}\\
+            &= (a\wedge b)\vee (c\wedge b) & \text{(por conmutatividad de $\wedge$)}\\
+            &= 0\vee (c\wedge b) & \text{(por ser $b$ complemento de $a$)}\\
+            &= (a\wedge c)\vee (c\wedge b) & \text{(por ser $c$ complemento de $a$)}\\
+            &= (c\wedge a)\vee (c\wedge b) & \text{(por conmutatividad de $\wedge$)}\\
+            &= c\wedge (a\vee b) & \text{(por distributividad de $\wedge$ resoecti de $\vee$)}\\
+            &= c\wedge 1 & \text{(por ser $b$ complemento de $a$)}\\
+            &= c & \text{(por teorema 10)}
+        \end{align*}
+    \end{dem}
+\end{teorema}
+
+\begin{definicion}[19]
+    Un retículo complementado y distribuido es un retículo booleano. 
+    \begin{nota}
+        $(A,\vee,\wedge, -)$ es llamada \textbf{álgebra booleana}.
+    \end{nota}
+\end{definicion}
+
+\begin{ejemplo}
+    $(P(S),\subseteq)$ es un álgebra booleana.
+\end{ejemplo}
+
+\begin{teorema}(Leyes de De Morgan).
+    $\forall a,b\in A$, donde $(A,\vee,\wedge, -)$ es un álgebra booleana, se tiene: 
+    \begin{enumerate}
+        \item $\overline{a\vee b} = \bar{a}\vee \bar{b}$
+        \item $\overline{a\wedge b}=\bar{a}\vee\bar{b}$
+    \end{enumerate}
+    
+\end{teorema}
+
+\begin{lema}
+    En un retículo distribuido, si $b\wedge \bar{c}=0\implies b\leq c$.
+\end{lema}
+
+\begin{lema}
+    Sea $(A,\vee,\wedge, -)$ una álgebra booleana finita. Sea $b\in A$ con $b\neq 0$ y $a_1,a_2,\cdots, a_k$ átomos de $A$ tales que $a_i\leq b$ para $i=1,\cdots, k\implies b = a_1\vee a_2\vee\cdots \vee a_k$.
+\end{lema}
+
+\begin{lema}
+    Sea $(A,\vee,\wedge, -)$ una álgebra booleana finita. Sea $b\in A$ con $b\neq 0$ y $a_1,a_2,\cdots, a_k$ átomos de $\wedge$ tales que $a_i\leq b$ para $i=1,\cdots, k\implies b =a_1\vee a_2\vee \cdots \vee a_k$ es la única forma de representar $b$ como disyunción de átomos. 
+\end{lema}
+
+\begin{teorema}
+    Sea $(A,\vee, \wedge, -)$ un álgebra booleana finita y $S$ es el conjunto de átomos. Entonces, $(A,\vee,\wedge,-)$ es isomorfa al sistema algebraico definido por el retículo $(P(S)\subseteq)$, $(P(S),\cup,\cap, -)$
+\end{teorema}
+
+\begin{cajita}
+    Hasta aquí el corto. GG ez.
+\end{cajita}

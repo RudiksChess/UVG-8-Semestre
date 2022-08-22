@@ -1,0 +1,79 @@
+
+\section{Teoría de Anillos}
+
+Clase: 05/07/2022
+
+\begin{definicion}
+    Un conjunto no vacío $R$ es un \textbf{anillo} si en $R$ están definidas dos operaciones binarias denotadas por $+$ y $\cdot$, tales que si $r_1,r_2,r_3\in R$: 
+    \begin{enumerate}
+        \item $r_1+r_2\in R$.
+        \item $(r_1+r_2)+r_3 = r_1 +(r_2+r_3)$
+        \item $\exists 0\in R\ni 0+r=r+0=r,\forall r\in R$
+        \item Si $r\in R\implies \exists -r\in R\ni r+(-r)=(-r)+r =0$
+        \item $r_1+r_2 = r_2+r_2$
+        \item $r_1\cdot r_2\in R$
+        \item $r_1\cdot (r_2\cdot r_3) = (r_1\cdot r_2)\cdot r_3$
+        \item $r_1(r_2+r_3)=r_1r_2+r_1r_3$ (distributividad izquierda) y $(r_1+r_2)r_3 =r_1r_2+r_1r_3$ (distributividad derecha)
+    \end{enumerate}
+\end{definicion}
+
+\begin{nota}
+    $(R,+,\cdot)$
+\end{nota}
+
+\begin{definicion}
+    Si $(R,+,\cdot)$ es un anillo en el que existe $1\in R$ tal que $1\cdot r=r\cdot 1=r,\forall r\in R$, entonces $R$ es un anillo con elemento neutro multiplicativo. \textbf{Suele llamarse anillo con unidad en la literatura}.
+\end{definicion}
+
+\begin{definicion}
+    Si $(R,+,\cdot)$ es un anillo en el que si $r_1,r_2\in R$ (arbitrario) entonces $r_1\cdot r_2 = r_2\cdot r_1$, entonces $R$ es un anillo conmutativo. 
+\end{definicion}
+
+\begin{definicion}
+    Si $(R,+,\cdot)$ es un anillo tal que $(R-\{0\},\cdot)$ es un grupo abeliano, entonces $(R,+,\cdot)$ es un campo. 
+\end{definicion}
+
+\begin{cajita}
+    Construcción de los números racionales.
+\end{cajita}
+
+\begin{ejemplo}
+    \begin{enumerate}
+        \item $(\mathbb{Z},+,\cdot)$ es un anillo conmutativo con elemento neutro multiplicativo.
+        \item $(2\mathbb{Z},+,\cdot)$ es un anillo conmutativo, pero no tiene un elemento neutro multiplicativo.
+        \item $(\mathbb{Q}, +,\cdot)$ es un campo \textbf{(¡ejercicio!)}. (Campo finito más pequeño)
+        \item $(\mathbb{Z}_7,+,\cdot)$ es un campo.
+        \item $(\mathbb{Z}_6,+,\cdot)$ es un anillo conmutativo con neutro multiplicativo. 
+        \item $(\mathbb{Q}_{2\times 2},+,\cdot)$ es un anillo no conmutativo con neutro multiplicativo.  $$\left(\mathbb{Q}_{2\times 2}=\left\{\begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}: a,b,c,d\in \mathbb{Q}\right\}\right)$$
+        \item $(\mathbb{C},+,\cdot,\mathbb{R})$ es campo.
+        \item Cuaterniones reales de Hamilton. Sea $Q=\{\alpha_0+\alpha_1i+\alpha_2j+\alpha_3k: \alpha_1,\alpha_2,\alpha_3,\alpha_4 \in \mathbb{R}\}$ con las operaciones y reglas siguientes: 
+        \begin{enumerate}
+            \item $i^2=j^2=k^2=-1; ij=-ji=k; jk=-kj; ki=-ik=j$. Nótese que $(\{1,-1,i,j,k,-i,-j,-k\},\cdot)$ es un grupo no abeliano de orden 8.
+            \item $(\alpha_0+\alpha_1 i+\alpha_2j+\alpha_3k)+(\beta_0+\beta_1i+\beta_2j+\beta_3k)=(\alpha_0+\beta_0)+(\alpha_1+\beta_1)i+(\alpha_2+\beta_2)j+(\alpha_3+\alpha_3)k$
+            \item $\alpha_0+\alpha_1i+\alpha_2j +\alpha_3 k =\beta_0 +\beta_1i+\beta_2j+\beta_3k$, si y solo si $\alpha_0=\beta_0, \alpha_1=\beta_1,\alpha_2=\beta_2$ y $\alpha_3=\beta_3$. 
+            \item $(\alpha_0 +\alpha_1i+\alpha_2j+\alpha_3k)(\beta_0 +\beta_1i+\beta_2j+\beta_3k)=\alpha_0\beta_0 +\alpha_0\beta_1i+\alpha_0\beta_2j +\alpha_0\beta_3k+\alpha_1\beta_0 i -\alpha_1\beta_1+\alpha_1\beta_2 ij+\cdots = (a_0\beta_0+\alpha_1\beta_1-\alpha_2\beta_2-\alpha_2\beta_2)+(\alpha_0\beta_1+\alpha_1\beta_0+\alpha_2\beta_3-\alpha_3\beta_2)i+(\alpha_0\beta_2-\alpha_1\beta_3+\alpha_2\beta_0+\alpha_3\beta_1)j +(\alpha_0\beta_3+\alpha_1\beta_2 -\alpha_2\beta_1 +\alpha_3\beta_0)k$
+        \end{enumerate}
+        $\implies (Q,+,\cdot)$ es un anillo no conmutativo con $0=0+0i+0j+0k$ como elemento neutro aditivo, $1=1+0i+0j+0k$ como elemento neutro multiplicativo y para $\alpha_0+\alpha_1i+\alpha_2j+\alpha_3k\in Q-\{0\}\implies \alpha_0^2+\alpha_1^2+\alpha_2^2+\alpha_3^2\neq 0$ y $(\alpha_0+\alpha_1,i+\alpha_2j+\alpha_3k)^{-1}= \frac{\alpha_0}{\alpha_0^2+\alpha_1^2+\alpha_2^2+\alpha_3^2}-\frac{\alpha_1}{\alpha_0^2+\alpha_1^2+\alpha_2^2+\alpha_3^2}i-\frac{\alpha_2}{\alpha_0^2+\alpha_1^2+\alpha_2^2+\alpha_3^2}j-\frac{\alpha_3}{\alpha_0^2+\alpha_1^2+\alpha_2^2+\alpha_3^2}k\in Q$ (\textbf{¡Ejercicio!})
+    \end{enumerate}
+    Los anillos no conmutativos, con neutro multiplicativo e inversos multiplicativos (de elementos no nulos), como los cuaterniones de Hamilton se llaman Anillos de División o Semicampos.
+\end{ejemplo}
+
+\begin{nota}
+    Por simplicidad y cuando el contexto lo permita un anillo $(R,+,\cdot)$ se abreviará $R$.
+\end{nota}
+
+\begin{definicion}
+    Si $R$ es un anillo, $r\in R-\{0\}$ es un Divisor de Cero si existe $a\in R-\{0\}$ o $b\in R-\{0\}$ tales que $r\cdot a=0$ o $b\cdot r=0$.
+\end{definicion}
+
+
+\begin{definicion}
+    Si $R$ es un anillo conmutativo que no tiene divisores de cero es un \textbf{dominio entero}. 
+\end{definicion}
+
+\begin{ejemplo}
+    El anillo de los $(\mathbb{Z},+,\cdot)$ es un dominio entero. 
+\end{ejemplo}

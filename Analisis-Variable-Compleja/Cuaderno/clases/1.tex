@@ -1,0 +1,39 @@
+
+\section{Números complejos}
+
+Clase: 06/07/2022
+
+Notas:
+\begin{itemize}
+    \item $(\mathbb{R}^2,+,\cdot)$ donde:
+    \begin{itemize}
+        \item $+:\mathbb{R}^2\times \mathbb{R}^2 \to \mathbb{R}^2\ni (a,b)+(c,d):= (a+c,b+d)$.
+        \item $\cdot:\mathbb{R}^2\times \mathbb{R}^2 \to \mathbb{R}^2\ni (a,b)*(c,d)= (ac.db,ad+bc)$.
+    \end{itemize}
+    $\implies$ es un campo.
+    \item $\mathbb{C}=(\mathbb{R}^2,+,\cdot)$
+    \item $\mathbb{C}$ no es totalmente ordenado. Supóngase por el absurdo, que $\mathbb{C}$ tiene orden total. Considere: $i\geq \vee i\leq 0$:
+    \begin{itemize}
+        \item Si $i\geq 0 \implies i^2\geq 0 \implies -i\geq 0 (\to\gets)$
+        \item Si $i\leq 0\implies -i\geq 0\implies (-i)^2\geq 0\implies -1\geq 0 (\to\gets)$
+        \item ¿Puede ordenarse $\mathbb{C}$? Orden lexicográfico y de diccionario.
+    \end{itemize}
+    \item Representación polar. Sea $z=a+bi\in\mathbb{C}\implies r=|z|=\sqrt{a^2+b^2}$, $\theta =\tan^{-1}(b/a) \mod(2\pi)$. $\implies z=a+bi = r\cos\theta +i\sin \theta=r\left[\cos\theta + i\sin \theta \right]= re^{i\theta}$.
+    \item Supongamos la identidad de Euler, $e^{ix}=\cos x+ i \sin x$ y $e^{-ix}=\cos x-i\sin x$. $\implies \cos x =\frac{e^{ix}+e^{-ix}}{2}$ y $ \sin x =\frac{e^{ix}-e^{-ix}}{2i}$.
+    \item Exponencial compleja.
+    \begin{definicion}
+        Si $z=x+yi\mathbb{C}$, entonces: 
+    $$\exp(z)=e^z := e^x(\cos y + i\sin y)= (2.71...)^x(\cos y + i\sin y)$$
+    \end{definicion}
+    \item Propiedades. 
+    \begin{prop}
+        $e^xe^w=e^{x+w},\forall z,w\in\mathbb{C}$
+    \end{prop}
+    \begin{prop}
+        $e^z$ es periódica.
+        \begin{dem}
+            Supóngase que $e^{z+w}=e^{z},\forall x\in \mathbb{C}$.$\implies e^w=e^0\implies e^w=1$. Sea $w=s+ti\implies e^{s+ti}=1\implies e^se^{ti}=1$. Si $s=0\implies e^{ti}=1\implies \cos t +i \sin t=1\implies \cos t =1$ y $\sin t=0$.$\implies t=2\pi k,$ para $k\in\mathbb{Z}$. $\implies w= 2\pi k i,$ para $k\in\mathbb{Z}$.$\implies e^z$ es periódica con período $2\pi k,k\in \mathbb{Z}^+$.
+        \end{dem}
+    \end{prop}
+\end{itemize}
+

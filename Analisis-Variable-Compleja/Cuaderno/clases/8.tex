@@ -1,0 +1,140 @@
+Clase: 11/08/2022
+
+\section{Topología General}
+
+\begin{definicion}
+    Sea $X$ un conjunto no vacío. Una clase $\tau\subseteq P(X)$ es una \textbf{topología} sobre $X$ si: 
+    \begin{enumerate}
+        \item $\Phi,X\in \tau$
+        \item La unión de cualquier clase de elementos de $\tau$ es un elemento de $\tau$. 
+        \item La intersección de cualquier clase finita de miembros de $\tau$ está en $\tau$.
+    \end{enumerate}
+\end{definicion}
+\begin{nota}
+    \begin{enumerate}
+        \item Un \textbf{espacio topológico} es el par $(X,\tau)$
+        \item A los miembros de $\tau$ se les llama \textit{abiertos} de $X$. 
+        \item A los elementos de $X$ se les llama puntos. 
+    \end{enumerate}
+    
+\end{nota}
+
+\begin{ejemplo}
+    Sea $X$ un espacio métrico, y sea $\tau$ la clase de todos los subconjuntos de $X$ que son abiertos en el sentido analítico (términos de la métrica generando bolas abiertas, unión de bolas abiertas). Esta topología, se llama topología usual del espacio métrico. 
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $X\neq \varnothing$ y $\tau = \underbrace{P(X)}_{\text{topología discreta}}$, el potencia de $X$. $\implies (X, P(X))$ es un espacio discreto.
+    Sea 
+    $$A=\{1,2,3\}$$
+    $$\implies \tau =\{\varnothing,A,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\}\}$$ 
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $X\neq \varnothing$ y $\tau =\{\varnothing,X\}$. $\implies (X,\tau)$ es un espacio indiscreto. 
+    $$\bigcup \varnothing = \varnothing;\qquad \bigcap \varnothing =X$$
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $X=\{a,b,c\}\implies $
+    \begin{enumerate}
+        \item $\tau_1=\{X,\varnothing,\{a\}\}$
+        \item $\tau_2=\{X,\varnothing, \{b,c\}\}$
+    \end{enumerate}
+\end{ejemplo}
+
+\begin{nota}
+    \begin{enumerate}
+        \item Un espacio topológico es \textbf{metrizable} si dada la topología del espacio, existe al menos una métrica que genera a dicha topología .
+        \begin{prop}
+            Si $X$ es metrizable $\implies X$ es métrico. 
+        \end{prop}
+        \item Existen espacios topológicos que no son metrizables $\implies$ teoría topológica es más amplia que la analítica. 
+    \end{enumerate}
+\end{nota}
+
+\begin{nota}
+    ¿Se hereda la propiedad de ser espacio topológico? No. 
+\end{nota}
+
+\begin{ejemplo}
+    Sea $Y$ un subconjunto de una topología. Para que $Y$ sea espacio topológico:
+    \begin{enumerate}
+        \item Se dota a $Y$ de una topología propia. 
+        \item Se dota a $Y$ de la topología relativa: 
+        $$\tau_y =\{G\cap Y:\forall G\in \tau\}$$
+        $\implies Y$ es un subespacio de $X$. 
+    \end{enumerate}
+\end{ejemplo}
+
+\begin{nota}
+    Dado el espacio topológico $(X,\tau)$ y $Y\subseteq X$, probemos que $\tau_y=\{Y\cap G:\forall G\in\tau\}$ es topología para $Y$. 
+    \begin{enumerate}
+        \item Como $\varnothing, X\in \tau \implies \varnothing \cap Y = \varnothing\in\tau_y$ y $X\cap Y=Y\in \tau_y\implies \varnothing,Y\in\tau_y$.
+        \item Sea $\{H_i\}_{i\in Z}$, una clase cualquier de elementos de $\tau_y\implies \exists G_i\in\tau \ni H_i=Y\cap G_i,\forall i$. Entonces, $\bigcup_i H_i=\bigcup_i\left[Y\cap G_i\right]= Y\cap [\bigcup_i G_i]\in \tau_y$
+        \item Sean $H_1,H_2\in\tau_y\implies H_i=Y\cap G_i,G_i\in \tau,i=1,2$. Entonces: 
+            $$H_1\cap H_2=(Y\cap G_1)\cap (Y\cap G_2)=Y\cap (G_1\cap G_2)\in\tau_y$$
+        Por lo tanto, $\tau_y$ es topología para $Y$. 
+    \end{enumerate}
+\end{nota}
+
+\begin{definicion}
+    Sean $(X,\tau)$ y $(Y,\tau')$ espacios topológicos y $f$ un mapeo de $X$ en $Y$. Entonces, $f$ es:
+    \begin{enumerate}
+        \item Continuo, si $\forall G\in\tau'$, se tiene que $f^{-1}(G)\in \tau $
+        \item Mapeo abierto, si $\forall H\in \tau$, se tiene $f(H)\in \tau'$
+    \end{enumerate}
+\end{definicion}
+
+\begin{nota}
+    Cualquier imagen $f(X)$, donde $X$ es espacio topológico y $f$ es un mapeo continuo, es una imagen continua de $X$. 
+\end{nota}
+
+\begin{definicion}
+    Un \textbf{homeomorfismo} es un mapeo entre espacios topológicos que es biyectivo, continuo y abierto (bicontinuo). 
+\end{definicion}
+
+\begin{nota}
+    \begin{enumerate}
+        \item Si existe un homeomorfismo entre los espacios topológicos $X$ y $Y$, se dice que estos espacios son homeomorfos. 
+        \item Dos espacios homeomorfos se diferencian en la naturaleza de sus puntos y son topológicamente indistinguibles. 
+        \item "Ser homeomorfo a" es una relación de equivalencia de la clase de espacios topológicos. 
+    \end{enumerate}
+\end{nota}
+
+\begin{definicion}
+    Una propiedad topológica si, cuando la tiene un espacio $X$, la tiene también cualquier imagen homeomorfa de $X$. 
+    $$f:(X,\tau)\to (Y,\tau')$$
+\end{definicion}
+
+\begin{nota}
+    El objecto de estudio de la topología (como rama de la matemática, es encontrar y caracterizar las propiedades topológicas.)
+\end{nota}
+
+\begin{definicion}
+    Un conjunto $F$ es cerrado en el espacio $(X,\tau)$, si $F^c\in\tau$. 
+\end{definicion}
+
+\begin{prop}
+    La intersección de cualesquiera dos topologías de $X$ es una topología de $X$. 
+    \begin{dem}
+        Sean $\tau_1,\tau_2$ topologías sobre $X$.
+        \begin{enumerate}
+            \item $\varnothing,X\in\tau_1$ y a $\tau_2\implies \varnothing,X\in \tau_1\cap \tau_2$.
+            \item Sea $\{G_i\}_{i\in I}$ una colección de subconjuntos de $\tau_1\cap \tau_2\implies G_i\in \tau_1\cap \tau_2,\forall i\implies G_i\in \tau_1$ y $G_i\in \tau_2,\forall i\implies \cup_i G_i\in\tau_1$ y $\cup_iG_i\in\tau_2\implies \cup_iG_i \in \tau_1\cap \tau_2$. 
+            \item Si $G_1,G_2\in \tau_1\cap \tau_2\implies G_1,G_2\in \tau_1$ y $G_1,G_2\in\tau_2\implies G_1\cap G_2\in\tau_1$ y $G_1\cap G_2\in \tau_2\implies G_1\cap G_2\in \tau_1\cap\tau_2\implies \tau_1\cap\tau_2$ es topología sobre $X$. 
+        \end{enumerate}
+    \end{dem}
+\end{prop}
+
+\begin{nota}
+    Sea $X=\{a,b,c\}$ y sean las topologías $\tau_1=\{\varnothing, X,\{a\}\}$ y $\tau_2=\{\varnothing,X,\{a\}\}\implies \tau_1\cup\tau_2=\{\varnothing,X,\{a\},\{b\}\}$ no es topología sobre $X$. 
+\end{nota}
+
+\begin{definicion}
+    Una sucesión $(a_n)$ de puntos del espacio topológico $(X,\tau)$ converge a un punto $b\in X$ (i.e. $\lim a_n=b$) si y solo si, $\forall G\in\tau$ que contiene a $b$, $\exists N\in\mathbb{Z}^+\ni$ si $n>N\implies a_n\in G$.  
+\end{definicion}
+
+\begin{ejemplo}
+    Sea $(X,\tau)$ un espacio indiscreto y $(a_n)$ una sucesión en $X$. 
+\end{ejemplo}

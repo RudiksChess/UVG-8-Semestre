@@ -1,0 +1,117 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+Problemas  1, 2, 5, 9, 10, 20 y 21, sección 3.4.
+
+\section{Sección 3.4}
+
+\begin{problema}[Problema 1]
+    If $U$ is an ideal of $R$ and $1\in U$, prove that $U= R$.
+    \begin{dem}
+        Por definición de ideal, tenemos que que $1\in U$ y para todo $r\in R$, tal que 
+        $$1\cdot r= r\cdot 1 = r\in U$$
+        Esto muestra que $U\subseteq R$ y $R\subseteq U$. Por lo tanto, $U=R$.
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 2]
+    If $F$ is a field, prove its only ideals are $(0)$ and $F$ itself.
+    \begin{dem}
+        Sea $U \neq \varnothing$ un ideal de  $F$, tal que que comprobaremos las dos propiedades de la definición de ideal: 
+
+        \begin{itemize}
+            \item Nótese que en un anillo $R$, $\{0\}$ y $R$ son ideales, y que $(0,+)$ y $(R,+)$ son de subgrupos de $R$. $\implies$ Sabemos que un campo es un anillo. Por lo tanto, $(0)$ y $F$ son subgrupos de $F$ bajo la adición. 
+            \item Por otra parte, sea $u\in U$ y $f\in F$. 
+                \begin{itemize}
+                    \item Si $U=(0)$, el resultado es trivial. 
+                    \item Si $U\neq (0)$, entonces $U$ contiene al menos un elemento no cero $u$. Como $F$ es un campo, tiene inverso multiplicativo $u^{-1}\in F$, tal que $uu^{-1}=1\in U\implies$ por el \textbf{Problema 1} que $U=F$.
+                \end{itemize}  
+        \end{itemize}
+        Por lo tanto $(0)$ y $F$ son los únicos ideales de un campo $F$.
+    \end{dem}
+\end{problema}
+\begin{problema}[Problema 5]
+    If $U, V$ are ideals of $R$,let $U+V= \{u+v\quad |u\in U,v\in V\}$. Prove that $U + V$ is also an ideal.
+    \begin{dem}
+        Debemos probar los dos incisos de la definición de ideal:
+        \begin{itemize}
+            \item Previamente se había demostrado que la suma de dos subgrupos también es un subgrupo, es decir $U+V$ es un subgrupo de de $R$ bajo la adición. 
+            \item Ahora bien, sea $u\in U,v\in V$ y $r\in R$, tal que: 
+                    $$r(u+v)=ru+rv = (u+v)r\in U+V$$
+        \end{itemize}
+        Por lo tanto, $U+V$ es un ideal de $R$ 
+    \end{dem}
+\end{problema}
+\begin{problema}[Problema 9]
+    If $U$ is an ideal of $R$, let $r(U) = \{x \in R | xu = 0 \quad\text{for all}\quad u\in  U\}$. Prove that $r(U)$ is an ideal of $R$.
+    \begin{dem}
+        Sea $r(U)\neq \varnothing$ un ideal de $R$, tal que: 
+        \begin{itemize}
+            \item Debemos comprobar $r(U)$ es un subgrupo de $R$ bajo la suma. Sea 
+            \begin{itemize}
+                \item Sea $x_1,x_2\in r(U)$, es decir $(x_1+x_2)u=x_1u+x_2u=0+0=0$ para todo $u\in U$.
+                \item Sea $0\in r(U)$, es decir $(0)u=0=0$ para todo $u\in U$.
+                \item Sea $-x\in r(U)$, es decir $(-x)u=-xu=0$ para todo $u\in U$. 
+            \end{itemize}
+            Por lo tanto, se cumple la definición de subgrupo bajo la adición.
+            \item Ahora bien, sea $x\in r(U)$ y $r_0\in R$. Nótese que 
+            $$(xr_0)u=x(r_0u)=0,\quad \forall u\in U \implies xr_0\in r(U) $$
+            $$(r_0x)u=r_0(xu)=0,\quad \forall u\in U\implies r_0x\in r(U)$$
+        \end{itemize}
+        Por lo tanto, $r(U)$ es un ideal de $R$. 
+    \end{dem}
+\end{problema}
+\begin{problema}[Problema 10]
+    If $U$ is an ideal of $R$ let $[R:U]= \{x\in R  |rx\in U \quad \text{for every }r\in R\}$. Prove that $[R: U]$ is an ideal of $R$ and that it contains $U$.
+    \begin{dem}
+        Sea $[R:U]\neq \varnothing$ un ideal de $R$, tal que: 
+        \begin{itemize}
+            \item Debemos comprobar $[R:U]$ es un subgrupo de $R$ bajo la suma. Sea 
+            \begin{itemize}
+                \item Sea $x_1,x_2\in [R:U]$, es decir $r(x_1+x_2)=xr_1+rx_2$ para cada $r\in R$.
+                \item Sea $0\in [R:U]$, es decir $r(0)=0$ para todo $r\in R$.
+                \item Sea $-x\in [R:U]$, es decir $r(-x)=-rx$ para todo $r\in U$.
+            \end{itemize}
+            Por lo tanto, se cumple la definición de subgrupo bajo la adición.
+            \item Ahora bien, sea $x\in [R:U]$ y $r_0\in R$. Nótese que 
+            $$r(r_0 x)=(rr_0)x\in U\implies r_0x\in [R:U]$$
+            $$r(xr_0)=(rx)r_0\in U\implies xr_0\in [R:U]$$
+        \end{itemize}
+        Por lo tanto, $[R:U]$ es un ideal de $R$. Por otra parte, 
+    \end{dem}
+\end{problema}
+\begin{problema}[Problema 20]
+    If $R$ is a ring with unit element 1 and $\phi$ is a homomorphism of $R$ onto $R^{\prime}$ prove that $\phi(1)$ is the unit element of $R^{\prime}$.
+    \begin{dem}
+        Debemos probar que $\phi(1)$ es elemento unitario de $R^{\prime}$. Por hipótesis, tenemos que $\phi$ es sobreyectivo de $R$ a $R'$, es decir que $\forall r' \in R',\exists r'\in R\ni \phi(r)=r'$. Entonces, tenemos: 
+        \begin{align*}
+            r' &= \phi(r)\\
+               &= \phi(1\cdot r)
+            \intertext{Usando la defición de homomorfismo:}
+            &= \phi(1)\phi(r)\\
+            &= \phi(1)r'
+        \end{align*}
+        Por lo tanto, $\phi(1)$ es elemento unitario de $R^{\prime}$.
+    \end{dem}
+
+\end{problema}
+\begin{problema}[Problema 21]
+    If $R$ is a ring with unit element 1 and $\phi$ is a homomorphism of $R$ into an integral domain $R^{\prime}$ such that $I(\phi) \neq R$, prove that $\phi(1)$ is the unit element of $R^{\prime}$.
+    \begin{dem}
+        Debemos probar que $\phi(1)$ es elemento unitario de $R^{\prime}$. Por hipótesis, tenemos que $I(\phi)\neq R\implies \exists x\in R\ni \phi(x)\neq 0$. Ahora bien, nótese que 
+        $$\phi(1)=\underbrace{\phi(1\cdot 1)}_{\text{homomorfismo}}=\phi(1)\cdot \phi(1)=\phi(1)^2,$$
+        es decir que la única posibilidad es que $\phi(1)=1$, ya que $\phi(1)=0$ no es posible por hipótesis. Por lo tanto,  $\phi(1)$ es el elemento unitario de $R'$.
+    \end{dem}
+\end{problema}
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

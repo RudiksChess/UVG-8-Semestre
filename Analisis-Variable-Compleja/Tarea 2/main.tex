@@ -1,0 +1,57 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\begin{problema}
+    For each of the following points in $\mathbb{C}$, give the corresponding point of $S$: 
+    \begin{enumerate}
+        \item 0
+        \item $1+i$
+        \item $3+2i$.
+    \end{enumerate}
+
+    \begin{sol}
+        Tenemos a $S$, definido como: 
+        $$ S= \{(x_1,x_2,x_3)\in \mathbb{R}^3: x_1^2+x_2^2 +x_3^2=1\}$$
+        En donde: 
+
+
+        $$x_1 = \frac{2x}{|z|^2+1 },\quad 
+        x_2 = \frac{2y}{|z|^2+1 }, \quad 
+        x_3 = \frac{|z|^2-1}{|z|^2+1}$$
+        Entonces, tenemos: 
+        \begin{enumerate}
+            \item $z= 0\implies |0|^2 \implies \sqrt{0} = 0$. Es decir, entonces: 
+
+            \begin{align*}
+                S &= \left(\frac{2x}{|z|^2+1 },\frac{2y}{|z|^2+1 },\frac{|z|^2-1}{|z|^2+1}\right)\\
+                &= \left(\frac{0}{0+1 },\frac{0}{0+1 },\frac{0-1}{0+1}\right)\\
+                &= \left(0,0,-1\right)\\
+            \end{align*}
+            \item $z= 1+i\implies |1+i|^2 \implies 2$. Es decir, entonces: 
+            \begin{align*}
+                S &= \left(\frac{2x}{|z|^2+1 },\frac{2y}{|z|^2+1 },\frac{|z|^2-1}{|z|^2+1}\right)\\ 
+                &= \left(\frac{2(1)}{2+1 },\frac{2(1)}{2+1 },\frac{2-1}{2+1}\right)\\
+                &=  \left(\frac{2}{3},\frac{2}{3},\frac{1}{3}\right)
+            \end{align*}
+            \item $z= 3+2i\implies |3+2i|^2 \implies 9+4 = 13$. Es decir, entonces: 
+            \begin{align*}
+                S &= \left(\frac{2x}{|z|^2+1 },\frac{2y}{|z|^2+1 },\frac{|z|^2-1}{|z|^2+1}\right)\\
+                &= \left(\frac{2(3)}{13+1 },\frac{2(2)}{13+1 },\frac{13-1}{13+1}\right)\\ 
+                &= \left(\frac{6}{14 },\frac{4}{14 },\frac{12}{14}\right)\\
+                &= \left(\frac{3}{7},\frac{2}{7},\frac{6}{7}\right)\\
+            \end{align*}
+        \end{enumerate}
+    \end{sol}
+\end{problema}
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

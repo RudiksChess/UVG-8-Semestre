@@ -1,0 +1,98 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+Problemas 3, 6, 7, 8, 10 y 12, sección 3.2.
+
+\section*{Sección 3.2}
+
+$R$ is a ring in all the problems.
+
+
+\begin{problema}[Problema 3]
+    Find the form of the binomial theorem in a general ring; in other words, find an expression for $(a+b)^{n}$, where $n$ is a positive integer.
+    \begin{sol}
+        Tenemos 2 casos:
+        \begin{enumerate}
+            \item Si el anillo es conmutativo, se tiene la definición usual del teorema binomial: 
+                $$(a+b)^{n} = \sum_{k=0}^n\begin{pmatrix}
+                    n\\
+                    k
+                \end{pmatrix}x^{n-k}y^k$$
+            \item Si el anillo no es conmutativo, tenemos que 
+            $$(a+b)^{n} = \sum_{k=0}^n(x_1\cdots x_n),$$
+            en donde la sumas van sobre todos los elementos de longitud $n$ con $x_i=a$ o $x_i=b$.
+        \end{enumerate}
+
+    \end{sol}
+\end{problema}
+
+\begin{problema}[Problema 6]
+    If $D$ is an integral domain and $D$ is of finite characteristic, prove that the characteristic of $D$ is a prime number.
+    \begin{dem}
+        Debemos probar que el característico de $D$ es un número primo. Por hipotesis, $D$ es un dominio entero y $D$ es de característica finita $\implies$ por definición, $p$ es el entero más pequeño tal que $pa=0 \quad \forall a\in D$. Por reducción al absurdo, supóngase que $p$ no es un número primo, es decir es un número compuesto $\implies \exists z_1,z_2\in \mathbb{Z}^+\ni p=z_1z_2$. Nótese entonces que $(z_1z_2)a=0 \quad \forall a\in D\implies$ pero esto también nos permite asegurar $(z_1z_2)a^2=(z_1a)(z_2a)=0\implies (z_1a)=0$ o $(z_2a)=0. (\to \gets)$ Pero es una contradicción ya que $p$ es el entero más pequeño y no puede ser 0. Por lo tanto, el característico $p$ de $D$ es un número primo. 
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 7]
+    Give an example of an integral domain which has an infinite number of elements, yet is of finite characteristic.
+    \begin{sol}
+        Basándonos en los ejemplos usuales del libro, $J_p$ (el anillo de enteros $\mod p$) un ejemplo claro sería $J_p[X]$ el anillo de polinomios sobre el anillo $J_p$.
+    \end{sol}
+\end{problema}
+
+\begin{problema}[Problema 8]
+    If $D$ is an integral domain and if $n a=0$ for some $a \neq 0$ in $D$ and some integer $n \neq 0$, prove that $D$ is of finite characteristic.
+    \begin{dem}
+        Debemos probar que $D$ es de característica finita. Sea entonces $x\in D \ni$
+        $$ (na)x = a(nx)=0,\quad a\neq 0.$$
+        $\implies (nx)=0\quad \forall x\in D$, cumpliendo la definición de característico finito para $D$. 
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 10]
+    Show that the commutative ring $D$ is an integral domain if and only if for $a, b, c \in D$ with $a \neq 0$ the relation $a b=a c$ implies that $b=c$.
+    \begin{dem}
+        Tenemos dos implicaciones: 
+        \begin{itemize}
+            \item $(\implies)$ Por hipótesis, $D$ es un dominio entero, tenemos que $a\neq 0$, tal que: 
+            \begin{align*}
+                ab&=ac\\
+                (ab-ac)&=0\\
+                a(b-c)&=0\\
+                b-c&=0\\
+                b&=c
+            \end{align*}
+            \item $(\impliedby)$ Por hipótesis, $a,b,c\in D$ con $b=c$. Por reducción al absurdo, supóngase $D$ no es de dominio entero, es decir $\exists a,b\in D-\{0\}\ni ab=0$. Pero 
+            $$0=ab=a\cdot 0\implies a(b-0)\implies b-0=0\implies b=0(\to\gets).$$
+            Por lo tanto, $D$ es un dominio entero.  
+        \end{itemize}
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 12]
+    Prove that any field is an integral domain.
+    \begin{dem}
+        Sea $D$ un campo $\implies$ es un anillo conmutativo divisible $\implies$ cada elemento no cero de $D$ es invertible. Por reducción al absurdo, supóngase que $D$ no es de dominio entero, entonces $m,a\in D-\{0\}\ni ma=0\implies m,a\neq 0, m$ es invertible, es decir que $m^{-1}$ existe, tal que: 
+        \begin{align*}
+            m^{-1}(ma) &= m^{-1}0\\
+            (m^{-1}m)a &= 0\\
+            (e)a &= 0\\
+            a &= 0 (\to\gets)
+        \end{align*}
+        Por lo tanto, $m,a=0$ y $D$ es de dominio entero. 
+    \end{dem}
+\end{problema}
+
+
+
+
+
+%---------------------------
+%\bibliographystyle{apa}-
+%\bibliography{referencias.bib}
+
+\end{document}

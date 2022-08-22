@@ -1,0 +1,56 @@
+Clase: 21/07/2022
+
+
+\begin{definicion}
+    Si $R$ y $R'$ son anillos y $\phi:R\to R'$ es un homomorfismo inyectivo, entonces se dice que $\phi$ \textbf{sumerge} a $R$ en $R'$, o que $\phi$ es una \textbf{inmersión} de $R$ en $R'$ o que con la acción de $\phi$, $R$ puede sumergirse en $R'$. Si $R$ puede sumergirse en $R'$, entonces $R'$ es un \textbf{Sobre Anillo} o  una \textbf{Extensión} de $R$.  
+\end{definicion}
+
+\begin{teorema}[3C]
+    Todo dominio entero puede sumergirse en un campo.
+    \begin{dem}
+        Sea $D$ un dominio entero y defínase en $D\times D-\{0\}$ la relación binaria $\sim\ni$ si $a,m\in D$ y $b,n\in D-\{0\}\implies (a,b)\sim (m,n)$ si y solo si, $an=mb$. Nótese que: 
+        \begin{itemize}
+            \item $ab=ba\implies (a,b)\sim (a,b),\forall (a,b)\in D\times D-\{0\}\implies \sim$ es reflexiva. 
+            \item Si $(a,b)\sim (m,n)\implies an=mb\implies mb=na\implies (m,n)\sim (a,b)\implies \sim$ es simétrica.
+            \item Si $(a_1,b_1)\sim (a_2,b_2)$ y $(a_2,b_2)\sim (a_3,b_3)\implies a_1b_2=b_1a_2$ y $a_2b_3=b_2a_3\implies a_1b_2b_3 = b_1a_2b_3$ y $a_2b_3b_1=b_2a_3b_1\implies a_1b_3b_2=a_2b_1b_3=a_3b_1b_2 = (a_1b_3 - a_3b_1)b_2 \implies$ como $b_2\neq 0$ y $D$ carece de divisores de cero $\implies a_1b_3-a_3b_1=0\implies a_1b_3=b_1a_3\implies (a_1,b_1)\sim (a_3,b_3)\implies \sim$ es transitiva. $\implies \sim$ es una relación de equivalencia, y para $(a,b)\in D\times D-\{0\}$, sea $[(a,b)]$ la clase de equivalencia de $(a,b)$ respecto a $\sim$, es decir $[(a,b)]\in D\times D-\{0\}/\sim $. 
+        \end{itemize}
+        Sea $+$: $D\times D-\{0\} /\sim \times D\times D-\{0\} /\sim \to D\times D-\{0\} /\sim\ni $
+        $$+\left([(a,b)],[(m,n)]\right)= [(a,b)]+[(m,n)]=[(an+bm,bn)]$$
+        Si $a_1,a_2,m_1,m_2\in D,b_1,b_2,n_1,n_2\in D-\{0\}\ni \left[(a_1,b_1)\right]=\left[(a_1,b_1)\right]$ y $[(m_1,n_1)]=[(m_2,n_2)]\implies (a_1,b_1)\sim (a_2,b_2)$ y $(m_1,n_1)\sim (m_2,n_2)\implies a_1b_2=b_1a_2$ y $m_1n_2=n_1m_2$. Entonces $[(a_1,b_1)]+[(m_1,n_1)]=\left[(a_1n_1+b_1m_1,b_1n_2)\right]\implies a_1b_2n_1n_2 = b_1a_2n_1n_2$ y $m_1n_2b_1b_2=n_1m_2b_1b_2\implies a_1n_1b_2n_2 = b_1n_1a_2n_2$ y $b_1m_1b_2n_2 = b_1n_1b_2m_2\implies a_1n_1b_2n_2+b_1m_1b_2n_2=b_1n_1a_2n_2+b_1n_1b_2m_2\implies (a_1n_1+b_1m_1)(b_2n_2)=(b_1n_1)(a_2n_2+b_2m_2)\implies (a_1n_1+b_1m_1,b_1n_1)\sim (a_2n_2+b_2m_2,b_2n_2\implies \left[\left(a_1n_1+b_1m_1b_1n_1\right)\right]=\left[(a_2 \cdots)\right]\implies \left[(a_1,b_1)\right]+[(m_1,n_1)] = \left[(a_1n_1+b_1m_1,b_1n_1)\right]=\left[(a_2m_2+b_2m_2,b_2n_2)\right]=\left[(a_2,b_2)\right]+\left[(m_2,n_2)\right]\implies$ las imágenes de $+$ son invariantes a cambios en los representantes de las clases de equivalencia. $\implies +$ es una función bien definida. $\implies \left(D\times D-\{0\}/\sim, +\right)$ es cerrada. 
+        \bigbreak 
+        Si $\left[(a,b)\right],\left[(m,n)\right]\in D\times D-\{0\}/\sim\implies \left[(a,b)\right]+\left[(m,n)\right]=\left[(an+bm,bn)\right]=\left[(mb+na,nb)\right]=\left[(m,n)\right]+[(a,b)]\implies \left(D\times D-\{0\}/\sim, +\right)$ es conmutativa.         \bigbreak 
+
+        Si $[(a,b)],[(c,d)],[(e,f)]\in D\times D-\{0\}/\sim\implies \left([(a,b)]+[(c,d)]\right)+ [(e,f)]= [(ad+bc,bd)]+[(e,f)]=[(ad+bc)f+(bd)e,(bd)f]=\left[(adf+bcf+bde,bdf)\right]= \left[(adf+bcf+bde, bdf)\right] = \left[a(df)+b(cf+de),b(df)\right]=[(a,b)]+[(cf+de,df)]=[(a,b)]+([c,d]+[(d,f)])\implies \left(D\times D-\{0\}/\sim, +\right)$ es asociativo. \bigbreak 
+
+        Si $b\in D-\{0\}$, entonces $[(0,b)]\in D\times D-\{0\}/\sim$ y si $[(c,d)]\in D\times D-\{0\}/\sim \implies [(0,b)]+[(c,d)]=[(0\cdot  +bc, bd)]=[(0+bc,bd)]=[(bc,bd)]$. Peor $(bc)d=(bd)c\implies [(bc,db)]=[(c,a)]\implies [(0,b)]+[(c,d)]=[(bc,bd)]=[(c,d)],\forall [(c,d)]\in D\times D-\{0\}/\sim \implies [(0,b)]$ es neutro de $\left(D\times D-\{0\}/\sim, +\right)$.\bigbreak 
+
+        Si $\left[(a,b)\right]\in D\times D-\{0\}/\sim\implies a\in D$ y $b\in D-\{0\}\implies -a\in D\implies \left[(-a,b)\right]\in D\times D-\{0\}/\sim \ni [(a,b)]
+        + [(-a,b)]= [(ab+b(-a),bb)]=[(ab-ab,bb)]=[(0,bb)]=[(0,b)]\implies [(-a,b)]=-[(a,b)]\implies$ todo elemento de $D\times D-\{0\}/\sim$ tiene inverso aditivo. $\implies \left(D\times D-\{0\}/\sim, +\right)$ es grupo abeliano. \bigbreak 
+
+        Sea ahora $\cdot$: $D\times D-\{0\}/\sim \times D\times D-\{0\}/\sim \to D\times D-\{0\}/\sim \ni\cdot\left([(a,b)],[(m,n)]\right)=[(a,b)]\cdot [(m,n)]=[(am,bn)]$. Sea $a_1,a_2,m_1,m_2\in D, b_1,b_2,n_1,n_2\in D-\{0\}\ni [(a_1,b_1)]=[(a_2,b_2)]$ y $[(m_1,n_1)]=[(m_2,n_2)]\implies a_1b_2=b_1a_2$ y $m_1n_2=n_1m_2\implies (a_1b_2)(m_1n_2)=(b_1a_2)(n_1m_2)\implies (a_1m_1)(b_2n_2)=(b_1n_1)(a_2m_2)\implies [(a_1m_1,b_1n_1)]=[(a_2m_2,b_2n_2)]$. Entonces, $[(a_1,b_1)][(m_1,n_1)]=[(a_1m_1,b_1n_1)]=[(a_2m_2,b_2n_2)]=[(a_2,b2)][(m_2,n_2)]\implies$ las imágnes de $\cdot$ son invariantes a cambios en los representates de las clases de equivalencia $\implies \cdot$ es una función bien definida $\implies\left(D\times D-\{0\}/\sim -\{[0,b]\},\cdot\right)$
+
+        $\left(D\times D-\{0\}/\sim - \{[(0,b)]\},\cdot\right)$ es connmutativo. \bigbreak 
+
+        Si $[(a,b)],[(c,d)],[(e,f)]\in D\times D-\{0\}/\sim \implies \left([(a,b)]\cdot [(c,d)]\right)\cdot\left([(e,f)]\right)=[(ac,bd)][(e,f)]=[((ac)e, (bd)f)]=[a(ce), b(df)]=[(a,b)]\cdot [(ce,df)]=[(a,b)]\cdot \left([(c,d)]\cdot [(e,f)]\right)\implies \left(D\times D-\{0\}/\sim - \{[0,b]\},\cdot\right)$ es asociativo. \bigbreak 
+
+        Si $b\in D-\{0\}\implies [(b,b)]\in D\times D-\{0\}/\sim$ y si $[(c,d)]\in D\times D-\{0\}/\sim\implies \left[(b,b)\right]\cdot [(c,d)]=[(bc,bd)]=[(c,d)]\implies [(b,b)]$ es neutro multiplicativo de $\left(D\times D-\{0\}/\sim - \{[(0,b)]\},\cdot\right)$\bigbreak 
+
+        Si $a,b\in D-\{0\}\implies [(a,b)]\in D\times D-\{0\}/\sim - \{[(0,b)]\}\implies [(b,a)]\in D\times D-\{0\}/\sim -\{[(0,b)]\}\ni [(a,b)]\cdot [(b,a)]=[(ab,ba)]=[(ab,ab)]$, el neutro multiplicativo de $D\times D-\{0\}/\sim -\{[(0,b)]\}\implies [(b,a)]=[(a,b)]^{-1}\implies$todo elemento de $(D\times D -\{0\}/\sim -\{[(0,b)],\cdot\})$ tiene inverso. $\implies \left(D\times D-\{0\}/\sim -\{[(0,b)]\},\cdot\right)$ es un grupo abeliano. \bigbreak 
+
+        Si $[(a,b)],[(c,d)],[(e,f)]\in D\times D-\{0\}/\sim \implies ([(a,b)]+[(c,d)])\cdot [(e,f)]= [(ade+cbe,bdf)]=[((ade+cbe)f,(b+f)f)]= [(ae)(df)+(bf)(ce), (bf)(df)]=[(ae,bf)]+[(ce,df)]\implies$ Se cumplen las leyes distributivas en $(D\times D-\{0\}/\sim,+,\cdot)$ se cumplen las leyes distributivas.\bigbreak 
+        
+        $\implies \left(D\times D-\{0\}/\sim, +,\cdot\right)$ es un campo. \bigbreak
+        
+        Si $b\in D-\{0\}$, sea $\phi: D\to D\times D-\{0\}/\sim \to \phi(d)= [(db,b)]$. Si $d_1,d_2\in D\implies \phi(d_1+d_2)=[((d_1+d_2)b, b)]=[((d_1+d_2)bb, bb)]=[((d_1b + d_2b,bb))]= [(d_1b,b)]+[(d_2b,b)]=\phi(d_1)+\phi(d_2)$. Además, $\phi(d_1d_2)=[((d_1d_2)b,b)]=[((d_1d_2)bb,bb)]=[((d_1b(d_2b)),bb)]=[(d_1b,b)][(d_2b,b)]=\phi(d_1)\phi(d_2)\implies \phi$ es homomorfismo.\bigbreak 
+        
+        Si $d\in K_\phi \implies\phi(d)=[(db,b)]=[(0,b)]\implies (db,b)\sim (0,b)\implies (db)b=0\cdot b=0\implies d(bb)=0$. Como $b\neq 0\implies$ y como $D$ no tiene divisores de 0, entonces $bb\neq 0\implies$ de nuevo, como $D$ no tiene divisores de cero, $d=0\implies K_\phi = (0)\implies \phi$ es inyectivo. $\implies \phi$ es una inmersión. $\implies D$ está sumergido en el campo $D\times D-\{0\}/\sim$.
+    \end{dem}
+\end{teorema}
+
+\begin{definicion}
+    Si $D$ es un dominio entero, el campo construido en la prueba del teorema 3C se llama \textbf{Campo de Cocientes} de $D$.
+\end{definicion}
+
+\begin{ejemplo}
+    $(\mathbb{Z},+,\cdot)$ es un dominio entero y $(\mathbb{Q},+,\cdot)$ es un campo de cocientes. 
+\end{ejemplo}

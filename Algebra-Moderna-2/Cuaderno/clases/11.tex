@@ -1,0 +1,31 @@
+Clase: 11/08/2022
+
+\begin{cajita}
+    \begin{teorema}[Wilson]
+    \end{teorema}
+\end{cajita}
+
+\begin{lema}[3.15]
+    Sea $p$ un número primo y supóngase que para $c\in\mathbb{Z}, (c,p)=1$ existen $x,y\in\mathbb{Z}$, tales que: $cp=x^2+y^2$, entonces existen $a,b\in\mathbb{Z}$ tales que $p=a^2+b^2$.
+    \begin{dem}
+        Nótese que $(\mathbb{Z},+,\cdot)$ es un subanillo de $(\mathbb{Z}(i),+,i)$ y $p$ es un elemento primo de $(\mathbb{Z},+,\cdot)$. Supóngase que $p$ es elemento primo de $(\mathbb{Z}(i),+,\cdot)$, pero por hipótesis, $cp=x^2+y^2=(x+yi)(x-yi)\implies$ por el lema 3.13, $p|x+yi$ o $p|x-yi\implies p|x+yi\implies \exists u+iv\in\mathbb{Z}(i)\ni x+iy = p(u+iv)=pu+i(pv)\implies x=pu,y=pv\implies x-iy = pu-i(pv)=p(u-iv)\implies p|x-yi\implies p^2|(x+iy)(x-iy)=cp\implies p|c\implies 1=(p,c)>p(\to\gets)\implies p$ no es elemento primo de $\mathbb{Z}(i)\implies a+bi, \alpha +\beta i\in \mathbb{Z}(i)$, ninguno de los dos unidades de $\mathbb{Z}(i)\ni p=(a+bi)(\alpha+\beta i)\implies d(a+bi)=a^2+b^2\neq 1$ y $d(\alpha-\beta i)=\alpha^2+\beta^2\neq 1$. Pero $p=(a+bi)(\alpha +\beta i)=(a\alpha b\beta)+(a\beta +b\alpha)i\implies a\beta +b\alpha =0\implies p=(a\alpha-b\beta)-0=(a\alpha -b\beta)-(a\beta +b\alpha)i=a\alpha -a\beta i -b\beta-b\alpha i=a(\alpha -\beta i)-bi(\alpha - \beta i)=(a-bi)(\alpha -\beta i)$. Entonces $p^2=pp=(a+bi)(\alpha+\beta i)(a-bi)(\alpha -\beta i)=(a^2+b^2)(\alpha^2+\beta^2)\implies a^2+b^2|p^2$ y como $\alpha^2+\beta^2>1$ y $a^2+b^2<p^2\implies a^2+b^2=1$ o $a^2+b^2=p\implies p=a^2+b^2$. 
+    \end{dem}
+\end{lema}
+
+\begin{lema}[3.16]
+    Si $p$ es un número primo de la forma $4n+1$, entonces la congruencia $x^2\equiv -1\mod p$ tiene solución.
+    \begin{dem}
+        Sea $x=\left(\frac{p-1}{2}\right)!\implies$ como $p$ es de la forma $4n+1\implies x=\left(\frac{p-1}{4}\right)$ tiene un número par de factores $\implies x=\prod_{i=1}^{p-1/2}i = \prod_{i=1}^{p-1/2}-i$. Ahora bien, $p-k\equiv -k\mod p\implies x^2=x\cdot x = \left(\prod_{i=1}^{p-1/2} i\right)\left(\prod_{i=1}^{p-1/2}-i\right) = \left(\prod_{i=1}^{(p-1)/2}i\right)\left(\prod_{i=1}^{(p-1)/2}p-i\right)=\left(\prod_{i=1}^{(p-1)/2}i\right)\left(\prod_{i=\frac{p-1}{2}+1}^{p-1}i\right)=\prod_{i=1}^{p-1}i=(p-1)=\equiv -1 \mod p $.
+    \end{dem}
+\end{lema}
+
+\begin{teorema}[3.6 - Fermat]
+    Si $p$ es un número primo de la forma $4n+1$, entonces existen $a,b\in\mathbb{Z}$ tales que $p=a^2+b^2$. 
+    \begin{dem}
+        Por el lema 3.15, $\exists x\in\mathbb{Z}\ni x^2\equiv -1\mod p$ y elíjase $x\ni 0\leq x\leq p-1$. Si $x<p/2\implies (p-x)^2=p^2-2px+x^2\equiv -1\mod p$ y $|p-x|=|p-x|=|x-p|<p/2$. De cualquier forma, siempre es posible elegir $X$ de manera que $|x|\leq p/2$ y $p|x^2+1\implies \exists c\in\mathbb{Z}\ni pc=x^2+1\leq p^2/4+1<p^2\implies p\not|c\implies (p,c)=1\implies$ por el lema 3.15 $\exists a,b\in\mathbb{Z}\ni p=a^2+b^2$.
+    \end{dem}
+\end{teorema}
+
+\begin{definicion}
+    Si $F$ es un campo, el conjunto de polinomios en la variable $x$ con coeficientes en $F$ o sobre $F$ es $F[x]=\{\sum_{i=0}^n a_ix^i : a_i\in F \wedge n\in\mathbb{Z}^+\cup \{0\}\}$.
+\end{definicion}

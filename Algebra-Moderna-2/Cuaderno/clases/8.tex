@@ -1,0 +1,75 @@
+Clase: 02/08/2022
+
+
+\begin{lema}[3.10]
+    Si $R$ es un anillo euclideano $r_1,r_2\in R-\{0\}$ y $r_2$ no es una unidad de $R$, entonces $d(r_1)<d(r_1r_2)$.     
+    \begin{dem}
+        Considérese $(r_1)=\{r_1\cdot r: r\in R\}$, un ideal de $R$. Por la condición (i) de la definición de anillo euclideano, $d(r_1)\leq d(r_1r_2)$. Nótese que $r_1r_2\in (r_1)$ y si se supone $d(r_1)=d(r_1r_2)\implies$ por el argumento usado por la prueba del teorema 3D, el $d$-valor de $r_1$ es mínimo en $(r_1)\implies d(r_1r_2)$ también es mínimo en $(r_1)\implies$ todo elemento de $(r_1)$ es múltiplo de $r_1r_2\implies (r_1)\subseteq (r_1r_2)\implies r_1r_2|r_1\implies\exists x\in R\ni r_1=(r_1r_2)x=r_1(r_2x)\implies 0=r_1-r_2(r_2x)=r_1\cdot 1-r_1(r_2x)=r_1(1-r_2x)\implies$ como $r_1\neq0$ y $R$ es dominio entero y por lo tanto carece de divisores de $0$. 
+        $$0=1-r_2x\implies 1=r_2x\implies$$
+        $r_2$ es unidad $(\to\gets)$. $\implies d(r_1)<d(r_1r_2)$ 
+    \end{dem}
+\end{lema}
+
+\begin{definicion}
+    Si $R$ es un anillo euclideano, $\pi \in R$ es un \textbf{Elemento Primo} de $R$, si $\pi$ no es una unidad de $R$ y si $\pi=r_1r_2$, entonces $r_1$ ó $r_2$ es una unidad de $R$. 
+\end{definicion}
+
+\begin{prop}
+    Si $R$ es un anillo euclideano y $r\in R-\{0\}$, entonces $r$ es una unidad de $R$, si y solo si, $d(r)=d(1)$. 
+    \begin{dem}
+        Tenemos
+        \begin{itemize}
+            \item $(\implies)$ Si $r$ es unidad de $R\implies\exists u\in R\ni ru=1\implies$ por (1) de la definición de anillo euclideano, $d(r)\leq d(ru)=d(1)\leq d(1r)=d(r)\implies d(r)=d(1)$
+            \item $(\impliedby)$ Si $d(r)=d(1)\implies \exists q_1\sigma \in R\ni 1= q\sigma $ con $\sigma =0$ o $d(\sigma)<d(r)=d(1)$. Si $\sigma \neq 0\implies d(\sigma)<d(1)=d(1\cdot \sigma)=d(\sigma)(\to\gets)\implies 1=qr\implies r$ es una unidad de $R$. 
+        \end{itemize}
+    \end{dem}
+\end{prop}
+
+\begin{lema}[3.11 - Existencia de las factorizaciones primas]
+    Si $R$ es un anillo euclideano y $r\in R-\{0\}$, entonces $r$ puede factorizarse como el producto de un número finito de elementos primos de $R$. 
+    \begin{dem}
+        Procediendo por inducción sobre $d(r)$: 
+        \begin{itemize}
+            \item Si $d(r)=d(1)\implies r$ es una unidad de $R\implies$ es el producto de 0 elementos primos de $R$, y el lema es válido. 
+            \item Supóngase el lema válido para todo $x\in R-\{0\}\ni d(x)<d(r)$
+            \item Si $r$ es un elemento primo de $R\implies r$ se factoriza como el producto de 1 elemento primero de $R$. Supóngase que $r$ no es una unidad de $R$ y que existen $a,b\in R-\{0\}$ ninguno unidad de $R$ tales que $r=ab\implies$ por (i) de la definición de anillo euclideano, $d(a)\leq d(ab)=d(r)\implies$ por la hipótesis inductiva $\exists m\in\mathbb{Z}^+, \pi_1,\cdots, \pi_m \ni a=\prod_{i=1}^m \pi_i$. Además, también por el lema 3.10, $d(b)<d(ba)=d(ab)=d(r)\implies$ por la hipótesis inductiva $\exists n\in\mathbb{Z}^+,\pi'_1,\cdots,\pi'_n$ elementos primos de $R\ni b=\prod_{j=1}^n\pi'_j\implies r=ab=\left(\prod_{i=1}^m \pi_i\right)\left(\prod_{j=1}^n \pi'_j\right)$
+        \end{itemize}
+    \end{dem}
+\end{lema}
+
+\begin{definicion}
+    Si $R$ es un anillo euclideano y $r_1,r_2\in R-\{0\}$, entonces $r_1$ y $r_2$ son \textbf{Primos Relativos} si $(r_1,r_2)$ es una unidad de $R$. 
+\end{definicion}
+
+\begin{nota}
+    Se sabe que el $(r_1,r_2)$ es la clase de equivalencia respecto a la asociación de algún máximo común divisor de $r_1$ y $r_2$. También se sabe que todo unidad es asociado a 1, es decir, sin perdida de generalidad se puede afirmar que en un anillo euclideano $r_1$ y $r_2$ son primos relativo $\iff (r_1,r_2)=1$
+\end{nota}
+
+\begin{lema}[3.12]
+    Si $R$ es un anillo euclideano, $r_1,r_2,r_3\in R-\{0\}$ tales que $r_1|r_2r_3$ y $(r_1,r_2)=1$ entonces $r_1|r_2$. 
+    \begin{dem}
+        Por el lema 3.8, $\exists \lambda, \mu\in R\ni 1=(r_1,r_2)=\lambda r_1+\mu r_2\implies r_3=r_1\lambda r_1+r_3\mu r_2=r_1(r_3\lambda)+r_2(r_3\mu)$. Pero $r_1|r_2r_3\implies \exists x\in R\ni r_2r_3=r_1x\implies r_3=r_1(r_3\lambda)+(r_2r_3)\mu =r_1(r_3\lambda)+(r_1x)\mu =r_1(r_3\lambda)+r_1(x\mu)=r_1(r_3\lambda +x\mu)\implies r_1|r_3$.
+    \end{dem}
+\end{lema}
+
+\begin{prop}
+    Si $R$ es un anillo euclideano, $\pi$ es un elemento primo de $R$ y $r\in R-\{0\}$, entonces $\pi|r$ o $(\pi,r)=1$. 
+    \begin{dem}
+        Tenemos $(\pi,r)|\pi\implies (\pi,r)=\pi$ o $(\pi,1)=1$ (o cualquiera de esta unidad) $\implies$ si $\pi=(\pi,r)|r$ o $(\pi,r)=1$.
+    \end{dem}
+\end{prop}
+
+\begin{lema}[3.13]
+    Si $R$ es un anillo euclideano, $\pi$ es un elemento primo de $R$. $r_1,r_2\in R-\{0\}\ni \pi |r_1r_2$, entonces 
+    \begin{dem}
+        Si $\pi\not| r_1\implies (\pi, r_1)=1\implies$ por el lema 3.12, $\pi |r_2$. Un argumento simétrico, asegura $\pi\not | r_2\implies \pi |r_1$
+    \end{dem}
+\end{lema}
+
+\begin{corolario}
+    Si $R$ es un anillo euclideano, $\pi$ es un elemento primo de $R$ y $r_1,\cdot, r_n\in R-\{0\}$ y $\pi | \prod_{i=1}^n \pi_i$ entonces existe $i$, $1\leq i\leq n\ni \pi|r_i$.
+    \begin{dem}
+        Por inducción matemática y el lema 3.13.
+    \end{dem}
+\end{corolario}
+

@@ -1,0 +1,70 @@
+
+
+Clase: 14/07/2022
+
+\begin{ejemplo}
+    Sea $\mathcal{C}([0,1])=\{f:[0,1]\to \mathbb{R}\ni f \text{ es continua}\}\implies \left(\mathcal{C}([0,1]),+,\cdot\right)$, con $+$ y $\cdot$ la suma y producto usuales de funciones de variable real y valores reales, es un anillo (¡ejercicio!). Sea además, $\phi:(\mathcal{C}([0,1]),+,\cdot) \to (\mathbb{R},+,\cdot)\ni \phi(f)=f(1/2)\implies \phi$ si $f_1,f_2\in \mathcal{C}([0,1])\implies \phi(f_1+f_2)=(f_1+f_2)(1/2)=f_1(1/2)+f_2(1/2)=\phi(f_1)+\phi(f_2)$ y $\phi(f_1\cdot f_2)=(f_1\cdot f_2)(1/2)=f_1(1/2)f_2(1/2)=\phi(f_1)\phi(f_2)\implies \phi$ es un homomorfismo. Si $\alpha\in\mathbb{R}\implies$ sea $f:[0,1]\to \mathbb{R}\ni f(x)=\alpha \implies f\in \mathcal{C}([0,1])\ni f(1/2)=\alpha\implies \phi(f)=\alpha\implies \phi$ es sobreyectivo. Además $k_\phi=\{f\in \mathcal{C}([0,1])\ni f(1/2)=0\}$.
+\end{ejemplo}
+
+
+\begin{nota}
+    Obsérvese que estos cinco ejemplos, aunque ilustrativos, consideran únicamente anillos conmutativos. 
+\end{nota}
+
+\begin{definicion}
+    Si $R$ y $R'$ son anillos, un homomorfismo $\phi: R\to R'$ biyectiva es un isomorfismo 
+\end{definicion}
+
+\begin{lema}[3.5]
+    Un homomorfismo sobreyectivo de anillos es un isomorfismo, si y solo si, su núcleo es trivial. 
+    \begin{dem}
+        Se deduce directamente del lema 2.16.
+    \end{dem}
+\end{lema}
+
+\begin{definicion}
+    Si $R$ es un anillo, un subconjunto no vacío $U$ de $R$ es un \textbf{ideal} o \textbf{ideal bilateral} si: 
+    \begin{enumerate}
+        \item $(U,+)$ es un subgrupo de $(R,+)$.
+        \item Para todos $u\in U$ y $r\in R$, $ur,ru\in U$ (i.e. $U$ \textbf{atrapa} o \textbf{absorbe} productos.)
+    \end{enumerate}
+\end{definicion}
+
+\begin{lema}[3.6]
+    Si $R$ es un anillo y $U$ es un ideal de $R$, entonces $R/U$ es un anillo y es una imagen homomórfica de $R$. 
+    \begin{cajita}
+        Tenemos:
+        $$R/U=\{u+r:r\in R\},$$
+        donde ¿$u+r$?:
+        \begin{enumerate}
+            \item $(U,+)$ es un subgrupo normal de $(R,+)$. 
+        \end{enumerate}
+    \end{cajita}
+    \begin{dem}
+        $(U,+)$ es subgrupo normal de $(R,+)\implies $ por el teorema $2C$, $(R/U,+)$ es grupo, donde $(u+r_1)+(u+r_2)=u+(r_1+r_2)$. Defínase ahora $\cdot$: $R/U\to R/U\ni \cdot (u+r_1,u+r_2)=(u+r_1)(u+r_2)=u+r_1r_2$. Sean $r_1,r_2,r_3,r_4\in R\ni u+r_1=u+r_3$ y $u+r_2 = u+r_4\implies r_1\equiv r_3\mod U$ y $r_2\equiv r_4 \mod U\implies r_1-r_3\in U$ y $r_2-r_4\in U\implies $ dado que $U$ atrapa productos, $r_1r_2-r_3r_2=(r_1-r_3)\cdot r_2\in U$ y además $r_3r_2-r_3r_4=r_3(r_2-r_4)\in U\implies r_1r_2-r_3r_4 =r_1r_2+0-r_3r_4=r_1r_2+(-r_3r_2+r_3r_2)-r_3r_4 = (r_1r_2-r_3r_2)+(r_3r_2-r_3r_4)\in U\implies r_1r_2\equiv r_3r_4 \mod U\implies U+r_1r_2 = U+r_3r_4\implies (U+r_1)(U+r_2)=U+r_1r_2 = U+r_3r_4 = (U+r_3)(U+r_4)\implies$ el producto de clases laterales en $R/U$ es una función bien definida, y con lo cual, la cerradura está bien asegurada. Si $U+r_1, U+r_2,U+r_3\in R/U\implies (U+r_1)+(U+r_2)(U+r_3)=(U+r_1r_2)(U+r_3)=U+(r_1r_2)r_3= U +r_1(r_2r_3)=(U+r_1)(U+r_2r_3)=(U+r_1)((U+r_2)(U+r_3))\implies $. Además, $((U+r_1)+(U+r_2))(u+r_3)=(U+(r_1+r_2))(U+r_3)=U+(r_1+r_2)r_3 = U + (r_1r_3 + r_2r_3)=(U+r_1r_3)(U+r_2r_3)=(U+r_1)(U+r_3)+(U+r_2)(U+r_3)$ y $(U+r_1)((U+r_2)+(U+r_3))=(U+r_1)(U+(r_2+r_3))=U+r_1(r_2+r_3)= U+(r_1r_2 + r_1r_3)= (U+r_1r_2)+(U+r_1r_3)=(U+r_1)(U+r_2)+(U+r_1)(U+r_3)\implies $ se cumplen las distributividades izquierda y derecha $\implies (R/U,+,\cdot)$ es un anillo. Considérese $\sigma: (R,+)\to (R/U,+)\ni \sigma(r)=u+r$ canónico, el cual se sabe que es sobreyectivo, con lo cual $(R/U,+)$ es una imagen homomórfica de $(R,+)$. Pero $\sigma(r_1r_2)=U+r_1r_2=(U+r_1)(U+r_2)=\sigma(r_1)\sigma(r_2)\implies \sigma: (R,+,\cdot)\to (R/U,+,\cdot)$ es un homomorfismo sobreyectivo y $(R/U,+,\cdot)$
+        es una imagen homomórfica de $(R,+,\cdot)$.
+    \end{dem}
+\end{lema}
+
+\begin{definicion}
+    Si $R$ es un anillo y $U$ es un ideal de $R$, entonces $R/U$ es el \textbf{anillo cociente} de $R$ sobre $U$.
+\end{definicion}
+
+\begin{teorema}[3A (primer teorema de isomorfismos)]
+    Si $R$ y $R'$ son anillos y $\phi:R\to R'$ es un homomorfismo sobreyectivo, entonces $R'\approx R/K_\phi$. Además, existe una correspondencia biyectiva entre el conjunto de ideales de $R'$ y el conjunto de ideales de $R$ que contienen a $K_\phi$. Esta correspondencia biyectiva, puede obtenerse asociando  a cada ideal $U'$ de $R'$ el ideal de $R$, $\phi^{-1}(U')$, con lo cual $R/\phi^{-1}(U)\approx R/U'$.
+    \begin{dem}
+        Se deduce directamente del lema 2.17 y los teoremas 2D y 2B. 
+    \end{dem}
+\end{teorema}
+
+
+\begin{lema}[3.7]
+    Si $R$ es un anillo conmutativo con elemento neutro multiplicativo cuyos únicos ideales son $(0)$ y $R$, entonces $R$ es un campo. 
+    \begin{dem}
+        Sea $a\in R-\{0\}$ y considérese $R_a=\{ra:r\in R\}$. Nótese que si $r_1a,r_2a\in Ra\implies r_1a-r_2a=(r_1-r_2)a\in Ra$ ya que $r_1-r_2\in R\implies$ por el corolario al lema 2.3, $(Ra,+)$ es un sugrupo de $(R,+)$. Sea $x\in R, ra\in Ra\implies (ra)x =x(ra)=(xr)a\in Ra$ ya que $xr\in R\implies Ra$ atrapa productos en $R\implies Ra$ es un ideal de $R\implies Ra=(0)$ o $Ra=R$. Pero como $1\in R$ y $a\neq 0\implies a=1-a\in Ra\implies Ra\neq (0)\implies Ra=R$. Pero además, como 
+    \end{dem}
+\end{lema}
+
+\begin{definicion}[Ideal maximal]
+    Si $R$ es un anillo, y $M$ es un ideal de $R$, $M\neq R$, entonces $M$ es un \textbf{ideal maximal} de $R$, siempre que si $U$ es un ideal de $R$ tal que $M\subseteq U\subseteq R$, entonces $M=U$ o $U=R$.  
+\end{definicion}

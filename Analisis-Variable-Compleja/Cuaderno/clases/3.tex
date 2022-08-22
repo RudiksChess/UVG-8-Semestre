@@ -1,0 +1,111 @@
+Clase: 14/07/2022
+
+\begin{ejemplo}
+    \begin{enumerate}
+        \item Encuentre las raíces cuadradas de $-15 -8i$
+    \end{enumerate}
+    \begin{sol}
+        Solución 1: $z^2 = -15-8i=17[\cos \underbrace{\theta}_{\theta +2\pi k} + i\sin \underbrace{\theta}_{\theta +2\pi k}]$, donde $\cos \theta= -15/17$, $\sin\theta = -8/17$. $\implies z_k=(17^{1/2})\left[\cos \frac{\theta +2\pi k}{2}+i \sin \frac{\theta +2\pi k}{2}\right], k=0,1$. 
+        \begin{cajita}
+            $(-15-8i)=\sqrt{15^2+8^2}=\sqrt{225+64}=\sqrt{289}=17$ 
+        \end{cajita}
+
+        De esto tiene: 
+        \begin{align*}
+            z_0 &= \sqrt{17}\left[\cos \theta/2 + i\sin \theta /2\right]\\
+            &= \sqrt{17}\left[-\frac{1}{\sqrt{17}}+\frac{4}{\sqrt{17}}i\right] = -1+4i\\
+            z_1 &= \sqrt{17}\left[\cos (\theta/2+\pi) + i\sin (\theta /2 +\pi)\right] = -\sqrt{17}\left[\cos \theta/2 +i \sin \theta/2\right]\\
+            &= -\sqrt{17}\left[-\frac{1}{\sqrt{17}}+\frac{4}{\sqrt{17}}i\right] = 1-4i
+        \end{align*}
+        \begin{cajita}
+            Tenemos: 
+            $$\cos \theta/2 = \pm \sqrt{\frac{1+\cos \theta}{2}}= \pm \sqrt{\frac{1-\frac{15}{17}}{2}}= \pm \frac{1}{\sqrt{17}}$$
+            (signo + no se toma en cuenta)
+            $$\sin \theta/2 = \pm \sqrt{\frac{1-\cos \theta}{2}}= \pm \sqrt{\frac{1+\frac{15}{17}}{2}}= \pm \frac{4}{\sqrt{17}}$$
+            (signo - no se toma en cuenta)
+        \end{cajita}
+        
+    \end{sol}
+    \begin{sol}[Segunda solución]
+        Sean $a+bi$ las raíces cuadradas. $\implies (a+bi)^2 = -15-8i\implies (a^2-b^2)+2abi = -15-8i\implies a^2-b^2 =-15$ y $2ab = -8\implies ab=-4\implies b=-4/a$. Entonces, reemplazamos: 
+        $\implies a^2 - (-4/a)^2 =-15\implies \frac{a^4-16}{a^2}=-15\implies a^4+15a^2-16=0\implies (a^2+16)(a^2-1)=0$. Por lo tanto, $a^2=-16$ o $a^2=1$, $a=\pm 4i$ o $a=\pm 1$. (Se excluye la parte imaginaria, ya que queremos un real). 
+
+        Si $a=1\implies b=-4$ y $a=-1\implies b=4$. Entonces las raíces cuadradas son $1-4i$ y $-1+4i$.
+    \end{sol}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Resuelva la ecuación:
+    $$z^2 +(2i-3)z+5-i=0$$
+    \begin{sol}
+        Tenemos: 
+        \begin{align*}
+            z &=frac{-(2i-3)\pm \sqrt{(2i-3)^2 -4(5-i)}}{2}\\
+            &= \frac{3-2i \pm \sqrt{-4-12i+9-20+4i}}{2}\\
+            &= \frac{3-2i \pm \sqrt{-15-8i}}{2}
+        \end{align*}
+    \end{sol}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Demuestre que los ceros de un polinomio con coeficientes reales ocurre en pares conjugados.\begin{dem}
+        Supóngase que $a+bi$ es raíz de: 
+        $$a_0z^n + a_1z^{n-1}+\cdots + a_n = 0,$$
+        nótese que $a_0\neq, a_1,\cdots, a_n,a,b\in \mathbb{R}$. A probar: $a-bi$ es raíz. Sea $a+bi = re^{i\theta}$. Entonces: 
+        $$a_0r^ne^{in\theta}+a_1r^{n-1}e^{i(n-1)\theta}+\cdots + a_n=0$$
+
+       Tomando conjugado: 
+       $\implies a_0 r^n e^{-in\theta}+a_0r^{n-1}e^{-i(n-1)\theta}+\cdots + a_n =0\implies re^{i\theta}=\overline{a+bi}=a-bi$ es raíz del polinomio.
+    \end{dem}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Pruebe que la suma y producto de todas las raíces de 
+    $$a_0z^n + a_1z^{n-1}+\cdots + a_n =0, a_0\neq 0,$$
+    son $-a_1/a$ y $(-1)^na_n/a_0$, respectivamente. 
+    \begin{dem}
+        Sea $z_1,z_2,\cdots, z_n$ las raíces del polinomio. $\implies a_0(z-z_1)(z-z_2)\cdots (z-z_n)=0$.
+        $\implies a_0\left[z^n\right]$. Entonces 
+        $a_0\left[z^n - (z_1+z_2+\cdots + z_n)z^{n-1}+\cdots + (-1)^n z_1\cdots z_n\right]=0$. Por comparación 
+        $a_0(z_1+\cdots + z_n)=1$ y $(-1)^na_0 z_1\cdots z_n=a_n$
+    \end{dem}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Compruebe que, si $z_1=r_1\left[\cos \theta_1+i\sin \theta_1\right]$ y $z_2 = r_2\left[\cos \theta_2 + i\sin \theta_2\right]$, entonces: 
+    $$\frac{z_1}{z_2}=\frac{r_1}{r_2}\left[\cos (\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)\right]$$
+    \begin{dem}
+        Sea 
+        $$\frac{z_1}{z_2}=\frac{r_1[\cos\theta_1+ i\sin \theta_1]}{r_1[\cos\theta_2+i\sin \theta_2]}*\frac{(\cos\theta_2 -i\sin \theta_2)}{(\cos \theta_2 -i\sin \theta_2)} = \cdots $$
+    \end{dem}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Calcule $(1+i)^{100}$. 
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            (1+i)^{100}  &= \left[\sqrt{2}\left(\cos\frac{\pi}{4}+i\sin \frac{\pi}{4}\right)\right]^{1000}\\
+            &= 2^{500}\left[\cos 250\pi +i \sin 250\pi\right]\\
+            &= 2^{500}
+        \end{align*}
+    \end{sol}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Encuentre el número pares ordenados $(a,b), a,b\in\mathbb{R}\ni (a+bi)^{2002}=a-bi$.
+    \begin{sol}
+        Sea $z=a+bi\implies z^{2002}=\overline{z}\implies |z^{2000}|=|\overline{z}|\implies |z|^{2000}-|z| = 0\implies |z|\left[|z|^{2001}-1\right]=0\implies |z|=0$ o $|z|=1$. 
+        \begin{enumerate}
+            \item Si $|z|=0\implies z=0\implies (0,0)$ es solución. 
+            \item Si $|z|=1\implies z^{2002}=\overline{z}\implies z^{2003}=z\cdot \overline{z}=|z|\implies z^{2003}=1$. Entonces, en este caso, se tiene 2003 pares ordenados. $\implies$ Tenemos 2004 pares ordenados. 
+        \end{enumerate}
+    \end{sol}
+\end{ejemplo}
+
+\begin{ejemplo}[**]
+    Dos polígonos regulares están inscritos en el mismo circulo. El primer polígono tiene 1982 lados y el segundo 2973 lados. ¿Cuántos vértices comunes tienes los polígonos?
+    \begin{sol}
+        
+    \end{sol}
+\end{ejemplo}

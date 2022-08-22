@@ -1,0 +1,101 @@
+Clase: 16/08/2022
+
+\begin{definicion}
+    Si $F$ es un campo, 
+
+    $$p(x)=\sum_{i=0}^m a_ix_i,\quad q(x)=\sum_{j=0}^n b_jx^j\in F[x],$$
+    entonces:
+    \begin{enumerate}
+        \item $p(x)=q(x)$, si y solo si, $m=n$ y $a_i=b_i,1\leq i\leq m$.
+        \item $p(x)+q(x)=\sum_{k=0}^{\max\{m,n\}}(a_k+b_k)x^k,a_k=0$ para $k>m$ y $b_k=0$ para $k>n$
+        \item $p(x)q(x)=\sum_{k=0}^{m+n}\left(\sum_{l=0}^k a_kb_{k-l}\right)x^k, a_l=0$ para $l>m$ y  $b_{k-l}=0$ para $k-l>n$. 
+    \end{enumerate}
+\end{definicion}
+
+\begin{prop}
+    Si $F$ es un campo, entonces $(F[x],+,\cdot)$ es un anillo conmutativo con elemento neutro multiplicativo. 
+\end{prop}
+
+\begin{definicion}
+    Si $F$ es un campo y $f(x)=\sum_{i=0}^na_ix^i\in F[x], a_n\neq 0$, entonces el \textbf{grado} de $f(x)$ es $gr(f)=n$. No está definido el grado del polinomio cero y si $gr(f)=0$, entonces $f(x)$ se dice constante. 
+\end{definicion}
+
+\begin{lema}[3.17]
+    Si $F$ es un campo y $f(x),g(x)\in F[X]-\{0\}$, entonces $gr(fg)=gr(f)+gr(g)$.
+    \begin{dem}
+        Se deduce directamente de la definición de producto en $F[x]$.
+    \end{dem}
+\end{lema}
+
+\begin{corolario}
+    Si $F$ es un campo y $f(x),g(x)\in F[x]-\{0\}$, entonces $gr(f)\leq gr(fg)$
+    \begin{dem}
+        Sea $0\leq gr(g)\implies gr(f)=gr(f)+0\leq gr(f)+gr(g)=gr(fg)$.
+    \end{dem}
+\end{corolario}
+
+\begin{corolario}
+    Si $F$ es un campo, entonces $(F[x],+,\cdot)$ es un dominio entero. 
+\end{corolario}
+
+\begin{definicion}
+    Si $F$ es un campo, entonces el campo de cocientes del dominio entero $(F[X],+,\cdot)$ es $(F(x),+,\cdot)$, el campo de las funciones racionales en $x$ sobre $F$. 
+\end{definicion}
+
+\begin{prop}
+    Si $F$ es un campo, entonces la función $\operatorname{gr}:F[X]-\{0\}\to \mathbb{Z}^+\cup\{0\}$ cumple: 
+    \begin{enumerate}
+        \item $\operatorname{gr}(f)\in \mathbb{Z}^+\cup\{0\},\forall f\in F[X]-\{0\}$
+        \item $\operatorname{gr}(f)\leq \operatorname{gr}(f,g),\forall f,g\in F[X]-\{0\}$
+    \end{enumerate}
+\end{prop}
+
+\begin{lema}[3.18 - Algoritmo de la división]
+    Si $F$ sea un campo, $f(x),g(x)\in F[X]$ y $g(x)\neq 0$, entonces existen $q(r),r(x)\in F[X]$ tales que $f(x)=q(x)g(x)+r(x)$, con $r(x)<0$ o $gr(r)<gr(g)$.
+    \begin{dem}
+        Si $gr(f)<gr(g)\implies q(x)=0$ y $r(x)=f(x)$
+    \end{dem}
+\end{lema}
+
+
+\begin{teorema}[3H]
+    Si $F$ es un campo, entonces $(F[X],+,\cdot)$ es un anillo euclideano.
+    \begin{dem}
+        Se deduce directamente de las definiciones y propiedades de $F[X]$ y $\operatorname{gr}$ y del lema 3.18. 
+    \end{dem}
+\end{teorema}
+
+\begin{lema}[3.19]
+    Si $F$ es un campo, entonces $(F[x],+,\cdot)$ es un anillo de ideales principales. 
+    \begin{dem}
+        Se deduce directamente de los teoremas 3D y 3H. 
+    \end{dem}
+\end{lema}
+
+\begin{lema}[3.20]
+    Si $F$ es un campo, entonces $f(x),g(x)\in F[X]-\{0\}$ siempre tiene un máximo común divisor $d(x)\in F[x]$ y es tal que existen $\lambda(x),\delta(x)\in F[x]$ tales que $d(x)=\lambda(x)f(x)+\delta(x)g(x)$.
+    \begin{dem}
+        Se deduce directamente del teorema 3H y el lema 3.8
+    \end{dem} 
+\end{lema}
+
+\begin{definicion}
+    Si $F$ es un campo, $p(x)\in F[X]$ es irreducible sobre $F$ si $p(x)=g(x)h(x)$, con $g(x)h(x)\in F[X]-\{0\}$, entonces $\operatorname{gr}(g)=0$ o $\operatorname{gr}(h)=0$
+\end{definicion}
+
+\begin{ejemplo}
+    $x^2+1$ es irreducible sobre $\mathbb{Q}$ pero no es irreducible sobre $\mathbb{C}$.
+\end{ejemplo}
+\begin{lema}[3.21]
+    Si $F$ es un campo, entonces todo polinomio en $F[X]$ puede factorizarse de manera única, salvo asociación, como producto de un número finito de polinomios de $F[X]$ irreducibles sobre $F$. 
+    \begin{dem}
+        Se deduce directamente de los teoremas $3E$ y $3H$.
+    \end{dem}
+\end{lema}
+
+\begin{lema}[3.22]
+    Si $F$ es un campo, el ideal generado por el polinomio $p(x)$ de $F[X]$ es un ideal maximal del anillo de polinomios si y solo si, $p(x)\in F[x]$ es irreducible sobre $F$. 
+    \begin{dem}
+        Se deduce de los lemas 3.14, 3.21 y teorema 3H. 
+    \end{dem}
+\end{lema}

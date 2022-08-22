@@ -1,0 +1,100 @@
+Clase: 19/07/2022
+
+
+\begin{prop}
+    Si $n|q|\implies $ cada raíz de $z^n-1=0$ es raíz de $z^9 -1 =0$.
+    \begin{dem}
+        Como $n|q\implies \exists p\in \mathbb{Z}^+\ni q =np$. Entonces: $z^q -1 = z^{np}-1 = (z^n)^p -1 = (z^n -1)(1+z^n +(z^n)^2+\cdots + (z^n)^{p-1}) = 0$. 
+    \end{dem}
+\end{prop}
+
+\begin{teorema}
+    Las raíces comunes de $z^m -1 = 0$ y $z^n -1 =0$ son las raíces de $z^d-1=0$, donde $d= \operatorname{MCD}(m,n)$.
+    \begin{dem}
+        Sea 
+        \begin{itemize}
+            \item $[\impliedby]$ Como $d/n$ y $d|m$. Por la propiedad anterior, las raíces de $z^d -1 =0$ son las raíces de $z^n-1 =0$ y de $z^m -1 = 0$. 
+            \item $[\implies]$ Sea $w$ una raíz de $z^n-1=0$  y de $z^m-1=0\implies w^n=1$ y $w^m =1$. Sean $x,y\in\mathbb{R}\ni d = mx+ny$ (por Bezout). Nótese que: 
+            $w^{ny}=1$ y $w^{mx}=1\implies w^{ny+mx}=1\implies w^d =1\implies w$ es raíz de $z^d-1=0$.
+        \end{itemize}
+    \end{dem}
+\end{teorema}
+
+
+\begin{cajita}
+    Presentar la última sección del libro Conway. Francotirador en la esfera que le dispara al polo norte. Mecanismo de compactificación de la esfera de Riemann. 
+\end{cajita}
+
+
+\subsection{Función analítica.}
+
+\begin{definicion}
+    Sea $f: A\to \mathbb{C}$, donde $A$ es un abierto de $\mathbb{C}$. La función $f$ es diferenciable (en el sentido de los complejos) en $z_0\in A$, si existe 
+    $$\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0} := f'(z_0)$$
+\end{definicion}
+
+\begin{nota}
+    \begin{enumerate}
+        \item La función $f$ es analítica sobre $A$, si es complejo diferenciable en cada $z\in A$. 
+        \item Algunas presentaciones utilizan holomorfa como sinónimo de analítica. 
+        \item La frase \textbf{analítica en} $z_0$ significa que $f$ es analítica en una vecindad de $z_0$.    
+    \end{enumerate}
+\end{nota}
+
+\begin{teorema}
+    Si $f'(z_0)$ existe $\implies f$ es continua en $z_0$.
+    \begin{dem}
+        A probar: $$\lim_{z\to z_0}f(z)=f(z_0)\iff \lim_{z\to z_0}\left[f(z)-f(z_0)\right]=0$$
+        Sea 
+        \begin{align*}
+            \lim_{z\to z_0}\left[f(z)-f(z_0)\right]&=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\left(z-z_0\right)\\
+            &= \lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\cdot \lim_{z\to z_0}(z-z_0)\\
+            &= f'(z_0)\cdot 0 = 0.
+        \end{align*}
+   
+    \end{dem}
+\end{teorema}
+
+\begin{prop}
+    Suponga que $f$ y $g$ son funciona analíticas sobre $A$, donde $A$ es un abierto de $\mathbb{C}$. Entonces, 
+    \begin{enumerate}
+        \item $af+bg$ es analítica sobre $A$, y
+        $$(af+bg)' = af'+bg',$$
+        $a,b\in\mathbb{C}$.
+        \item $f\cdot g$ es analítica sobre $A$ y $$(fg)'=f'g+fg'$$
+        \item Si $g(z)\neq 0,\forall z\in A, f/g$ es analítica sobre $A$ y: 
+        $$\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^2}$$
+        \item Cualquier polinomio es una función \textbf{analítica sobre todo} $\mathbb{C}$ (una función entera). 
+    \end{enumerate}
+\end{prop}
+
+\begin{teorema}[Regla de la cadena]
+    Sean $f:A\to \mathbb{C}$ y $g:B\to \mathbb{C}$ analíticas sobre los abiertos $A$ y $B$ de $\mathbb{C}$, respectivamente; y sea $f(A)\subset B$. Entonces, la composición de funciones $g\circ f: A\to \mathbb{C}\ni (g\circ f)(z)= g(f(z))$ es analítica sobre $A$, y se cumple: 
+    $$\left[(g\circ f)(z)\right]' = \left[g(f(z))\right]' = g'(f(z))\cdot f'(z)$$
+    \begin{cajita}
+        \begin{dem}[Esquema]
+            Si $f(z)=w$ y $f(z_0)=w_0$, entonces: 
+            $$\frac{g(f(z))-g(f(z_0))}{z-z_0}=\frac{g(f(z))-g(f(z_0))}{w-w_0}\cdot \frac{f(z)-f(z_0)}{z-z_0}$$
+            Si $z\to z_0\implies g'(f(z_0))\cdot f'(z_0)$.
+
+            Nótese que $w=w_0$ no es imposible $\implies$ el argumento puede fallar.
+        \end{dem}
+    \end{cajita}
+    \begin{dem}
+        Sea $f(z_0)=w_0$, y definamos para $w_0\in B:$
+        $$h(w)= \begin{cases}
+            \frac{g(w)-g(w_0)}{w-w_0}-g'(w_0),& w\neq w_0\\
+            0,& w=w_0
+        \end{cases}
+        $$
+
+        \begin{align*}
+            h(f(z)) &= \frac{g(f(z))-g(f(z_0))}{f(z)-w_0}-g'(w_0), w\neq w_0
+        \end{align*}
+
+        $$\frac{g(f(z))-g(f(z_0))}{z-z_0} = \left[h(f(z))+g(w_0)\right]\left[\frac{f(z)-w_0}{z-z_0}\right]$$
+        Si $z\to z_0$:
+        $$\frac{d}{dz}g(f(z_0))=\left[0+g'(w_0)\right]f'(z_0)$$
+    \end{dem}
+\end{teorema}
+

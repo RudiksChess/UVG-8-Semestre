@@ -1,0 +1,217 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\begin{problema}
+    Si $a, b \in \mathbb{C}$, pruebe que $|1+a|+|1+b|+|1+a b| \geq 2$.
+    \begin{sol}
+        Por casos, sea: 
+
+        \begin{itemize}
+            \item Sea $\textcolor{red}{|b|}\geq 1$, tal que: 
+            \begin{align*}
+                |1+a|+|1+b|+|1+a b| &= |1+a| + |1+b|+|-(1+ab)|\\
+                                    &\geq |1+a| + \left|(1+b)-(1+ab)\right|\\
+                                    &= |1+a|+ |b-ab|\\
+                                    &= |1+a| + \textcolor{red}{|b|}|1-a|\\
+                                    &\geq |1+a| + |1-a|\\
+                                    &\geq |(1+a)+(1-a)| \\
+                                    &= 2
+            \end{align*}
+            \item Sea $\textcolor{red}{|b|}\leq 1$, tal que:
+            \begin{align*}
+                |1+a|+|1+b|+|1+a b| &\geq \textcolor{red}{|b|}|1+a|+|1+b|+|1+ab|\\
+                                    &= |b+ba|+|1+b|+|1+ab|\\
+                                    &\geq |(1+b)-(b+ab)|+|1+ab|\\
+                                    &= |1-ab|+||1+ab|\\
+                                    &\geq |(1-ab)+(1+ab)|\\
+                                    &= 2
+            \end{align*}
+        \end{itemize}
+        
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Si $z \in \mathbb{C}$ y si $\operatorname{Re}\left(z^{n}\right) \geq 0, \forall n \in \mathbb{Z}^{+}$, pruebe que $z \in \mathbb{R}^{+}$.
+    \begin{sol}
+        Por hipótesis, $r\left[\cos\theta + i \sin\theta\right] \in \mathbb{C}$ y también:
+        \begin{align*}
+            \operatorname{Re}\left(z^{n}\right) &= \operatorname{Re}\left(r^n \left[\cos n\theta + i\sin n\theta\right] \right) & \text{De Moivre}\\
+            &= \operatorname{Re}\left(r^n\cos n\theta + ir^n\sin n\theta\right) & \\
+            &= r^n\cos n\theta \geq 0\\
+            &\implies \cos n\theta \geq 0,\forall n\in\mathbb{Z}^+
+        \end{align*}
+        $\implies$ De esto, podemos concluir que la única manera que la anterior desigualdad se cumpla, es que $\theta =0$. $\implies z=r\left[\cos 0 +i \sin 0\right]=r$. Por lo tanto, 
+        $$z\in\mathbb{R}^+.$$
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Encuentre todas las soluciones complejas de la ecuación: $e^{z^{2}}=1$.
+    \begin{sol}
+        Nótese que:
+        \begin{align*}
+            e^{z^2} &= 1\\
+            e^{w} &= 1, \quad w= z^2\\
+            e^{w} &= 1 = e^{2\pi k i}, \quad k\in\mathbb{Z} \\
+        \end{align*}
+        $\implies w = 2\pi k i \implies z^2 = 2\pi k i\implies z= \pm \sqrt{2\pi k i}$.
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Sea $a \in \mathbb{R}^{+}$y sea $M_{a}=\left\{z \in \mathbb{C}-\{0\}:\left|z+\frac{1}{z}\right|=a\right\}$. Encuentre los valores máximo y mínimo de $|z|$ cuando $z \in M_{a}$.
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            \left|z+\frac{1}{z}\right| &=a\\
+            \left|z+\frac{1}{z}\right|^2 &=a^2\\
+            \left(z+\frac{1}{z}\right)\overline{\left(z+\frac{1}{z}\right)} &=a^2\\
+            \left(z+\frac{1}{z}\right)\left(\overline{z}+\frac{1}{\overline{z}}\right) &=a^2\\
+            z\overline{z}+\frac{z}{\overline{z}}+\frac{\overline{z}}{z}+\frac{1}{z\overline{z}} &=a^2\\
+            |z|^2+\frac{z^2+\overline{z}^2}{\overline{z}z}+\frac{1}{z\overline{z}} &=a^2\\
+            |z|^2+\frac{z^2+\overline{z}^2}{|z|^2}+\frac{1}{|z|^2} &=a^2\\
+            \frac{|z|^2|z|^2 +(z^2+\overline{z}^2) + 1}{|z|^2} &=a^2\\
+            \frac{|z|^4 +z^2+\overline{z}^2 + 1}{|z|^2} &=a^2\\
+            |z|^4 +z^2+\overline{z}^2 + 1 &= a^2|z|^2\\
+            |z|^4 +z^2+\overline{z}^2 + 1 + 2z\overline{z} - 2z\overline{z} &= a^2|z|^2\\
+            |z|^4 -a^2|z|^2 - 2z\overline{z} + 1 +z^2+ 2z\overline{z}+\overline{z}^2  &= 0\\
+            |z|^4 -a^2|z|^2 - 2z\overline{z} + 1 + (z^2+\overline{z}^2)  &= 0\\
+            |z|^4 -a^2|z|^2 - 2|z|^2 + 1 + (z^2+\overline{z}^2)  &= 0\\
+            |z|^4 -(a^2+2)|z|^2 + 1 + (z^2+\overline{z}^2)  &= 0\\
+            |z|^4 -(a^2+2)|z|^2 + 1   &= - (z^2+\overline{z}^2)\leq 0
+        \end{align*}
+
+        De esta expresión, se utiliza la fórmula general, tal que: 
+
+        \begin{align*}
+            |z|^2 &= \frac{-(-(a^2+2))\pm \sqrt{(-(a^2+2))^2-4(1)(1)}}{2(1)}\\
+                  &=\frac{(a^2+2)\pm \sqrt{a^4+4a^2+4-4}}{2}\\
+                  &=\frac{(a^2+2)\pm \sqrt{a^4+4a^2}}{2}\\
+            |z|   &=  \sqrt{\frac{(a^2+2)\pm \sqrt{a^4+4a^2}}{2}}\\
+        \end{align*}
+        Por lo tanto, el máximo y el mínimo de $|z|$ son los siguientes: 
+        \begin{equation*}
+            \begin{aligned}[c]
+                \max|z| = \sqrt{\frac{(a^2+2)+ \sqrt{a^4+4a^2}}{2}}
+            \end{aligned}
+            \qquad\text{y}\qquad
+            \begin{aligned}[c]
+                \min|z| = \sqrt{\frac{(a^2+2)- \sqrt{a^4+4a^2}}{2}}
+            \end{aligned}
+            \end{equation*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Pruebe que para cada número complejo $z,|z+1| \geq \frac{1}{\sqrt{2}}$ o $\left|z^{2}+1\right| \geq 1$.
+    \begin{sol}
+        Por reducción al absurdo, considérese que para un número complejo $z$,  
+        $$|z+1| <\frac{1}{\sqrt{2}}\quad\text{y}\quad\left|z^{2}+1\right| <1$$
+        Ahora bien, bajando a componentes se tiene: 
+        
+        \begin{equation*}
+            \begin{aligned}[c]
+                |a+bi+1| &<\frac{1}{\sqrt{2}}\\
+                |(a+1)+bi| &<\frac{1}{\sqrt{2}}\\
+                \sqrt{(a+1)^2 + b^2} &<\frac{1}{\sqrt{2}}\\
+                (a+1)^2 + b^2 &<\frac{1}{2}\\
+                a^2+2a+1 +b^2 &<\frac{1}{2}\\
+                2(a^2+2a+1 +b^2) &<1\\
+                2a^2+4a+2 +2b^2 &<1\\
+                2a^2+4a+1 +2b^2 &<0\\
+            \end{aligned}
+            \qquad\text{y}\qquad
+            \begin{aligned}[c]
+                \left|(a+bi)^{2}+1\right| &<1\\
+                \left|a^2-2abi+(bi)^2+1\right| &<1\\
+                \left|(a^2-b^2+1)-2abi\right| &<1\\
+                \sqrt{(a^2-b^2+1)^2 +(2ab)^2} &<1\\
+                (a^2-b^2+1)^2 +(2ab)^2 &<1\\
+                a^{4}-2 a^{2} b^{2}+2 a^{2}+b^{4}-2 b^{2}+1 + 4a^2b^2 &<1\\
+                a^{4}+2 a^{2}+b^{4}-2 b^{2}+ 2a^2b^2 &<0
+            \end{aligned}
+            \end{equation*}
+            Sumando estas dos expresiones, se tiene:
+            \begin{align*}
+                (2a^2+4a+1 +2b^2)+(a^{4}+2 a^{2}+b^{4}-2 b^{2}+ 2a^2b^2) &< 0+0\\
+                4a+1+a^{4}+4a^{2}+b^{4}+ 2a^2b^2 &< 0\\
+                (4a^{2}+4a+1)+ (a^{4}+2a^2b^2 +b^{4})&< 0\\
+                (2a^2+1)^2+ (a^2+b^2)^2&< 0\\
+                \sqrt{(2a^2+1)^2+ (a^2+b^2)^2}&< \sqrt{0}\\
+            \end{align*}
+            Es decir, se tiene: 
+
+            \begin{equation*}
+                \begin{aligned}[c]
+                    |(2a^2+1)+(a^2+b^2)i| &<0\\
+                \end{aligned}
+                \qquad\text{o}\qquad
+                \begin{aligned}[c]
+                    \left|(a^2+b^2)+(2a^2+1)i\right| &<0\\
+                \end{aligned}
+                \end{equation*}            
+            Lo que es una contradicción, ya que encontramos otras dos formas de representar un número complejo $z$. Por lo tanto, para cada número complejo $z$, 
+
+            $$|z+1| \geq \frac{1}{\sqrt{2}}\qquad \text{o} \qquad \left|z^{2}+1\right| \geq 1$$
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Sea $z \in \mathbb{C} \ni\left(z+\frac{1}{z}\right)\left(z+\frac{1}{z}+1\right)=1$. Para un entero $n$, evalúe la expresión:
+    $$\left(z^{n}+\frac{1}{z^{n}}\right)\left(z^{n}+\frac{1}{z^{n}}+1\right)$$
+
+    \begin{sol}
+        Dada la hipótesis, tenemos: 
+        \begin{align*}
+            \left(z+\frac{1}{z}\right)\left(z+\frac{1}{z}+1\right) & = 1\\
+            z^2+1+z+1+\frac{1}{z^2} + \frac{1}{z} &= 1 \\
+            z^2+1+z+\frac{1}{z^2} + \frac{1}{z} &= 0 \\
+            \frac{z^4+z^2+z^3+1+z}{z^2}&= 0\\
+            \frac{(z^4+z^2+z^3+1+z)(z-1)}{z^2(z-1)}&= 0\\
+            \frac{(z^5-1)}{z^2(z-1)}&= 0,z\neq 1
+        \end{align*}
+        $\implies$ Esto nos permite determinar que $z^5=1$, en donde las $z$ se pueden encontrar a partir de la definición de la raíz de la unidad\footnote{ La definición de la raíz de la unidad, se puede encontrar en: \href{https://encyclopediaofmath.org/wiki/Root_of_unity}{https://encyclopediaofmath.org/wiki/Root\_of\_unity} .}, en donde: 
+
+        $$z = \cos\left(\frac{2\pi k}{5}\right)+ i \sin \left(\frac{2\pi k}{5}\right) = e^{2\pi ki/5}, \quad k=0,1,2,3,4$$
+
+        $\implies$ Ahora bien, por otra parte, tenemos que $z^n =1\implies \left(e^{2\pi ki/5}\right)^n=1\implies\left(e^{2\pi ki}\right)^{n/5}=1 $, es decir que solo se cumple cuando $n$ es divisible por $5$ (i.e. $n=5c$ para $c \in\mathbb{Z}$). $\implies$ A partir de esto, se tienen dos casos: 
+
+        \begin{enumerate}
+            \item Si $z^n =1$, es decir $5|n$: 
+                $$\left(z^{n}+\frac{1}{z^{n}}\right)\left(z^{n}+\frac{1}{z^{n}}+1\right)= (1+1)(1+1+1) =6$$
+            \item Si $z^n \neq 1$, es decir $5\not |n$: 
+            \begin{align*}
+                \left(z^{n}+\frac{1}{z^{n}}\right)\left(z^{n}+\frac{1}{z^{n}}+1\right) & = 1\\
+                z^{2n}+1+z^n+1+\frac{1}{z^{2n}} + \frac{1}{z^n} &= 1 \\
+                z^{2n}+1+z^n+\frac{1}{z^{2n}} + \frac{1}{z^n} &= 0 \\
+                \frac{z^{4n}+z^{2n}+z^{3n}+1+z^n}{z^{2n}}&= 0\\
+                \frac{(z^{4n}+z^{2n}+z^{3n}+1+z^n)(z^{n}-1)}{z^{2n}(z^{n}-1)}&= 0\\
+                \frac{(z^{5n}-1)}{z^{2n}(z^{n}-1)}&= 0\\
+                \frac{((z^{5})^n-1)}{z^{2n}(z^{n}-1)}&= 0\\
+                \frac{((1)^n-1)}{z^{2n}(z^{n}-1)}&= 0\\
+            \end{align*}
+        \end{enumerate}
+
+        Por lo tanto, 
+
+        $$\left(z^{n}+\frac{1}{z^{n}}\right)\left(z^{n}+\frac{1}{z^{n}}+1\right)=\begin{cases}
+            6, &  5|n\\
+            1, & 5\not|n
+        \end{cases}$$
+        
+    \end{sol}
+\end{problema}
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

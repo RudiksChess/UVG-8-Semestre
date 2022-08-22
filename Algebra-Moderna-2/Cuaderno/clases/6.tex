@@ -1,0 +1,62 @@
+Clase: 26/07/2022
+
+\begin{definicion}
+    Un dominio entero $R$ es un \textbf{Anillo Euclideano} si existe una función $d:R-\{0\}\to \mathbb{Z}^+\cup \{0\}$, llamada $d-$valor tal que si $a,b\in R-\{0\}$, entonces:
+    \begin{enumerate}
+        \item $d(a)\leq d(ab)$. 
+        \item $\exists q, r\in R\ni a=bq+r$, donde $r=0$ o $d(r)<d(b)$.
+    \end{enumerate}
+\end{definicion}
+
+\begin{ejemplo}
+    $(\mathbb{Z},+,\cdot)$ con $d(n)=|n|$, el valor absoluto de $n\in\mathbb{Z}$, es un anillo euclideano.
+\end{ejemplo}
+
+
+\begin{teorema}[3D]
+    Si $R$ es un anillo euclideano y $U$ es un ideal de $R$, entonce existe: 
+    $a_0\in R$ tal que $U=\{a_0r:r\in R\}=(a_0)$.
+    \begin{dem}
+        Si $U=\{0\}\implies $ sea $a_0=0\implies U=\{0\}=\{0\cdot r:r\in R\}=(0)$. \bigbreak 
+
+        Si $U\neq\{0\}\implies \exists a\in U \ni a\neq 0$. Sea $a_0\in U-\{0\}\ni d(a_0)$ es mínimo. Siendo $R$ anillo euclideano existen $q,r\in R\ni u=aq+r$, con $r=0$ o $d(r)<d(a_0)$. Si $r=0\implies u=aq\in (a)$. Pero $a\in U$ y $U$ atrapa productos $\implies aq\in U\implies r=u-aq\in U$. Si $r\neq 0\implies r\in U$ y $d(r)<d(a_0)$ no es mínimo en $U$ $(\to \gets)$. $\implies U\subseteq (a)\subseteq U \implies U=(a)$.
+    \end{dem}
+\end{teorema}
+
+\begin{corolario}
+    Todo anillo euclideano tiene elemento neutro multiplicativo. 
+    \begin{dem}
+        Si $R$ es un anillo euclideano $\implies R$ es ideal de $R \implies$ por el teorema 3D $\exists a_0\in R \ni R=(a_0)$, ya que $R\neq (0)\implies r \in R\implies \exists x_1\in R\ni r=a_0x_1$. En particular, $a_0\in R\implies \exists x_0 \in R\ni a_0=a_0x_0\implies rx_0=(x_ra_0)x_0=x_r(a_0x_0)=x_ra_0=a_0x_r=r\implies x_0$ es neutro multiplicativo de $R$.  
+    \end{dem}
+\end{corolario}
+
+
+\begin{definicion}
+    Un dominio entero $R$ con elemento neutro multiplicativo es un \textbf{Anillo de Ideales Principales} si para todo ideal $A$ de $R$ existe $a_0\in R$ tal que $A=(a)=\{ar:r\in R\}$  
+\end{definicion}
+
+\begin{corolario}
+    Todo anillo euclideano es un anillo de ideales principales. 
+\end{corolario}
+
+
+\begin{definicion}
+    Si $R$ es un anillo conmutativo, $r_1,r_2\in R, r_1\neq 0$, entonces $r_1$ divide a $r_2$ si existe $r_3\in R$ tal que: $r_2=r_1r_3$, denotado por $r_1|r_2$. 
+\end{definicion}
+
+\begin{prop}
+    Si $R$ es un anillo conmutativo y $r_1,r_2,r_3\in R-\{0\}$, entonces: 
+    \begin{enumerate}
+        \item Si $r_1|r_2$ y $r_2|r_3\implies r_1|r_3$
+        \item Si $r_1|r_2$ y $r_1|r_3\implies r_1|(r_2\pm r_3)$
+        \item Si $r_1|r_2\implies r_1|r_2r_3$ 
+    \end{enumerate}
+    \begin{dem}
+        Tenemos: 
+        \begin{enumerate}
+            \item Si $r_1|r_2$ y $r_2|r_3\implies \exists x_1,x_2\in R\ni r_2x_1r_1$ y $r_3=x_2r_2\implies r_3=x_2(x_1r_1)=(x_2x_1)r_1\implies r_1|r_3$. 
+            \item $r_1|r_2$ y $r_1|r_3\implies \exists x_1,x_2\in R\ni r_2=x_1r_1$ y $r_2\pm r_3 =(x_1r_1)\pm (x_2r_1)=(x_1\pm x_2)r_2\implies r_1|(r_2\pm r_3)$
+            \item Si $r_1|r_2\implies \exists x\in R\ni r_2=xr_1\implies r_2r_3=r_3r_2=r_3(xr_3)=(r_3xr_1),x_3\in R\implies r_1|r_2r_3$.
+        \end{enumerate}
+    \end{dem}
+\end{prop}

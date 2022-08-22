@@ -1,0 +1,21 @@
+Clase: 09/08/2022
+
+\begin{definicion}
+    El conjunto $\mathbb{Z}(i)=\{a+bi:a,b\in\mathbb{Z}, i =\sqrt{-1}\}$ es el conjunto de los \textbf{Enteros Gaussianos}. 
+\end{definicion}
+
+\begin{prop}
+    Sea $(\mathbb{Z}(i),+,\cdot)$, donde $+,\cdot$ son las operaciones usuales de números complejos es un dominio entero. 
+\end{prop}
+
+\begin{teorema}[3F]
+    Sea $(\mathbb{Z}(i),+,\cdot)$ es un anillo euclideano.
+    \begin{dem}
+        Considérese la función $$d:\mathbb{Z}-\{0\}\to\mathbb{Z}^+\cup \{0\}\ni d=(a+bi)=a^2+b^2$$
+        De esta definición, $d(a+bi)\in\mathbb{Z}^+\cup\{0\},\forall a+bi\in\mathbb{Z}(i)-\{0\}$. Además, si $a_1+b_1i,a_2+b_2i\in \mathbb{Z}(i)-\{0\}\implies d((a_1+b_1i)(a_2+b_2i))=d((a_1a_2-b_1b_2)+(b_1a_2+a_1b_2)i)=(a_1a_2-b_1b_2)^2+(b_1a_2+ a_1b_2)^2=\cdots = a_1^2(a_2^2+b_2^2)+b_1^2(a_2^2+b_2^2)=(a_1^2+b_1^2)(a_2^2+b_2^2)=d(a_1+b_1i)d(a_2+b_2i)$. Ahora bien, si $0=d(a+bi)=a^2+b^2\implies a=b=0\implies d(a+bi)>0,\forall a+bi\in\mathbb{Z}(i)-\{0\}\implies d(a+bi)\geq 1,\forall a+bi\in\mathbb{Z}(i)-\{0\}\implies d(a_1+b_1i)d(a_2+b_2i)=(a_1^2+b_1^2)(a_2^2+b_2^2)\geq a_1^2+b_1^2=d(a_1+b_1i)\implies d$ es un $d-$valor para $\mathbb{Z}(i)$.\bigbreak 
+
+        Considérese el caso especial $n\in\mathbb{Z}$ y $a+bi\in\mathbb{Z}(i)\implies$ por el algoritmo de la división en $\mathbb{Z},\exists q_1,q_2,r_1,r_2\in\mathbb{Z}\ni a=q_1n+r_1$ y $b=q_2n+r_2$, con $0\leq r_2<n$ y $0\leq r_2<n$. Si $0\leq r_1<n/2$ y $ 0\leq r_2<n/2$, sean $\delta_1=q_1,\delta_2=q_2,\sigma_1=r_1$ y $\sigma_2=r_2$. Si $n/2<r_1<n\implies -n/2>-r_1>-n \implies n/2\geq n-r_1>0>-n/2\implies |n-r_1|<n/2\implies$ sean $\delta_1=q_1+1$ y $\delta_1=r_1-n\implies a=1_1n+r_1=q_1n+n-n+r_1=(q_1+1)n+(r_1-n)=\delta_1n+\sigma_1$, con $|\sigma_1|<n/2$. De igual forma, si $n/2<r_2<n$, sean $\delta_2=q_2+1$ y $\delta_2=r_2-n\implies b=q_2n+r_2=q_2n+n-n+r_2=(q_2+1)n+(r_2-n)=\delta_2n+\sigma_2, |\sigma_2|<n/2$. Entonces, $a+bi = (\delta_1n\sigma_1)+(\delta_2n+\sigma_2)i =\delta_1 n+\sigma_1+\delta_2 ni+\sigma_2i = (\delta_1+\delta_2i)n+(\sigma_1+\sigma_2i)$, con $d(\sigma_1+\sigma_2i)=\sigma_1^2+\sigma_2^2<n^2/4+n^2/4=n^2/2<n^2=d(n+0i)=d(n),$ con $\sigma_1+\sigma_2i, \sigma_1+\sigma_2i\in\mathbb{Z}(i)$\bigbreak 
+
+        Sean ahora $a_1+b_1i,a_2+b_2i\in\mathbb{Z}(i)$ y $a_2+b_2i\neq 0\implies (a_2+b_2i)\overline{(a_2+b_2i)}=(a_2+b_2i)(a_2-b_2i)=a^2+b_2^2\in\mathbb{Z}^+$. Además, $(a_1+b_1i)\overline{(a_2+b_2i)}= (a_1+b_1i)(a_2-b_2i)\in\mathbb{Z}(i)\implies$ aplíquese el caso especial a $(a_2+b_2i)\overline{(a_2+b_2i)}\in\mathbb{Z}^+$ y $(a_1+b_1i)\overline{a_2+b_2i}\in\mathbb{Z}(i)\implies \exists \delta_1,\delta_2,\sigma_1,\sigma_2\in\mathbb{Z}\ni (a_1+b_1i)\overline{(a_2+b_2i)}=(\delta_1+\delta_2i)\left[(a_2+b_2i)\overline{(a_2+b_2i)}\right]+ (\sigma_1+\sigma_2i)\ni d(a_2+b_2i)d(\overline{(a_2+b_2i)})=d\left((a_2+b_2i)\overline{(a_2+b_2i)}\right)>d(\sigma_1+\sigma_2i)=d\left((a_1+b_1i)\overline{(a_2+b_2i)}-(\sigma_1+\sigma_2i)\left[(a_2+b_2i)\overline{(a_2+b_2i)}\right]\right)=d\left(\left[(a_1+b_1i)-(\sigma_1+\sigma_2i)(a_2+b_2i)\overline{(a_2+b_2i)}\right]\right) = d\left((a_1+b_1i)-(\delta_1+\delta_2i)(a_2+b_2i)\right)d\left(\overline{a_2+b_2i}\right)\implies d(a_2+b_2i)>d\left((a_1+b_1i)-(\delta_1+\delta_2i)(a_2+b_2i)\right)$. Sea $R_1+R_2i\in \mathbb{Z}(i)\ni R_1+R_2i=(a_1+b_1i)(\delta_1+\delta_2i)(a_2+b_2i)$. Es conclusión, $\delta_1+\delta_2i, R_1+R_2i\in\mathbb{Z}(i)\ni a_1+b_1i=(\delta_1+\delta_2)(a_2+b_2i)+(R_1+R_2i)$, con $R_1+R_2=0$ o $d(R_1+R_2i)<d(a_2+ b_2i)$.
+        \end{dem}  
+\end{teorema}

@@ -1,0 +1,76 @@
+Clase: 12/07/2022
+
+\begin{teorema}
+    Para cualesquiera $a,b,c$ y $d$ es un retículo $(A,\leq)$, si $a\leq b$ y $c\leq d$ $\implies (a\vee c \leq b\vee d)$ y $a\wedge c\leq b$ y $d$.
+    \begin{dem}
+        Sean $a,b,c,d\in A$. Supóngase que $a\leq b$ y $c\leq d$. Además, $b\leq b\vee d$ y $d\leq b\vee d$ por definición de supremo de $b$ y $d$. Luego, $a\leq b\vee d$ y $c\leq b\vee d$ por transitividad de $\leq$. Pero $a\vee c\leq b\vee d$ por ser la menor cota superior de $a$ y $c$. 
+    \end{dem} 
+\end{teorema}
+
+\begin{nota}
+    $a<b:=a\leq b$ y $a\neq b$. 
+\end{nota}
+
+\begin{teorema}
+    La operaciones de $\vee$ y $\wedge$ son conmutativas. 
+    \begin{dem}
+        Por definición de cota superior y unicidad $v$. 
+    \end{dem}
+\end{teorema}
+
+
+\begin{teorema}
+    Las operaciones $\vee$ y $\wedge$ son asociativas. 
+    \begin{dem}
+        A demostrar: $a\vee (b\vee c) = (a\vee b)\vee c, \forall a,b,c\in A$.
+        \begin{enumerate}
+            \item ¿$(a\vee b)\vee c\leq a\vee (b\vee c)$? Sean $a,b,c,d\in A$. Entonces por la definición de cota superior de $a$ y $b\vee c$:  $a\leq a\vee (b\vee c)$ y $(b\vee c)\leq a\vee (b\vee c)$. Luego $a\leq a\vee (b\vee c)$ y $(b\leq a\vee(b\vee c) \text{ y } (c\leq a\vee (b\vee c)))$ por ser $b\vee c$ una cota superior y $\leq $ cumple con la transitividad. Entonces, $(a\leq a\vee (b\vee c) \text { y } (b\leq a (b\vee c)))$ y $c\leq a\vee (b\vee c)$  por ser asociativa. Luego, $a\vee b\leq a\vee(b\vee c)$ y $c\leq a\vee (b\vee c)$ por ser cota superior de $a$ y $b$. Entonces, $(a\vee b)\vee c\leq a\vee (b\vee c)$ por menor cota superior de $a\vee b$ y $c$. 
+            \item ¿$a\vee (b\vee c) \leq (a\vee b)\vee c$? Lo mismo que el anterior. 
+        \end{enumerate}
+        Por antisimetría de los dos resultados, 
+        $a\vee (b\vee c) = (a\vee b)\vee c$.
+    \end{dem}
+\end{teorema}
+
+\begin{teorema}
+    $\forall a\in A, a\vee a =a $ y $a\wedge a=a$.
+    \begin{dem}
+        Sean $a\in A$, por definición de supremo, $a\leq a\vee a$. Además, $a\leq a$ por ser reflexiva. Entonces, $a\leq a\vee a$ por ser el supremo de $a$ y $a$. Por ser $\leq$ antisimetrica, $a\vee a = a$. 
+    \end{dem}
+\end{teorema}
+
+\begin{teorema}
+    $\forall a,b\in A, a\vee(a\wedge b)=a$ y $a\wedge (a\vee b)=a$.
+\end{teorema}
+
+\begin{definicion}[14]
+    Un retículo distributivo si la operación $\wedge$ se distribuye respecto de la operación $\vee$ y la operación $\vee$ se distribuye respecto de $\wedge$. 
+
+    $$\forall a,b,c\in A, (a\wedge (b\vee c))= (a\wedge b)\vee (a\wedge c)$$
+\end{definicion}
+
+
+\begin{teorema}
+    Si la operación $\wedge$ es distributiva respecto a la operación $\vee$ en un retículo, entonces la operación $\vee$ es distributiva respecto a la operación $\wedge$ y viceversa. 
+    \begin{dem}
+        Si $a\wedge (b\vee c)=(a\vee b)\vee (a\wedge c)\implies a\vee (b\wedge c) = (a\vee b)\wedge (a\vee c)$. Sean $a,b,c,d\in A$,
+        \begin{align*}
+            \intertext{Por hipótesis:}
+            (a\vee b)\wedge (a\vee c)& = [(a\vee b)\wedge b]\vee [(a\vee b)\wedge c]\\
+            \intertext{Por conmutatividad de $\wedge$:}
+            &=a\wedge (a\wedge b)]\vee [c\wedge (a\vee b)]
+            \intertext{Por teorema de absorción}
+            &= a\vee [c\wedge (a\vee b)]
+            \intertext{Por hipóteses:}
+            &= a\vee [(c\wedge a )\vee (c\wedge b)]
+            \intertext{Por conmutatividad de $\wedge$}
+            &= a\vee [(a\wedge c )\vee (b\wedge c)]
+            \intertext{Por ser $\vee$ asociativo:}
+            &= [a\vee (a\vee c)]\vee (b\wedge c)
+            \intertext{Por teorema 8 de absorción:}
+            &= a\vee[b\wedge c]
+        \end{align*}
+        
+
+    \end{dem}
+\end{teorema}

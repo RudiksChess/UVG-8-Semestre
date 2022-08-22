@@ -1,0 +1,43 @@
+
+
+Clase: 19/07/2022
+
+
+\begin{ejemplo}
+    Sea $U$ un ideal de $(\mathbb{Z},+,\cdot)$. Como $(U,+)$ es un subgrupo de $(\mathbb{Z},+)$. $\implies$ siendo $(\mathbb{Z},+)$ cíclico e infinito, si $U\neq (0)\implies (U,+)$ es también cíclico e infinito $\implies \exists n_0\in\mathbb{Z}\ni U=(n_0)=n_0\mathbb{Z}$. Efectivamente, $U=(n_0)$ es un ideal de $\mathbb{Z}$, ya que si $m\in\mathbb{Z}$ y $u\in U\implies \exists x\in\mathbb{Z}\ni u = xn_0\implies mu=m(xn_0)=(mx)n_0\in U$, ya que $mx\in \mathbb{Z}$, y efectivamente, $U$ atrapa productos en $\mathbb{Z}$. ¿Para qué valores de $n_0$, $U$ es un ideal maximal de $\mathbb{Z}$? Sea $p$ un número primo y $U$ un ideal de $\mathbb{Z}\ni (p)\subseteq U\subseteq \mathbb{Z}$. Ahora bien, $\exists u_0\in\mathbb{Z}\ni U =(u_0)=u_0\mathbb{Z}\implies (p)\subseteq (u_0)\subseteq \mathbb{Z}$. 
+    \begin{cajita}
+        Recordatorio. 
+        $$(p)=p\mathbb{Z}=\{px:x\in\mathbb{Z}\}$$
+    \end{cajita}
+    Nótese que $p=p\cdot 1\in p\mathbb{Z}=(p)\subseteq (u_0)=u_0\mathbb{Z}\implies u_0|p$.
+
+    \begin{cajita}
+        Generados tamaños. 
+
+        $$\underbrace{(a)}_{pequeño}\subseteq \underbrace{(b)}_{grande}\implies \underbrace{b}_{pequeño}|\underbrace{a}_{grande}$$
+    \end{cajita}
+
+    Como $p$ es un número primo, $u_0=1$ o $u_0=p\implies (u_0)=(1)=\mathbb{Z}$ o $(u_0)=(p)\implies (p)$ es un ideal maximal de $\mathbb{Z}$. Sea $M$ un ideal maximal de $\mathbb{Z}\implies \exists m\in\mathbb{Z}\ni M=(m_0)=m_0\mathbb{Z}$. 
+    \begin{cajita}
+        y además si $U$ es un ideal de $\mathbb{Z}\ni M\subseteq U\subseteq \mathbb{Z}\implies \exists u_0\in\mathbb{Z}\ni U=(u_0)\implies (m_0)\subseteq (u_0)\subseteq (1)\implies (m_0)=(u_0)$ o $(u_0)=(1)\implies (m_0)\subseteq (u_0)$ y $(u_0)\subseteq (m_0)$ y $(1)\subseteq (u_0)$ y $(u_0)\subseteq (1)\implies m_0|u_0$ y $u_0|m_0$. 
+    \end{cajita}
+    $\implies$ si $a|m_0\implies (m_0)\subseteq (a)\subseteq \mathbb{Z}\implies $ siendo $(m_0)$ un ideal de $\mathbb{Z}\implies (m_0)=(a)$ o $(a)=\mathbb{Z}\implies a\in (a)\subseteq (m_0)$ o $a=1$. $\implies m_0|a$ o $a=1\implies m_0=a$ o $1=a\implies m_0$ es primo. En el anillo $(\mathbb{Z},+,\cdot), (m)$ es un ideal maximal de $\mathbb{Z}$, si y solo si, $m$ es primo. 
+    
+
+\end{ejemplo}
+
+\begin{ejemplo}
+    Sea $M=\{f\in\mathcal{C}([0,1]):f(1/2)=0\}$ un ideal de $\left(\mathcal{C}[0,1],+,\cdot\right)$. Sea $U$ un ideal de $\mathcal{C}([0,1])\ni M\subset U\implies \exists g\in U-M\implies g:[0,1]\to \mathbb{R}$, continua y $g(1/2)\neq 0$. Sea $h:[0,1]\to\mathbb{R}\ni h(x)=g(x)-g(1/2)\implies h(1/2)=0$ y $h(x)$ es continua en $[0,1]\implies h\in M\subseteq U\implies h\in U\implies g-h\in U$, pero $(g-h)(x)=g(x)-h(x)=g(x)-g(x)+g(1/2)=g(1/2)\neq 0$ y $g(1/2)\in U\implies 1/g(1/2)\in \mathcal{C}([0,1])$ y como $U$ es ideal, atrapa productos. $\implies 1 = g\left(\frac{1}{2}\right)\cdot \frac{1}{g\left(\frac{1}{2}\right)}\in U\implies$ si $f(x)\in\mathcal{C}([0,1])$, como $U$ atrapa productos $f(x)=f(x)\cdot 1 \in U\implies \mathcal{C}([0,1])\subseteq U\subseteq \mathcal{C}([0,1])\implies U=\mathcal{C}\left([0,1]\right)\implies M$ es un ideal maximal de $\mathcal{C}\left([0,1]\right)$.  Ahora bien, si $\gamma\in [0,1]$, sea $M_\gamma =\{f\in\mathcal{C}([0,1])\ni f(\gamma)=0\}$. $\implies$ usando el mismo argumento se demuestra que $M_\gamma$ es un ideal maximal de $\mathcal{C}([0,1])$. Además, si $M$ es un ideal maximal del anillo de $\mathcal{C}([0,1])\implies \exists \gamma \in [0,1]\ni M=M_\gamma$. Entonces, existe una biyección entre los elementos de $[0,1]$ y los ideales maximales del anillo $\mathcal{C}([0,1],+,\cdot)$.
+
+\end{ejemplo}
+
+\begin{teorema}[3B]
+    Si $R$ es un anillo conmutativo con elemento neutro multiplicativo y $M$ es un ideal de $R$, entonces $M$ es un ideal maximal de $R$, si y solo si, $R/M$ es un campo.
+    \begin{dem}
+        Sea 
+        \begin{itemize}
+            \item $[\implies]$ Se sabe que $\left(R/M,+,\cdot\right)$ es un anillo conmutativo. Considérese el homomorfismo canónico $\sigma: R\to R/M\ni \sigma(r)= M+r$ y $K_\sigma=M\implies$ por el teorema 3A,existe una correspondencia biyectiva entre los ideales de $R/M$ y los ideales de $R$ que contienen a $K_\sigma=M\implies $ Como $M$ es ideal maximal, los únicos ideales de $R$ que contienen a $M$ son $R$ y $M\implies$ los únicos ideales de $R/M$ son $(M)$ y $R/M$. Además, como $R$ tiene elemento neutro multiplicativo 1, $M+1$ es el elemento neutro multiplicativo de $R/M$, entonces por el lema 3.7, $R/M$ es campo.
+            \item $[\impliedby]$ Si $(R/M, +, \cdot)$ es un campo $\implies (M)$ y $R/M$ son los únicos ideales de $R/M\implies $ aplicando de nuevo el teorema 3A al homomorfismo canónico, por la correspondencia biyectiva, los únicos ideales de $R$ que contienen a $M$ son $R$ y $M$. $\implies M$ es un ideal maximal de $R$. 
+        \end{itemize}
+    \end{dem}
+\end{teorema}

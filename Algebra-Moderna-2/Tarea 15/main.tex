@@ -11,6 +11,59 @@ Problema 4, sección 3.6.
 \section*{Sección 3.6}
 \begin{problema}[Problema 4]
     Prove that if $K$ is any field which contains $D$ then $K$ contains a subfield isomorphic to $F$. (In this sense $F$ is the smallest field containing $D$.)
+    \begin{dem}
+        Debemos probar que $K$ contiene un subcampo isomorfo a $F$. Proponemos una función $\phi: F\to K$ de la forma 
+        $$\phi([x,y])=xy^{-1}$$
+        Entonces, comprobaremos las siguientes propiedades: 
+        \begin{itemize}
+            \item Función bien definida. 
+                \begin{itemize}
+                    \item Sea $[x,y]\in F$, en donde $x,y\in D$ y $y\neq0\implies x,y\in K\implies x,y^{-1}\in K\implies xy^{-1}\in K$.
+                    \item Supóngase que $[x,y]=[x_0,y_0]$, en donde $y,y_0\neq 0$. Ahora bien, tenemos:
+                    
+                    \begin{align*}
+                               xy_0 &= x_0y\\
+                               xy_0(y^{-1}y_0^{-1}) &= x_0y(y^{-1}y_0^{-1})\\
+                               xy^{-1} &= x_0y_0^{-1}\\
+                               \phi[x,y] &= \phi[x_0,y_0]\\
+                    \end{align*}
+                    Por lo tanto, hemos probado las dos propiedades para ser una función bien definida. 
+                    
+                \end{itemize}
+                \item Ahora bien, intentaremos probar que $\phi$ es isomorfismo, primero demostrando que es homomorfismo y luego que es inyectivo. 
+                    \begin{itemize}
+                        \item Sea $\phi$ un homomorfismo, tal que: 
+                        \begin{enumerate}
+                            \item Para la suma. Sea 
+                            \begin{align*}
+                                \phi([x_1,y_1]+[x_2,y_2]) &= \phi([x_1y_2+x_2y_1,y_1y_2])\\
+                                &= (x_1y_2+x_2y_1)(y_1y_2)^{-1}\\
+                                &= (x_1y_2+x_2y_1)(y_1^{-1}y_2^{-1})\\
+                                &= x_1y_1^{-1} +x_2y_2^{-1}\\
+                                &= \phi([x_1,y_1])+\phi([x_2,y_2])
+                            \end{align*}
+                            \item Para la multiplicación. Sea 
+                            \begin{align*}
+                                \phi([x_1,y_1]\cdot[x_2,y_2]) &= \phi([x_1x_2,y_1y_2])\\
+                                &= x_1x_2(y_1y_2)^{-1}\\
+                                &= x_1(y_1)^{-1}x_2(y_2)^{-1}\\
+                                &= \phi([x_1,y_1])\cdot\phi([x_2,y_2])
+                            \end{align*} 
+                            
+                        \end{enumerate}
+                        Por lo tanto, $\phi$ es un homomorfismo para la suma y la multiplicación.
+                    \end{itemize}
+                    \item Ahora bien, demostraremos que también se cumple la inyectividad. Sea
+                    \begin{align*}
+                        \phi([x_1,y_1]) &= \phi([x_2,y_2])\\
+                        x_1y_1^{-1} &= x_2y_2^{-1}\\
+                        x_1y_1^{-1}(y_1y_2) &= x_2y_2^{-1}(y_1y_2)\\
+                        x_1y_2 &= x_2y_2\\
+                        [x_1,y_1] &= [x_2,y_2]
+                    \end{align*}
+        \end{itemize}
+        Por lo tanto, se cumple una de las definición de isomorfismo para $\phi([x,y])$ y $F$. Ahora, nos hace falta verificar que $\phi(F)$ es un subcampo de $K$, pero esto se cumple por la definición de  homomorfismo inyectivo el cual se sumerge entre dos anillos. 
+    \end{dem}
 \end{problema}
 
 %---------------------------

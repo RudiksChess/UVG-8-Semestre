@@ -1,0 +1,58 @@
+Clase: 23/08/2022
+
+\begin{definicion}
+    $f(x)=\sum_{i=0}^n a_ix^i\in \mathbb{Z}[x]$ es primitivo si $(a_0,\cdots, a_n)=1$
+\end{definicion}
+
+\begin{lema}[3.23]
+    Si $f(x),g(x)\in \mathbb{Z}[x]$ son primitivos, entonces $f(x)g(x)$ es primitivo. 
+    \begin{dem}
+        Si $f(x)=\sum_{i=0}^n a_ix^i$ y $g(x)=\sum_{j=0}^n b_jx^j$, supóngase que el máximo común divisor de los coeficientes de $f(x)g(x)$ es mayor que 1. $\implies \exists p$, número primo $\ni$ divisor al máximo común divisor de los coeficientes $f(x)g(x)$. Como $f(x)$ es primitivo, $p\not | (a_0,\cdots, a_m)\implies$ sea $i^*$ el índice más pequeño tal que $p\not | a_{i^*}$. De igual manera, sea $j^{*}$ el índice más pequeño tal que $p\not|b$. Entonces, el coeficiente de $x^{i^* +j^*}$ en $f(x)g(x)$ es 
+        $$C_{i^*+j^*}=\sum_{k=0}^{i^*+j^*}a_kb_{i^*+j^*-k}=a_{i^*}+b_{j^*}+\sum_{k=0}^{i^*-1}a_kb_{i^*+j^*-k}+\sum_{k=i^*+1}^{i^*+j^*}a_kb_{i^*+j^*-k}.$$
+        Por la elección de $i^*$ y $j^*$, $p|a_i$ para $0\leq i<i^*$ y $p|b_j$ para $0\leq j<j^*\implies p|a_kb_{i^*+j^*-k}$ para $0\leq k\leq i^*-1$ y $p|a_kb_{i^*+j^*-k}$ para $i^*+1\leq k\leq i^*+j^*\implies p|\sum_{k=0}^{i^*-1}a_kb{i^*+j^*-k}$ y $p|\sum_{k=i^*+1}^{i^*+j^*}a_kb{i^*+j^*-k}$ y por hipótesis, $p|c_{i^*+j^*}\implies p|\left(c_{i^*+j^*}-\sum_{k=0}^{i^*-1}a_kb_{i^*+j^*-k}-\sum_{k=i^*+1}^{i^*+j^*}a_kb_{i^*+j^*-k}\right)=a_{i^*}b_{j^*}\implies p|a_{i^*}$ o $p|b_{j^*}(\to\gets)\implies f(x)g(x)$ es primitivo.  
+    \end{dem}
+\end{lema}
+
+\begin{definicion}
+    El \textbf{contenido} de $f(x)=\sum_{i=0}^n a_ix^i\in\mathbb{Z}[x]$ es $(a_0,\cdots,c_n)$.Notación, $C(f)$.
+\end{definicion}
+
+\begin{prop}
+    Si $f(x)\in\mathbb{Z}[x]$, entonces existe $p(x)\in \mathbb{Z}[x]$, primitivo, tal que $f(x)=C(f)p(x)$.
+\end{prop}
+
+\begin{teorema}[3I - Lema de Gauss ]
+    Si $p(x)\in \mathbb{Z}[x]$ es primitivo y puede factorizarse como el producto de dos polinomios con coeficientes racionales, entonces puede factorizarse como el producto de dos polinomios con coeficientes enteros. 
+    \begin{dem}
+        Si $u(x)=\sum_{i=0}^{m}\frac{\alpha_i}{\beta_i}x^i,v(x)=\sum_{j=0}^{n}\frac{\delta_j}{\gamma_j}x_j\in\mathbb{Q}[x]$. Es decir, $\alpha_i,\delta_i\in\mathbb{Z}$ y $\beta_i,\gamma_j\in\mathbb{Z}-\{0\}\ni$
+        \begin{align*}
+            p(x)&=u(x)v(x)\\
+            &=\left(\sum_{i=0}^{m}\frac{\alpha_i}{\beta_i}x^i\right)\left(\sum_{j=0}^{n}\frac{\delta_j}{\gamma_j}x_j\right)\\
+            &= \frac{1}{\left(\prod_{i=0}^{m}\beta_i\right)\left(\prod_{j=0}^n\gamma_j\right)}\left(\sum_{i=0}^m \alpha_i\left(\prod_{l+i}\beta_l\right)x^i\right)\left(\sum_{j=0}^n \delta_j\left(\prod_{r+j}\gamma_r\right)x^j\right)
+        \end{align*}
+        Sea $\sigma(x)=\sum_{i=0}^m \alpha_i\left(\prod_{l+i}\beta_l\right)x^i, \nu(x)=\sum_{j=0}^n \delta_j\left(\prod_{r+j}\delta_r\right)x^j\in \mathbb{Z}[x]\implies p(x)= 1/\left(\left(\prod_{i=0}^{m}\beta_i\right)\left(\prod_{j=0}^{n}\gamma_j\right)\right)\sigma(x)\nu(x)=\frac{a}{b}q_1(x)q_2(x)$, donde $a=C(\delta)c(\nu)\in \mathbb{Z}, b=\left(\prod_{i=0}^m p_i\right)\left(\prod_{j=0}^n\gamma_j\right)\in\mathbb{Z}-\{0\}$, sea $q_1(x),q_2(x)\in \mathbb{Z}[x]$ primitivos y $\sigma(x)=C(\sigma)q_1(x)$ y $\nu(x)=C(\nu)q_2(x)\implies$ por el lema 3.23 $q_1(x)q_2(x)$ es primitivo y $bp(x)=aq_1(x)q_2(x)$. Como $p(x)$ es primitivo, el contenido de $bp(x)$ es $b$ y como $q_1(x)q_2(x)$ primitivo. $\implies$ el contenido de $aq_1(x)q_2(x)$ es $a\implies$ como los contenidos de polinomios es iguales de ser iguales, $a=b\neq0\implies a/b =1\implies p(x)=q_1(x)q_2(x)$. 
+        
+    \end{dem}
+\end{teorema}
+
+\begin{definicion}
+    Si $f(x)=\sum_{i=0}^{n}a_ix^{i}\in\mathbb{Z}[x]$ y $a_n=1$, entonces $f(x)$ se dice \textbf{Entero Mónico}.
+\end{definicion}
+
+\begin{prop}
+    Todo polinomio mónico de $\mathbb{Z}[x]$ es primitivo.
+\end{prop}
+
+\begin{corolario}
+    Si un polinomio mónico de $\mathbb{Z}[x]$ se factoriza como el polinomio en $\mathbb{Q}[x]$, entonces se factoriza como el producto de los polinomios enteros mónicos. 
+    \begin{dem}
+        Se deduce del lema de Gauss $(3I)$ y la propiedad anterior. 
+    \end{dem}
+\end{corolario}
+
+\begin{teorema}[3J - Criterio de Einsentein]
+    Si $f(x)=\sum_{i=0}^{n}a_ix^{i}\in \mathbb{Z}[x]$ y $p$ es un número primo que $p\not|a_n$, $p|(a_0,\cdots, a_{n-1})$ y $p^2|a_0$, entonces $f(x)$ es irreducible en $\mathbb{Q}[x]$.
+    \begin{dem}
+        Sea $p(x)\in \mathbb{Z}[x]$, primitivo $\ni f(x)=C(f)p(x)$, y nótese que $f(x)$ es irreducible sobre $\mathbb{Q}\iff p(x)$ es irreducible sobre $\mathbb{Q}$. Además, la hipótesis se se tienen, ya que $(C(f),p)=1$. Sea $p(x)=\sum_{i=0}^n \alpha_i x^i$, con $p\not| \alpha_n,p|(\alpha_0,\cdot,\alpha_{n-1})$ y $p^2\not | \alpha_0$. Supóngase que $p(x)$ no es irreducible sobre $\mathbb{Q}\implies u(x),v(x)\in \mathbb{Q}[x], gr(u)>0$ y $gr(v)>0\ni p(x)=u(x)v(x)\implies$ por el teorema de Gauss (3I) $\exists r(x)=\sum_{j=0}^{m_1} \beta_jx^j, s(x)=\sum_{k=0}^{m_2}\delta_kx^k\in\mathbb{Z}[x], m_1=gr(r)>0$ y $m_2=gr(s)>0\ni \sum_{i=0}^n a_i x^i = p(x)=r(x)s(x)=\sum_{i=0}^{m_1+m_2+m}\left(\sum_{t=0}^i \beta_t\delta_{i-t}\right)x^i$. Entonces, $p|\alpha_0=\beta_0\delta_0\implies p|\beta_0$ o $p|\delta_0$. Pero, $p^2\not|\alpha_0=\beta_0\delta_0\implies p|\beta_0$ o $p|\delta_0$. Si $p|(\beta_0,\cdots,\beta_{m_1})\implies p|\beta_{m_1}|\beta_{m_1}\delta_{m_2}=\alpha_{m_1+m_2}=\alpha_n(\to\gets)\implies$ Sea $j^*$ el primer subíndice tal que $\ni p\not|\beta_{j^*}\implies$ si $0\leq j\leq j^*-1\implies p|\beta_j$. Pero, $\alpha_{j^*}=\sum_{t=0}^{j^*}\beta_t\delta_{j^*-t}$, entonces $p|\alpha_{j^*}$, $p|\beta_t|\beta_t|\beta_t\delta_{j^*-t}$ para $0\leq t\leq j^*-1\implies p|\sum_{t=0}^{j^*-1}\beta_t\delta_{j^*-t}\implies p|(\alpha_{j^*}-\sum_{t=0}^{j^*}\beta_t\delta_{j^*-t})=\beta_{j^*}\delta_0\implies p|\beta_{j^*}$ o $p|\delta_0\implies p|\delta_0\implies p\not|\beta_0$. Entonces $p(x)$ es irreducible sobre $\mathbb{Q}$. 
+    \end{dem}
+\end{teorema}

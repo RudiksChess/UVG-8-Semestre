@@ -1,0 +1,50 @@
+Clase: 25/08/2022
+
+\begin{prop}
+    Si $R$ es un anillo conmutativo con elemento neutro multiplicativo, entonces $R[x]$ es un anillo conmutativo con elemento neutro multiplicativo. \begin{dem}
+        ejercicio. 
+    \end{dem}
+\end{prop}
+
+\begin{definicion}
+    Si $R$ es un anillo conmutativo con elemento neutro multiplicativo, entonces $R[x_1,\cdots,x_n]$ se define: $R_1=R[x];R_2=R_1[x_2]=(R[x_1])[x_2]=R[x_1,x_2];R_3=R_2[x_3]=((R[x_1])[x_2])[x_3]=R[x_1,x_2,x_3];\cdots; R_n=R_{n-1}[x_n]=R[x_1,\cdots, x_{n}]$, el anillo de polinomios en las variables $x_1,\cdots, x_n$ con coeficientes en $R$. 
+\end{definicion}
+
+\begin{prop}
+    Si $R$ es un anillo conmutativo con elemento neutro multiplicativo, entonces los elementos de $R[x_1,\cdots, x_n]$ son de la forma $\sum a_i,\cdots, i_n \prod_{j=1}^n x_j^{i_j}$, con $a_i,\cdots,i_n\in R$, y la suma de estos polinomios definidos por las operaciones entre coeficientes, y el producto de estos polinomios usando la ley distributiva y las reglas de exponentes $\left(\prod_{j=1}^n x_j^{ij}\right)\left(\prod_{j=1}^n x_j^{k_j}\right)=\prod_{j=1}^n x_j^{i_j+k_j}$
+\end{prop}
+
+\begin{lema}
+    Si $R$ es un dominio entero, entonces $R[x]$ es un dominio entero. 
+    \begin{dem}
+        Nótese que en la demostración del lema 3.17 y sus corolarios no se usó la existencia de inversos multiplicativos en el campo $F$, por lo que esos argumentos son válidos para el dominio entero $R$. 
+    \end{dem}
+\end{lema}
+
+\begin{corolario}
+    Si $R$ es un dominio entero, entonces $R[x_1,\cdots,x_n]$ es un dominio entero. 
+    \begin{dem}
+        Se deduce del lema 3.24 y la definición de $R[x_1,\cdots, x_n]$
+    \end{dem}
+\end{corolario}
+
+\begin{nota}
+    Si $R$ es dominio entero $\implies R[x_1,\cdots, x_n]$ es dominio entero. $\implies R(x_1,\cdots, x_n)$ es el campo de las funciones racionales en las variables $x_1,\cdots,x_n$ con coeficientes en $R$. Si $F$ es un campo, en particular es un dominio entero y $F(x_1,\cdots, x_n)$ es el campo de las funciones racionales en las variables $x_1,\cdots,x_n$ con coeficientes en $F$, el caul juega un papel importante en Geometría Algebraica y la teoría de Galois.  
+\end{nota}
+
+
+\begin{ejemplo}
+    El teorema 3D dice que si $F$ es un campo, entonces $F[x]$ es un anillo de ideales principales (de hecho, 3F a continuación asegura que $F[x]$ son anillos euclideanos). Ahora, si $F$ es un campo, ¿$F[x_1,\cdots,x_n]$ es también un anillo de ideales principales? Considérese el anillo $\mathbb{Q}[x,y]$, los polinomios $x,y\in \mathbb{Q}[x,y]$ y el conjunto $(x,y)=\{\alpha(x,y)x+\beta(x,y)y:\alpha(x,y),\beta(x,y)\in\mathbb{Q}[x,y]\}\subseteq \mathbb{Q}[x,y]$. Sean $\alpha_1(x,y)+\beta_1(x,y)y,\alpha_2(x,y)x+\beta_2(x,y)y\in (x,y)\implies \alpha_1(x,y)x+\beta_1(x,y)y-(\alpha_2(x,y)x+\beta_2(x,y)y)=(\alpha_1(x,y)-\alpha_2(x,y))x+(\beta_1(x,y)-\beta_2(x,y))y\in (x,y)$, ya que $\alpha_1(x,y)-\alpha_2(x,y),\beta_1(x,y)-\beta_2(x,y)\in\mathbb{Q}[x,y]\implies$ por el corolario al lema 2.3, $((x,y),+)$ es un subgrupo $(\mathbb{Q}[x,y],+)$. Sea ahora $f(x,y)\in \mathbb{Q}[x,y]$ y $\alpha(x,y)x+\beta(x,y)y\in (x,y)\implies f(x,y)(\alpha(x,y)+\beta(x,y)y)=(f(x,y)\alpha(x,y))x+(f(x,y)\beta(x,y))y\in (x,y)$, ya que $f(x,y)\alpha(x,y),f(x,y)\beta(x,y)\in\mathbb{Q}\implies (x,y)$ es un ideal de $\mathbb{Q}[x,y]$.\bigbreak 
+    Supóngase que existe $d(x,y)\in \mathbb{Q}[x,y]\ni (x,y)=(d(x,y))$. Nótese que si $\alpha(x,y)=1$ y $\beta(x,y)=0\implies x=1\cdot x+0\cdot y=\alpha(x,y)x+\beta(x,y)y\in (x,y)\implies d(x,y)|x$. Además, si $\alpha(x,y)=0$ y $\beta(x,y)=1\implies y=0\cdot x+1\cdot y=\alpha(x,y)x+\beta(x,y)y\in (x,y)\implies d(x,y)|y$. Por otro lado, si $\exists g(x,y),h(x,y)\in\mathbb{Q}\ni x=g(x,y)h(x,y)\implies g(x,y)$ o $h(x,y)$ es constante $\implies x$ es irreducible en $\mathbb{Q}[x,y]$ sobre $\mathbb{Q}$. Con igual argumento, se sabe que $y$ es irreducible en $\mathbb{Q}[x,y]$ sobre $\mathbb{Q}\implies x,y$ son primos relativos en $\mathbb{Q}[x,y]$ sobre $\mathbb{Q}$ $\implies$ su máximo común divisor es 1. Ahora bien, se demostró que $d(x,y)$ es divisor común de $x,y\implies d(x,y)|1\implies d(x,y)$ es una unidad $\implies (d(x,y))=\mathbb{Q}[x,y]\implies 1\in \mathbb{Q}[x,y]=(x,y)\implies \exists \alpha(x,y),\beta(x,y)\in\mathbb{Q}[x,y]\ni 1=0\cdot x+0\cdot y +1=\alpha(x,y)x+\beta(x,y)y+0\implies 1=0(\to\gets)$ el ideal $(x,y)$ no tiene generador en $\mathbb{Q}[x,y]\implies \mathbb[x,y]$ no es un anillo de ideales maximales $\implies \mathbb{Q}[x,y]$ no es un anillo euclideano. Con este ejemplo se puede asegurar que si $F$ es campo, $F[x_1]$ so un anillo euclideano. pero en general $F[x_1,\cdots,x_n],n>1$ no es un anillo euclideano.\bigbreak
+
+    Por otro lado, el teorema 3E, dice que si $F$ es un campo, entonces $F[x]$ tiene factorización prima única (de hecho, el teorema 3F asegura que $F[x]$ es anillo euclideano)\bigbreak 
+    Si $R$ es un dominio entero con factorización prima única, ¿$R[x]$ es también dominio entero con factorización prima única? En caso afirmativo, ¿$R[x_1,\cdots,x_n]$ es también un dominio entero con factorización prima única? 
+\end{ejemplo}
+
+\begin{definicion}
+    Un dominio entero con elemento neutro multiplicativo es un dominio de factorización única si:
+    \begin{enumerate}
+        \item Todo elemento de $R-\{0\}$ es una unidad o puede factorizarse como el producto de un número finito de elementos irreducibles (primos) de $R$. 
+        \item La factorización de (i) es única salvo el orden de los factores y asociación. 
+    \end{enumerate}
+\end{definicion}

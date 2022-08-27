@@ -1,0 +1,94 @@
+Clase: 23/08/2022
+\section{Sección en $\mathbb{C}$}
+
+\begin{nota}
+    \begin{enumerate}
+        \item Una curva o contorno en $\mathbb{C}$ es un mapeo continuo: 
+        $$\gamma:[a,b]\to\mathbb{C}$$
+        \item Una curva en $C^1-$por tramos (primera derivada continua) si existe una partición $\{a=a_1<a_2<\cdot <a_n=b\}$ de $[a,b]\ni$
+        \begin{enumerate}
+            \item $\gamma$ es diferenciable sobre $(a_i,a_{i+1})$
+            \item $\gamma'$ es continua sobre $[a_i,a_{i+1}]$
+        \end{enumerate} 
+    \end{enumerate}
+    \begin{cajita}
+        En esta teoría todas las curvas son $C^1-$por tramos.
+    \end{cajita}
+\end{nota}
+
+\begin{definicion}
+    Sea $h:[a,b]\to\mathbb{C}\ni h(t)=u(t)+iv(t)$.
+    $$\implies \int_a^b h(t)dt := \int_a^b u(t)dt+i \int_a^bv(t)dt$$
+\end{definicion}
+
+\begin{definicion}
+    Sea $f$ una función continua y definida sobre un abierto $A\subseteq \mathbb{C}$ y $\gamma:[a,b]\to \mathbb{C}$ una curva $C^1$ por tramos tal que $\gamma([a,b])\subset A$, entonces: 
+    $$\int_\gamma f = \int_\gamma f(z)dz:= \int_a^b f(\gamma(t))\cdot \gamma'(t)dt$$
+\end{definicion}
+
+
+\begin{nota}
+    \begin{enumerate}
+        \item Sea $\gamma:[a,b]\to\mathbb{C}$ una curva, $t\to \gamma(t)$. $\implies -\gamma:[a,b]\to\mathbb{C}\ni (-\gamma)(t)=\gamma(a+b-t)\implies -\gamma$ es la curva opuesta de $\gamma$.
+        \item Sea $\gamma_1:[a,b]\to\mathbb{C}$ y $\gamma_2:[b,c]\to\mathbb{C}\ni $
+        $$\gamma_1(b)=\gamma_2(b)$$
+        $\implies \gamma_1+\gamma_2:[a,c]\to\mathbb{C}\ni$
+        $$(\gamma_1+\gamma_2)(t)=\begin{cases}
+            \gamma_1(t), & t\in [a,b]\\
+            \gamma_2(t), & t\in[b,c]
+        \end{cases}$$
+        curva suma de $\gamma_1$ con $\gamma_2$.
+    \end{enumerate}
+\end{nota}
+
+\begin{prop}
+    \begin{enumerate}
+        \item Sea $\int_\gamma [c_1f+c_2g]=c_1\int_\gamma f+c_2\int_\gamma g$, $f,g$ funciones continuas, $\gamma$ es una curva de $C^1$ por tramos. Es decir, la integral de línea es lineal. 
+        \item $\int_{-\gamma}f=-\int_\gamma f$
+        \item $\int_{\gamma_1+\gamma_2}f=\int_{\gamma_1}f+\int_{\gamma_2}f$
+    \end{enumerate}
+\end{prop}
+
+\begin{definicion}
+    Sea $\gamma:[a,b]\to\mathbb{C}$ una curva $C^1-$por tramos. Una curva suave ($C^1-$) por tramos $\tilde{\gamma}:[\tilde{a},\tilde{b}]\to\mathbb{C}$ es una reparametrización de $\gamma$ si $\exists$ una función $C^1$,$\alpha:[a,b]\to[\tilde{a},\tilde{b}]\ni \alpha'(t)>0,\alpha(a)=\tilde{a},\alpha(b)=\tilde{b}$ y $\gamma(t)=\tilde{\gamma}(\alpha(t))$.
+\end{definicion}
+
+\begin{prop}
+    Si $\tilde{\gamma}$ es reparametrización de $\gamma$, entonces 
+    $$\int_\gamma f=\int_{\tilde{\gamma}}f,$$
+    para cualquier función $f$ continua y definida sobre un abierto que contenga a $\gamma([a,b])$.
+    \begin{dem}
+        Sea $\int_\gamma f=\int_a^bf(\gamma(t))\cdot \gamma'(t)dt$, donde $\gamma'(t)=\frac{d\gamma}{dt}=\frac{d\tilde{\gamma}(\alpha(t))}{dt}=\tilde{\gamma}'(\alpha(t))\frac{d\alpha(t)}{dt}\implies \int_\gamma f=\int_a^bf(\tilde{\gamma}(\alpha(t)))\tilde{\gamma}'(\alpha(t))\frac{d(\alpha(t))}{dt}dt\implies$ sea $\alpha(t)=s$, tal que $\int_{\tilde{a}}^{\tilde{b}}f(\tilde{\gamma}(s))\tilde{\gamma}'(s)ds=\int_{\tilde{\gamma}f}$.
+    \end{dem}
+\end{prop}
+
+\begin{prop}
+    Sea $f$ una función continua sobre un abierto $A\subseteq \mathbb{C}$ y $\gamma$ una curva $C^1-$por tramos sobre $[a,b]$. Si $\exists M\geq 0\ni |f(z)|\leq M,\forall z\in A$, entonces
+    $$\left| \int_\gamma f\right|\leq M\cdot l(\gamma),$$
+    donde $l(\gamma)$ es la longitud de $\gamma$ sobre $[a,b]$. ($\int_a^b (\gamma'(t))dt$) 
+    \begin{dem}
+        \begin{enumerate}
+            \item Sea $g:[a,b]\to\mathbb{C}\ni g(t)=u(t)+iv(t)\implies \int_a^b g(t)dt =\int_a^bu(t)dt+i\int_a^bv(t)dt\implies \operatorname{Re}\int_a^bg(t)dt=\int_a^bu(t)dt=\int_a^b\operatorname{Re}g(t)dt$.
+            \item A probar: $\left| \int_a^b g(t)dt\right|\leq \int_a^b|g(t)|dt$. Sea $\int_a^b g(t)dt=re^{i\theta},r,\theta $ fijos, $r>0$. $\implies r=e^{-i\theta}\int_a^b g(t)dt =\int_a^b e^{-i\theta }g(t)dt\implies r=\operatorname{Re}\int_a^be^{-i\theta}g(t)dt=\int_a^b\operatorname{Re}[e^{-i\theta}g(t)]dt\leq \int_a^b |e^{-i\theta}g(t)|dt=\int_a^b|e^{-i\theta}|\cdot |g(t)|dt= \int_a^b |g(t)|dt\implies |r|=r=\left|e^{-i\theta}\int_a^b g(t)dt\right|=|e^{-i\theta}|\cdot |\int_a^b g(t)dt| = |\int_a^b g(t)dt|\leq \int_a^b |g(t)|dt$. 
+            \item $\left| \int_\gamma f\right|=|\int_a^b f(\gamma(t))\cdot \gamma'(t)dt\leq \int_a^b|f(\gamma(t))\cdot \gamma'(t)|dt=\int_a^b|f(\gamma(t))|\cdot |\gamma'(t)|dt\leq \int_a^b M \cdot |\gamma'(t)|dt = M\int_a^b|\gamma'(t)|dt=M\cdot l(\gamma)$.
+        \end{enumerate}
+        
+    \end{dem}
+\end{prop}
+ 
+\begin{prop}[Teorema fundamental del cálculo para integrales de línea]
+    Supóngase que $\gamma:[a,b]\to \mathbb{C}$ es $C^1-$ por tramos y que $F$ está definida y es analítica sobre el abierto $A$ que contiene a $\gamma([a,b])$. Suponga que $F'$ es continua (es redundante). $\implies\int F'(t)dt =F(\gamma(b))-F(\gamma(a))$. 
+    \begin{dem}
+        Sea $F(\gamma(t))=g(t)=u(t)+iv(t)\implies F'(\gamma(t))\cdot \gamma'(t)=g'(t)=u'(t)+iv'(t)$.
+        \begin{align*}
+            \int_\gamma F'(t)dt &= \int_a^bF'(\gamma(t))\cdot \gamma'(t)dt\\
+            &= \int_a^b [u'(t)+iv'(t)]dt\\
+            &= \int_a^b u'(t)dt+i\int_a^b v'(t)dt\\
+            &= u(t)|_a^b +iv(t)|_a^b\\
+            &= u(b)-u(a)+i[v(b)-v(a)]\\
+            &= [u(b)+iv(b)]-[u(a)+iv(a)]\\
+            &= g(b)-g(a)\\
+            &= F(\gamma(b))-F(\gamma(a))
+        \end{align*}
+    \end{dem} 
+\end{prop}

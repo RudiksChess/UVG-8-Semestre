@@ -10,22 +10,83 @@ Problemas 1, 3 y 4, sección 3.5.
 \section*{Sección 3.5}
 \begin{problema}[Problema 1]
     Let $R$ be a ring with unit element, $R$ not necessarily commutative, such that the only right-ideals of $R$ are $(0)$ and $R$. Prove that $R$ is a division ring.
-
+   \begin{dem}
+        Debemos probar que $R$ es un anillo de división, es decir que para cada elemento $a\in R-\{0\}, aa^{-1}=1$. Tenemos dos casos:
+        \begin{itemize}
+            \item Si $R=(0)$, el resultado es trivial
+            \item Si $R\neq(0)$, sea $x\in R-\{0\}$, el cual es un ideal derecho $xR$ y $x=x\cdot 1\in xR,xR\neq 0$. Entonces tenemos $xR=R\implies \exists y \in R \ni x\cdot y=1.$
+        \end{itemize}
+        
+        Por lo tanto, $R$ es un anillo de división. 
+   \end{dem} 
 \end{problema}
 
 \begin{problema}[Problema 3]
 
-    Let $J$ be the ring of integers, $p$ a prime number, and ( $p)$ the ideal of $J$ consisting of all multiples of $p$. Prove
+    Let $J$ be the ring of integers, $p$ a prime number, and ($p)$ the ideal of $J$ consisting of all multiples of $p$. Prove
     \begin{itemize}
         \item $J /(p)$ is isomorphic to $J_{p}$, the ring of integers $\bmod p$.
-        \item Using Theorem $3.5 .1$ and part (a) of this problem, that $J_{p}$ is a field.
+        \begin{dem}
+            Debemos probar que $J /(p)$ es isomorfo a $J_{p}$. Proponemos una función $\phi: J/(p)\to J_p$ de la forma 
+            $$\phi((p)+n)=n\bmod p$$
+            Entonces, comprobaremos las siguientes propiedades: 
+            \begin{itemize}
+                \item Función bien definida. 
+                    \begin{itemize}
+                        \item Sea $\phi((p)+n)\in J_p,\forall (p)+n\in J/(p)$.
+                        \item Supóngase que $(p)+n=(p)+n_0$ y por la hipótesis tenemos que $(p)$ es el ideal de $J$ que consiste en todos los múltiplos de $p$, es decir que $n=n_0+kp,\forall k\in\mathbb{Z}$. Ahora bien, tenemos:
+                        
+                        \begin{align*}
+                            \phi((p)+n)&= n\bmod p\\
+                                       &= n\bmod p\\
+                                       &= (n_0+kp) \bmod p\\
+                                       &= n_0 \bmod p\\
+                                       &= \phi((p)+n_0)
+                        \end{align*}
+                        Por lo tanto, hemos probado las dos propiedades para ser una función bien definida. 
+                        
+                    \end{itemize}
+                    \item Ahora bien, intentaremos probar que $\phi$ es isomorfismo, primero demostrando que es homomorfismo y luego que es inyectivo. 
+                        \begin{itemize}
+                            \item Sea $\phi$ un homomorfismo, tal que: 
+                            \begin{enumerate}
+                                \item Para la suma. Sea 
+                                \begin{align*}
+                                    \phi([(p)+n_1]+[(p+n_2)]) &= \phi((p)+[n_1+n_2])\\
+                                    &= (n_1+n_2) \bmod p\\
+                                    &= n_1 \bmod p+n_2\bmod p\\
+                                    &= \phi((p)+n_1) +\phi((p)+n_2)
+                                \end{align*}
+                                \item Para la multiplicación. Sea 
+                                \begin{align*}
+                                    \phi([(p)+n_1]\cdot[(p+n_2)]) &= \phi((p)+[n_1\cdot n_2])\\
+                                    &= (n_1\cdot n_2) \bmod p\\
+                                    &= (n_1 \bmod p)\cdot (n_2\bmod p)\\
+                                    &= \phi((p)+n_1)\cdot \phi((p)+n_2)
+                                \end{align*} 
+                                
+                            \end{enumerate}
+                            Por lo tanto, $\phi$ es un homomorfismo para la suma y la multiplicación.
+                        \end{itemize}
+                        \item Ahora bien, demostraremos que también se cumple la inyectividad. Se a
+                        \begin{align*}
+                            \phi((p)+n_1) &= \phi((p)+n_2)\\
+                            n_1&\equiv n_2 \mod p\\
+                            n_1-n_2&\equiv 0 \mod p\\
+                            n_1-n_2&= kp \quad k\in \mathbb{Z}
+                            \intertext{De esto, tenemos que $n_1-n_2\in (p)$, lo que nos permite concluir que:}
+                            \phi((p)+n_1) &= \phi((p)+n_2)
+                        \end{align*}
+            \end{itemize}
+            Por lo tanto, se cumple una de las definición de isomorfismo para $J/(p)$ y $J_p$
+        \end{dem}
+        \item Using Theorem 3.5.1 and part (a) of this problem, that $J_{p}$ is a field.
+        \begin{dem}
+            En clase demostramos que en el anillo de los enteros $(J,+,\cdot)$, $(p)$ es un ideal maximal de $J$ si y solo si $p$ es primo $\implies$ por el teorema 3.5.1, $J/(p)$ es un campo, pero por el inciso (a) de este problema $J/(p)\approx J_p$. Por lo tanto, $J_p$ es un campo. 
+        \end{dem}
     \end{itemize}
 
 \end{problema}
-\begin{problema}[Problema 4]
-    Let $R$ be the ring of all real-valued continuous functions on the closed unit interval. If $M$ is a maximal ideal of $R$, prove that there exists a real number $\gamma, 0 \leq \gamma \leq 1$, such that $M=M_{\gamma}=\{f(x) \in R \mid f(\gamma)=0\}$.
-\end{problema}
-
 
 %---------------------------
 %\bibliographystyle{apa}

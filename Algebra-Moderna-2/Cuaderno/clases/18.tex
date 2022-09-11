@@ -1,0 +1,65 @@
+Clase: 06/09/2022
+
+\begin{corolario}
+    Si $F$ es un campo, $L$ es una extensión finita de $F$ y $K$ es un subcampo de $L$ tal que $F\subseteq K$, entonces $[K:F]|[L:F]$.
+    \begin{dem}
+        Del álgebra lineal, si $F\subseteq K\subseteq L\implies [L:K]\leq [L:F]\in\mathbb{Z}^+\implies [L:K]\in\mathbb{Z}^+$. Además, $(K,+,\cdots,F)$ es subespacio de $(L,+,\cdot, F)\implies [K:F]\leq [L:F]\in \mathbb{Z}^+\implies [K:F]\in\mathbb{Z}^+\implies$ por el teorema, 5.A. $[L:K][K:F]=[L:F]\implies [K:F]|[L:F]$.
+    \end{dem}
+\end{corolario}
+
+\begin{corolario}
+    Si $F$ es un campo, $L$ es una extensión finita de $F$ y $[L:F]$ es un número primo, entonces no existe  $K$ extensión de $F$ tal que $F\subset K\subseteq L$; es decir $L$ es la extensión propia de $F$ más pequeña (en el orden parcial de la contención).
+\end{corolario}
+
+\begin{definicion}
+    Sea $F$ un campo, $K$ una extensión de $F$, entonces $a\in K$ es algebraico sobre $F$ si existen $n\in\mathbb{Z}^+,\alpha_0,\cdots,\alpha_n\in F$, no 0, tales que $\sum_{i=0}^n\alpha_ia^i=0$.
+    \begin{cajita}
+        $a\in K$ es algebraico sobre $F\iff \exists f(x)\in F[x]\ni f(a)=0$. En donde, 
+        $$f(x)=\sum_{i=0}^n \alpha_ix^i\in F[x],\quad \alpha_0,\cdots, \alpha_n\in F$$
+    \end{cajita}  
+\end{definicion}
+
+\begin{definicion}
+    Si $F$ es un campo y $K$ es una extensión de $F$, $f(x)=\sum_{i=0}^n\alpha_ix^i \in F[x]$ y $a\in K$, entonces $f(a)=\sum_{i=0}^n\alpha_ia^i\in K$ es \textbf{el valor de } $f(x)$ en $a$. Si $f(a)=0$, entonces se dice que $a$ satisface a $f(x)$ o que $a$ es una raíz de $f(x)$.
+\end{definicion}
+
+\begin{prop}
+    Si $F$ es un campo y $K$ es una extensión de $F$, entonces $a\in K$ es algebraico sobre $F$, si existe $f(x)\in F[x]\ni f(a)=0$.
+\end{prop}
+
+\begin{prop}
+    Si $F$ es un campo, $K$ es una extensión de $F$, $a\in K$ y $\mathbb{M}=\{L:L \text{ex una extensión de $F$ y }a\in L\}$, entonces:
+    \begin{enumerate}
+        \item $\mathbb{M}\neq \varnothing$
+        \item $\bigcap \mathbb{M}\in \mathbb{M}$
+    \end{enumerate}
+    \begin{dem}
+        Tenemos
+        \begin{enumerate}
+            \item $k\in \mathbb{M}\implies \mathbb{M}\neq \varnothing$
+            \item $F\subseteq \bigcap \mathbb{M},a\in \bigcap\mathbb{M}$ y la intersección de campo es campo. 
+        \end{enumerate}
+    \end{dem}
+\end{prop}
+
+\begin{cajita}
+    \begin{nota}
+        Notación. Si $F$ es un campo, $k$ es una extensión de $F$ y $a\in K$ entonces $F(a)=\bigcap\{L: L \text{es una extensión de $F$}\ni a\in L\}$. La propiedad asegura que $F(a)\neq\varnothing$ y $F(a)$ es la extensión más pequeña de $F$ que contiene a $a$ como uno de sus elementos. En particular, $F\subseteq F(a)\subseteq K$.  
+    \end{nota}
+\end{cajita}
+
+\begin{definicion}
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $a\in K$, entonces $F(a)$ se le llama subcampo de $K$ obtenido por la adjunción de $a$.
+\end{definicion}
+
+\begin{prop}
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $a\in K$, entonces $$F(a)=\left\{\frac{f(a)}{g(a)}\ni f(x),g(x)\in F[x],g(a)\neq 0\right\}$$
+    \begin{dem}
+        Tenemos:
+        \begin{itemize}
+            \item $(\subseteq)$ Nótese que $\left\{\frac{f(a)}{g(a)}\ni f(x),g(x)\in F[x],g(a)\neq 0\right\}$ es una copia isomorfica del campo de las funciones racionales en $x$ sobre $F$, $F(x)=\left\{\frac{f(x)}{g(x)}\ni f(x),g(x)\in F[x],g(x)\neq 0\right\}$. Nótese que si $\alpha\in F\implies$ sean $f(x)=\alpha$ y $g(x)=1\in F[x]\implies f(a)=\alpha$ y $g(a)=1\implies \alpha = \frac{\alpha}{1}=\frac{f(a)}{g(a)}\in \left\{\frac{f(a)}{g(a)}\ni f(x),g(x)\in F[x] \text{y} g(a)\neq 0\right\}\implies F\subseteq \left\{\frac{f(a)}{g(a)}\ni f(x),g(x)\in F[x],g(a)\neq 0\right\} $. Sean $f(x)=x,g(x)=1\in F[x]\implies a=\frac{a}{1}=\frac{f(a)}{g(a)}\in \left\{\frac{f(a)}{g(a)}: f(x),g(x)\in F[x] \text{ y } g(a)\neq 0\right\}$ es un campo que contiene a $F$ y a $a$. $\implies F(a)\subseteq \left\{\frac{f(a)}{g(a)}\ni f(x),g(x)\in F[x],g(a)\neq 0\right\}$.
+            \item $(\supseteq)$ Sea $\frac{p(a)}{q(a)}\in \{\frac{f(a)}{g(a)}:f(x),g(x)\in F[x] \text{ y } g(a)\neq 0\}\implies \exists m,n\in\mathbb{Z}^+,\alpha_0,\cdots,\beta_0,\cdots,\beta_n\in F\ni p(x)=\sum_{i=0}^m \alpha_ix^i, g(x)=\sum_{j=0}^n\beta_jx^j,q(a)=\sum_{j=0}^n \beta_j a^j \neq 0$. Ahora bien, $a\in F(a)\implies a^x \in F(a),\forall x\in\mathbb{Z}$. Además, $F\subseteq F(a)\implies \delta\in F(a),\forall \delta \in F\implies \alpha_ia^i,\beta_ja^j\in F(a)\implies f(a)=\sum_{i=0}^m\alpha_ia^i,q(a)=\sum_{j=0}^n\beta_j a^j\in F(a)$ y como $q(a)\neq 0\implies f(a),\frac{1}{q(a)}\in F(a)\implies \frac{f(a)}{q(a)}\in F(a)\implies\left\{\frac{f(a)}{g(a)}\ni f(x),g(x)\in F[x],g(a)\neq 0\right\}\subseteq F(a)$
+        \end{itemize}
+    \end{dem}
+\end{prop}
+

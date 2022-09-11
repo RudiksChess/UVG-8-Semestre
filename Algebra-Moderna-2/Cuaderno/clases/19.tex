@@ -1,0 +1,27 @@
+Clase: 08/09/2022
+
+\begin{teorema}[5B]
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $a\in K$, entonces es algebraico sobre $F$ si y solo si, $F(a)$ es una extensión finita de $F$. 
+    \begin{dem}
+        Tenemos:
+        \begin{itemize}
+            \item $(\implies)$  Supóngase que $a$ es algebraico sobre $F\implies$ el conjunto de polinomios en $F[x]$ satisfecho por $a$ no es vacío $\implies$ sea $p(x)\in F[x]$, de grado mínimo tal que $p(a)=0$. Si existen $f(x),g(x)\in F[x]-\{0\}$ tales que $p(x)=f(x)g(x)\implies 0=p(a)=f(a)g(a)$. Pero $f(a)\in K$, que por ser campo carece de divisores de cero, $f(a)=0$ o $g(a)=0$, $gr(f)\geq gr(p)$ o $gr(g)\geq gr(p)$. Pero por otro lado, $p(x)=f(x)g(x)\implies gr(f)\leq gr(p)$ o $gr(g)\leq gr(p)\implies gr(f)=0$ o $gr(g)=0$. $\implies f(x)$ o $g(x)$ es constante en $F[x]\implies p(x)$ es irreducible sobre $F$. Por el lema 3.22 $[p(x)]$ es un ideal máxima de $F[x]\implies$ por el teorema 3.B, el cociente $F[x]/[p(x)]$ es campo. Sea $f(x)+[p(x)]\in F[x]/[p(x)]$, y por el algoritmo de la división en $F[x]$ (lema 3.17) $\exists q(x),r(x)\in F[x]\ni r(x)=0$ o $gr(r)<gr(p)\implies \exists \alpha_0,\cdots,\alpha_{gr(p)-1}\in F\ni r(x)=\sum_{i=0}^{gr(p)-1}\alpha_ix^i$, tales que $f(x)+[p(x)]=(p(x)q(x)+r(x))+[p(x)]=[p(x)q(x)+[p(x)]]+[r(x)+[p(x)]]=[p(x)]+[r(x)+[p(x)]]=r(x)+[p(x)]=\sum_{i=0}^{gr(p)-1}a_ix^i + [p(x)]=$
+            \begin{cajita}
+                $p(x)q(x)-0 = p(x)q(x)\in [p(x)]\implies p(x)q(x)\in [p(x)]\implies p(x)q(x)\equiv 0\pmod [p(x)]\implies p(x)q(x)+[p(x)]=[p(x)]$
+            \end{cajita}
+            $=\sum_{i=0}^{gr(p)-1}[\alpha_ix^i + [p(x)]]=\sum_{i=0}^{gr(p)-1}[\alpha_i+[p(x)]][x^i + [p(x)]] = \sum_{i=0}^{gr(p)-1}[\alpha_i+ [p(x)]][x+[p(x)]]^i$.
+            
+            \begin{cajita}
+                El intento fallido. 
+                Sea $\psi: F[x]/[p(x)]\to F(a)\ni \psi(f(x)+[p(x)])=f(a)$. Si $f(x)+[p(x)], g(x)+[p(x)]\in F[x]/[p(x)]\ni f(x)+[p(x)]=g(x)+[p(x)]\implies f(x)\equiv g(x)\pmod (p(x))\implies f(x)-g(x)\in [p(x)]\implies \exists q(x)\in F[x]\ni p(x)q(x)=f(x)-q(x)\implies f(x)=g(x)+p(x)q(x)\implies f(a)=\psi[f(x)+[p(x)]]=\psi[(g(x)+p(x)+q(x))+[p(x)]]=g(a)+p(a)q(a) = g(a)+0q(a)=q(a)=\psi(g(x)+[p(x)])\implies \psi$ es una función bien definida. \break 
+                
+                Además, $\psi[f(x)+[p(x)]]+[g(x)+[p(x)]]=\psi[(f(x)+g(x))+[p(x)]]=f(a)+g(a)=\psi[f(x)+[p(x)]]+\psi[g(x)+[p(x)]]$ y $\psi[f(x)+[p(x)]][g(x)+[g(x)]]=\psi[f(x)g(x)+[p(x)]]=f(a)g(a)=\psi[f(x)+[p(x)]]\psi[g(x)+[p(x)]]\implies \psi$ es un homomorfismo. 
+
+            \end{cajita}
+
+            Sea $\psi:F[x]\to \psi(F[x])$ es homomorfismo sobreyectivo $\implies$ por el primer teorema de isomorfismos (3A), $F[x]/K_\psi\approx \psi(F[x])$. Ahora bien, $p(x)\in K_\psi\implies (p(x))\subseteq K_\psi\implies [p(x)]\subseteq K_\psi \subseteq F[x]$, pero siendo $[p(x)]$ un ideal maximal de $F[x]$ y claramente $K_\psi \neq F[x]\implies K_\psi =[p(x)]\implies F[x]/[p(x)]\approx \psi(F[x])\implies \psi (F[x])$ es un campo $\implies F(a)$ es una extensión de $\psi(F[x])$. Explicitando el isomorfismo de la relación $F[x]/[p(x)]\approx \psi(F[x])$, como $\phi: F[x]/[p(x)]\to \psi(F[x])\ni \phi[f(x)+[p(x)]]=\psi[f(x)]=f(a)$, isomorfismo. Entonces, nótese que $\phi(\alpha_i+[p(x)])=\alpha,\forall \alpha \in F\implies F\subseteq \psi(F[x])$. Además, $\phi(x+[p(x)])=a\implies a +\psi(F[x])\implies \psi(F[x])$ es una extensión de $F$ y $a\in \psi(F[x])\implies F(a)\subseteq \psi(F[x])$. Por lo tanto, $F(a)=\psi(F[x])\approx F[x]/[p(x)]$. Pero se había demostrado que $f(x)+[p(x)]=\sum_{i=0}^{gr(p)-1}(\alpha_i +[p(x)])(x+[p(x)])^i$, pero $\alpha_i+[p(x)]\approx \alpha_i$ y $x+[p(x)]\approx a\implies f(x)+[p(x)] = \sum_{i=0}^{gr(p)-1}[\alpha_i + [p(x)]][x+[p(x)]]^i\approx \sum_{i=0}^{gr(p)-1}\alpha_ia^i$ con $\alpha_0,\cdots,\alpha_{gr(p)-1}\in F\implies F(a)\approx F[x]/[p(a)]=\langle \{1,\cdots, a^{gr(p)-1}\}\rangle_F$. Pero además, si $\beta_0,\cdots \beta_{gr(p)-1}\in F\ni \sum_{i=0}^{gr(p)-1}\beta_ia^i=0\implies h(x)=\sum_{i=0}^{gr(p)-1}\beta_i x^i\in F[x]$, de grado a lo más $gr(p)=1$ y satisfecho por $a\implies h(x)=0\implies \beta_0=\cdots =\beta_{gr(p)-1}=0\implies \{1,\cdots,a^{gr(p)-1}\}$ es l.i en $F(a)$ sobre $F\implies [F(a):F]=gr(p)\in \mathbb{Z}^+$
+            \item $(\impliedby)$
+    
+        \end{itemize}
+    \end{dem}
+\end{teorema}

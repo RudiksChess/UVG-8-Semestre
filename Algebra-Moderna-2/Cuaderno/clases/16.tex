@@ -1,0 +1,47 @@
+Clase: 30/08/2022
+
+\begin{ejemplo}
+    El teorema 3.E muestra que todo anillo euclideano es un dominio de factorización única. 
+\end{ejemplo}
+
+\begin{lema}[3.25]
+    Si $R$ es un dominio de factorización única, $r_1,r_2\in R$ entonces $r_1$ y $r_2$ tienen un único (salvo asociación) máximo común divisor $(r_1,r_2)\in R$. Además, si $r_1$ y $r_2$ son primos relativos $r_1|r_2r_3$, entonces $r_1|r_3$.
+    \begin{dem}
+        Si $r_1$ o $r_2$ son unidades, entonces $(r_1,r_2)=1$ (salvo asociación). Si $r_1$ y $r_2$ no son unidades de $R\implies \exists p_1,\cdots, p_m,q_1,\cdots,q_j\in R$, elementos primos de $R$, $m,n\in\mathbb{Z}^+\ni r_1=\prod_{i=1}^{m}p_i^{\alpha_i}$ y $r_2=\prod_{j=1}^n q_j^{\beta_j}, \alpha_i,\beta_j\in\mathbb{Z}^+$ las factorizaciones primas únicas de $r_1$ y $r_2$ en $R$. Sea $S=\{p_1,\cdots, p_m\}\cap \{q_1,\cdots,q_n\}$. Si $S=\varnothing\implies (r_1,r_2)=1$. Si $S=\{s_1,\cdots,s_k\}\implies \prod_{l=1}^k s_l^{\delta_l}$, donde $s_l=p_{i_l}=q_{j_l}$ y $\delta_l=\min\{\alpha_{i_l},\beta_{j_l}\}\implies \prod_{l=1}^k s_l^{\delta_l}|r_1$ y $\prod_{l=1}^k s_l^{\delta_l}|r_2$. Sea $d\in R\ni d|r_1$ y $d|r_2\implies$ sea $d=\prod_{h=1}^{t}a_h^{\gamma_h}$, la factorización prima de $d$ en $R$. Es decir, $a_n$ son elementos primos de $R$ y $\gamma_n\in\mathbb{Z}^+$. Pero $a_{h^k}|\prod_{k=1}^{t}a_h^{\gamma_n}=d|r_1=\prod_{i=1}^m p_i^{\alpha_i}\implies \exists \sigma \in R\ni a_{h}\sigma =\prod_{i=1}^m p_i^{\alpha_i}$. Sea $\alpha =\prod_{g=1}^\tau \pi_g^{\nu_g}\implies a_n\prod_{g=1}^\tau \pi_g^{\nu_g}=\prod_{i=1}^m p_i^{\alpha_i}\implies$ por la unicidad de las factorizaciones primas en $R$, debe existir $i_n,1\leq i-h\leq m\ni a_h=p_{i_n}$. De igual forma $a_n|\prod_{k=1}^t a_n^{\gamma_n}=d|r_2=\prod_{j=1}^n q_j^{\beta_j}\implies \exists j_n,1\leq j_n\leq n\ni a_h=q_{j_n}\implies a_h\in S\implies d|\prod_{g=1}^ks_l^{\delta_l}\implies (r_1,r_2)=\prod_{l=1}^k s_l^{s_l}$, el cual es único en $R$ porque se construyó a partir de la factorización única de $r_1$ y $r_2$. Ahora, si $r_1$ y $r_2$ son primos relativos $\implies (r_1,r_2)=1$. Además, si $r_3=\prod_{z=1}^\phi c_z^{\psi_z}$, la factorización prima única de $r_3$ en $R\implies \prod_{i=1}^mp_i^{\alpha_i}|\left(\prod_{j=1}^m q_j^{\beta_j}\right)\left(\prod_{z=1}^{\phi}c_z^{\psi_z}\right)\implies $ por la unicidad de las factorizaciones primas en  $R$, cada $p_i$ debe coincidir cib algún elemento primo de $R$ en la lista $q_1,\cdots,q_n,c_1,\cdots,c_1\phi$. Pero como $(r_1,r_2)=1\implies \{p_i\}\cap \{q_1,\cdots,q_n\}=\varnothing\implies p_i\in\{c_1,\cdots, c_\phi\}\implies r_1=\prod_{i=1}^mp_i^{\alpha_i}|\prod_{z=1}^{\phi}c_z^{\phi_z}=r_3$.
+       \end{dem} 
+\end{lema}
+
+\begin{corolario}
+    Si $R$ es un dominio de factorización única $p,r_1,r_2\in R$, $p$ elemento primo de $R$ y $p|r_1r_2$, entonces $p|r_1$ o $p|r_2$. 
+    \begin{dem}
+        Si $p|r_1$ y $p|r_2$, el corolario es válido. Si $p\not |r_1\implies (p,r_1)=1\implies$ por el lema 3.25, $p|r_2$. El caso restante es simétrico. 
+    \end{dem}
+\end{corolario}
+
+\begin{lema}[3.26]
+    Si $R$ es un dominio de factorización única, entonces el producto de dos polinomios primitivos en $R[x]$ es también primitivo en $R[x]$.
+    \begin{dem}
+        Por la unicidad de la factorización prima en $R$, la existencia y unicidad de los máximos comunes divisores en $R$, garantizado por el lema 3.25 y por la propiedad de divisibilidad demostrada también el lema 3.25, los argumentos del lema 3.23, válido para $\mathbb{Z}[x]$, son también válidos para $R[x]$. 
+    \end{dem} 
+\end{lema}
+
+\begin{corolario}
+    Si $R$ es un dominio de factorización única y $f(x),g(x)\in R[x]$, entonces $c(fg)=c(f)c(g)$, salvo asociación.
+    \begin{dem}
+        Sea $f(x)=c(f)f_1(x)$ y $g(x)=c(g)g_1(x)$, con $f_1(x),g_1(x)$ primitivos en $R[x]\implies f(x)g(x)=(c(f))f_1(x)(c(g)g_1(x))=(c(f)c(g))f_1(x)g_1(x)\implies$ por el teorema 2.26 $f_1(x)g_1(x)$ es primitivo en $R[x]\implies c(f)c(g)$ es el contenido de $(c(f)c(g))f_1(x)g(x)=f(x)g(x)\implies c(f)c(g)=c(fg)$.
+    \end{dem}
+\end{corolario}
+\begin{corolario}
+    Si $R$ es dominio de factorización única $f_1(x),\cdots f_n(x)\in R[x]$, entonces $c(f_1,\cdots,f_n)=\prod_{i=1}^nc(f_i)$, excepto asociación.
+\end{corolario}
+
+\begin{lema}[3.27]
+    Si $R$ es un dominio de factorización única, $f(x)\in R[x]$ es primitivo y $F$ es el campo de cocientes de $R$. Entonces, $f(x)$ es irreducible en $R[x]$ si y solo si, $f(x)$ es irreducible en $F[x]$.
+    \begin{dem}
+        Tenemos 
+        \begin{itemize}
+            \item ($\implies$) si $f(x)$ es irreducible sobre $R$, pero $\exists g(x),h(x)\in F[x]\ni gr(g)>0$ y $gr(h)>0\ni f(x)=g(x)h(x)\implies \exists a,b\in R-\{0\},g_1(x),h_1(x)\in R[x]\ni g(x)=\frac{1}{a}g_1(x)$ y $h(x)=\frac{1}{b}h_1(x)\implies abf(x)=g_1(x)h_1(x)$. Además, $\exists g_2(x),h_2(x)\in R[x]$, primitivos $\ni g_1(x)=c(g_1)g_2(x)$ y $h_1(x)=c(h_1)h_2(x)\implies abf(x)=c(g_1)c(h_1)g_2(x)h_2(x)$ por el lema 3.26, $g_2(x)$ es primitivo y $c(g_1)c(h_1)$ es el contenido de $c(g_1)c(g_2)g_2(x)h_2(x)=abf(x)$ y $f(x)$ es primitivo en $R[x]$, $ab$ es el contenido de $abf(x)\implies c(g_1)c(g_2)=ab\implies f(x)=g_2(x)h_2(x)$. Pero $gr(g_2)=gr(g)>0$ y $gr(h_2)=gr(h_1)=gr(h)>0\implies f(x)$ no es irreducible. $(\to\gets) f(x)$ es irreducible sobre $F$.
+            \item $(\impliedby)$ Si $f(x)$ es irreducible sobre $F$, pero existen $g(x),h(x)\in R[x]\ni gr(g)>0,gr(h)>0$ y $f(x)=g(x)h(x)$, como $R\subseteq F\implies R[x]\subseteq F[x]\implies g(x),h(x)\in F[x], f(x)$ no es irreducible $(\to\gets) f(x)$ es irreducible sobre $R$. 
+        \end{itemize}
+    \end{dem}
+\end{lema}

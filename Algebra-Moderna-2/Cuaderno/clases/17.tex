@@ -1,0 +1,64 @@
+Clase: 01/09/2022
+
+\begin{lema}[3.28]
+    Si $R$ es un dominio es un dominio de factorización única y $p(x)\in R[x]$ es primitivo, entonces $p(x)$ puede factorizarse de manera única como producto de polinomios irreducibles en $R[x]$.
+    \begin{dem}
+        Sea $F$ el campo de cocientes de $R\implies R\subseteq F\implies R[x]\subseteq F[x]\implies p(x)\in F[x]\implies$ por el lema 3.21, $\exists p_1(x),\cdots, p_n(x)\in F[x]$, irreducibles sobre $F$, $n\in\mathbb{Z}^+,$ únicos salvo asociación $\ni p(x)=\prod_{i=1}^n p_i(x)$. 
+
+        \begin{cajita}
+            $p_i(x)\in F[x]$, $p_i(x)$ es irreducible sobre $F$. 
+            $$p_i(x)=\sum_{j=0}^m\frac{a_j}{b_j}x^j,\quad a_j,b_j\in R,b_j\neq0$$
+            Además, 
+            \begin{align*}
+                p_i(x) & =\sum_{j=0}^m\frac{a_j}{b_j}x^j\\
+                &= 1\cdot\sum_{j=0}^m\frac{a_j}{b_j}x^j\\ 
+                &=\frac{\prod_{i=0}^m b_j}{\prod_{j=0}^m b_j}\sum_{j=0}^m \frac{a_j}{b_j}x^j\\
+                &= \frac{1}{\prod_{j=0}^{m}b_j}a_j\left(\prod_{k\neq j}b_j\right)x^j
+            \end{align*}
+           Por el lema 3.25 $\exists q_i(x)\in R[x]$ primitivo sobre $R$, irreducible sobre $F$ tal que: 
+           $$p_i(x)=\frac{\left(a_0(\prod_{j\neq 0}b_j),\cdots,a_m(\prod_{j\neq m}b_j)\right)}{\prod_{j=0}^m b_j}q_i(x)$$
+        \end{cajita}
+        Entonces para cada $p_i(x)$, $\exists f_i(x)\in R[x]$ y $b\in R-\{0\}\ni p_i(x)=\frac{1}{b}f_i(x)$ y $f_i(x)$ es irreducible sobre $F$. Además, para cada $f_i(x),\exists q_i(x)\in R[x]$, primitivo en $R[x]$, irreducible sobre $F\ni p_i(x)=\frac{c(f_i)}{b_i}q_i(x)\implies$ por el lema 3.27, $q_i(x)$ es irreducible sobre $R$. Pero $p(x)=\prod_{i=1}^n p_i(x)=\prod_{i=1}^n \frac{c(f_i)}{b_i}q_i(x)=\left(\prod_{i=1}^{n}\frac{c(f_i)}{b_i}\right)\left(\prod_{i=1}^n q_i(x)\right)$. Ahora bien, por el lema 3.23, $\prod_{i=1}^n q_i(x)$ es primitivo en $R[x]\implies$ el contenido de $\left(\prod_{i=1}^n \frac{c(f_i)}{b_i}\right)\left(\prod_{i=1}^n q_i(x)\right)$ es $\prod_{i=1}^n \frac{c(f_i)}{b_i}$ y también debe ser igual al contenido de $p(x)$, que por ser primitivo $1=c(p)=\prod_{i=1}^n \frac{c(f_i)}{b_i}\implies p(x)=\prod_{i=1}^nq_i(x)$. La unicidad, salvo asociación, de los $q_i(x)$, se deriva de la unicidad de los $p_i(x)$.  
+    \end{dem}
+\end{lema}
+
+\begin{teorema}[3K]
+    Si $R$ es un dominio de factorización única, entonces $R[x]$ es un dominio de factorización única. 
+    \begin{dem}
+        Por el lema 3.24, $R[x]$ es un dominio entero, y como $R$ tiene elemento neutro multiplicativo, este lo es también de $R[x]$. Sea $f(x)\in R[x]-\{0\}\implies \exists f_1(x)\in R[x]-\{0\}$, primitivo sobre $R\ni f(x)=c(f)f_1(x)\implies$ por el teorema 3.28 $\exists p_1(x),\cdots, p_n(x)\in R[x],n\in\mathbb{Z}^+,$ todos irreducibles sobre $R$, únicos salvo asociación $\ni f_i(x)=\prod_{i=1}^n p_i(x)\implies f(x)=c(f)f_1(x)=c(f)\prod_{i=1}^np_i(x)$. Si $\exists q_1(x),\cdots, q_m(x)\in R[x]\ni c(f)=\prod_{i=1}^m q_i(x)\implies 0=gr(c(f))=\underbrace{\sum_{i=1}^m gr(q_i)}_{\text{lema 2.17}}\implies gr(q_i)=0\implies q_i(x)$ son polinomios constantes $\implies$ la única factorización de $c(f)$ como elemento de $R[x]$ es la misma factorización que tiene como elemento de $R$, la cual también es única $\implies R[x]$ es un dominio de factorización única.
+    \end{dem}
+\end{teorema}
+
+\begin{corolario}
+    Si $R$ es un dominio de factorización única, entonces $R[x_1,\cdots,x_n]$ es también un dominio de factorización única. 
+    \begin{dem}
+        Aplicación sucesiva del teorema 3k en la definición de $R[x_1,\cdots,x_n]$.
+    \end{dem}
+\end{corolario}
+
+\begin{corolario}
+    Si $F$ es un campo, entonces $F[x_1,\cdots,x_n]$ es un dominio de factorización única. 
+    \begin{dem}
+        $F$ es un dominio de factorización única. 
+    \end{dem}
+\end{corolario}
+
+
+\section{Teoría de campos}
+\begin{definicion}
+    Si $F$ es un campo, un campo $K$ es una extensión de $F$ si $F\subseteq K$, es decir, si $F$ es un subcampo de $K$.
+\end{definicion}
+
+\begin{definicion}
+    Si $F$ es un campo y $K$ es una extensión de $F$, entonces el grado de $K$ sobre $F$ es la dimensión de $K$ como espacio vectorial sobre $F$. 
+    \begin{cajita}
+        $[K:F]$, el grado de $K$ sobre $F$. Si $[K:F]\in\mathbb{Z}^+$, entonces $K$ se dice que una extensión finita de $F$.  
+    \end{cajita}
+\end{definicion}
+
+\begin{teorema}[5A]
+    Si $L$ es una extensión finita del campo $K$ y $K$ es una extensión finita del campo $F$, entonces $L$ es una extensión finita de $F$, $[L:F]=[L:K][K:F]$
+    \begin{dem}
+        Sea $\{l_1,\cdots,l_{[L:K]}\}$ una base de $L$ sobre $K$ y $\{k,\cdots,k_{[K:F]}\}$ una base de $K$ sobre $F$. Sea ahora $l\in L\implies \exists \alpha_1,\cdots, \alpha_{[L:K]}\in K \ni l = \sum_{i=1}^{[L:k]}\alpha_il_i$, pero para cada $i\exists \beta_1,\cdots, \beta_{[L_k]}\in F\ni \alpha_i=\sum_{j=1}^{[L:K]}\beta_jk_j\implies l=\sum_{i=1}^{}$
+    \end{dem}
+\end{teorema}

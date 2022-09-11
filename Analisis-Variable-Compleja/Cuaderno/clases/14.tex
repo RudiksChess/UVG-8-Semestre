@@ -1,0 +1,55 @@
+Clase: 08/09/2022
+
+\begin{problema}[FIC]
+    Sea $f$ analítica sobre una región $A\subseteq \mathbb{C}$, $\gamma$ una curva cerrada en $A$ que es homotópica a un punto, y $z_0\in A\ni z_0\not\in \gamma$. Entonces, 
+    $$f(z_0)\cdot I(\gamma;z_0)= \frac{1}{2\pi i}\int\frac{f(z)}{z-z_0}dz$$
+    \begin{dem}
+        Sea
+        \begin{align*}
+            \int \frac{f(z)}{z-z_0}dz &= \int_\gamma \frac{f(z)-f(z_0)+f(z_0)}{z-z_0}dz\\
+            &= \int_\gamma \frac{f(z)-f(z_0)}{z-z_0}+f(z_0)\int_\gamma \frac{dz}{z-z_0}\\
+            &= \int_\gamma \frac{f(z)-f(z_0)}{z-z_0}dz +f(z_0)(2\pi i)I(\gamma; z_0)
+        \end{align*}
+        A probar: $$\int_\gamma \frac{f(z)-f(z_0)}{z-z_0}dz=0$$
+        \begin{cajita}
+            Recordemos que, si $f$ es analítica sobre $A$, entonces: 
+            $$f(z)=f(z_0)+f'(z_0)(z-z_0)+\eta(z-z_0),$$
+            donde $\eta \to 0$, cuando $z\to z_0$
+            $$\iff \eta =\frac{f(z)-f(z_0)}{z-z_0}-f'(z_0)$$
+        \end{cajita}
+        \begin{align*}
+            \int_\gamma \frac{f(z)-f(z_0)}{z-z_0} &= \underbrace{\int_\gamma f'(z_0)dz}_{0, TFC}+\int_\gamma \eta dz\\
+            &= 0 +\int_\gamma \eta dz
+        \end{align*}
+        Sea $\tilde{\gamma}$ una curva cerrada, homotópica a $\gamma$ y para $\delta>0$, $\tilde{\gamma}$ debe estar contenida en $B=\{z: |z-z_0|<\delta \}$ para cada $\varepsilon >0$. Para los elementos de $B$, en particular para los puntos de $\tilde{\gamma}$, se tiene que $|\eta| < \varepsilon$, donde $\delta=\delta(\varepsilon)$. Entonces, por M-L, 
+        $$\int_\gamma \eta dz = 0.$$
+    \end{dem}
+\end{problema}
+
+\begin{teorema}[FIC, para derivadas]
+    Sea $f$ analítica sobre una región $A$. Entonces, existen todas las derivadas de $f$ sobre $A$. Además, para $z_0\in A$ y cualquier $\gamma$, curva cerrada y homotópica a un punto sobre $A\ni z_0\not\in \gamma$, entonces: 
+    $$f^{(k)}(z_0)\cdot I(\gamma;z_0)=\frac{k!}{2\pi i}\int_\gamma \frac{f(\psi)}{(\psi -z_0)^{k+1}}d\psi $$
+\end{teorema}
+
+\begin{prop}[Desigualdades de Cauchy]
+    Sea $f$ analítica sobre una región $A$ y $\gamma$ un círculo simple en $A$ con radio $R$ y centro en $z_0$. Suponga que 
+    $D=\{z: |z-z_0|<R\}$ también está en $A$. Asuma qeu $|f(z)|\leq M,\forall z\in \gamma,z_0\not\in \gamma$. Entonces, 
+    $$|f^{(k)}(z_0)|\leq \frac{k!}{R^k}M,\quad k=0,1,2,\cdots$$
+    \begin{dem}
+        Sea 
+        \begin{align*}
+            |f^{(k)}(z_0)| &= \left|\frac{k!}{2\pi i}\right|\cdot \left|\int_\gamma \frac{f(\psi)}{(\psi -z_0)^{k+1}}d\psi\right|.
+        \end{align*}
+        Como 
+        $$\left| \frac{f(\psi)}{(\psi -z_0)^{k+1}}\right|\leq \left| \frac{M}{(\psi -z_0)^{k+1}}\right|\leq \frac{M}{|\psi -z_0|^{k+1}}=\frac{M}{R^{k+1}}$$
+        Entonces, por ML, $|f^{(k)}(z_0)|\leq \frac{k!}{2\pi}\cdots \frac{M}{R^{k+1}}\cdot 2\pi R=\frac{k!M}{R^k}$
+    \end{dem}
+\end{prop}
+
+\begin{teorema}(Liouville)
+    Si $f$ es una función entera y si $\exists M\geq0\ni |f(z)|\leq M,\forall z\in \mathbb{C}$, entonces $f$ es constante. 
+    \begin{dem}
+        Sabemos que, para cualquier circulo de radio $R$ y centro en $z_0\in \mathbb{C}$, se tiene que $|f'(z_0)|\leq M/R \to_{R\to \infty}0\implies f'(z_0)=0$. Como $\mathbb{C}$ es conexo, entonces $f$ es constante.  
+
+    \end{dem}
+\end{teorema}

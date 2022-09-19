@@ -1,0 +1,231 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+\begin{problema}
+    Sea $\gamma$ la frontera del cuadrado cuyos lados están sobre las líneas $x=\pm 2$ y $ y=\pm 2$. Evalúe las integrales siguientes:
+    \begin{enumerate}
+        \item $\int_\gamma \frac{e^{-z} d z}{z-(\pi i / 2)}$
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma \frac{e^{-z}}{z-(\frac{\pi}{2}i)}dz &= f\left(\frac{\pi}{2}i\right)\cdot 2\pi i\\
+                &= e^{-\frac{\pi}{2}i}\cdot 2\pi i\\
+                &= \left[\cos\left(-\frac{\pi}{2}\right)+ i \sin\left(-\frac{\pi}{2}\right)\right]\cdot 2\pi i\\
+                &= \left[0+ -1\right]\cdot 2\pi i\\
+                &= \left[0+ -1 i\right]\cdot 2\pi i\\
+                &= -2\pi i^2\\
+                &= 2\pi
+            \end{align*}
+        \end{sol}
+        \item $\int_\gamma \frac{z d z}{2 z+1}$
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma \frac{z}{2 z+1} dz &= \int_\gamma \frac{\frac{1}{2}z}{z-\left(-\frac{1}{2}\right)} dz\\
+                &= f(-1/2)\cdot 2\pi i\\
+                &= -\frac{1}{4}\cdot 2\pi i\\
+                &= -\frac{\pi i}{2}
+            \end{align*}
+        \end{sol}
+        \item $\int_\gamma \frac{\cos z }{z\left(z^2+8\right)}dz$
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma\frac{\cos z }{z\left(z^2+8\right)}dz &=  \int_\gamma\frac{\frac{\cos z}{z^2+8}}{z-0}dz\\
+                &= f(0)\cdot 2\pi i\\
+                &= \frac{\cos 0}{0^2+8}\cdot 2\pi i\\
+                &= \frac{1}{4}\pi i
+            \end{align*}
+        \end{sol}
+        \item $\int_\gamma \frac{\cosh z d z}{z^4}$
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma \frac{\cosh z}{z^4}dz &= \int_\gamma \frac{\cosh z}{(z-0)^{3+1}}dz\\
+                &= \frac{2\pi i \cdot f^{(3)}(0)}{3!}\\
+                &=\frac{2\pi i \cdot \sinh(0)}{3!}\\
+                &=\frac{2\pi i \cdot 0}{3!}\\
+                &= 0
+            \end{align*}
+        \end{sol}
+    \end{enumerate}
+\end{problema}
+
+
+\begin{problema}
+    Calcule las integrales a continuación:
+    \begin{enumerate}
+        \item $\int_\gamma \frac{d z}{z}, \gamma(t)=\cos t+2 i \sen t, 0 \leq t \leq 2 \pi$
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma \frac{1}{z}dz &= \int_\gamma \frac{1}{z-0}dz \\
+                &=f(0)\cdot 2\pi i\\
+                &= 2\pi i
+            \end{align*}
+        \end{sol}
+        \item $\int_\gamma \frac{d z}{z^2}, \gamma(t)=\cos t+2 i\sen t, 0 \leq t \leq 2 \pi$
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma \frac{1}{z^2}dz &= \int_\gamma \frac{1}{(z-0)^{1+1}}dz\\
+                &= \frac{f^{(1)}(0)\cdot 2\pi i}{1!}\\
+                &= 0
+            \end{align*}
+        \end{sol}
+        \item $\int_\gamma \frac{e^z d z}{z}, \gamma(t)=2+e^{i t}, 0 \leq t \leq 2 \pi$
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma \frac{e^z }{z}dz &= \int_\gamma \frac{e^z }{z-0}dz\\
+                &= 0
+            \end{align*}
+            Es 0, porque $z_0=0\in \gamma$ y entonces no se cumple el teorema. 
+        \end{sol}
+        \item $\int_\gamma \frac{d z}{z^2-1}, \gamma(t)$ es el círculo de radio 1 y centrado en 1
+        \begin{sol}
+            Sea
+            \begin{align*}
+                \int_\gamma \frac{1}{z^2-1}dz &= \int_\gamma \frac{1}{(z-1)(z+1)}dz
+                \intertext{\begin{cajita}
+                    \begin{align*}
+                        \frac{1}{(z-1)(z+1)} &= \frac{A}{z-1}+\frac{B}{z+1}\\
+                        1&= A(z+1)+B(z-1)\\
+                         &= Az+A+Bz-B\\
+                         &= (A+B)z+(A-B)
+                    \end{align*}
+                    Entonces $A+B = 0$ y $A-B=1\implies A=1+B$. Es decir 
+                    $$(1+B)+B=0\implies B=\frac{-1}{2} $$
+                    $$A=\frac{1}{2}$$
+                \end{cajita}}
+                &= \int_\gamma \left[\frac{1}{2(z-1)}-\frac{1}{2(z+1)}\right]dz\\
+                &= \int_\gamma \left[\frac{\frac{1}{2}}{(z-1)}-\frac{\frac{1}{2}}{(z+1)}\right]dz\\
+                &= \int_\gamma \frac{\frac{1}{2}}{(z-1)}dz-\int_\gamma\frac{\frac{1}{2}}{(z-(-1))}dz\\
+                &= f(1)\cdot 2\pi i - 0\\
+                &= \pi i
+            \end{align*}
+        \end{sol}
+    \end{enumerate}
+\end{problema}
+
+\begin{problema}
+    Demuestre que la longitud de arco de una curva $\gamma$ es invariante bajo reparametrizaciones.
+    \begin{cajita}
+        \begin{definicion}
+            Sea $\gamma:[a, b] \rightarrow \mathbb{C}$ una curva $C^1-$ por tramos. Una curva suave $\left(C^1-\right)$ por tramos $\tilde{\gamma}:[\tilde{a}, \tilde{b}] \rightarrow \mathbb{C}$ es una reparametrización de $\gamma$ si $\exists$ una función $C^1, \alpha:[a, b] \rightarrow[\tilde{a}, \tilde{b}] \ni \alpha^{\prime}(t)>0, \alpha(a)=\tilde{a}, \alpha(b)=\tilde{b}$ y $\gamma(t)=\tilde{\gamma}(\alpha(t))$
+        \end{definicion}
+    \end{cajita}
+    \begin{dem}
+        Sea $\gamma:[a,b]\to\mathbb{C}$ una curva, definida como $\gamma(t)=x(t)+iy(t)$ en donde la longitud de arco definida como: 
+        $$L=\int_a^b\sqrt{[x'(t)]^2+[y'(t)]^2} dt = \int_a^b|\gamma'(t)| dt $$, 
+        y sea $\alpha:[a,b]\to [\tilde{a},\tilde{b}]\ni \alpha'(t)>0,\alpha(a)=\tilde{a},\alpha(b)=\tilde{b}$ tal que $\gamma(t)=\tilde{\gamma}(\alpha(t))$; tal que $\tilde{\gamma}(t)= x(\alpha(t))+iy(\alpha(t))$ en donde su la longitud de arco está definido como: 
+        $$L=\int_{\tilde{a}}^{\tilde{b}}\sqrt{[x'(\alpha(t))]^2+[y'(\alpha(t))]^2}dt=\int_{\tilde{a}}^{\tilde{b}}|\tilde{\gamma}'(\alpha(t))\cdot \alpha'(t)| dt $$
+        Es decir que debemos probar que: 
+
+        $$ \int_a^b|\gamma'(t)| dt=\int_{\tilde{a}}^{\tilde{b}}|\tilde{\gamma}'(\alpha(t))\cdot \alpha'(t)| dt,$$
+        nótese que $\tilde{\gamma}$ es una reparametrización de $\gamma$ y por proposición \textbf{demostrada en clase}, podemos concluir que la igualdad se cumple. Por lo tanto, la longitud de arco de una curva $\gamma$ es invariante bajo reparametrizaciones.
+    \end{dem}
+\end{problema}
+
+
+\begin{problema}
+    Muestre que si $f$ es analítica sobre y en el interior de la curva $\gamma$ y $z_0 \notin \gamma$, entonces
+$$
+\int_\gamma \frac{f^{\prime}(z) d z}{z-z_0}=\int_\gamma \frac{f(z) d z}{\left(z-z_0\right)^2}
+$$
+\begin{dem}
+    Tenemos: 
+    \begin{itemize}
+        \item Si $z_0$ está afuera de la región, entonces ambas integrales son cero y la igualdad se cumple.
+        \item Si $z_0$ está dentro de la región. Tenemos por FIC
+        \begin{align*}
+            \int_\gamma \frac{f^{\prime}(z) d z}{z-z_0}&= f'(z_0)\cdot 2\pi i\\
+        \end{align*}
+        y por otra parte por FIC para derivadas 
+        \begin{align*}
+            \int_\gamma \frac{f(z) d z}{\left(z-z_0\right)^2} &= \int_\gamma \frac{f(z) d z}{\left(z-z_0\right)^{1+1}} = \frac{f^{\prime}(z_0)\cdot 2\pi i }{1!}=f^{\prime}(z_0)\cdot 2\pi i 
+            \end{align*}
+        Por lo tanto, 
+        $$
+    \int_\gamma \frac{f^{\prime}(z) d z}{z-z_0}=\int_\gamma \frac{f(z) d z}{\left(z-z_0\right)^2}
+    $$
+    \end{itemize}
+    
+\end{dem}
+\end{problema}
+
+\begin{problema}
+    Sean $\gamma_1$ y $\gamma_2$ círculos centrados en el origen y de radios 1 y 2 , respectivamente. Compruebe que
+$$
+\int_{\gamma_1} \frac{d z}{z^3\left(z^2+10\right)}=\int_{\gamma_2} \frac{d z}{z^3\left(z^2+10\right)}
+$$
+    \begin{dem}
+        Sea
+        \begin{itemize}
+            \item Primera igualdad \begin{align*}
+                \int_{\gamma_1} \frac{d z}{z^3\left(z^2+10\right)} &= \int_{\gamma_1} \frac{\frac{1}{\left(z^2+10\right)}}{z^3}dz\\
+                &= \int_{\gamma_1} \frac{\frac{1}{\left(z^2+10\right)}}{(z-0)^{2+1}}dz\\
+                &= \frac{f^{(2)}(0)\cdot 2\pi i}{2!}
+            \end{align*}
+            \item Segunda igualdad \begin{align*}
+                \int_{\gamma_2} \frac{d z}{z^3\left(z^2+10\right)} &= \int_{\gamma_2} \frac{\frac{1}{\left(z^2+10\right)}}{z^3}dz\\
+                &= \int_{\gamma_2} \frac{\frac{1}{\left(z^2+10\right)}}{(z-0)^{2+1}}dz\\
+                &= \frac{f^{(2)}(0)\cdot 2\pi i}{2!}
+            \end{align*}
+        \end{itemize}
+        Por lo tanto, 
+        $$
+\int_{\gamma_1} \frac{d z}{z^3\left(z^2+10\right)}=\int_{\gamma_2} \frac{d z}{z^3\left(z^2+10\right)}
+$$
+    \end{dem}
+\end{problema}
+
+\begin{problema}
+    Evalúe $\int_\gamma \frac{2 z^2-15 z+30}{z^3-10 z^2+32 z-32} d z$, donde $\gamma$ es el círculo $|z|=3$.
+    \begin{sol}
+        Sea
+        \begin{cajita}
+            Tenemos
+            \begin{align*}
+                z^3-10 z^2+32 z-32 &= \frac{(z-2)( z^3-10 z^2+32 z-32)}{(z-2)}\\
+                &= (z-2)( z^2-8z+16)\\
+                &= (z-2)(z-4)^2
+            \end{align*}
+        \end{cajita}
+        \begin{align*}
+            \int_\gamma \frac{2 z^2-15 z+30}{z^3-10 z^2+32 z-32} d z &= \int_\gamma \frac{2 z^2-15 z+30}{(z-2)(z-4)^2} d z\\
+            &= \int_\gamma \frac{\frac{2 z^2-15 z+30}{(z-4)^2}}{(z-2)} d z
+            \intertext{Usando el FIC:}
+            &= f(2)\cdot2\pi i\\
+            &= \frac{2 (2)^2-15 (2)+30}{((2)-4)^2}\cdot 2\pi i\\
+            &= \frac{8}{4}\cdot 2\pi i\\
+            &= 4\pi i
+        \end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Suponga que $f(z)$ es una función entera y que la función armónica $u(x, y)=\operatorname{Re}[f(z)]$ tiene cota superior $u_0$. Demuestre que $u(x, y)$ es constante sobre el plano.
+   \begin{dem}
+    Primero, proponemos una función entera $h(z)=e^z$, la cual probaremos que es constante por Liouville. Sea entonces, 
+    \begin{align*} |h(z)| &= |e^{f(z)}| = \left|e^{\operatorname{Re}[f(z)]+i\operatorname{Im}[f(z)]}\right| =  \left|e^{\operatorname{Re}[f(z)]}e^{i\operatorname{Im}[f(z)]}\right|\\
+        &= |e^{\textup{Re}\,f(z)} (\cos\operatorname{Im}\,f(z) +i\sin \operatorname{Im}\,f(z))| \\ &= |e^{\textup{Re}\,f(z)}| \cdot |\cos \operatorname{Im}\,f(z) +i\sin \operatorname{Im}\,f(z)| \\ &= e^{u(x,y)} \sqrt{\cos^2\operatorname{Im}\,f(z) + \sin^2\textup{Im}\,f(z)}\\
+        &= e^{u(x,y)} \cdot 1\\
+        &\le e^{u_0} \end{align*} 
+   \end{dem}
+   $\implies$ Por Liouville $h(z)$ es constante $\implies h'(z)=0$. Pero por otra parte, nótese que 
+   $$h'(z)=e^{f(z)}\cdot \underbrace{f'(z)}_{=0}=0$$ 
+   Entonces $f'(z)=0$ implicando que $f(z)=u(x,y)$ es constante. 
+\end{problema}
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

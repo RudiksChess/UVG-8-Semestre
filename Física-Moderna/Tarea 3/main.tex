@@ -1,0 +1,350 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+\begin{problema}[Problema 1] Los rayos $X$ de longitud de onda $0.2400 \mathrm{~nm}$ están dispersos por Compton, y el haz disperso se observa en un ángulo de $60.0^{\circ}$ en relación con el haz incidente. Encontrar: 
+    \begin{enumerate}
+        \item la longitud de onda de los rayos $X$ dispersos
+        \begin{sol}
+            Tenemos: 
+            \begin{align*}
+                \Delta\lambda =\lambda'-\lambda &=\frac{h}{mc}\left(1-\cos\theta\right)\\
+                &=\frac{h}{mc}\left(1-\cos\theta\right)\\
+                \lambda'-0.2400 &=\frac{h}{mc}\left(1-\cos\theta\right)\\
+                &= 2.426 \times 10^3\left(1-\cos60\right)\\
+                \lambda' &= \\
+                \lambda' &= 2.426\times 10^{-3}(0.5)+0.2400\\
+                &= 0.2412 nm
+            \end{align*}
+        \end{sol}
+        \item la energía de los fotones dispersos de rayos $X$ y 
+        \begin{sol}
+            \begin{align*}
+                E'&=hf'\\
+                 &=h\frac{c}{\lambda'}\\
+                 &= \frac{1240}{0.2412} \\
+                 &= 5141 eV
+            \end{align*}
+        \end{sol}
+        \item la energía cinética de los electrones dispersos.
+        \begin{sol}
+            Tenemos
+            $$K_e=E-E'=\frac{hc}{\lambda} - 5141 = 26eV$$
+        \end{sol}
+    \end{enumerate}
+    
+    
+
+\end{problema}
+\begin{problema}
+    [Problema 2]  Tenemos:
+    \begin{enumerate}
+        \item ¿Cuáles son la energía y el impulso de un fotón de rojo con de longitud de onda 650 nm? 
+        \begin{sol}
+            Tenemos, 
+            \begin{enumerate}
+                \item Energía 
+                    $$E=\frac{hc}{\lambda}= \frac{1240}{650} =1.91 eV$$
+                \item Impulso
+                $$p=\frac{E}{c}= \frac{1.91}{c}= 1.91 eV/c$$
+            \end{enumerate}
+        \end{sol}
+        \item ¿Cuál es la longitud de onda de un fotón de energía $2.40$ eV?
+        \begin{sol}
+            Tenemos, 
+            $$E=\frac{hc}{\lambda}= \frac{1240}{2.40} =517 nm$$
+        \end{sol}
+    \end{enumerate} 
+   
+\end{problema}
+\begin{problema}[Problema 3] 
+    La función de trabajo para el metal de tungsteno es de 4,52 eV. 
+    \begin{enumerate}
+        \item ¿Cuál es la energía cinética máxima de los electrones cuando la radiación de longitud de onda $198 \mathrm{~nm}$ se utiliza?
+        \begin{sol}
+            Tenemos,
+            \begin{align*}
+                K_{\max}&=hf-\phi\\
+                        &=h\frac{c}{\lambda}-\phi\\
+                        &=\frac{1240}{198}-4.52\\
+                        &= 1.72 eV
+            \end{align*}
+        \end{sol}
+        \item ¿Qué es el potencial en este caso?
+        \begin{sol}
+            Tenemos, 
+            \begin{align*}
+                V &= \frac{K_{\max}}{e}\\
+                &= \frac{1.72 eV}{e}\\
+                &= 1.72 V
+            \end{align*}
+        \end{sol}
+    \end{enumerate}
+    
+\end{problema}
+\begin{problema}
+    [Problema 4]  Una lámina de oro $\left(\rho=19.3 \frac{\mathrm{g}}{\mathrm{cm}^{3}}, M=197 \mathrm{~g} / \mathrm{mol}\right)$ tiene un grosor de $2.0 \times 10^{-4} \mathrm{~cm}$. Se utiliza para dispersar partículas alfa de energía cinética $8.0 \mathrm{MeV}$.
+    \begin{cajita}
+Número de núcleos por unidad de volumen
+$$
+\begin{aligned}
+n &=\frac{N_{\mathrm{A}} \rho}{M}=\frac{\left(6.02 \times 10^{23} \text { átomos } / \mathrm{moles}\right)\left(19.3 g / \mathrm{cm}^3\right)}{(197 g / \mathrm{moles})\left(1 \mathrm{~m} / 10^2 \mathrm{~cm}\right)^3} \\
+&=5.9 \times 10^{28} \mathrm{~m}^{-3}
+\end{aligned}
+$$
+
+    \end{cajita}
+    \begin{enumerate}
+        \item ¿Qué fracción de partículas alfa se dispersan en ángulos superiores a $90^{\circ}$ ? 
+        \begin{sol}
+            El parámetro de impacto $b$: 
+            \begin{align*}
+                b &= \frac{zZ}{2K}\frac{e^2}{4\pi \varepsilon_0}\cot \frac{1}{2\theta}\\
+                &= \frac{2(79)}{2(8.0 MeV)}(1.44 Me V\cdot fm)\cot 45^{\circ}\\
+                &= 14 fm = 1.4\times 10^{-14}m
+            \end{align*}
+            Y la fracción de partículas: 
+            \begin{align*}
+                f_{>90^{\circ}} &= nt\pi b^2\\
+                                &= (5.9 \times 10^{28} \mathrm{~m}^{-3})(2\times 10^{-6})\pi (1.4\times 10^{-14}m)^2\\
+                                &= 7.5 \times 10^{-5}
+            \end{align*}
+            
+        \end{sol}
+        
+        \item  ¿Qué fracción de las partículas alfa se dispersa en ángulos entre $90^{\circ}$ y $45^{\circ}$ ?
+        \begin{sol}
+            El parámetro de impacto $b$: 
+            \begin{align*}
+                b &= \frac{zZ}{2K}\frac{e^2}{4\pi \varepsilon_0}\cot \frac{1}{2\theta}\\
+                &= \frac{2(79)}{2(8.0 MeV)}(1.44 Me V\cdot fm)\cot 22.5^{\circ}\\
+                &= 34 fm = 3.4\times 10^{-14}m
+            \end{align*}
+            Y la fracción de partículas: 
+            \begin{align*}
+                f_{>45^{\circ}} &= nt\pi b^2\\
+                                &= (5.9 \times 10^{28} \mathrm{~m}^{-3})(2\times 10^{-6})\pi (3.4\times 10^{-14}m)^2\\
+                                &= 4.4 \times 10^{-4}
+            \end{align*}
+
+            Entonces, aplicando una resta: 
+            $$f_{>45^{\circ}}-f_{>90^{\circ}}= 3.6\times 10^{-4}$$
+            
+        \end{sol}
+    \end{enumerate}
+    
+
+\end{problema}
+\begin{problema}
+    [Problema 5]  Encuentra la distancia de aproximación más cercana de un alfa de $8.0 \mathrm{MeV}$ incidente de partículas en una lámina de oro.
+    \begin{sol}
+            Sea 
+            $$d=\frac{zZe^2}{4\pi \varepsilon_0}\frac{1}{K}=(2)(79)(1.44 MeV\cdot fm)\frac{1}{8.0 MeV}=28 fm$$
+    \end{sol}
+\end{problema}
+\begin{problema}
+    [Problema 6]  La longitud de onda límite de la serie Paschen $\left(n_{0}=3\right)$ es $820.1 \mathrm{~nm}$. ¿Cuáles son las tres longitudes de onda más largas de la serie de Paschen?
+    \begin{sol}
+            Se tiene: 
+            \begin{cajita}
+                $$\lambda = (820.1 nm)\frac{n^2}{n^2-3^2},\qquad (n=4,5,6)$$
+            \end{cajita}
+            Entonces las tres longitudes más largas son: 
+            \begin{align*}
+                n=4: & \lambda = (820.1 nm)\frac{4^2}{4^2-3^2}=1875 nm\\
+                n=5: & \lambda = (820.1 nm)\frac{5^2}{5^2-3^2} = 1281 nm\\
+                n=6: & \lambda = (820.1 nm)\frac{6^2}{6^2-3^2} = 1094 nm\\
+            \end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    [Problema 7]  Encuentra las longitudes de onda de las transiciones de $n_{1}=3$ a $n_{2}=2$ y desde $n_{1}=4$ a $n_{2}=2$ en el átomo hidrogeno.
+    \begin{sol}
+            Se tienen dos casos: 
+            \begin{enumerate}
+                \item De $n_1=3$ y $n_2=2$:
+                \begin{align*}
+                    \lambda &= \frac{1}{R_\infty}\left(\frac{n_1^2n_2^2}{n_1^2-n_2^2}\right)\\
+                    &= \frac{1}{1.097\times 10^7 m^{-1}}\left(\frac{3^2 2^2}{3^2-2^2}\right)\\
+                    &= 656.1 nm
+                \end{align*}
+                \item De $n_1=4$ y $n_2=2$:
+                \begin{align*}
+                    \lambda &= \frac{1}{R_\infty}\left(\frac{n_1^2n_2^2}{n_1^2-n_2^2}\right)\\
+                    &= \frac{1}{1.097\times 10^7 m^{-1}}\left(\frac{4^2 2^2}{4^2-2^2}\right)\\
+                    &= 486.0 nm
+                \end{align*}
+            \end{enumerate}
+    \end{sol}
+\end{problema}
+\begin{problema}
+    [Problema 8]  La temperatura superficial del Sol es de aproximadamente 5800 $K$, y las mediciones de la distribución espectral del Sol muestran que irradia casi como un cuerpo negro, desviándose principalmente en longitudes de onda muy cortas. Suponiendo que el Sol irradia como un cuerpo negro ideal, ¿a qué longitud de onda ocurre el pico en el espectro solar?
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            \lambda T &= 2.898\times 10^{-3} m\cdot K\\
+            \lambda &= \frac{2.898\times 10^{-3} m\cdot K}{T}\\
+            &= \frac{2.898\times 10^{-3} m\cdot K}{5800 K}\\
+            &= 499.7 nm
+        \end{align*}
+    \end{sol}
+\end{problema}
+\begin{problema}
+    [Problema 9]  La longitud de onda umbral de potasio es 558 nm.
+    \begin{cajita}
+        Sea 
+        \begin{align*}
+            eV_0 &= hf-\phi\\
+            V_0&= \frac{hf}{e}-\frac{\phi}{e}
+        \end{align*}
+        
+    \end{cajita}
+    \begin{enumerate}
+        \item ¿Cuál es la función de trabajo para el potasio?
+        \begin{sol}
+            Como necesitamos encontrar el trabajo $V_0=0$, tal que 
+            \begin{align*}
+                V_0&= \frac{hf}{e}-\frac{\phi}{e}\\
+                0 &= \frac{hf}{e}-\frac{\phi}{e}\\
+                \frac{\phi}{e} &= \frac{hf}{e}\\
+                &= \frac{hc}{e\lambda}\\
+                &= \frac{1240 eV\cdot nm}{558nm}\\
+                &= 2.22eV
+                        \end{align*}
+        \end{sol} 
+        \item ¿Cuál es potencial de frenado cuando la luz de 400 nm es incidente en el potasio?
+        \begin{sol}
+            Sea 
+            \begin{align*}
+                V_0&= \frac{hf}{e}-\frac{\phi}{e}\\
+                   &= \frac{hc}{e\lambda}-\frac{\phi}{e}\\
+                   &= \frac{1240 eV\cdot nm }{400 nm} -2.22 eV\\
+                   &= 3.10eV - 2.22eV\\
+                   &= 0.88V
+            \end{align*}
+        \end{sol} 
+    \end{enumerate}
+    
+\end{problema}
+\begin{problema}[Problema 10]
+    Una fuente puntual de $100 W$ irradia luz con longitud de onda de $555 nm$ (verde amarillento) uniformemente en todas las direcciones. Esta es la longitud de onda a la que el ojo humano tiene una sensibilidad máxima, un ojo adaptado a la oscuridad es capaz de detectar tan solo 10 fotones por segundo. Suponiendo que la pupila del ojo adaptado a la oscuridad tiene un diámetro de $7 mm$, qué tan lejos de la fuente ¿Se pudo detectar la luz?
+    \begin{sol}
+        Primero, se tiene que 
+        \begin{enumerate}
+            \item La energía.
+            $$E=\frac{hc}{\lambda }= \frac{(6.63\times 10^{-34}J\cdot s)(3\times 10^8 m/s)}{555\times 10^{-0}m}=3.58\times 10^{-19}J/\text{fotones}$$
+            \item Los 100 W a fotones:
+            $$100W = 100 J/s\cdot \frac{1\text{ fotón}}{3.58\times 10^{-19}J} = 2.79\times 10^{20} \text{fotón}/s$$
+            \item El flujo mínimo: 
+            $$10 \frac{\text{fotón}}{s}\cdot \frac{1}{\pi R_{pupila}^2}=2.60\times 10^5 \frac{\text{fotón}}{s\cdot m^2}$$
+            \item Distancia de la fuente:
+            \begin{align*}
+                4\pi r^2 &= (\text{fuente})(\text{flujo})\\
+                r^2 &= \frac{ 2.79\times 10^{20} \text{fotón}/s\cdot s\cdot m^2}{(4\pi )2.60\times 10^5 \text{fotón}}\\
+                r&= 9.24\times 10^3 km
+            \end{align*}
+            
+        \end{enumerate}
+        
+    \end{sol}
+\end{problema}
+\begin{problema}
+    [Problema 11]  En un experimento de dispersión de Compton en particular se encuentra que la longitud de onda incidente $\lambda_{1}$ se desplaza en un 1,5\% cuando el ángulo de dispersión es $120^{\circ}$. 
+    \begin{cajita}
+        Tenemos
+            \begin{align*}
+                \Delta \lambda = \lambda_2-\lambda_1 &= \frac{h}{mc}(1-\cos\theta)\\
+                &= 0.00243(1-\cos \theta)
+            \end{align*}
+    \end{cajita}
+    
+    \begin{enumerate}
+        \item ¿Cuál es el valor de $\lambda_{1}$ ? 
+        \begin{sol}
+            Entonces, se tiene que 
+            \begin{align*}
+                \frac{\Delta \lambda}{\lambda_1} &= 0.015\\
+                \frac{\Delta \lambda}{0.015} &=\lambda_1\\
+                \frac{0.00243(1-\cos 120^{\circ})}{0.015} &=\lambda_1\\
+                0.243nm &=\lambda_1
+            \end{align*}
+        \end{sol}
+        \item ¿Cuál será la longitud de onda $\lambda_{2}$ del fotón desplazado cuando el ángulo de dispersión es de $75^{\circ}$ ?
+        \begin{sol}
+            Tenemos 
+            \begin{align*}
+                \lambda_2&=\lambda_1+\Delta\lambda\\
+                        &= 0.243nm + 0.00243(1-\cos 75^{\circ})\\
+                        &= 0.245nm
+            \end{align*}
+        \end{sol}
+    \end{enumerate}
+    
+    
+
+\end{problema}
+\begin{problema}
+    [Problema 12] El radio del núcleo de oro (Au) se ha medido por dispersión de electrones de alta energía como $6.6 \mathrm{fm}$. ¿Qué cinética energía que una partícula habría necesitado Rutherford, de modo que para la dispersión de $180^{\circ}$, la partícula a llega superficie nuclear antes de invertir la dirección?
+    \begin{sol}
+        Se tiene:
+
+        $$\begin{aligned} \frac{1}{2} m v^2 &=\frac{k q_\alpha Q}{r_d}=\frac{\left(9 \times 10^9\right)(2)(79)\left(1.60 \times 10^{-19}\right)^2}{6.6 \times 10^{-15}} \\ &=5.52 \times 10^{-12} \mathrm{~J}=34.5 \mathrm{MeV} \end{aligned}$$
+    \end{sol}
+\end{problema}
+\begin{problema}[Problema 13]
+    Calcule la longitud de onda de la $H_{\beta}$ línea espectral, es decir, la segunda línea de la serie de Balmer predicha por Bohr modelo. La línea $H_{\beta}$ se emite en la transición de $n_{l}=4$ a $n_{u}=2$.
+    \begin{sol}
+        Tenemos 
+        \begin{align*}
+            \frac{1}{\lambda} &=R\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right)\\
+            \frac{1}{\lambda} &=\left(1.097 \times 10^7 \mathrm{~m}^{-1}\right)\left(\frac{1}{2^2}-\frac{1}{4^2}\right)
+        \end{align*}
+        
+Entonces, 
+$$
+\lambda=4.86 \times 10^{-7}=486 \mathrm{~nm}
+$$
+    \end{sol}
+\end{problema}
+\begin{problema}[Problema 14] Calcular las constantes de Rydberg para $\mathrm{H}$ y $\mathrm{He}^{+}$aplicando la corrección de masa reducida $$\left(m=9.1094 \times 10^{-31} \mathrm{~kg}, m_{p}=1.6726 \times 10^{-27} \mathrm{~kg}, m_{\alpha}=6.6447 \times 10^{-27} \mathrm{~kg}\right)$$
+    \begin{sol}
+        Se tiene:
+        \begin{enumerate}
+            \item Para $\mathrm{H}$:
+            $$
+        \begin{aligned}
+        R_{\mathrm{H}} &=R_{\infty}\left(\frac{1}{1+m / M_{\mathrm{H}}}\right)=R_{\infty}\left(\frac{1}{1+\frac{9.1094 \times 10^{-31}}{ 1.6726 \times 10^{-27}}}\right) \\
+        &=1.09677 \times 10^7 \mathrm{~m}^{-1}
+        \end{aligned}
+        $$
+        \item Para $R_{\mathrm{He}}$: 
+        $$
+        \begin{aligned}
+        R_{\mathrm{He}} &=R_{\infty}\left(\frac{1}{1+m / M_{\mathrm{He}}}\right)=R_{\infty}\left(\frac{1}{1+\frac{9.1094 \times 10^{-31}}{ 6.6447 \times 10^{-27}}}\right) \\
+        &=1.09722 \times 10^7 \mathrm{~m}^{-1}
+        \end{aligned}
+        $$
+        \end{enumerate}
+        
+
+       
+    \end{sol}
+\end{problema}
+
+
+    
+    
+
+
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

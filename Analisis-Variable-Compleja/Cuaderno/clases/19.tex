@@ -1,0 +1,58 @@
+Clase: 06/10/2022
+
+\begin{teorema}[M-test de Weierstrass]
+    Sea $g_n(z)$ una sucesión de funciones definidas sobre $A\subseteq \mathbb{C}$, suponga que existe una sucesión de números reales $M_n\geq 0\ni$ satisfacen:
+    \begin{enumerate}
+        \item $|g_n(z)|\leq M_n,\forall n\in \mathbb{Z}^+$
+        \item $\sum_{n=1}^{\infty}M_n$converge. 
+    \end{enumerate}
+    Entonces, $\sum_{n=1}^{\infty}g_n(z)$ converge uniformemente y absolutamente. 
+    \begin{dem}
+        Por hipótesis, sabemos $\sum_{n=1}^{\infty}M_n$ converge $\implies \forall\varepsilon>0\exists N\in\mathbb{Z}^+\ni$ si $n\geq N$ entonces, $|\sum_{k=n+1}^{n+p}M_k|<\varepsilon,\forall p=1,2,\cdots .$ De nuevo, si $n\geq N$, 
+        \begin{align*}
+            \left|\sum_{k=n+1}^{n+p}g_k(z)\right|\leq \sum_{k=n+1}^{n+p}|g_k(z)|\leq \sum_{k=n+1}^{n+p}M_n<\varepsilon,\forall p=1,2,\cdots, \forall z\in A.
+        \end{align*}
+
+        Por el criterio de Cauchy, $\sum_{n=1}^\infty g_n(z)$ converge absoluta y uniformemente. 
+    \end{dem}
+\end{teorema}
+
+\begin{ejemplo}
+    Considere la serie siguiente $\sum_{n=1}^{\infty}\frac{1}{n^2+z^2}$, donde $z\in \mathbb{C}-\{ni:n\in \mathbb{Z}^+\}$
+    \begin{enumerate}
+        \item Nótese que (tomando convergencia absoluta), 
+        \begin{align*}
+            \lim_{n\to\infty}\frac{\left|\frac{1}{n^2+z^2}\right|}{\frac{1}{n^2}}=\lim_{n\to\infty}\left|\frac{n^2}{n^2+z^2}\right|=1
+        \end{align*}
+        Como $\sum_{n=1}^\infty \frac{1}{n^2}$ converge $\implies \sum_{n=1}^\infty\frac{1}{n^2+z^2}$ converge absolutamente $\implies \sum_{n=1}^\infty \frac{1}{n^2+z^2}$ converge.
+
+        \item Sea $D$ un subconjunto acotado de $\mathbb{C}-\{ni:n\in\mathbb{Z}^+\}$. Es dcir, $\exists c\geq 0\ni |z|\leq c,\forall z\in D$. Entonces, 
+        \begin{align*}
+            |n^2+z^2|\geq |n^2|-|z^2|=|n|^2-|z|^2 \geq n^2-c^2
+        \end{align*}
+        Entonces, 
+        \begin{align*}
+            \left|\frac{1}{n^2+z^2}\right|\leq \frac{1}{n^2-c^2}=M_n.
+        \end{align*}
+        A probar: $\sum_{n=1}^\infty \frac{1}{n^2-c^2}$ converge. 
+        \begin{align*}
+            \lim_{n\to\infty}\left|\frac{\frac{1}{n^2-c^2}}{\frac{1}{n^2}}\right|=1
+        \end{align*}
+        Como $\sum_{n=1}^\infty\frac{1}{n^2}$ converge, entonces $\sum_{n=1}^{\infty}\frac{1}{n^2-c^2}$ converge. Entonces, por el $M-$test, $\sum_{n=1}^\infty \frac{1}{n^2+z^2}$ converge absoluta y uniformemente sobre $D$. 
+    \end{enumerate}
+\end{ejemplo}
+
+
+
+\begin{prop}
+    Sea $\gamma:[a,b]\to A\subseteq \mathbb{C}$, una curva sobre la región $A$, y sea $(f_n)$ una sucesión de funciones continuas definidas sobre $\gamma([a,b])$, que converge uniformemente a una función $f$ sobre $\gamma([a,b])$. Entonces, 
+    $$\int_\gamma f_n\to_{unif} \int_{\gamma}f$$
+    \begin{prop}
+        Sabemos que $f_n$ es continua $\forall n\in \mathbb{Z}^+$ y que $f_n\to_{unif}f\implies f$ es continua $\implies f$ es integrable. Además, dado $\varepsilon>0\exists N\in\mathbb{Z}^+\ni$ si $n\geq N$, entonces $|f_n(z)-f(z)|<\varepsilon,\forall z\in \gamma([a,b])$
+        \begin{align*}
+            \left|\int_\gamma f_n-\int_\gamma f\right|=\left|\int_\gamma (f_n-f)\right|\leq \int_\gamma |f_n-f|<\varepsilon\cdot l(\gamma)
+        \end{align*}
+        Por la arbitrariedad de $\varepsilon$, se tiene que $\int_\gamma f_n\to \int_\gamma f$
+    \end{prop}
+\end{prop}
+

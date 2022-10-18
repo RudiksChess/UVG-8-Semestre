@@ -11,23 +11,62 @@ Problemas 2, 3 y 7, sección 3.9.
     Prove that
     \begin{enumerate}
         \item $x^2+x+1$ is irreducible over $F$, the field of integers $\bmod 2$.
-        \item $x^2+1$ is irreducible over the integers mod 7 .
-        \item $x^3-9$ is irreducible over the integers mod 31 .
+        \begin{dem}
+            Si se evalua, 0 y 1 en la expresión, tenemos: 
+            \begin{align*}
+                p(0)&= 0^2+0+1 \equiv 1 \bmod 2 \neq 0 \\
+                p(1)&= 1^2+1+1 \equiv 1 \bmod 2 \neq 0 \\
+            \end{align*}
+            Por lo tanto, $x^2+x+1$ es irreducible. 
+        \end{dem}
+        \item $x^2+1$ is irreducible over the integers $\bmod 7$ .
+        \begin{dem}
+            Por reducción al absurdo, sea $x^2+1$ reducible, entonces existe un $k\in J_7$ tal que $k^2+1\equiv0(\bmod 7)$. Pero, nótese que $7= 4*1+3$ y entonces por el \textbf{problema 2 del la tarea 17} no existe un $k$ tal que $k^2+1\equiv0(\bmod 7) (\to\gets)$. Por lo tanto, $x^2+1$ es irreducible. 
+        \end{dem}
+        \item $x^3-9$ is irreducible over the integers $\bmod 31$ .
+        \begin{dem}
+            Por reducción al absurdo, sea $x^3-9$ reducible, entonces existe un $k\in J_{31}$ tal que $k^3-9\equiv0(\bmod 31)$. Por el pequeño teorema de Fermat, tenemos: 
+            \begin{align*}
+                k^{30} &\equiv 1 (\bmod 31)\\
+                (k^{3})^{10} &\equiv 1 (\bmod 31)\\
+                (9)^{10} &\equiv 5 (\bmod 31)(\to\gets)
+            \end{align*}
+            Contradicción. Por lo tanto, $x^3-9$ es irreducible.
+        \end{dem}
         \item $x^3-9$ is reducible over the integers $\bmod 11$.
+        \begin{dem}
+            Si se evalúa $0,\cdots 10$ en $p(x)=x^3-9$, tenemos: 
+            \begin{align*}
+                p(0) &\equiv 1\bmod 11\\
+                p(1) &\equiv 3\bmod 11\\
+                p(2) &\equiv 10\bmod 11\\
+                p(3) &\equiv 7\bmod 11\\
+                p(4) &\equiv 0\bmod 11\\
+                p(5) &\equiv 5\bmod 11\\
+                p(6) &\equiv 9\bmod 11\\
+                p(7) &\equiv 4\bmod 11\\
+                p(8) &\equiv 8\bmod 11\\
+                p(9) &\equiv 5\bmod 11\\
+                p(10) &\equiv 1\bmod 11
+            \end{align*}
+            Nótese que $(x-4)$ es un factor. Por lo tanto, $x^3-9$ es reducible en $J_{11}$
+                \end{dem}
     \end{enumerate}
 
 
-    \begin{dem}
-    \end{dem}
 \end{problema}
 \begin{problema}[Problema 3]
     Let $F, K$ be two fields $F \subset K$ and suppose $f(x), g(x) \in F[x]$ are relatively prime in $F[x]$. Prove that they are relatively prime in $K[x]$.
     \begin{dem}
+        Por hipótesis, $f(x),g(x)$ son primos relativos, entonces por \textbf{lema 3.20}, existen $\lambda(x),\delta(x)\in F[x]$ tal que: 
+        $$1= \lambda(x)f(x)+\delta(x)g(x)\in K[x],$$
+        por contención, lo que implica que $f(x),g(x)$ son elementos de $K[x]$ y son primos relativos, probando el problema.
     \end{dem}
 \end{problema}
 \begin{problema}[Problema 7]
-    7. If $f(x)$ is in $F[x]$, where $F$ is the field of integers $\bmod p, p$ a prime, and $f(x)$ is irreducible over $F$ of degree $n$ prove that $F[x] /(f(x))$ is a field with $p^n$ elements.
+    If $f(x)$ is in $F[x]$, where $F$ is the field of integers $\bmod p, p$ a prime, and $f(x)$ is irreducible over $F$ of degree $n$ prove that $F[x] /(f(x))$ is a field with $p^n$ elements.
     \begin{dem}
+        Por hipótesis, $f(x)$ es irreducible sobre $F$ de grado $n$, entonces por \textbf{lema 3.22} $(f(x))$ es un ideal maximal de $F[x]$. Entonces, por el \textbf{teorema 3B}, $F[x]/(f(x))$ es un campo; además, cualquier elemento del cociente debe ser un polinomio de grado $n=gr(f(x))$ es decir, $p^n$ elementos. 
     \end{dem}
 \end{problema}
 

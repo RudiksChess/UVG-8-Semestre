@@ -11,12 +11,29 @@ Problemas 1 y 4, sección 3.8.
 \begin{problema}[Problema 1]
     Find all the units in $J[i]$.
     \begin{dem}
+        Sabemos que $J$ es un anillo euclideano y sea ahora $r=x+yi\in R-\{0\}$, entonces por \textbf{proposición} demostrada en clase $r$ es una unidad de $R\iff d(r)=d(1)$. Es decir entonces que para $r$ tenemos:
+
+        $$d(r)=x^2+y^2 = d(1)=1^2+0^2=1,$$
+        entonces las posibles soluciones son: $x=0,y=\pm 1$ o $x=\pm 1+,y=0$. Es decir, $i,-i,1,-1$ son las posibles soluciones de $J[i]$.
     \end{dem}
 \end{problema}
 
 \begin{problema}[Problema 4]
     Prove that if $p$ is a prime number of the form $4 n+3$, then there is no $x$ such that $x^2 \equiv-1 \bmod p$.
     \begin{dem}
+        Por reducción al absurdo, supóngase que existe un $x$ tal que $x^2\equiv -1\mod p$. Ahora bien, considérese el pequeño teorema de Fermat, tal que 
+        \begin{align*}
+            &\implies x^p \equiv x\\
+            &\iff x^{4n+3}\equiv x \bmod p\\
+            &\iff x^{4n}x^3 \equiv 1\cdot x \bmod p\\
+            &\iff x^{4n}x^3 \equiv ((1\bmod p)(x \bmod p)) \bmod p
+        \end{align*}
+        Entonces, se tiene $x^{4n} \equiv 1\bmod p$ y $x^3\equiv x \bmod p$. Nótese que si consideramos a $n=1$, tenemos 
+        \begin{align*}
+            &\implies x^4 \equiv 1\bmod p\\
+            &\iff x^{2}x^2 \equiv ((1\bmod p)(1 \bmod p)) \bmod p
+        \end{align*}
+        Es decir, $x^2 \equiv 1\mod p$, lo cual es una contradicción a nuestra suposición. Por lo tanto, se cumple que no existe un $x$ tal que $x^2\equiv -1\bmod p$.
     \end{dem}
 \end{problema}
 

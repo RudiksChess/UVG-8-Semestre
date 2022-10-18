@@ -9,23 +9,80 @@ Problemas 2, 3 y 5, sección 3.10.
 
 
 \begin{problema}[Problema 2]
-    2. If $p$ is a prime number, prove that the polynomial $x^n-p$ is irreducible over the rationals.
-
+    If $p$ is a prime number, prove that the polynomial $x^n-p$ is irreducible over the rationals.
     \begin{dem}
+        Nótese que $x^n-p$ se puede reescribir como: 
+        $$f(x)=x^n -p = a_0+a_1x+a_2x^2 +\cdots + a_nx^n,$$
+        en donde $a_0=-p, a_n=1$ y los demás coeficientes en 0. $\implies$ Aplicamos el criterio de Eisenstein  y entonces suponemos que para $p$ se tiene $p\not|a_n, p\not| a_n, p|a_1,p|a_2,\cdots, p|a_0, p^2\not| a_0$. Por lo tanto, $f(x)$ es irreducible sobre los racionales.
     \end{dem}
 \end{problema}
 
 \begin{problema}[Problema 3]
-    3. Prove that the polynomial $1+x+\cdots+x^{p-1}$, where $p$ is a prime number, is irreducible over the field of rational numbers. (Hint: Consider the polynomial $1+(x+1)+(x+1)^2+\cdots+(x+1)^{p-1}$, and use the Eisenstein criterion.)
-
+    Prove that the polynomial $1+x+\cdots+x^{p-1}$, where $p$ is a prime number, is irreducible over the field of rational numbers. (Hint: Consider the polynomial $1+(x+1)+(x+1)^2+\cdots+(x+1)^{p-1}$, and use the Eisenstein criterion.)
     \begin{dem}
+        Sea $f(x)=1+x+\cdots +x^{p-1}$, usando la sugerencia, nótese que la expresión anterior es equivalente a $f(x+1)=1+(x+1)+(x+1)^2+\cdots+(x+1)^{p-1}$ la cual también es irreducible sobre el campo de los números racionales. Ahora bien, nótese que 
+        \begin{align*}
+            f(x+1) &=1+(x+1)+(x+1)^2+\cdots+(x+1)^{p-1}\\
+                 &= \frac{((x+1)-1)\left[1+(x+1)+(x+1)^2+\cdots+(x+1)^{p-1}\right]}{((x+1)-1)}\\
+                 &= \frac{(x+1)+(x+1)^2+(x+1)^3+\cdots+(x+1)^{p}-1-(x+1)-(x+1)^2-\cdots -(x+1)^{p-1}}{((x+1)-1)}\\
+                 &= \frac{(x+1)^{p}-1}{x}
+                 \intertext{Por teorema binomial,}
+                 &= \frac{\sum_{k=0}^p\begin{pmatrix}
+                    p\\
+                    k
+                 \end{pmatrix}x^{p-k}1^k -1}{x} =\frac{\sum_{k=0}^p\begin{pmatrix}
+                    p\\
+                    k
+                 \end{pmatrix}x^{p-k} -1}{x}\\
+                 &= \frac{\begin{pmatrix}
+                    p\\
+                    0
+                 \end{pmatrix}x^{p}+\begin{pmatrix}
+                    p\\
+                    1
+                 \end{pmatrix}x^{p-1}+\begin{pmatrix}
+                    p\\
+                    2
+                 \end{pmatrix}x^{p-2}+\cdots+ \begin{pmatrix}
+                    p\\
+                    p-1
+                 \end{pmatrix}x^{p-(p-1)}+\begin{pmatrix}
+                    p\\
+                    p
+                 \end{pmatrix}x^{p-p}   -1}{x}\\
+                 &= \frac{x^{p}+px^{p-1}+\begin{pmatrix}
+                    p\\
+                    2
+                 \end{pmatrix}x^{p-2}+\cdots +px+1 -1}{x}\\
+                 &= x^{p-1}+px^{p-2}+\begin{pmatrix}
+                    p\\
+                    2
+                 \end{pmatrix}x^{p-3}+\cdots +p
+        \end{align*}
+        $\implies$ Por el criterio de Eisenstein, $f(x+1)$ es irreducible sobre los racionales. Por lo tanto, como $f(x+1)$ era equivalente a $f(x)$, $f(x)$ también es irreducible sobre los irracionales. 
     \end{dem}
 \end{problema}
 
 \begin{problema}[Problema 5]
+    If $a$ is rational and $x-a$ divides an integer monic polynomial, prove that $a$ must be an integer.
 
-5. If $a$ is rational and $x-a$ divides an integer monic polynomial, prove that $a$ must be an integer.
+   
     \begin{dem}
+        Sea $a=m/n\in \mathbb{Q}$ y sea $f(x)= \left(a_0+a_1x+\cdots + (1)\cdot x^n\right)$ tenemos que 
+        $$\left(x-\frac{m}{n}\right)\Big|f(x),$$
+
+        de esto, tenemos que $\exists g(x)\in \mathbb{Q}[x] \ni f(x)=\left(x-\frac{m}{n}\right)g(x)$. Sea entonces, 
+        \begin{align*}
+            f(x)&=\left(x-\frac{m}{n}\right)g(x)\\
+            \left(a_0+a_1x+\cdots + x^n\right) &= \left(x-\frac{m}{n}\right)\frac{p}{q}\cdot g'(x), \quad (p,q)=1 \\
+            &= \left(nx-m\right)\frac{p}{qn}\cdot g'(x)
+            \intertext{Por \textbf{proposición} $f(x)$ es primitivo en los enteros, por ser mónico. Entonces $p/qn=1$. }
+             &= \left(nx-m\right)\left(b_0+b_1x+\cdots +b_{n-1}x^{n-1} \right)\\
+            &= mb_0+\left(nb_0-mb_1\right)x+\cdots +nb_{n-1}x^{n}
+        \end{align*}
+        $\implies$ De esto, tenemos que
+        $$a_0=mb_0, a_1= nb_0-mb_1,\cdots, 1= nb_{n-1}$$
+        Pero nótese que entonces, que para que se cumpla la igual de arriba, $n=1,-1$, por lo que $m/n$ debe ser un entero. Por lo tanto, $a$ es un entero. 
     \end{dem}
 \end{problema}
 

@@ -32,14 +32,7 @@ Clase: 08/09/2022
             \end{align*}
             $\implies a^{gr(p)+1}$ es combinación lineal de $\{1,\cdots, a^{gr(p)-1}\}$. Un proceso inductivo muestra que si $k\in \mathbb{Z}^+,a^{gr(p)+k}$ es combinación lineal de $\{1,\cdots,a^{gr(p)-1}\}$. Nótese que $\langle \{1,\cdots, a^{gr(p)-1}\}\rangle_F\implies \{a^n : n\in \mathbb{Z}^+\}\subseteq \langle \{1,\cdots, a^{gr(p)-1}\}\rangle_F$ es cerrado bajo la suma y el producto en $F(a)$ y por las propiedades de este conjunto, se puede demostrar, $(\langle\{1,\cdots, a^{gr(p)-1}\},+,\cdots\rangle)$ es un anillo conmutativo con neutro multiplicativo. Además, si $\alpha\cdot 1\in \langle \{1,\cdots, a^{gr(p)-1}\}\rangle_F\implies F\subseteq \langle\{1,\cdots,a^{gr(p)-1}\}\rangle_F$ y claramente $a\in \{1,\cdots, a^{gr(p)-1}\}\subseteq \langle\{1,\cdots, a^{gr(p)-1}\}\rangle_F$. Sean $\sum_{i=0}^{gr(p)-1}\delta_i a^i\in \langle \{1,\cdots, a^{gr(p)+1}\}\langle_F-\{0\}$ y $q(x)=\sum_{i=0}^{gr(p)-1}\delta_ix^i\in F[x]\implies$ como $gr(q)<gr(p)\implies p(x)\not| q(x)$. Usando el mismo argumento empleado en la versión de la prueba, se puede demostrar que $p(x)$ es irreducible sobre $F\implies q(x)\not| p(x)\implies (p(x),q(x))=1\implies$ por el lema 3.20, $f(x),g(x)\in F[x]\ni 1=f(x)p(x)+g(x)q(x)$. Pero, $1=f(a)p(a)+g(a)q(a)=f(a)\cdot 0 + g(a)q(a)=g(a)q(a)$. Si $g(x)=\sum_{j=0}^m\gamma_j x^j\in F[x]\implies g(a)=\sum_{j=0}^m \gamma_j a^j\in \langle \{1,\cdots, a^{gr(p)-1}\}\rangle_F \implies 1=g(a)\sum_{i}^{gr(p)-1}\delta_i a^i \implies g(a)=\left(\sum_{i=0}^{gr(p)-1}\delta_i a^i\right)^{-1}\implies \rangle\{1,\cdots, a^{gr(p)-1}\}\langle_F$ es campo $\implies \rangle \{1,\cdots, a^{gr(p)-1}\}\langle_F$ es una extensión de $F$ que contiene a $a\implies F(a)\subseteq \rangle \{1,\cdots, a^{gr(p)-1}\}\langle_F\implies \rangle \{1,\cdots, a^{gr(p)-1}\}_F=F(a)$. Si $\gamma_0,\cdots, \gamma_{gr(p)-1}\in F\ni \sum_{i=0}^{gr(p)-1}\gamma_i a^i =0\implies $ sea $h(x)=\sum_{i=0}^{gr(p-1)}\gamma_{i}x^i\in F[x]\ni h(a)=0$ y $gr(h)\leq gr(p)-1\leq gr(p)\implies$ como el $gr(p)$ es el mínimo de los polinomios en $F[x]$ satisfechos por $a\implies h(x)=0\implies \gamma_0=\cdots =\gamma_{gr(p)-1}=0\implies \{1,\cdots,a^{gr(p)-1}\}$ es linealmente independiente en $F(a)$ sobre $F\implies \{1,\cdots, a^{gr(p)-1}\}$ es una base pero $F(a)$ sobre $F\implies [F(a):F]=gr(p)\in \mathbb{Z}^+$. 
             
-            
-
-
-
-
-
-            \item $(\impliedby)$
-    
+            \item $(\impliedby)$ Si $[F(a):F]\in \mathbb{Z}^+\implies \{1,\cdots, a^{[F(a):F]}\}$ por tener $[F(a):F]+1$ elementos, es linealmente dependiente en $F(a)$ sobre $F\implies \exists \alpha_0,\cdots, \alpha_{[F(a):F]}\in F$, no todos cero $\ni \sum_{i=0}^{[F(a):F]}\alpha_i a^i=0\implies$ sea $f(x)=\sum_{i=0}^{[F(a):F]}\alpha_i x^i \in F[x]-\{0\}\ni f(a)=0\implies a$ es algebraico sobre $F$. 
         \end{itemize}
     \end{dem}
 \end{teorema}

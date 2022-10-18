@@ -1,0 +1,16 @@
+Clase: 13/11/2022
+
+\begin{teorema}[5J- Unicidad de los campos de descomposición ]
+    Si $F$ y $F'$ son campos, $\tau,\tau^*$ y $\tau^{**}$ definidos como en los lemas 5.3 y 5.4 $f(x)\in F[x]$, $f'(t)=\tau^{*}(f(x))\in F'[t]$, $E$ es un campo de descomposición de $f(x)$ sobre $F$ y $E'$ es un campo de descomposición de $f'(t)$ sobre $F'$, entonces existe $\phi:E\to E'$, isomorfismo tal que $\phi(\alpha)=\tau(\alpha)=\alpha',\forall \alpha \in F$
+    \begin{dem}
+        Procediendo sobre $[E:F]$:
+        \begin{enumerate}
+            \item $[E:F]=1\implies E$ es un espacio vectorial de dimensión 1 sobre $F\implies \exists \{a\}\subseteq E\ni \{a\}$ es base $E$ sobre $F\implies$ como $E\not= \{0\},a\not=0$ y además como $E=\langle\{a\}\rangle_F$ y $1\in E\implies \exists \alpha\in F-\{0\}\ni 1=\alpha a\implies a=\alpha^{-1}\cdot 1=\alpha^{-1}\in F\implies F=\langle\{a\}\rangle_F=E\implies F=E$ es campo de descomposición de $f(x)$ sobre $F$. Sea $\phi =\tau\implies E=F\approx F'$. Por el lema 5.3, por lo que $\tau^*$ es un isomorfismo $\implies f(x)$ y $f'(t)$ tienen las mismas raíces, salvo $\tau^*\implies F'$ contiene a todas las raíces de $f'(t)\implies E'\subseteq F'$. Pero $E'$ es extensión de $F'\implies E'=F'$. Sea $\phi=\tau$, el isomorfismo requerido y $E\approx E'$.
+            \item Supóngase el teorema válido para todos los polinomios $g(x)\in F_0[x]$ con campo de descomposición $E_0$ sobre $F_0$ tales que 
+            $[E_0:F_0]<[E:F]$, si $E_0'$ es el campo de descomposición de $g'(t)=\tau^*(g(x))$, entonces $E_0\approx E_0'$ y $[E_0:F_0']=[E_0':F_0']$.
+            \item Si $[E:F]>1\implies $ existen raíces de $f(x)$ que no pertenecen a $F\implies \exists p(x)\in F[x]$ irreducible sobre $F\ni p(x)|f(x)$ y $1<gr(p)\leq gr(f)\implies$ por lema 5.3, $\tau^*$ es isomorfismo $p'(t)=\tau^*(p(x))$ es un factor irreducible de $f'(t)$ y $1<gr(p')=gr(p)\leq gr(f)=gr(f')$. Sea $v\in E$ una raíz de $p(x)\implies$ por el teorema 5.C, $[F(v):F]=gr(p)$. Sea $w\in E'$ una raíz de $p'(t)\implies$ por el teorema 5I, $\exists\sigma F(v)\to F'(w)$ isomorfismo y es tal que $\sigma(v)=w$ y $\sigma(\alpha)=\tau(a)=\alpha'$. Por el teorema 5A, $[E:F]=[E:F(v)][F(v):F]$ y como $[F(v):F]=gr(p)>1\implies [E:F(v)]=[E:F]/[F(v):F]<[E:F]$. 
+            Considérese ahora a $f(x)\in F(v)[x]$. Si $E$ no es campo de descomposición de $f(x)$ sobre $F(v)\implies$ por el teorema 5H $\exists E_1$ campo de descomposición de $f(x)$ sobre $F(v)\implies [E:F(v)]>[E_1:F(v)]\implies$ por el teorema 5A, $[E:F]=[E:F(v)]>[E_1:F(v)][F(v):F]=[E_1:F]\implies E$ no es campo de descomposición de $f(x)$ sobre $F(\to\gets)\implies E$ es campo de descomposición de $f(x)$ sobre $F(v)$. Replicando este argumento, $E'$ es campo de descomposición de $f'(t)$ sobre $F'(w)$.  
+            Aplicando la hipótesis inductiva a $f(x)\in F(v)[x]$, $E$ es campo de descomposición de $f(x)$ sobre $F(v)$ y $[E:F(v)]<[E:F]$, entonces existe $\phi:E\to E'$, isomorfismo $\ni\phi(\alpha)=\tau(\alpha)=\alpha',\forall\alpha \in F$. 
+        \end{enumerate}
+    \end{dem}
+\end{teorema}

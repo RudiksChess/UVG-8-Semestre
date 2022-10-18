@@ -1,0 +1,59 @@
+Clase: 24/11/2022
+
+
+\begin{lema}[5.3]
+    Si $F$ y $F'$ son campos, $\tau:F\to F'$ es un isomorfismo, entonces $\tau^*:F[x]\to F'[t]\ni f(x)=\sum_{i=0}^n \alpha_i x^i\in F[x]\to \tau^*(f(x))=\tau*\left(\sum_{i=0}^n \alpha_i x^i\right) =\sum_{i=0}^n\tau(\alpha_i)t^i =\sum_{i=0}^n\alpha_i't^i$.
+    \begin{dem}
+        Si $f(x)=\sum_{i=0}^m \alpha_i x^i, g(x)=\sum_{j=0}^n\beta_j x^j\in F[x]\implies$
+        
+        \begin{align*}
+            \tau^*(f(x)+g(x))&=\tau^*\left(\sum_{i=0}^m \alpha_i x^i +\sum_{i=0}^n\beta_jx^j\right)\\ &=\tau^*\left(\sum_{k=0}^{\max(m,n)}(\alpha_k+\beta_k)x^k\right)\\
+            &=\sum_{k=0}^{\max(m,n)}\tau (\alpha_k+\beta_k)t^k\\
+            &=\sum_{k=0}^{\max(m,n)}(\tau(\alpha_b)+\tau(\beta_k))t^k\\
+            &= \sum_{k=0}^{\max(m,n)}(\alpha_k'+\beta_k')t^k =\sum_{i=0}^m \alpha_i't^i +\sum_{j=0}^n\beta_j't^j\\
+            &= \sum_{i=0}^m\tau(\alpha_i)t^i + \sum_{j=0}^n \tau (\beta_j)t^j\\
+            &= \tau^*(\sum_{i=0}^m \alpha_i x^i)+ \tau^*(\sum_{j=0}^n\beta_jx^j)= \tau^*(f(x))+\tau^*(g(x))
+        \end{align*}
+        Además, 
+        \begin{align*}
+            \tau^*(f(x)g(x)) &= \tau^*\left(\left(\sum_{i=0}^m \alpha_i x^i\right)\left(\sum_{j=0}^n \alpha_j x^j\right)\right)\\
+            &= \tau^*\left(\sum_{k=0}^{m+n}\left(\sum_{l=0}^k \alpha_l\beta_{k-l}\right)x^k\right)\\
+            &= \sum_{k=0}^{m+n}\tau\left(\sum_{l=0}^k\alpha_l \beta_{k-l}\right)t^k\\
+            &= \sum_{k=0}^{m+n}\left(\sum_{l=0}^k \tau (\alpha_l \beta_{k-l}\right)t^k\\
+            &= \sum_{k=0}^{m+n}\left(\sum_{l=0}^k \tau(\alpha_l)\tau(\beta_{k-l})\right)t^k\\
+            &= \cdots\\
+            &= \tau^*\left(\sum_{i=0}^m \alpha_ix^i\right)\tau^*\left(\sum_{j=0}^n \beta_jx^j\right)
+        \end{align*}
+        Entonces $\tau^*$ es homomorfismo. \bigbreak 
+
+        Si $f(x)\in K_{\tau^*}\implies 0=\tau^*(f(x))=\tau^*\left(\sum_{i=0}^m \alpha_ix^i\right)=\sum_{i=0}^m \tau(\alpha_i)t^i \implies 0=\tau(\alpha_0)=\cdots =\tau(\alpha_m)\implies$ como $\tau$ es isomorfismo, $0=\alpha_0=\cdots=\alpha_m\implies f(x)=0\implies K_{\tau^*}=0\implies$ por lema 3.5 , $\tau^*$ es inyectivo. \bigbreak
+
+        Si $f(t)\in F'[t]\implies\exists \alpha_0',\cdots,\alpha_m'\in F'\ni f(t)=\sum_{i=0}^m \alpha_i't^i\implies$ por la sobreyectividad de $\tau,\exists \alpha_0,\cdots,\alpha_m\in F\ni \tau(\alpha_0)=\alpha_0',\cdots, \tau(\alpha_m)=\alpha_m'\implies f(x)=\sum_{i=0}^m \alpha_i x^i \in F[x]\ni \tau ^*(f(x))=\tau^*(\sum_{i=0}^m\alpha_ix^i)=\sum_{i=0}^m \tau(\alpha_i')t^i=\sum_{i=0}^m \alpha_i't^i = f(t)\implies \tau^*$ es sobreyectivo. $\implies \tau ^*$ es isomorfismo.
+    \end{dem} 
+\end{lema}
+
+\begin{cajita}
+    \begin{nota}
+        En los teoremas 5BCG se recurrió al cociente $F[x]/(p(x))$ para obtener una extensión finita de $F$ que contenga una raíz de $p(x)$. Por esta razón se estudiará la relación entre los cocientes entre el anillo $F[x]/(f(x))$ y $F'[t]/(f(t))$ cuando $F[x]\sum F'[t]$
+    \end{nota}
+\end{cajita}
+
+\begin{lema}[5.4]
+    Si $F$ y $F'$ son campos, $\tau$ y $\tau^*$ definidos como en el lema 5.3, entonces $\tau^{**}:F[x]/(f(x))\to F'[t]/(f'(t))$, isomorfismo, tal que $\tau^{**}(\alpha)=\tau(\alpha)=\alpha',\forall \alpha\in F$.
+    \begin{dem}
+        Considérese la identificación isomorfica $\alpha\approx \alpha+[f(x)],\forall \alpha \in F$ y con ello $F\subseteq F[x]/((f(x)))$. De manera similar, $\alpha'\approx \alpha' + [f'(t)],\forall \alpha' \in F'\implies F'\subseteq F'[t]/(f'(t))$. Sea $\tau^{**}: F[x]/(f(x))\to F'[t]/(f'(t))\ni \tau^{**}(g(x)+[f(x)])=\tau^{**}(g(x))+[f'(t)]=g'(t)+[f'(t)]$ y nótese que si $\alpha\in F\implies \tau^{**}(\alpha)=\tau^{**}(\alpha+[f(x)])=\tau'(\alpha)+[f'(t)]=\tau(\alpha)+[f'(t)]=\alpha' + [f'(t)]\approx \alpha '$.\bigbreak 
+        Demostrar que está bien definido, si $g_1(x),g_2(x)\in F[x]\ni g_1(x)+[f(x)] = g_2(x)+[f(x)]=g_1(x)\equiv g_2(x)\mod(f(x))\implies g_1(x)-g_2(x)\in (f(x))\implies f(x)|g_1(x)-g_2(x)\implies\exists q(x)\in F[x]\ni f(x)q(x)=g_1(x)-g_2(x)\implies f'(t)q'(t)=\tau^*(f(x))\tau^*(q(x))=\tau^*(f(x)q(x))=\tau^*(g_1(x)-g_2(x))=\tau^*(g_1(x))-\tau^*(g_2(x))=g_1'(t)-g_2'(t)\implies f'(t)|g_1'(t)-g_2'(t)\implies g_1'(t)-g_2'(t)\in (f(t))\implies g_1'(t)\equiv g_2'(t)\mod(f'(t))\implies \tau^*(g(t)+[f(x)])=\tau^*(g_1(x))+(f'(t))=g_1'(t)+[f'(t)]=g_2'(t)+[f'(t)]=\tau^*(g_2(x))+(f'(t))=\tau^{**}(g_2(x)+f(x))\implies \tau ^{**}$ es una función bien definida. \bigbreak 
+
+
+        Homomorfismo. Si $g_1(x),g_2(x)\in F[x]\implies\tau^{**}\left((g_1(x)+[f(x)])+(g_2(x)+(f(x))\right)=\tau^{**}\left((g_1(x)+g_2(x))+[f(x)]\right)=\tau^{*}(g_1(x)+g_2(x))+[f'(t)]=\tau^*(g_1(x))+\tau^*(g_2(x))+[f'(t)]=(g_1'(t)+g_2'(t))+[f'(t)]=g'(t)+[f'(t)]+g_2'(t)+[f'(t)]=\tau^*(g_1(x))+[f'(t)]+\tau^*(g_2(x)+[f'(t)])=\tau^{**}(g_1(x)+[f(x)])+\tau^{**}(g_2(x)+(f(x)))$. Además, $\tau^{**}((g_1(x)+[f(x)])(g_2(x)+[f(x)]))=\tau^{**}(g_1(x)g_2(x)+[f(x)])=\tau^*(g_1(x)g_2(x))+[f'(t)]=\tau^{*}(g_1(x))\tau^{*}(g_2(x))+[f'(t)]=\cdots = \tau^{**}(g_1(x)+[f(x)])\tau^{**}(g_2(x)+[f(x)])\implies \tau^{**}$ es homomorfismo. \bigbreak 
+
+        Sea $f(x)+[f(x)]\in K_{\tau^{**}}\implies (f'(t))=\tau^{**}(g(x)+[f(x)])=\tau^*(g(x))+[f'(t)]=g'(t)+[f'(t)]\implies g'(t)\in (f'(t))\implies f'(t)|g'(t)\implies \exists q'(t)\in F'[t]\ni f'(t)q'(t)=g'(t)$. Por la sobreyectividad de $\tau^*,\exists q(x)\in F[x]\ni \tau^*(q(x))=q'(t)\implies f(x)q(x)=(\tau^{*})^{-1}(f'(t))(\tau^{*})^{-1}(q'(t))=(\tau^{*})^{-1}(f'(t)q'(t))=(\tau^{*})^{-1}(g'(t))=g(x)\implies f(x)|g(x)\implies g(x)\in (f(x))\implies g(x)+[f(x)]=[f(x)]\implies K_{\tau^{**}}=(f(x))\implies$ por el lema 3.5, $\tau^{**}$ es inyectivo. \bigbreak 
+
+        Si $g'(t)+(f'(t))\in F'[t]/(f'(t))\implies g'(t)\in F'[t]$ y por la sobreyectividad de $\tau^{*}\ni g(x)\in F[x]\ni \tau^{*}(g(x))=g'(t)\implies g(x)+[f(x)]\in F[x]/(f(x))\ni \tau^{**}(g(x)+[f(x)])=\tau^*(g(x))+(f'(t))=g'(t)+[f'(t)]\implies \tau^{**}$ es sobreyectivo. $\implies \tau^{**}$ es isomorfismo. 
+    \end{dem}
+\end{lema}
+
+\begin{cajita}
+    Lema 5.4 es un lema de presentación más avanzada de teoría de anillos. 
+\end{cajita}
+

@@ -1,0 +1,69 @@
+Clase: 22/09/2022
+
+
+\begin{definicion}
+    Si $F$ es un campo y $K$ es una extensión de $F$, entonces $a\in K$ \textbf{es algebraico grado $n$ sobre $F$} si existe un polinomio no nulo en $F[x]$ de grado $n\in \mathbb{Z}^+$ satisfecho por $a$, y no existe ningún polinomio en $F[x]$ satisfecho por $a$ de grado menor a $n$. 
+\end{definicion}
+
+\begin{teorema}[5C]
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $a\in K$ es algebraico de grado $n$ sobre $F$, entonces $[F(a):F]=n$.
+    \begin{dem}
+        Úsese la prueba del teorema 5B. 
+    \end{dem}
+\end{teorema}
+
+\begin{teorema}[5D]
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $a,b\in K$ son algebraicos sobre $F$, entonces $a\pm b$, $ab$ son algebraicos  sobre $F$. Además, si $b\neq0$, entonces $ab^{-1}$ es algebraico sobre $F$. Es decir, el conjunto de elementos de $K$ algebraicos sobre $F$ son un campo. 
+    \begin{dem}
+        Supóngase que $a$ es algebraico de grado $m\in\mathbb{Z}^+$ sobre $F$ y que $b$ es algebraico de grado $n\in \mathbb{Z}^+$ sobre $F$.$\implies$ por el teorema 5.C. $[F(a):F]=m$. Por otro lado, $F\subseteq F(a)\implies F\subseteq F(b)\subseteq F(a)(b)\implies b\in F(a)(b)$ es algebraico de grado a lo más $n$ sobre $F\implies b\in F(a)(b)$ es algebraico de grado a lo más $n$ sobre $F(a)\implies$ por teorema 5C $[F(a)(b):F(a)]\leq n\implies$ Por teorema 5A, $[F(a)(b):F(a)][F(a):F]\leq nm\in \mathbb{Z}^+\implies F(a)(b)$ es una extensión finita de $F$. Ahora bien, $a,b\in F(a)(b)\implies a\pm b,ab\in F(a)(b)$ y cuando $b\pm 0, ab^{-1}\in F(a)(b)\implies$ por el teorema 3B, $a\pm b,ab$ son algebraicos sobre $F$ y cuando $b\neq 0,ab^{-1}$ es algebraico sobre $F$.
+    \end{dem}
+\end{teorema}
+
+\begin{corolario}
+    Si $F$ es un campo, $K$ es una extensión de $F$, $a\in K$ es algebraico de grado $m\in\mathbb{Z}^+$ sobre $F$ y $b\in K$ es algebraico de grado $n\in\mathbb{Z}^+$ sobre $F$, entonces $a\pm b,ab$ y cuando $b\neq0$, $ab^{-1}$ son algebraicos sobre $F$ de grado a lo más $mn$.
+    \begin{dem}
+        Se deduce directamente de la prueba del teorema $5D$. 
+    \end{dem}
+\end{corolario}
+
+\begin{nota}
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $a,b\in K$, entonces $F(a,b)=F(a)(b)$ y $F(b,a)=F(b)(a)$.
+\end{nota}
+
+\begin{prop}
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $a,b\in K$, entonces $F(a,b)=F(b,a)$.
+    \begin{dem}
+        Sea $a\in F(a)\implies a\in F(a)(b)$. Además, $b\in F(a)(b)$ y $F\subseteq F(a)\subseteq F(a)(b)\implies F(b)\subseteq F(a)(b)\implies F(b)(a)\subseteq F(a)(b)$. La contención del otro lado es simétrica. 
+    \end{dem}
+\end{prop}
+
+\begin{nota}
+    Si $F$ es un campo, $K$ es una extensión de $F$ y $\alpha_1,\cdots,\alpha_n\in K\implies F(a_1,\cdots,a_n)$ es la extensión más pequeña de $F$ que contiene a $a_1,\cdots, a_n$.
+\end{nota}
+
+\begin{definicion}
+    Si $F$ es un campo, una extensión $K$ de $F$ es algebraica si todos los elementos de $K$ son algebraicos sobre $F$.
+\end{definicion}
+
+\begin{teorema}[5E]
+    Si $F$ es un campo, $L$ es una extensión algebraica de $K$ y $K$ es una extensión algebraica de $F$, entonces $L$ es extensión algebraica de $F$. 
+    \begin{dem}
+        Sea $l\in L\implies \exists k_1,\cdots, k_m\in K\ni \sum_{i=0}^m k_i l^i=0$. Pero $k_1$ es algebraico sobre $F\implies$ por el teorema 5BC, $[F(k_1):F]\in \mathbb{Z}^+$. Ahora bien, $k_2$ es algebraico sobre $F\implies k_2$ es algebraico sobre $F(k_1)$.  
+        $$\vdots $$
+        Me cansé xd 
+    \end{dem}
+\end{teorema}
+
+\begin{definicion}
+    $a\in \mathbb{C}$ es un número algebraico si es algebraico sobre $\mathbb{Q}$. 
+\end{definicion}
+
+\begin{definicion}
+    Un número complejo que no es algebraico es trascendente. 
+\end{definicion}
+
+\begin{cajita}
+    \begin{ejemplo}
+        $e$ es trascendente
+    \end{ejemplo}
+\end{cajita}

@@ -10,12 +10,22 @@ Problemas 6 y 7, sección 3.7.
 \begin{problema}[Problema 6]
     Prove that the units in a commutative ring with a unit element form an abelian group.
     \begin{dem}
+        Sean $e_1,e_2$ unidades en un anillo conmutativo $R$ y por la definición de unidades existen $e_1^{-1},e_2^{-1}\in R$ tal que $e_1e_1^{-1}=1$ y $e_2e_2^{-1}=1$. Ahora comprobaremos las propiedades de grupo: 
+        \begin{itemize}
+            \item Cerradura. Sea 
+            $$(e_1 e_2)\cdot (e_1^{-1}e_2^{-1})=(e_1 e_2)\cdot (e_2^{-1}e_1^{-1})=e_1\cdot(e_2\cdot e_2^{-1})\cdot e_1^{-1}= e_1\cdot 1\cdot e_1^{-1}=1\in R$$
+            \item Elemento neutro. En este caso, la hipótesis lo da, $1\in R$.
+            \item Inversos. Por hipótesis, tenemos que si $e$ es una unidad, entonces existe $e^{-1}$ tal que $ee^{-1}\in R$.
+            \item Asociatividad. Sean $e_1,e_2,e_3$ unidades, tal que $(e_1e_2)e_3= e_1(e_2e_3)$.
+        \end{itemize}
+        Como $R$ es conmutativo, $ee^{-1}=e^{-1}e$ también se cumple. Por lo tanto, las unidades en un anillo conmutativo con un elemento unitario 1 forma un grupo abeliano. 
     \end{dem}
 \end{problema}
 
 \begin{problema}[Problema 7]
     Given two elements $a, b$ in the Euclidean ring $R$ their least common multiple $c \in R$ is an element in $R$ such that $a \mid c$ and $b \mid c$ and such that whenever $a \mid x$ and $b \mid x$ for $x \in R$ then $c \mid x$. Prove that any two elements in the Euclidean ring $R$ have a least common multiple in $R$.
     \begin{dem}
+        Por hipótesis, $a,b\in R-\{0\}$. Ahora bien, supóngase que $(c)=\{c\in R\ni a|c,b|c\}$ es un ideal en $R$, sea entonces para $x,y\in (c)$ tal que $a|(x+y)$ y $b|(x+y)$. De la misma manera, nótese que se cumple que para $r\in R, a|xr, a|rx$. Por lo tanto, $(c)$ es un ideal en $R$ para un $c\in R$.  Supóngase ahora que $c$ es el mínimo común múltiple en $R$, por definición sabemos también que $(c)$ es un anillo de ideales principales en donde se cumple $c|x$ en donde $x\in R$. Por lo tanto, $c$ es el mínimo común múltiplo en $R$.
     \end{dem}
 \end{problema}
 

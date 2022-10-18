@@ -1,0 +1,156 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\begin{problema}[10p]
+    Estudie la convergencia puntual y uniforme de las sucesiones siguientes:
+    \begin{enumerate}
+        \item $\left(n z^n\right)$
+        \begin{sol}
+            Sea $f_n(z)=(nz^n)$, por criterio de la razón, tenemos 
+            \begin{align*}
+                \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| &= \lim_{n\to\infty}\left|\frac{(n+1)z^{n+1}}{nz^n}\right|\\
+                &= \lim_{n\to\infty}\frac{(n+1)}{n}|z|\\
+                &= |z|
+            \end{align*}
+            Entonces, si $|z|<1$, la serie es absolutamente convergente ($\implies$ puntualmente), si $|z|>1$ la serie diverge y si $|z|$ no hay conclusión. 
+            
+        \end{sol}
+        \item $\left(\frac{z^n}{n}\right)$
+        \begin{sol}
+            Sea $f_n(z)=\left(\frac{z^n}{n}\right)$, considere 
+            \begin{align*}
+                \left|\frac{z^n}{n}\right|=\frac{|z|^n}{n}\leq |z|^n=r^n
+            \end{align*}
+            Entonces, $|z|\leq r$ tal que:
+            $$\sum_{n=1}^{\infty}r^n\leq \sum_{n=0}^\infty r^n$$
+            la cual converge para $r<1$ y por medio del M-test de Weierstrass, $\sum_{n=1}^{\infty} \frac{z^n}{n}$ converge absoluta ($\implies$ puntual) y uniformemente. 
+        \end{sol}
+        \item $\left(\frac{1}{1+n z}\right)$, definida sobre $\{z \in \mathbb{C}\operatorname{Re} z \geq 0\}$
+        \begin{sol}
+            Sea $f_n(z)=\left(\frac{1}{1+n z}\right)$, considere
+            \begin{align*}
+                \left|1+nz\right|=|nz+1|\geq |nz|-|1|\geq |nz|-1 \geq   |nz|       
+            \end{align*}
+            Entonces, 
+            $$\left|\frac{1}{1+nz}\right|\leq \frac{1}{n|z|}=M_n$$
+            Ahora bien, nótese que 
+            $$\sum_{n=1}^{\infty}=\frac{1}{n|z|},$$
+            es convergente para $\{z\in \mathbb{C}, \operatorname{Re}z\geq 0\}$ y por medio del M-test de Weierstrass, $\sum_{n=1}^{\infty} \frac{z^n}{n}$ converge absoluta ($\implies$ puntual) y uniformemente. 
+        \end{sol}
+    \end{enumerate}
+\end{problema}
+
+\begin{problema}[10p]
+    Presente un ejemplo de una serie convergente de números complejos $\sum_{n=0}^{\infty} z_n$, tal que la serie $\sum_{n=0}^{\infty} z_n^3$ diverge.
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            \sum_{n=0}^{\infty} z_n &=
+            \frac{5^0}{i}-\frac{5^0}{2i}-\frac{5^0}{2i}+\frac{5}{i}-\frac{5}{2i}-\frac{5}{2i}+\frac{5^2}{i}-\frac{5^2}{2i}-\frac{5^2}{2i}+\cdots+\frac{5^n}{i}-\frac{5^n}{2i}-\frac{5^n}{2i}+\cdots\\
+            &= \left[\frac{5^0}{i}-\frac{5^0}{2i}-\frac{5^0}{2i}\right]+\left[\frac{5}{i}-\frac{5}{2i}-\frac{5}{2i}\right]+\left[\frac{5^2}{i}-\frac{5^2}{2i}-\frac{5^2}{2i}\right]+\cdots+\left[\frac{5^n}{i}-\frac{5^n}{2i}-\frac{5^n}{2i}\right]+\cdots\\
+            &= 0
+        \end{align*}
+        Pero si lo elevamos al cubo:
+        \begin{align*}
+            \sum_{n=0}^{\infty} z_n^3 &=
+            \left(\frac{5^0}{i}\right)^3+\left(-\frac{5^0}{2i}\right)^3+\left(-\frac{5^0}{2i}\right)^3+\left(\frac{5}{i}\right)^3+\left(-\frac{5}{2i}\right)^3+\left(-\frac{5}{2i}\right)^3+\\
+            &+\left(\frac{5^2}{i}\right)^3+\left(-\frac{5^2}{2i}\right)^3+\left(-\frac{5^2}{2i}\right)^3+\cdots + \left(\frac{5^n}{i}\right)^3+\left(-\frac{5^n}{2i}\right)^3+\left(-\frac{5^n}{2i}\right)^3+\cdots\\
+            &=-\infty
+        \end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}[15p]
+    Investigue la convergencia de las series de números complejos a continuación:
+    \begin{enumerate}
+        \item $\sum_{n=1}^{\infty} \frac{1}{n+i}$
+        \begin{sol}
+            Usando comparación al límite, se propone la serie armónica $\sum_{n=1}^{\infty}\frac{1}{n}$, la cual es divergente. Entonces, 
+            \begin{align*}
+                \lim_{n\to\infty}\frac{a_n}{b_n} &= \lim_{n\to\infty}\frac{\frac{1}{n+i}}{\frac{1}{n}}\\
+                &= \lim_{n\to\infty}\frac{n}{n+i}\\
+                &= \lim_{n\to\infty}\frac{1}{1+\frac{i}{n}}\\
+                &= 1
+            \end{align*}
+            Por lo tanto, el límite existe y entonces la serie original diverge. 
+        \end{sol}
+        \item $\sum_{n=1}^{\infty} \frac{i n}{n+i}$
+        \begin{sol}
+            Usando la definición, 
+            \begin{align*}
+                a_n &=\frac{in}{n+1}\\
+                \implies \lim_{n\to\infty}a_n &=\lim_{n\to\infty}\frac{in}{n+1}\\
+                                     &=i\lim_{n\to\infty}\frac{n}{n+1}\\
+                                     &=i\lim_{n\to\infty}\frac{\frac{n}{n}}{\frac{n}{n}+\frac{1}{n}}\\
+                                     &= i
+            \end{align*}
+            Como $\lim_{n\to\infty}a_n\neq 0\implies$ la serie diverge. 
+        \end{sol}
+    \end{enumerate}
+
+\end{problema}
+
+\begin{problema}[25p]
+    Demuestre los enunciados siguientes:
+    \begin{enumerate}
+        \item Suponga que $f$ es analítica sobre una región $A$ y que $f\left(a_k\right)=0$ en una sucesión $\left(a_k \neq w\right)$ que tiene límite $w \in A$, entonces $f$ es idéntica a cero en $A$.
+        \begin{dem}
+            Debemos probar que $f\equiv 0$. Sea $f$ analítica sobre una región $A$ (conjunto conexo por trayectorias y abierto), además $w$ es el límite de la sucesión $a_k$, es decir es un punto de acumulación $\implies$ por la conexidad, todos los puntos $w,a_0,a_1,a_2,\cdots, a_{n-1},a_n$ también están unidos por una trayectoria en $A\implies$ cada uno de los puntos tienen una vecindad circular $C_k$ con centro en cada uno de los puntos. 
+            Ahora bien, tomemos únicamente el límite de la sucesión $w$, tal que tenemos la hipótesis del teorema de Taylor, es decir que $\forall z\in C_w $ tenemos:
+            $$f(z)=\sum_{n=1}^\infty\underbrace{\frac{f^{(n)}(w)}{w!}}_{m_n}(z-w),$$
+            en donde $m_n=0$ y repitiendo el procedimiento para todos los círculos, tenemos que $f\equiv 0$. 
+        \end{dem}
+        \item Si $A$ es una región acotada y que $f$ es analítica en la cerradura de $A$, entonces $|f|$ alcanza su máximo sobre la frontera de $\overline{A}$.
+        \begin{dem}
+            Sea $f(z)=u(x,y)+iv(x,y)$ analítica sobre la cerradura $\overline{A}$ de la región acotada $A$, es decir $\overline{A}$ es un compacto. $\implies$ Como $f(z)$ es analítica entonces también $f(z)$ es continua en $\overline{A}$ y su módulo debe preservar la continuidad también, es decir,
+            \begin{align*}
+                |f(z)|&= |u(x,y)+iv(x,y)|\\
+                      &= \sqrt{u^2(x,y)+v^2(x,y)}
+            \intertext{Entonces, por teorema de topología, la continuidad y la compacidad, implican que }
+                      &\leq M \qquad \forall z\in \overline{A},
+            \end{align*}
+            en donde $M$ es el máximo sobre la frontera de $\overline{A}$. 
+        \end{dem}
+    \end{enumerate}
+
+\end{problema}
+
+\begin{problema}[20p]
+    Sea $P_n(z)=\sum_{k=0}^n \frac{z^k}{k !}$. Dado un número real positivo $R$, demuestre que $P_n$ no tiene ceros en el disco con centro en el origen y radio $R$ para todo $n$ suficientemente grande.
+    \begin{dem}
+        Sea un disco $D_R(0)$ para un $n$ suficientemente grande. Debemos probar que $P_n$ no tiene ceros en $D_R(0)$. Por medio del teorema de Rouché \footnote{Definición del \href{https://en.wikipedia.org/wiki/Rouché\%27s_theorem}{Teorema de Rouché}} se propone una función $f(z)=\frac{P_n(z)}{e^z}$ y $g(z)=1$, $e^z$ se propone ya que no tiene ceros y se selecciona un $n$ lo suficientemente grande tal que se cumpla que $|f(z)-1|<1$ y entonces se garantiza que $P_n$ no tiene ceros en $D_R(0)$.
+    \end{dem}
+\end{problema}
+
+\begin{problema}[20p]
+    Sea $f$ una función analítica sobre $\mathbb{C}$ y tal que su parte real está acotada superiormente. Demuestre que $f$ es constante.
+    \begin{dem}
+        Este problema se resolvió en el \textbf{problema 7 de la tarea 3},
+        se propone función entera $f(z)$, en donde su parte real $u(x, y)=\operatorname{Re}[f(z)]$ tiene cota superior $u_0$.  Entonces, se debe probar que $u(x, y)$ es constante sobre el plano. Primero, se propone una función entera $h(z)=e^z$, la cual probaremos que es constante por Liouville. Sea entonces, 
+    \begin{align*} |h(z)| &= |e^{f(z)}| = \left|e^{\operatorname{Re}[f(z)]+i\operatorname{Im}[f(z)]}\right| =  \left|e^{\operatorname{Re}[f(z)]}e^{i\operatorname{Im}[f(z)]}\right|\\
+        &= |e^{\textup{Re}\,f(z)} (\cos\operatorname{Im}\,f(z) +i\sin \operatorname{Im}\,f(z))| \\ &= |e^{\textup{Re}\,f(z)}| \cdot |\cos \operatorname{Im}\,f(z) +i\sin \operatorname{Im}\,f(z)| \\ &= e^{u(x,y)} \sqrt{\cos^2\operatorname{Im}\,f(z) + \sin^2\textup{Im}\,f(z)}\\
+        &= e^{u(x,y)} \cdot 1\\
+        &\le e^{u_0} \end{align*} 
+
+   $\implies$ Por Liouville $h(z)$ es constante $\implies h'(z)=0$. Pero por otra parte, nótese que 
+   $$h'(z)=e^{f(z)}\cdot \underbrace{f'(z)}_{=0}=0$$ 
+   Entonces $f'(z)=0$ implicando que $f(z)=u(x,y)$ es constante. 
+        . 
+    \end{dem}
+\end{problema}
+
+
+
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

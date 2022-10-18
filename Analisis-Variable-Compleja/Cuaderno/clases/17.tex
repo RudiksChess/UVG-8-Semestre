@@ -1,0 +1,29 @@
+Clase: 29/09/2022
+
+
+\begin{prop}
+    Si $\sum a_n$ y $\sum b_n$ son de términos positivos y si $0<\lim \frac{a_n}{b_n}<\infty$, entonces ambas series divergen o ambas series convergen. 
+    \begin{dem}
+        Suponga que $$\lim\frac{a_n}{b_n}=L<\infty,$$
+        entonces $\forall \varepsilon\exists N\in\mathbb{Z}^+\ni$ si $n\geq N$, se cumple 
+        \begin{align*}
+            \left|\frac{a_n}{b_n}-L\right| <\varepsilon
+        \end{align*}
+        $$\implies b_n(L-\varepsilon)<a_n<b_n(L+\varepsilon)$$
+        Si $b_n$ converge $\implies$ como $a_n<b_n(L+\varepsilon),\forall n\geq N\implies \sum a_n$ converge. 
+
+        Si $b_n$ diverge $\implies b_n(L-\varepsilon)<a_n,\forall n\geq N\implies \sum a_n$ diverge 
+    \end{dem}
+\end{prop}
+
+\begin{prop}
+    Si $\sum b_k$ converge y $0\leq a_k\leq b_k$, entonces $\sum a_n$ converge.\\
+    Si $\sum c_k$ diverge y $0\leq c_k\leq d_k$, entonces $\sum d_k$ diverge. 
+    \begin{dem}
+        Como $\sum b_k$ converge $\implies$
+        la sucesión de sumas parciales de $\sum b_k$ converge $\implies$ dicha sucesión es de Cauchy. $\implies \forall k$ y $\forall p$, se tiene:
+        $$a_{k+1}+a_{k+2}+\cdots+a_{k+p}\leq b_{k+1}+b_{k+2}+\cdots + b_{k+p},$$ 
+        entonces, la sucesión de sumas parciales de $\sum a_k$ es de Cauchy $\implies$ es convergente. 
+        
+    \end{dem}
+\end{prop}

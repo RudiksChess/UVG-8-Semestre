@@ -1,0 +1,21 @@
+Clase: 27/09/2022
+
+\begin{lema}[5.1 (Teorema del residuo)]
+    Si $F$ es un campo, $K$ es una extensión de $F$ ,$p(x)\in F[x]$, entonces para todo $k\in K$, existe $q(x)\in K[x]$ tal que $gr(q)=gr(p)-1$ y $p(x)=(x-k)q(x)+p(k)$
+    \begin{dem}
+        Sea $F\subseteq K\implies F[x]\subseteq K[x]\implies p(x)\in K[x]$. Por el lema 3.18 (algoritmo de la división) aplicado a $p(x)$ y $x-k$ en $K[x]$, se tiene que existen $q(x),r(x)\in K[x]\ni p(x)=(x-k)q(x)+r(x)$, donde $r(x)=0$ o $gr(r)<gr(x-k)=1$. Pero $p(k)=(k-k)q(k)+r(k)=0\cdot q(k)+r(k)=r(k)\in K\implies p(x)=(x-k)q(x)+p(k)$, con $gr(q)=gr((x-k)q(x))=gr(x-k)+gr(q)=1+gr(q)\implies gr(q)=qr(p)-1$.
+    \end{dem}
+\end{lema}
+
+\begin{corolario}
+    Si $F$ es un campo, $K$ es una extensión $F$, $p(x)\in F[x]$ y $a\in K$ es una raíz de $p(x)$, entonces $(x-a)|p(x)$.
+\end{corolario}
+
+\begin{definicion}
+    Si $F$ es un campo y $K$ es una extensión de $F$ y $p(x)\in F[x]$, entonces $a\in K$ es una raíz de $p(x)$ de multiplicidad $m\in\mathbb{Z}^+$, cuando $(x-a)^m|p(x)$ y $(x-a)^{m+1}\not| p(x)$
+\end{definicion}
+
+\begin{lema}
+    Un polinomio de grado $n\in\mathbb{Z}^+$ sobre un campo $F$ tiene a lo más $n$ raíces en cualquier extensión de $F$, contando $m$ raíces en el caso de las raíces de multiplicidad $m$.
+\end{lema}
+

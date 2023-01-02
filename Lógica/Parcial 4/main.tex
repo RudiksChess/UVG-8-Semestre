@@ -1,0 +1,80 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\begin{problema}
+    Realice la negación del siguiente enunciado:
+$(y)((A y \wedge B y) \Longrightarrow((\sim C y \wedge T y) \Longrightarrow((\exists x)(\sim D x \wedge \sim E y))))$
+Nota: Se deben negar hasta que el conectivo de negación quede en los predicados correspondientes.
+(Valor 30 puntos).
+\begin{sol}
+    Tenemos:
+    \begin{align*}
+        \sim \left[(y)((A y \wedge B y) \Longrightarrow((\sim C y \wedge T y) \Longrightarrow((\exists x)(\sim D x \wedge \sim E y)))) \right]\\
+        (\exists y)\sim ((A y \wedge B y) \Longrightarrow((\sim C y \wedge T y) \Longrightarrow((\exists x)(\sim D x \wedge \sim E y))))\\
+        (\exists y)((A y \wedge B y) \wedge \sim ((\sim C y \wedge T y) \Longrightarrow((\exists x)(\sim D x \wedge \sim E y))))\\
+        (\exists y)((A y \wedge B y) \wedge ((\sim C y \wedge T y) \wedge \sim ((\exists x)(\sim D x \wedge \sim E y))))\\
+        (\exists y)((A y \wedge B y) \wedge ((\sim C y \wedge T y) \wedge  ((x)\sim(\sim D x \wedge \sim E y))))\\
+        (\exists y)((A y \wedge B y) \wedge ((\sim C y \wedge T y) \wedge  ((x) (\sim \sim Dx\vee \sim\sim Ey))))\\
+        (\exists y)((A y \wedge B y) \wedge ((\sim C y \wedge T y) \wedge  ((x) (Dx\vee Ey))))\\
+    \end{align*}
+\end{sol}
+\end{problema}
+
+\begin{problema}
+    Demostrar que $((\exists x)(F x \vee \sim G x)) \Longrightarrow \sim((x)(\sim F x \wedge G x))$
+Nota: $F$ y $G$ son predicados de aridad 1 y hay que utilizar el sistema axiomático definido para los predicados.
+\begin{dem}
+    Sea 
+    \begin{align*}
+        ((\exists x)(F x \vee \sim G x)) \Longrightarrow \sim((x)(\sim F x \wedge G x))
+    \end{align*}
+    Por transpositiva, esto es equivalente a decir: 
+    \begin{align*}
+        \sim (\sim((x)(\sim F x \wedge G x))) &\implies \sim ((\exists x)(F x \vee \sim G x)) & \\
+        \underbrace{(x)(\sim F x \wedge G x)}_{\text{hipótesis}}&\implies (x)\sim(Fx\vee \sim Gx) & \text{Negación}\\
+        &\implies (x)(\sim Fx\wedge \sim\sim Gx) & \text{De Morgan}\\
+        &\implies \underbrace{(x)(\sim Fx\wedge Gx}_{\text{tesis}}) & \text{Doble negación}
+    \end{align*}
+    Entonces, la demostración sería: 
+    \begin{align*}
+        (x)(\sim F x \wedge G x)&\implies&\\
+        &\implies \sim Fy\wedge Gy& \text{IE 1}\\
+        &\implies \sim Fy& \text{Simp 2}\\
+        &\implies Gy& \text{Simp 2}\\
+        &\therefore(x)(\sim F x \wedge G x)
+    \end{align*}
+\end{dem}
+\end{problema}
+
+\begin{problema}
+
+En caso de ser estudiante de Matemática, responda haciendo una reflexión de las siguientes preguntas:
+\begin{enumerate}
+    \item ¿Por qué seleccionó la carrera de Matemática?
+    \begin{sol}
+        Supongo que por casualidades de la vida llegué a esta carrera. Estuve 2 años en física y luego me percaté que no era lo que yo esperaba, entonces decidí buscar otros rumbos. Mis otras opciones eran computación o ciencia de datos. Sin embargo, esas carreras no estaban centradas en la investigación (lo cual es un aspecto al que yo estoy interesado un montón) y por lo tanto, me di cuenta que esas carreras me decepcionarían eventualmente. Lo más cercano que encontré fue matemática y entonces decidí que ese sería mi camino. 
+    \end{sol}
+    \item ¿En que ha contribuido la Mátematica en su formación?
+    \begin{sol}
+        La verdad es que ha sido una experiencia bastante interesante. Actualmente trabajo haciendo algoritmos de Machine Learning y tener un conocimiento en matemática me ha ayudado a tener una mayor comprensión de las cuestiones que trato y hacer mi trabajo mucho más eficiente. 
+    \end{sol}
+    \item Finalizando la carrera de Matemática, ¿Cómo o dónde considera que los conocimientos adquiridos puedan ser aplicados?
+    \begin{sol}
+        Probablemente haga un PhD en algo relacionado a inteligencia artificial o computación, en donde tener un conocimiento profundo en matemática es un prerrequisito.  
+    \end{sol}
+\end{enumerate}
+
+
+\end{problema}
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

@@ -1,0 +1,108 @@
+Clase: 03/11/2022
+
+\begin{teorema}
+    Sea $f(z)$ una función analítica en el interior sobre una curva cerrada y simple $\gamma$, excepto en un polo $a$ de orden $m$ en el interior de $\gamma$. Entonces, 
+    \begin{align*}
+        a_{-1}=\operatorname{Res}(f;a) = \lim_{z\to a}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{m-1}}\left[(z-a)^m f(z)\right]
+    \end{align*}
+    \begin{dem}
+        Como $f$ tiene un polo de orden $m$ en $a$, entonces,
+        \begin{align*}
+            f(z)=\sum_{n=0}^\infty a_n(z-a)^n +\frac{a_{-1}}{z-a}+\frac{a_{-1}}{z-a}+\frac{a_{-2}}{(z-a)^{2}}+\cdots+\frac{a_{-m}}{(z-a)^m} 
+        \end{align*}
+        Entonces 
+        \begin{align*}
+            (z-a)^m f(z)= \sum_{n=0}^\infty a_n(z-a)^{n+m} +\frac{a_{-1}(z-a)^m}{z-a}+\frac{a_{-1}(z-a)^m}{z-a}+\frac{a_{-2}(z-a)^m}{(z-a)^{2}}+\cdots+\frac{a_{-m}(z-a)^m}{(z-a)^m} 
+        \end{align*}
+        Entonces $(z-a)^mf(z)$ es analítica, por lo que
+        \begin{align*}
+            \frac{d^{m-1}(z-a)^m f(z)}{dz^{m-1}} = \frac{d^{m-1}}{dz^{m-1}}\sum_{n=0}^\infty a_n (z-a)^{n+m}+(m-1)!a_{.1}
+        \end{align*}
+        Si $z\to a$:
+        \begin{align*}
+            \lim_{z\to a} \frac{d^{m-1}(z-a)^m f(z)}{dz^{m-1}} =(m-1)!a_{-1}
+        \end{align*}
+    \end{dem}
+\end{teorema}
+
+\begin{nota}
+    Sea 
+    \begin{enumerate}
+        \item Si $f(z)$ tiene un cero de orden (multiplicidad algebraica) $m$ en $z_0\implies g(z)=1/f(z)$ tiene un polo de orden $m$ en $z_0$.
+        \item Suponga que $f$ es analítica en $0<|z-z_0|<\varepsilon$
+        \begin{enumerate}
+            \item $f$ tiene singularidad removible en $z_0$, si 
+            $$\lim_{z\to z_0}f(z)\cdot (z-z_0)\quad \text{existe}$$
+            \item $f(z)$ tiene un 0 de orden $n$ en $z_0$ si:
+            $$\lim_{z\to z_0}\frac{f(z)}{(z-z_0)^n},$$
+            existe y es diferente de cero. 
+            \item $f(z)$ tiene un polo de orden $n$ en $z_0$ si 
+            $$\lim_{z\to z_0}f(z)(z-z_0)^n$$
+            existe y es diferente de cero.
+        \end{enumerate}
+    \end{enumerate}
+\end{nota}
+\begin{ejemplo}
+    Sea $f(z)=\frac{z}{(z-1)(z+1)^2}$
+    \begin{enumerate}
+        \item Sea $\operatorname{Res}(f;z=1)=\lim_{z\to 1}f(z)=\lim_{z\to 1}\frac{z}{(z+1)^2}=\frac{1}{4}$
+        \item Sea 
+        \begin{align*}
+            \operatorname{Res}(f;z=-1) &=\lim_{z\to -1}\frac{d}{dz}(z+1)^2 f(z)\\
+            &=\lim_{z\to -1}\frac{d}{dz}\frac{z}{z-1}\\
+            &= \lim_{z\to -1}\frac{(z-1)-z}{(z-1)^2} = -1/4
+        \end{align*}
+
+    \end{enumerate}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Compruebe que $$\int_0^\infty \frac{\cos mx}{x^2+1}dz =\frac{\pi}{2}e^{-m},m>0$$
+    \begin{sol}
+        Sea
+        \begin{enumerate}
+            \item Sea 
+                \begin{align*}
+                    f(z)=\frac{e^{imz}}{z^2+1} =\frac{\cos mz}{z^2+1}+i\frac{\sin mz}{z^2+1}
+                \end{align*}
+                Nótese que si $z=x\implies \operatorname{Re}f(z)=\frac{\cos mx}{x^2+1}$
+            \item Sea 
+            
+            Sea entonces
+            \begin{align*}
+                \operatorname{Res}(f;z=i)&=\lim_{z-i}(z-i)\frac{e^{imz}}{(z+i)(z-i)}\\
+                &= \frac{e^{-m}}{2i} = -i\frac{e^{m}}{2}
+            \end{align*}
+            Entonces 
+            \begin{align*}
+                \int_\gamma f(z)dz = 2\pi i \operatorname{Res}(f,z=i)
+            \end{align*}
+            Entonces
+            $$\int_\gamma f(z)dz=\int_{\gamma_1}f+\int_{\gamma_2}f$$
+            De esto 
+            \begin{align*}
+                \int_{\gamma_1}f(z)dz =\int_{0}^\pi \frac{e^{imRe^{it}}}{(Re^{it})^2+1}iRe^{it}dt
+            \end{align*}
+            A probar que: 
+            $$\left|\frac{1}{z^2+1}\right|\leq \frac{M}{R^k}$$
+            Sea 
+            $$|z^2+1|\geq |z|^2-1 = R^2-1\implies \left|\frac{1}{z^2+1}\right|\leq \frac{1}{R^2-1}$$
+            Entonces si $R\to \infty\implies \int_\gamma f = 0$.
+            Sea 
+            \begin{align*}
+                \int_{\gamma_2}f &=\int_{-R}^R \frac{e^{imt}}{t^2+1}dt\\
+                &= \int_{-R}^R \left[\frac{\cos mt}{t^2+1}+i\frac{\sin mt}{t^2+1}\right]dt
+            \end{align*}
+            Entonces
+            \begin{align*}
+                \int_{\gamma_2}f &= 2 \pi  i\operatorname{Res}(f;z=i)=2\pi i\left(-\frac{i}{2}e^{-m}\right)\\
+                &= \pi e^{-m}
+            \end{align*}
+            Por partidad: 
+            \begin{align*}
+                2\int_0^R \frac{\cos mt}{t^2+1}dt = \pi e^{-m}
+            \end{align*}
+            $$R\to \infty\implies \int_0^\infty \implies \int_0^\infty \frac{\cos mt}{t^2+1}dt =\frac{\pi}{2}e^{-m}$$
+        \end{enumerate}
+    \end{sol}
+\end{ejemplo}

@@ -1,0 +1,252 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\begin{problema}
+    Normalice la función de onda $A r e^{-r / \alpha}$ de $r=0$ a $\infty$ donde $\alpha$ y $A$ son constantes.
+    \begin{sol}
+        Sea
+        \begin{align*}
+            \int_0^\infty \left(Are^{-r/\alpha}\right)\left(Are^{-r/\alpha}\right) dr &= 1\\
+            \int_0^\infty \left(A^2r^2e^{-2r/\alpha}\right)dr &= 1\\
+            A^2\int_0^\infty \left(r^2e^{-2r/\alpha}\right)dr &= 1\\
+            A^2\left[-\frac{1}{2}ar^2e^{-(2r)/a}\Big|_0^\infty+a\int_0^\infty re^{-(2r)/a}dr\right] &= 1\\
+            &\vdots\\
+            A^2\left[-\frac{1}{4}a^3e^{-(2r)/a}-\frac{1}{2}a^2re^{-(2r)/a}-\frac{1}{2}ar^2e^{-(2r)/a}\right]_0^\infty &= 1\\
+            A^2\left[\frac{a^3}{4}\right] &= 1\\
+            A &= \sqrt{\frac{4}{a^3}}\\
+              &= \frac{2}{\sqrt{a^3}}
+        \end{align*}
+        Por lo tanto, la función normalizada es
+        $$\psi(r,t)=\sqrt{\frac{A}{a^3}}re^{-r/\alpha}$$
+
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    La propiedad 2 de las condiciones de frontera para las funciones de onda especifica que $\Psi$ debe ser continua para evitar valores de probabilidad discontinuos. ¿Por qué no podemos tener probabilidades discontinuas?
+    \begin{sol}
+        Simplemente porque no existiría la segunda derivada en $x$ de $\Psi$ y entonces no se cumpliría la ecuación de onda. 
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Si el potencial $V(\mathrm{x})$ para un sistema unidimensional es independiente del tiempo, muestre que el valor esperado para $x$ es independiente del tiempo.
+    \begin{sol}
+        Como $V$ es independiente del tiempo, tenemos dos casos: 
+        \begin{itemize}
+            \item Normalizado,
+            \begin{align*}
+                \langle x\rangle = \int_{\infty}^\infty x\psi^*(x)\psi(x)dx
+            \end{align*}
+            \item No normalizado,
+            \begin{align*}
+                 \langle x\rangle = \frac{\int_{\infty}^\infty x\psi^*(x)\psi(x)dx}{\int_{\infty}^\infty \psi^*(x)\psi(x)dx}
+            \end{align*}
+        \end{itemize}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Una función de onda $\Psi=A\left(e^{i x}+e^{-i x}\right)$ está en la región $-\pi<x<\pi$ y cero en otras partes. Normalice la función de onda 
+    
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            \Psi &= A(e^{ix}+e^{-ix})\\
+                 &= A\left(\cos x+i\sin x +\cos x -i\sin x\right)\\
+                 &= 2A\cos x
+        \end{align*}
+       
+        \begin{align*}
+            \int_{-\pi}^\pi \psi^*(x,y)\psi(x,t)dx&=1\\
+            \int_{-\pi}^\pi \left[2A\cos x\right]\left[2A\cos x\right]dx&=1\\
+            4A^2\int_{-\pi}^\pi \cos^2 x dx &= 1\\
+            4A^2\int_{-\pi}^\pi \left(\frac{1}{2}\cos2x + \frac{1}{2}\right) dx &= 1\\
+            4A^2\left[\frac{1}{2}\left(x+\sin x \cos x\right)\right]_{-\pi}^\pi &= 1\\
+            4A^2\pi &= 1\\
+            A &= \sqrt{\frac{1}{4\pi}}
+        \end{align*}
+    \end{sol}
+    y encuentre la probabilidad de que la partícula sea:
+    \begin{itemize}
+        \item entre $x=0$ y $x=\frac{\pi}{8}$,
+        \begin{sol}
+            Sea 
+            \begin{align*}
+                P &= \int_0^{\pi/8}\left(2\sqrt{\frac{1}{4\pi}}\cos x\right)\left(2\sqrt{\frac{1}{4\pi}}\cos x\right)dx\\
+                 &= \frac{4}{4\pi}\int_{0}^{\pi/8}\cos^2 x dx\\
+                 &= \frac{1}{\pi}\left[\frac{1}{2}\left(x+\sin x \cos x\right)\right]_{0}^{\pi/8}\\
+                 &=0.119
+            \end{align*}
+        \end{sol}
+        \item entre $x=0$ y $x=\pi / 4$.
+        \begin{sol}
+            Sea 
+            \begin{align*}
+                P &= \int_0^{\pi/4}\left(2\sqrt{\frac{1}{4\pi}}\cos x\right)\left(2\sqrt{\frac{1}{4\pi}}\cos x\right)dx\\
+                 &= \frac{4}{4\pi}\int_{0}^{\pi/4}\cos^2 x dx\\
+                 &= \frac{1}{\pi}\left[\frac{1}{2}\left(x+\sin x \cos x\right)\right]_{0}^{\pi/4}\\
+                 &=0.205
+            \end{align*}
+        \end{sol}
+    \end{itemize}
+     
+\end{problema}
+
+\begin{problema}
+    Determine el valor promedio de $\Psi_n^2(x)$ en el interior del pozo de potencial infinito para $n=1,5,10$, y 100 . Compare estos promedios con la probabilidad clásica de detectar la partícula dentro de la caja.
+    \begin{sol}
+        Nótese que $\psi_n$ es una función ya normalizada definida como: 
+        $$\psi_n(x)=\sqrt{\frac{2}{L}}\sin \left(\frac{n\pi x}{L}\right) \quad (n=1,2,3,\cdots)$$
+        Sea 
+        \begin{align*}
+            \langle\psi^2_n(x)\rangle &= \frac{\int_0^L\psi^*_n(x)\psi_n(x)dx}{\int_0^L (1)dx}
+            \intertext{Como $\psi_n(x)$ ya estaba normalizado, el numerador debe ser 1:}
+            &= \frac{1}{L}
+        \end{align*}
+        Entonces la $n$ no afecta en el valor promedio de $\Psi_n^2(x)$; siempre es el mismo. En el caso caso clásico, el resultado sería uniforma dentro de la caja. 
+    \end{sol}
+
+\end{problema}
+
+\begin{problema}
+    Un electrón está atrapado en un potencial infinito de pozo cuadrado de ancho $0.70 \mathrm{~nm}$. Si el electrón está inicialmente en el estado $n=4$, ¿cuáles son las diversas energías de fotones que se pueden emitir cuando el electrón salta al estado fundamental?
+    \begin{sol}
+        Sea
+        \begin{align*}
+            E_1 &= \frac{h^2c^2}{8mc^2L^2}\\
+            &= \frac{(1240eV\cdot nm)^2}{8(511\times 10^3 eV)(0.70 nm)^2}\\
+            &= 935 keV
+        \end{align*}
+        Con esto se derivando los demás estados con
+        $$E_n = n^2E_1$$
+        Entonces, 
+        $$E_2=3.07eV,\quad E_3=6.91eV, \quad E_4=12.28eV$$
+        Por lo tanto, las diversas energías de fotones que se pueden emitir cuando el electrón salta al estado fundamental son todas las combinaciones que  $n\leq 4$, es decir:
+        \begin{itemize}
+            \item $E_4-E_3$
+            \item $E_4-E_2$
+            \item $E_4-E_1$
+            \item $E_3-E_2$
+            \item $E_4-E_1$
+            \item $E_2-E_1$
+        \end{itemize}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Compare los resultados de los potenciales de pozo cuadrado infinito y finito.
+    \begin{enumerate}
+        \item ¿Son las longitudes de onda más largas o más cortas para el pozo cuadrado finito comparadas con el pozo infinito?
+        \begin{sol}
+            Las del pozo finito son mayores, porque se salen del cuadrado. 
+        \end{sol}
+        \item Usar argumentos físicos para decidir si las energías (para un número cuántico dado $n$ ) son (i) mayores o (ii) menores para el pozo cuadrado finito que para el pozo cuadrado infinito?
+        \begin{sol}
+            Menores para el pozo cuadrado infinito. Esto se justifica por el inciso anterior. 
+        \end{sol}
+        \item ¿Por qué habrá un número finito de estados de energía ligados para el potencial finito?
+        \begin{sol}
+            Se debe a la energía. Si la energía fuera mayor al potencial, entonces no habría un número finito. 
+        \end{sol}
+    \end{enumerate}
+      
+
+\end{problema}
+
+\begin{problema}
+    Un átomo de nitrógeno de masa $2.32 \times 10^{-26} \mathrm{~kg}$ oscila en una dimensión a una frecuencia de $10^{13} \mathrm{~Hz}$. ¿Cuáles son sus niveles de energía constante de fuerza efectiva y cuantizada?
+    \begin{sol}
+        Se tiene: 
+        \begin{itemize}
+            \item Energía constante efectiva
+            \begin{align*}
+                E &= \left(n+\frac{1}{2}\right)\hbar\omega\\
+                   &= \left(n+\frac{1}{2}\right)hf\\
+                   &= \left(n+\frac{1}{2}\right)(4.126\times 10^{-15}eV\cdot s)(1\times 10^{13} s^{-1})\\
+                   &= \left(n+\frac{1}{2}\right)(4.126\times 10^{-2}eV\cdot s)
+            \end{align*}
+            \item Energía cuantizada
+            \begin{align*}
+                k &= \omega^2m\\
+                &= 4\pi^2f^2m\\
+                &= 4\pi^2\left(1\times 10^{13}s^{-1}\right)^2(2.32\times 10^{-26}kg)\\
+                &= 91.6 N/m
+            \end{align*}
+        \end{itemize}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Muestre que la energía de un oscilador armónico simple en el estado $n=1$ es $3 \hbar \omega / 2$ sustituyendo la función de onda $\Psi_1=A x e^{-\alpha x^2 / 2}$ directamente en la ecuación de Schrödinger.
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            \frac{d \psi}{d x} &=A e^{-\alpha x^2 / 2}-A \alpha x^2 e^{-\alpha x^2 / 2}\\
+            \frac{d^2 \psi}{d x^2} &=-3 A \alpha x e^{-\alpha x^2 / 2}+A \alpha^2 x^3 e^{-\alpha x^2 / 2}=\left(\alpha^2 x^2-3 \alpha\right) \psi
+        \end{align*}
+
+Nótese que la sección de oscilador simple del libro de texto, se hizo la deducción: 
+
+$$\frac{d^2\psi}{dx^2}=(\alpha^2x^2-\beta)\psi, \quad \beta =\frac{2mE}{\hbar^2}$$
+De esto, tenemos que 
+\begin{align*}
+    3\alpha &= \frac{2mE}{\hbar^2}\\
+    \frac{3\alpha\hbar^2}{2m}&=E
+    \intertext{Para el estado de energía $n=1$, se tiene $\alpha = \sqrt{\frac{mk}{\hbar^2}}$}
+    \frac{3\sqrt{\frac{mk}{\hbar^2}}\hbar^2}{2m}&=E\\
+    \frac{3\omega \hbar}{2} &= E
+\end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Un electrón de $1.0 \mathrm{eV}$ tiene una probabilidad de $2.0 \times 10^{-4}$ hacer un túnel a través de una barrera de potencial de $2.5 \mathrm{eV}$. ¿Cuál es la probabilidad de que un protón de $1.0 \mathrm{eV}$ haga un túnel a través de la misma barrera?
+    \begin{sol}
+
+        Nótese que con una probabilidad de $2 \times 10^{-4}$, se tiene $\kappa L \gg 1$ y además: 
+        \begin{align*}
+            T&=16 \frac{E}{V_0}\left(1-\frac{E}{V_0}\right) e^{-2 \kappa L}\\
+            &=16 \frac{1}{2.5}\left(1-\frac{1}{2.5}\right) e^{-2 \kappa L}\\
+            &=3.84 e^{-2 \kappa L}
+            \intertext{En donde, $\kappa=\frac{\sqrt{2 m c^2\left(V_0-E\right)}}{\hbar c}=\frac{\left[2\left(511 \times 10^3 \mathrm{eV}\right)(1.5 \mathrm{eV})\right]^{1 / 2}}{197.4 \mathrm{eV} \cdot \mathrm{nm}}=6.27 \mathrm{~nm}^{-1}$}
+            &=2 \times 10^{-4} 
+        \end{align*}
+        De esto, se extrae $L$, tal que: 
+$$L=\frac{\ln \left(1.92 \times 10^4\right)}{2\left(6.27 \times 10^9 \mathrm{~m}^{-1}\right)}=7.86 \times 10^{-10} \mathrm{~m}$$
+
+Para la segunda parte del problema, usando la masa del protón, se tiene: 
+
+\begin{align*}
+    \kappa&=\frac{\sqrt{2 m c^2\left(V_0-E\right)}}{\hbar c}\\
+    &=\frac{\left[2\left(938.27 \times 10^6 \mathrm{eV}\right)(1.5 \mathrm{eV})\right]^{1 / 2}}{197.4 \mathrm{eV} \cdot \mathrm{nm}}\\
+    &=268.8 \mathrm{~nm}^{-1}
+\end{align*}
+
+
+Por lo tanto, 
+\begin{align*}
+    T&=3.84 e^{-2 \kappa L}\\
+    &=3.84 e^{-2\left(268.8 \times 10^9 \mathrm{~m}^{-1}\right)\left(7.86 \times 10^{-10} \mathrm{~m}\right)}\\
+    &=1.2 \times 10^{-183}
+\end{align*}
+
+
+La probabilidad del protón es más pequeña. 
+    \end{sol}
+\end{problema}
+
+
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

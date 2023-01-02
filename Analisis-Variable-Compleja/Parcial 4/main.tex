@@ -1,0 +1,309 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+
+\section{Funciones armónicas}
+
+
+\begin{cajita}
+    \begin{nota}[Notación interesante]
+        Tenemos:
+        \begin{itemize}
+            \item El plano extendido, $\mathbb{C}_{\infty}=\mathbb{C}\cup \{\infty\}$
+            \item $\overline{A}$ cerradura de $A$. 
+            \item La frontera extendida, $\partial_\infty=\partial G\cup \{\infty\}$. Un caso particular cuando $G$ está acotado, entonces $\partial_\infty=\partial G$.
+            \item Función de Green. Sea $G$ un conjunto y $a$ un punto $\partial_\infty G$, sea 
+            $$G(a;r)=G\cap B(a;r), \forall r>0$$
+        \end{itemize}
+    \end{nota}
+\end{cajita}
+
+\subsection{Motivación}
+
+
+
+\begin{cajita}
+    \begin{teorema}
+        Una función $f$ en una región $G$ es análitica si y solo si $\operatorname{Re} f=u$ y $\operatorname{Im} f=v$ son funciones armónicas que satisfacen las ecuaciones de Cauchy Riemann.
+    \end{teorema}
+    \begin{teorema}
+        Una región $G$  es simplemente conexa si y solo si para cada función armónica $u$ sobre $G$  existe una función armónica $v$ sobre $G$ tal que $f=u+i v$ es analítica en $G$.
+    \end{teorema}
+\end{cajita}
+
+
+
+\begin{definicion}[Ecuación de Laplace]
+    Si $G$ es un subconjunto abierto de $\mathbb{C}$ entonces una función $u:G \to \mathbb{R}$ es armónica, si $u$  tiene segundas derivadas parciales y 
+$$
+\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0 .
+$$
+\end{definicion}
+
+El propósito de esta definición es presentar propiedades derivadas de él y que guíen a la resolución del \textbf{Problema de Dirichlet}. \bigbreak 
+
+
+Dicho problema ha tenido diversas soluciones a lo largo de la historia:
+\begin{itemize}
+    \item Teorema de Green. Último subcapítulo del Conway. 
+    \item Solución de Dirichlet a través de Perron. 
+    \begin{enumerate}
+        \item Propiedades básicas
+        \begin{itemize}
+            \item Teorema del valor medio
+        \end{itemize}
+        \item Funciones armónicas en un disco
+            \begin{itemize}
+                \item Principio máximo (primera y segunda versión)
+                \item Principio del mínimo
+            \end{itemize}
+        \item Funciones armónicas en un disco
+            \begin{itemize}
+                \item Teorema y desigualdad de Harnack 
+            \end{itemize}
+        \item Funciones subarmónicas y superarmónicas
+        \begin{itemize}
+            \item Principio máximo (tercera y cuarta versión)
+        \end{itemize}
+        \item El problema de Dirichlet
+    \end{enumerate}
+    \item Versión de Weierstrass y posteriormente Hilbert. 
+\end{itemize}
+
+
+
+\begin{cajita}
+    \begin{definicion}[Problema de Dirichlet]
+        Consiste en determinar todas las regiones $G$ tales que para cualquier función continua
+        $$f:\partial G\to \mathbb{R}$$
+        existe una función continua
+        $$u:\overline{G}\to \mathbb{R},$$
+        tal que 
+        $$u(z)=f(z)$$
+        en donde $z\in\partial G$ y $u$ es una función armónica en $G$.
+    \end{definicion}
+\end{cajita}
+
+
+\subsection{Propiedades básicas}
+
+
+
+\begin{teorema}[Teorema del valor medio - MVP]
+    Sea $u: G \rightarrow \mathbb{R}$ una función armónica y sea $\bar{B}(a ; r)$ un disco cerrado contenido en $G$. Si $\gamma$ es el círculo $|z-a|=r$, entonces$$
+u(a)=\frac{1}{2 \pi} \int_0^{2 \pi} u\left(a+r e^{i \theta}\right) d \theta
+$$
+\begin{dem}
+    Sea $D$ un disco tal que $\bar{B}(a ; r) \subset D \subset G$  y sea $f$ una función analítica en $D$ tal que $u=\operatorname{Re} f$. Entonces, usando la FIC 
+    $$
+f(a)=\frac{1}{2 \pi} \int_0^{2 \pi} f\left(a+r e^{i \theta}\right) d \theta .
+$$
+\end{dem}
+\end{teorema}
+
+\begin{definicion}
+    Una función continua $u: G \rightarrow \mathbb{R}$ tiene el MVP si para cualquier $\vec{B}(a ; r) \subset G$
+$$
+u(a)=\frac{1}{2 \pi} \int_0^{2 \pi} u\left(a+r e^{i \theta}\right) d \theta
+$$
+\end{definicion}
+
+
+\begin{teorema}[Principio máximo (1 versión)]
+    Sea $G$  una región y supóngase que $u$ es una función real continua  en $G$ con el MVP. Si existe un punto $a$ en $G$  tal que $u(a) \geq u(z)$  para todo $z$ en $G$ entonces $u$ es una función constante.
+    \begin{dem}
+        Los pasos: 
+        \begin{enumerate}
+            \item  Sea $A$, el conjunto definido por
+            $$
+            A=\{z \in G: u(z)=u(a)\} .
+            $$
+            
+            Como $u$ es continua, $A$ es cerrado en $G$. Si $z_0 \in A$ sea $r$  es elegida tal que  $\bar{B}\left(z_0 ; r\right) \subset G$. Supóngase que existe un punto $b$ en $B\left(z_0 ; r\right)$ tal que $u(b) \neq u(a)$; entonces, $u(b)<u(a)$. 
+
+            \item  Por la continuidad, $u(z)<u(a)=u\left(z_0\right)$ para todo $z$ en un vecindario de $b$. 
+            \item En particular, si $\rho=\left|z_0-b\right|$ y $b=z_0+\rho e^{i \beta}, 0 \leq \beta<2 \pi$ entonces hay un intervalo propio $I$ de $[0,2 \pi]$ tal que  $\beta \in I$ y $u\left(z_0+\rho e^{i \theta}\right)<u\left(z_0\right)$ para todo $\theta$ en $I$.
+            \item Entonces, por el MVP
+            $$
+            u\left(z_0\right)=\frac{1}{2 \pi} \int_0^{2 \pi} u\left(z_0+\rho e^{i \theta}\right) d \theta<u\left(z_0\right),
+            $$
+            una contradicción.
+            \item Entonces $B\left(z_0 ; r\right) \subset A$ y $A$ es también abierta. Por lo tanto, por la conexidad de $G, A=G$.
+        \end{enumerate}
+    
+    \end{dem}
+\end{teorema}
+
+\begin{teorema}[Principio máximo (2 versión)]
+    Sea $G$ uuna región y sean $u$ y $v$ dos funciones reales continuas en $G$ que tiene el MVP. Si para cada punto $a$ en la frontera extendida $\partial_{\infty} G$,
+$$
+\limsup _{z \rightarrow a} u(z) \leq \liminf _{z \rightarrow a} v(z)
+$$
+entonces se cumple: $u(z)<v(z),\forall z\in G$ o $u=v$.
+\end{teorema}
+
+
+\begin{teorema}[Principio del mínimo]
+    Sea $G$ una región y supóngase que $u$  es una función real continua en $G$ con el MVP. Si existe un punto $a$ en $G$ tal que $u(a) \leq u(z)$ para todo $z$ en $G$ entonces $u$ es una función constante.
+\end{teorema}
+\subsection{Funciones armónicas en un disco}
+
+Una aplicación en pequeñas dimensiones. Estudio de funciones armónicas en discos abiertos $(\{z:|z|<1\})$ 
+
+
+\begin{definicion}[Kernel de Poisson]
+    La función
+$$
+P_r(\theta)=\sum_{n=-\infty}^{\infty} r^{|n|} e^{i n \theta},
+$$
+para $0 \leq r<1$ y $-\infty<\theta<\infty$.
+\begin{cajita}
+    Luego de varios pasos: 
+    $$P_r(\theta)=\frac{1-r^2}{1-2 r \cos \theta+r^2}=\operatorname{Re}\left(\frac{1+r e^{i \theta}}{1-r e^{i \theta}}\right)$$
+\end{cajita}
+\end{definicion}
+
+
+\begin{definicion}[Desigualdad de Harnack]
+    Si $u: \bar{B}(a ; R) \rightarrow \mathbb{R}$  es continua, armónico en $B(a ; R)$, y $u \geq 0$ entonces para $0 \leq r<R$ y para todo $\theta$
+$$
+\frac{R-r}{R+r} u(a) \leq u\left(a+r e^{i \theta}\right) \leq \frac{R+r}{R-r} u(a)
+$$
+
+\end{definicion}
+
+\begin{definicion}
+    Si $G$ es  un subconjunto abierto de $\mathbb{C}$ entonces $\operatorname{Har}(G)$ es el espacio de funciones armónicas en $G$. Como $\operatorname{Har}(G) \subset C(G, \mathbb{R})$ está dado por la métrica que hereda de $C(G, \mathbb{R})$.
+\end{definicion}
+
+\begin{definicion}[Teorema de Harnack]
+     Sea $G$  una región. be a region.
+     \begin{enumerate}
+        \item El espacio métrico $\operatorname{Har}(G)$ es completo.
+        \item  Si $\left\{u_n\right\}$  es una sucesión en $\operatorname{Har}(G)$ tal que $u_1 \leq u_2 \leq \ldots$ entonces: $u_n(z) \rightarrow \infty$ uniformemente sobre compactos de $G$ o $\left\{u_n\right\}$ converge en $\operatorname{Har}(G)$ a una función armónica.
+     \end{enumerate}
+     
+\end{definicion}
+
+\subsection{Funciones subarmónicas y superarmónicas}
+
+\begin{definicion}
+    Sea $G$ una región y sea $\varphi: G \rightarrow \mathbb{R}$ una función continua. $\varphi$ es una función subarmónica si para cualquier $\bar{B}(a ; r) \subset G$,
+$$
+\varphi(a) \leq \frac{1}{2 \pi} \int_0^{2 \pi} \varphi\left(a+r e^{i \theta}\right) d \theta .
+$$
+$\varphi$ es una función superarmónica si para cualquier $\bar{B}(a ; r) \subset G$,
+$$
+\varphi(a) \geq \frac{1}{2 \pi} \int_0^{2 \pi} \varphi\left(a+r e^{i \theta}\right) d \theta .
+$$
+\end{definicion}
+
+
+
+\begin{teorema}[Principio Máximo (3 versión)]
+    Sea $G$ una región y sea $\varphi: G \rightarrow \mathbb{R}$ sea una función subarmónica. Si existe un punto $a\in G$ con $\varphi(a) \geq \varphi(z)$ para todo $z\in G$ entonces $\varphi$ es una función constante.
+\end{teorema}
+
+
+\begin{teorema}[Principio Máximo (4 versión)]
+    
+ Sea $G$  una región y sea $\varphi$ y $\psi$ sea funciones reales definidas sobre $G$ tal que  $\varphi$ es subarmónico y $\psi$ es superarmónica. Si para cada punto $a$ en $\partial_{\infty} G$
+$$
+\limsup _{z \rightarrow a} \varphi(z) \leq \liminf _{z \rightarrow a} \psi(z),
+$$
+entonces:  $\varphi(z)<\psi(z),\forall z\in G$ o $\varphi=\psi$ y $\varphi$ es armónico. 
+\end{teorema}
+
+\begin{definicion}
+    Si $G$ es una región y $f: \partial_{\infty} G \rightarrow \mathbb{R}$ es una función continua entonces la Familia Perron, $P(f, G)$, consiste en todas las funciones subarm´
+    s $\varphi: G \rightarrow \mathbb{R}$ tales que:
+$$
+\underset{z \rightarrow a}{\lim \sup } \varphi(z) \leq f(a)
+$$
+para todo $a$ en $\partial_{\infty} G$.
+\end{definicion}
+
+
+\begin{cajita}
+    \begin{ejemplo}
+        La solución para el problema de Dirichlet para un disco unitario en $\mathbb{R}^2$ está dado por la fórmula integral de Poisson.
+
+Si $f$ es una función continua sobre el contorno $\partial D$ del disco unitario abierto $D$, entonces la solución al problema de Dirichlet es $u(z)$ dado por:
+$$
+u(z)= \begin{cases}\frac{1}{2 \pi} \int_0^{2 \pi} f\left(e^{i \psi}\right) \frac{1-|z|^2}{\left|z-e^{i \psi}\right|^2} d \psi & \text { si } z \in D \\ f(z) & \text { si } z \in \partial D\end{cases}
+$$
+La solución $u$ es continua en el disco unitario cerrado $\bar{D}$ y armónica sobre $D$.
+El integrando se conoce como kernel de Poisson; esta solución resulta de la función de Green en dos dimensiones:
+$$
+G(z, x)=-\frac{1}{2 \pi} \log |z-x|+\gamma(z, x)
+$$
+donde $\gamma(z, x)$ es armónica
+$$
+\Delta_x \gamma(z, x)=0
+$$
+y elegida tal que $G(z, x)=0$ para $x \in \partial D$.
+    \end{ejemplo}
+\end{cajita}
+
+\subsection{El problema de Dirichlet}
+
+\begin{definicion}
+    Una región $G$ es llamado Región de Dirichlet  si el problema de Dirichlet que puede ser resuelto por $G$. Entonces, $G$ es una región de Dirichlet si para cada función continua $f: \partial_{\infty} G \rightarrow \mathbb{R}$ existe una función continua $u: G^{-} \rightarrow \mathbb{R}$ tal que $u$ es armónico en $G$ y $u(z)=f(z)$ para todo $z$ en $\partial_{\infty} G$.
+\end{definicion}
+
+
+\begin{definicion}
+    Sea $G$ una región y sea $a \in \partial_{\infty} G$. Una \textbf{barrera} para $G$ en $a$ es una familia $\left\{\psi_r: r>0\right\}$ de funciones tales que:
+    \begin{enumerate}
+        \item $\psi_r$ es definido y superarmónico en $G(a ; r)$ con $0 \leq \psi_r(z) \leq 1$;
+        \item $\lim _{z \rightarrow a} \psi_r(z)=0$;
+        \item $\lim _{z \rightarrow w} \psi_r(z)=1$ para $w$ en $G \cap\{w:|w-a|=r\}$.
+    \end{enumerate}
+    \begin{cajita}
+        $\psi_r: G(a ; r) \rightarrow \mathbb{R}$,
+        $$\psi_r(z)=\frac{1}{c_r} \min \left\{u(z), c_r\right\}$$
+    \end{cajita}
+\end{definicion}
+
+
+
+\begin{teorema}
+    Sea $G$ una región y sea $a \in \partial_{\infty} G$ tal que existe una barrera para $G$ en $a$. Si $f: \partial_{\infty} G \rightarrow \mathbb{R}$ es continuo y $u$ es la función Perron asociado con $f$ entonces:
+$$
+\lim _{z \rightarrow a} u(z)=f(a)
+$$
+
+\begin{dem}
+    Los pasos: 
+    \begin{enumerate}
+        \item Sea $\left\{\psi_r: r>0\right\}$ una barrera para $G$ en $a$ y asúmase que $a \neq \infty$; además considere que $f(a)=0$.
+        \item Sea $\epsilon>0$ y sea $\delta>0$ tal que $|f(w)|<\epsilon$ cuando $w \in \partial_{\infty} G$ y $|w-a|<2 \delta$
+        \item Sea $\psi=\psi_\delta$. 
+        \item Sea $\hat{\psi}: G \rightarrow \mathbb{R}$  definido por $\hat{\psi}(z)=\psi(z)$ para $z$ en $G(a ; \delta)$ y $\hat{\psi}(z)=1$ para $z$ en $G-B(a ; \delta)$.
+        \item Entonces $\hat{\psi}$ es superarmónica. Si $|f(w)| \leq M$ para todo $w$ en $\partial_{\infty} G$, entonces $-M \hat{\psi}-\epsilon$ es superarmónica.
+    \end{enumerate}
+    
+\end{dem}
+
+\end{teorema}
+
+\begin{corolario}
+    Una región $G$ es una región de Dirichlet si y solo si es una barrera para $G$  en cada punto de $\partial_{\infty} G$.
+\end{corolario}
+
+\cite{conway2012functions}
+\cite{gamelin2003complex}
+\cite{tanton2005encyclopedia}
+
+
+%-----------------------
+
+\bibliographystyle{plain}
+\bibliography{referencias.bib}
+
+\end{document}

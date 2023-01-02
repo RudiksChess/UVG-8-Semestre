@@ -1,0 +1,257 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\begin{problema}
+    Sea $f(z)=\frac{1}{z(z-1)(z-2)}$ y encuentre la expansión de Laurent de $f(z)$ en cada uno de los anillos dados:
+    \begin{cajita}
+        Sea 
+        \begin{align*}
+            \frac{1}{z(z-1)(z-2)} &= \frac{A}{z}+\frac{B}{z-1}+\frac{C}{z-2}\\
+            1 &= A(z-1)(z-2) + Bz(z-2)+Cz(z-1)\\
+              &= (Az-A)(z-2)+Bz^2-2Bz+Cz^2-Cz\\
+              &= Az^2-2Az-Az+2A+ Bz^2-2Bz+Cz^2-Cz
+        \end{align*}
+        Entonces: 
+        \begin{align*}
+            A+B+C &= 0\\
+            -2A -A -2B-C= -3A -2B-C&=0\\
+            2A &=1
+        \end{align*}
+         Entonces
+         \begin{align*}
+            B+C &= -\frac{1}{2}\implies C=-\frac{1}{2}-B\\
+           -2B-C &= \frac{3}{2}\implies-2B+\frac{1}{2}+B = \frac{3}{2}\implies B= -1 \\
+            A &= \frac{1}{2}
+         \end{align*}
+         Por lo tanto, 
+         \begin{align*}
+            \frac{1}{z(z-1)(z-2)} &= \frac{1}{2z}-\frac{1}{z-1}+\frac{1}{2(z-2)}
+         \end{align*}
+    \end{cajita}
+    \newpage
+    \begin{enumerate}
+        \item Centro en $z=0$, y radios $r_2=0, r_1=1$
+        \begin{sol}
+            Sea $A=\{z\in\mathbb{C}: 0<|z|<1\}$. Tenemos: 
+            \begin{align*}
+                f(z)=\frac{1}{z(z-1)(z-2)} &= \frac{1}{2z}-\frac{1}{z-1}+\frac{1}{2(z-2)}\\
+                &= \frac{1}{2z}+\frac{1}{1-z}+\frac{1}{2}\left(\frac{1}{z-2}\right)\\
+                &= \frac{1}{2z}+\frac{1}{1-z}+\frac{1}{2}\left(\frac{1\big/(-1/2)}{(z-2)\big/ (-1/2)}\right)\\
+                &= \frac{1}{2z}+\frac{1}{1-z}-\frac{1}{4}\left(\frac{1}{1-\frac{z}{2}}\right)\\
+                &= \frac{1}{2z}+\sum_{n=0}^{\infty}\left(z\right)^n-\frac{1}{4}\left(\sum_{n=0}^{\infty}\left(\frac{z}{2}\right)^n\right)\\
+                &= \frac{1}{2z}+z^0+z^1+z^2+\cdots -\frac{1}{4}\left(\frac{z^0}{2^0}+\frac{z^1}{2^1}+\frac{z^2}{2^2}+\cdots\right)\\
+                &= \frac{1}{2z}+1+z+z^2+\cdots -\frac{1}{4}-\frac{z}{8}-\frac{z^2}{16}-\cdots
+            \end{align*}
+        \end{sol}
+        \item Centro en $z=0$, y radios $r_2=1, r_1=2$
+        \begin{sol}
+            Sea $A=\{z\in\mathbb{C}: 1<|z|<2\}$. Tenemos: 
+            \begin{align*}
+                f(z)=\frac{1}{z(z-1)(z-2)} &= \frac{1}{2z}-\frac{1}{z-1}+\frac{1}{2(z-2)}\\
+                &= \frac{1}{2z}-\frac{1\big/ z}{(z-1)\big/ z}+\frac{1}{2}\left(\frac{1}{z-2}\right)\\
+                &= \frac{1}{2z}-\frac{1}{z}\left(\frac{1}{1-\frac{1}{z}}\right)+\frac{1}{2}\left(\frac{1\big/(-1/2)}{(z-2)\big/ (-1/2)}\right)\\
+                &= \frac{1}{2z}-\frac{1}{z}\left(\frac{1}{1-\frac{1}{z}}\right)-\frac{1}{4}\left(\frac{1}{1-\frac{z}{2}}\right)\\
+                &= \frac{1}{2z}-\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^n-\frac{1}{4}\left(\sum_{n=0}^{\infty}\left(\frac{z}{2}\right)^n\right)\\
+                &= \frac{1}{2z}-\sum_{n=0}^{\infty}\left(\frac{1}{z^{n+1}}\right)-\frac{1}{4}\left(\sum_{n=0}^{\infty}\left(\frac{z}{2}\right)^n\right)\\
+                &= \frac{1}{2z}-\frac{1}{z^1}-\frac{1}{z^2}-\frac{1}{z^3}-\cdots - \frac{1}{4}-\frac{z}{8}-\frac{z^2}{16}-\cdots
+            \end{align*}
+        \end{sol}
+        \item Centro en $z=0$, y radios $r_2=2, r_1=\infty$
+        \begin{sol}
+            Sea $A=\{z\in\mathbb{C}: 2<|z|<\infty\}$. Tenemos: 
+            \begin{align*}
+                f(z)=\frac{1}{z(z-1)(z-2)} &= \frac{1}{2z}-\frac{1}{z-1}+\frac{1}{2(z-2)}\\
+                &=\frac{1}{2z}-\frac{1\big/ z}{(z-1)\big/ z}+\frac{1}{2}\left(\frac{1}{z-2}\right)\\
+                &=\frac{1}{2z}-\frac{1}{z}\left(\frac{1}{1-\frac{1}{z}}\right)+\frac{1}{2}\left(\frac{1\big/ z}{(z-2)\big/ z}\right)\\
+                &=\frac{1}{2z}-\frac{1}{z}\left(\frac{1}{1-\frac{1}{z}}\right)+\frac{1}{2z}\left(\frac{1}{1-\frac{2}{z}}\right)\\
+                &=\frac{1}{2z}-\frac{1}{z}\left(\sum_{n=0}^\infty\left(\frac{1}{z}\right)^n\right)+\frac{1}{2z}\left(\sum_{n=0}^\infty\left(\frac{2}{z}\right)^n\right)\\
+                &=\frac{1}{2z}-\left(\sum_{n=0}^\infty\left(\frac{1}{z^{n+1}}\right)\right)+\left(\sum_{n=0}^\infty\left(\frac{2^{n-1}}{z^{n+1}}\right)\right)\\
+                &= \frac{1}{2z}-\frac{1}{z^1}-\frac{1}{z^2}-\frac{1}{z^3}-\cdots +\frac{2^{0-1}}{z^{1}}+\frac{2^{1-1}}{z^{1+1}}+\frac{2^{2-1}}{z^{2+1}}+\cdots
+            \end{align*}
+        \end{sol}
+    \end{enumerate}
+
+\end{problema}
+
+\begin{problema}
+    Para la función
+    $$f(z)=\frac{z^2+z+3}{z^3+2 z^2+z+2}$$
+    \begin{cajita}
+        Sea
+        \begin{align*}
+            f(z)=\frac{z^2+z+3}{z^3+2 z^2+z+2} &= \frac{z^2+z+3}{(z+2)(z^2+1)} = \frac{A}{z+2}+\frac{Bz+C}{z^2+1}\\
+            \implies z^2+z+3&= A(z^2+1)+(Bz+C)(z+2)\\
+                   &= Az^2+A+Bz^2+2Bz +Cz+2C
+        \end{align*}
+        Entonces, 
+        \begin{align*}
+            A+B=1;\quad 2B+C =1; \quad A+2C=3
+        \end{align*}
+        En donde, 
+        $$A=1;\quad B=0; \quad C=1$$
+        Por lo tanto, 
+        $$\frac{z^2+z+3}{(z+2)(z^2+1)} = \frac{1}{z+2}+\frac{1}{z^2+1}$$
+    \end{cajita}
+    \begin{enumerate}
+        \item Encuentre el desarrollo de Taylor con respecto al origen
+        \begin{sol}
+            Sea
+            \begin{align*}
+                f(z) &= \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}(z)^n\\
+                &= \frac{f^{0}(0)}{0!}z^0+\frac{f^{1}(0)}{1!}z+\frac{f^{2}(0)}{2!}z^2+\cdots\\
+                &=\left[\frac{1}{z+2}+\frac{1}{z^2+1}\right]_{z=0}z^0+\left[-\frac{2z}{(z^2+1)^2}-\frac{1}{(z+2)^2}\right]_{z=0}z^1+\\
+                &+ \left[\frac{6}{(z^2+1)^2}-\frac{8}{(z^2+1)^3}+\frac{2}{(z+2)^3}\right]_{z=0}z^2+\cdots\\
+                &=\frac{3}{2}-\frac{z}{4}-\frac{7z^2}{8}+\cdots
+            \end{align*}
+        \end{sol}
+        \item Encuentre el desarrollo de Taylor con respecto a $z=-1$
+        \begin{sol}
+            Sea $a=-1$
+            \begin{align*}
+                f(x) &= \sum_{n=0}^\infty \frac{f^{(n)}(-1)}{n!}(z-(-1))^n = \sum_{n=0}^\infty \frac{f^{(n)}(-1)}{n!}(z+1)^n\\
+                &= \frac{f^{0}(0)}{0!}(z+1)^0+\frac{f^{1}(0)}{1!}(z+1)^1+\frac{f^{2}(0)}{2!}(z+1)^2+\cdots\\
+                &=\left[\frac{1}{z+2}+\frac{1}{z^2+1}\right]_{z=-1}(z+1)^0+\left[-\frac{2z}{(z^2+1)^2}-\frac{1}{(z+2)^2}\right]_{z=-1}(z+1)^1+\\
+                &+ \left[\frac{6}{(z^2+1)^2}-\frac{8}{(z^2+1)^3}+\frac{2}{(z+2)^3}\right]_{z=-1}(z+1)^2+\cdots\\
+                &= \frac{3}{2}-\frac{z+1}{2}+\frac{5}{4}(z+1)^2+\cdots
+            \end{align*}
+        \end{sol}
+        \item Calcule la(s) expansión(es) de Laurent con respecto al origen
+        \begin{sol}
+            Sea 
+            \begin{itemize}
+                \item Sea $A=\{z\in\mathbb{C}: 2<|z-0|<\infty\}$
+                 \begin{align*}
+                    f(z) &= \frac{1}{z+2}+\frac{1}{z^2+1}\\
+                         &= \frac{1\big/z}{(z+2)\big/ z}+\frac{1\big/z^2}{(z^2+1)\big/ z^2}\\
+                         &= \frac{1}{z}\left(\frac{1}{1-\left(-\frac{2}{z}\right)}\right)+\frac{1}{z^2}\left(\frac{1}{1-\left(-\frac{1}{z^2}\right)}\right)\\
+                         &=\frac{1}{z}\left(\sum_{n=0}^\infty \left(-\frac{2}{z}\right)^n\right)+\frac{1}{z^2}\left(\sum_{n=0}^\infty\left(-\frac{1}{z^2}\right)^n\right)\\
+                         &= \left(\sum_{n=0}^\infty \frac{(-2)^n}{z^{n+1}}\right)+\left(\sum_{n=0}^\infty\frac{(-1)^n}{z^{2n+2}}\right)\\
+                \end{align*}
+                \item Caso no necesario:
+                \begin{align*}
+                    f(z) &= \frac{1}{z+2}+\frac{1}{z^2+1}\\
+                         &= \frac{1\big/z}{(z+2)\big/ z} + \frac{1}{1-(-z^2)}\\
+                         &= \frac{1}{z}\left(\frac{1}{1-\left(-\frac{2}{z}\right)}\right) + \frac{1}{1-(-z^2)}\\
+                         &= \sum_{n=0}^\infty \frac{(-2)^n}{z^{n+1}}+\sum_{n=0}^\infty(-z^2)^n
+                \end{align*}
+                \item Sea $A=\{z\in\mathbb{C}: 1<|z-0|<2\}$
+                \begin{align*}
+                    f(z) &= \frac{1}{z+2}+\frac{1}{z^2+1}\\
+                         &= \frac{1/2}{(z+2)/2}+\frac{1/z^2}{(z^2+1)/z^2}\\
+                         &= \frac{1}{2}\left(\frac{1}{1-\left(-\frac{z}{2}\right)}\right)+\frac{1}{z^2}\left(\frac{1}{1-\left(-\frac{1}{z^2}\right)}\right)\\
+                         &=\frac{1}{2}\left(\sum_{n=0}^\infty\left(-\frac{z}{2}\right)^n\right)+\left(\sum_{n=0}^\infty\frac{(-1)^n}{z^{2n+2}}\right)\\
+                         &=\left(\sum_{n=0}^\infty \frac{(-z)^n}{2^{n+1}}\right)+\left(\sum_{n=0}^\infty\frac{(-1)^n}{z^{2n+2}}\right)\\
+                \end{align*}
+                \item Sea $A=\{z\in\mathbb{C}: 0<|z-0|<1\}$ 
+                \begin{align*}
+                    f(z) &= \frac{1}{z+2}+\frac{1}{z^2+1}\\
+                         &= \frac{1/2}{(z+2)/2}+\frac{1}{1-(-z^2)}\\
+                         &=\frac{1}{2}\left(\frac{1}{1-\left(-\frac{z}{2}\right)}\right) + \frac{1}{1-(-z^2)}\\
+                         &= \left(\sum_{n=0}^\infty \frac{(-z)^n}{2^{n+1}}\right) + \sum_{n=0}^\infty(-z^2)^n
+                \end{align*}
+             \end{itemize}
+            
+
+            
+
+            
+            
+            
+        \end{sol}
+        \item Calcule la expansión de Laurent con respecto a cada punto singular. En cada caso, presente el residuo de la función:
+
+        \begin{sol}
+            Sea 
+            \begin{enumerate}
+                \item Se tiene $a=-2$
+                \begin{enumerate}
+                    \item Sea 
+                    \begin{align*}
+                        f(z) &= \frac{1}{z+2}+\frac{1}{z^2+1}\\
+                             &= \frac{1}{z+2}+\frac{i}{2}\left(\frac{1}{z+i}\right)-\frac{i}{2}\left(\frac{1}{z-i}\right)\\
+                             &= \frac{1}{z+2}+\frac{i}{2}\left(\frac{1}{2-2+z+i}\right)-\frac{i}{2}\left(\frac{1}{2-2+z-i}\right)\\
+                             &= \frac{1}{z+2}+\frac{i}{2}\left(\frac{1}{-2+i-\left[-(z+2)\right]}\right)-\frac{i}{2}\left(\frac{1}{-2-i-\left[-(z+2)\right]}\right)\\
+                             &= \frac{1}{z+2}+\frac{i}{2(-2+i)}\left(\frac{1}{1-\left[\frac{-(z+2)}{-2+i}\right]}\right)+\frac{i}{2(2+i)}\left(\frac{1}{1-\left[\frac{(z+2)}{(2+i)}\right]}\right)\\
+                             &= \frac{1}{z+2}+\frac{i}{2(-2+i)}\left(\sum_{n=0}^\infty\left[\frac{-(z+2)}{-2+i}\right]^n\right)+ \frac{i}{2(2+i)}\left(\sum_{n=0}^\infty \left[\frac{z+2}{2+i}\right]^n\right)\\
+                             &= \frac{1}{z+2}+\frac{i}{2}\left(\sum_{n=0}^\infty\frac{(-1)^n(z+2)^n}{(-2+i)^{n+1}}\right)+ \frac{i}{2}\left(\sum_{n=0}^\infty \frac{(z+2)^n}{(2+i)^{n+1}}\right)
+                    \end{align*}
+                \end{enumerate}
+                \item Se tiene $a=i$:
+                \begin{enumerate}
+                    \item Sea 
+                    \begin{align*}
+                        f(z) &= \frac{1}{z+2}+\frac{1}{z^2+1}\\
+                             &= \frac{1}{i-i+z+2}+\frac{1}{(z+i)(z-i)}\\
+                             &= \frac{1}{2+i+z-i}+\frac{i}{2}\left(\frac{1}{z+i}\right)-\frac{i}{2}\left(\frac{1}{z-i}\right)\\
+                             &= \frac{1}{2+i-[-(z-i)]}+\frac{i}{2}\left(\frac{1}{2i-2i+i-z}\right)-\frac{i}{2}\left(\frac{1}{z-i}\right)\\
+                             &= \frac{1}{2+i}\left(\frac{1}{1-\left[\frac{-(z-i)}{2+i}\right]}\right)+\frac{i}{2}\left(\frac{1}{2i -\left[-(z-i)\right]}\right)-\frac{i}{2}\left(\frac{1}{z-i}\right)\\
+                             &= \frac{1}{2+i}\left(\sum_{n=0}^\infty \left[\frac{-(z-i)}{2+i}\right]^n\right)+\frac{1}{4}\left(\frac{1}{1 -\left[\frac{-(z-i)}{2i}\right]}\right)-\frac{i}{2}\left(\frac{1}{z-i}\right)\\
+                             &= \frac{1}{2+i}\left(\sum_{n=0}^\infty \frac{(-1)^n(z-i)^n}{(2+i)^n}\right)+\frac{1}{4}\left(\sum_{n=0}^\infty \left[-\frac{(z-i)}{2i}\right]^n\right)-\frac{i}{2}\left(\frac{1}{z-i}\right)\\
+                             &= \left(\sum_{n=0}^\infty \frac{(-1)^n(z-i)^n}{(2+i)^{n+1}}\right)+\frac{1}{4}\left(\sum_{n=0}^\infty \left[-\frac{(z-i)}{2i}\right]^n\right)-\frac{i}{2}\left(\frac{1}{z-i}\right)
+                            \end{align*}
+                \end{enumerate}
+                \item Se tiene $a=-i$:
+                \begin{enumerate}
+                    \item Sea 
+                    \begin{align*}
+                        f(z) &= \frac{1}{z+2}+\frac{1}{z^2+1}\\
+                             &= \frac{1}{i-i+z+2}+\frac{1}{(z+i)(z-i)}\\
+                             &= \frac{1}{2-i+z+i}-\frac{i}{2}\left(\frac{1}{z-i}\right)+\frac{i}{2}\left(\frac{1}{z+i}\right)\\
+                             &= \frac{1}{2-i-[-(z+i)]}-\frac{i}{2}\left(\frac{1}{2i-2i+z-i}\right)+\frac{i}{2}\left(\frac{1}{z+i}\right)\\
+                             &= \frac{1}{2-i}\left(\frac{1}{1-\left[\frac{-(z+i)}{2-i}\right]}\right)-\frac{i}{2}\left(\frac{1}{-2i -\left[-(z+i)\right]}\right)+\frac{i}{2}\left(\frac{1}{z+i}\right)\\
+                             &= \frac{1}{2-i}\left(\sum_{n=0}^\infty \left[\frac{-(z+i)}{2-i}\right]^n\right)+\frac{1}{4}\left(\frac{1}{1 -\left[\frac{(z+i)}{2i}\right]}\right)+\frac{i}{2}\left(\frac{1}{z+i}\right)\\
+                             &= \frac{1}{2-i}\left(\sum_{n=0}^\infty \frac{(-1)^n(z+i)^n}{(2- i)^n}\right)+\frac{1}{4}\left(\sum_{n=0}^\infty \left[\frac{(z+i)}{2i}\right]^n\right)+\frac{i}{2}\left(\frac{1}{z+i}\right)\\
+                             &= \left(\sum_{n=0}^\infty \frac{(-1)^n(z+i)^n}{(2-i)^{n+1}}\right)+\frac{1}{4}\left(\sum_{n=0}^\infty \left[\frac{(z+i)}{2i}\right]^n\right)+\frac{i}{2}\left(\frac{1}{z+i}\right)
+                            \end{align*}
+                \end{enumerate}
+            \end{enumerate}
+        \end{sol}
+    \end{enumerate}
+\end{problema}
+
+\begin{problema}
+    Sea $G$ una región del plano complejo y $f: G \rightarrow \mathbb{C}$ una función analítica excepto para polos. Muestre que $f$ no puede tener un punto límite en $G$.
+    \begin{sol}
+        Por reducción al absurdo, supóngase que $f$ tiene un punto límite $a$ en $G$. Por hipótesis, tenemos una función \textit{meromorfa} en $G$, es decir que $f$ es analítica en todo $G$ (incluyendo a $a$), excepto para los polos. $\implies$ La función es analítica en una vecindad de $a(\to\gets)$, entonces $a$ no es un punto límite. Por lo tanto, $f$ no puede tener un punto límite en $G$.
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Investigue la existencia del desarrollo de Laurent de $f(z)=\frac{1}{\operatorname{sen}\left(\frac{1}{z}\right)}$, con respecto al origen.
+    \begin{sol}
+        Sea
+        \begin{align*}
+            \sen z &= \frac{e^{iz}-e^{iz}}{2i}\\
+                   &= \frac{1}{2i}\left[e^{iz}-e^{iz}\right]
+            \intertext{Usando $e^z = \sum_{n=0}^\infty\frac{z^n}{n!}$: }
+                   &= \frac{1}{2i}\left[\sum_{n=0}^\infty\frac{(iz)^n}{n!}-\sum_{n=0}^\infty\frac{(-iz)^n}{n!}\right]\\
+                   &= \frac{1}{2i}\left[\sum_{n=0}^\infty\frac{i^nz^n}{n!}-\sum_{n=0}^\infty\frac{(-1)^n (iz)^n}{n!}\right]
+        \end{align*}
+        Entonces para $\sen(1/z)$:
+        \begin{align*}
+            \sin\left(\frac{1}{z}\right) &=\frac{1}{2i}\left[\sum_{n=0}^\infty\frac{i^n(1/z)^n}{n!}-\sum_{n=0}^\infty\frac{(-1)^n (i(1/z))^n}{n!}\right]\\
+            &=\frac{1}{2i}\left[\sum_{n=0}^\infty\frac{i^n}{z^nn!}-\sum_{n=0}^\infty\frac{(-1)^n i^n }{z^nn!}\right]\\
+        \end{align*}
+        Por lo tanto, 
+        Entonces para $(\sen(1/z))^{-1}$:
+        \begin{align*}
+            \left(\sin\left(\frac{1}{z}\right)\right)^{-1} &=\left(\frac{1}{2i}\left[\sum_{n=0}^\infty\frac{i^n}{z^nn!}-\sum_{n=0}^\infty\frac{(-1)^n i^n }{z^nn!}\right]\right)^{-1}\\
+            &= 2i\left[\sum_{n=0}^\infty\frac{z^nn!}{i^n}-\sum_{n=0}^\infty\frac{z^nn!}{(-1)^n i^n }\right]\\
+        \end{align*}
+        Mostrando la existencia del desarrollo de Laurent de $f(z)=1/\sin(1/z)$. 
+    \end{sol}
+\end{problema}
+
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

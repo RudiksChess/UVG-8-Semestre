@@ -5,7 +5,163 @@
 \begin{document}
 \input{Configuraciones/nombres}
 %--------------------------
+Problemas 1, 2, 3, 4, 5 y 14, sección 5.5
 
+
+\begin{problema}[Problema 1]
+    If $F$ is of characteristic 0 and $f(x) \in F[x]$ is such that $f^{\prime}(x)=0$, prove that $f(x)=\alpha_0 \in F$.
+    \begin{dem}
+        Sea $f(x)$ de la forma: 
+        \begin{align*}
+            f(x) &= \alpha_0+\alpha_1x+\cdots+\alpha_{n-1}x^{n-1}+\alpha_nx^n
+            \intertext{y su derivada:}
+            f'(x) &= \alpha_1+\cdots+(n-1)\alpha_{n-1}x^{n-2}+n\alpha_nx^{n-1}=0
+        \end{align*}
+        Entonces,
+        $$n\alpha_n=(n-1)\alpha_{n-1}=\cdots=\alpha_1=0.$$
+        Además, por la hipótesis, tenemos que $F$ es de característica 0 $\implies n\alpha=0, \forall \alpha \in F,n\in\mathbb{Z}$ es válido solo si $n=0$ o $\alpha=0$. Entonces, esto implica
+        $$\alpha_n=\alpha_{n-1}=\cdots =\alpha_1=0$$
+        Por lo tanto, 
+        $$f(x)=\alpha_0\in F$$
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 2]
+    If $F$ is of characteristic $p \neq 0$ and if $f(x) \in F[x]$ is such that $f^{\prime}(x)=0$, prove that $f(x)=g\left(x^p\right)$ for some polynomial $g(x) \in F[x]$.
+    \begin{dem}
+        Sea $f(x)$ de la forma: 
+        \begin{align*}
+            f(x) &= \alpha_0+\alpha_1x+\cdots+\alpha_{n-1}x^{n-1}+\alpha_nx^n
+            \intertext{y su derivada:}
+            f'(x) &= \alpha_1+\cdots+(n-1)\alpha_{n-1}x^{n-2}+n\alpha_nx^{n-1}=0
+        \end{align*}
+        Entonces,
+        $$n\alpha_n=(n-1)\alpha_{n-1}=\cdots=\alpha_1=0.$$
+        Además, por la hipótesis, tenemos que $F$ es de característica $ p\neq 0\implies  n\alpha=0, \forall \alpha \in F,n\in \mathbb{Z}$ es válido si $\alpha=0$ o $p|n$. 
+        Es decir que para los coeficientes de $x^c$, los cuales no se hacen cero, tenemos el siguiente caso: 
+         
+        \begin{align*}
+            f(x) &= \alpha_{pc}x^{pc}+\alpha_{p(c-1)}x^{p(c-1)}+\cdots +\alpha_px^p +\alpha_0\\
+            &= \alpha_{pc}(x^p)^c+\alpha_{p(c-1)}(x^p)^{c-1}+\cdots + \alpha_p(x^p)+\alpha_0
+        \end{align*}
+
+        Ahora bien, nótese que la función anterior está evaluada por $x^p$, entonces 
+
+        \begin{align*}
+            g(x) &= \alpha_{pc}(x)^c+\alpha_{p(c-1)}x^{c-1}+\cdots + \alpha_px+\alpha_0
+            \intertext{Y al evaluar esta expresión por $x^p$, se tiene:}
+            g(x^p)&= \alpha_{pc}(x^p)^c+\alpha_{p(c-1)}(x^p)^{c-1}+\cdots + \alpha_p(x^p)+\alpha_0
+        \end{align*}
+
+
+
+        Por lo tanto, 
+        $$f(x)=g(x^p)$$
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 3]
+    Prove that $(f(x)+g(x))^{\prime}=f^{\prime}(x)+g^{\prime}(x)$ and that $(a f(x))^{\prime}=$ $a f^{\prime}(x)$ for $f(x), g(x) \in F[x]$ and $\alpha \in F$.
+    \begin{dem}
+        Sea
+        \begin{align*}
+            f(x)&= \alpha_0+\alpha_1x+\cdots+\alpha_{n-1}x^{n-1}+\alpha_nx^n\\
+            f'(x) &= \alpha_1+\cdots+(n-1)\alpha_{n-1}x^{n-2}+n\alpha_nx^{n-1}
+            \intertext{y}
+            g(x)&= \beta_0+\beta_1x+\cdots+\beta_{n-1}x^{n-1}+\beta_nx^n\\
+            g'(x) &= \beta_1+\cdots+(n-1)\beta_{n-1}x^{n-2}+n\beta_nx^{n-1}
+        \end{align*}    
+        Ahora bien, demostraremos las dos propiedades: 
+        \begin{enumerate}
+            \item Sea
+            \begin{align*}
+                (f(x)+g(x))' &=(\alpha_0+\alpha_1x+\cdots+\alpha_{n-1}x^{n-1}+\alpha_nx^n+ \beta_0+\beta_1x+\cdots+\beta_{n-1}x^{n-1}+\beta_nx^n)'\\
+                             &=((\alpha_0+\beta_0)+(\alpha_1+\beta_1)x+\cdots+(\alpha_{n-1}+\beta_{n-1})x^{n-1}+(\alpha_n+\beta_n)x^n)'\\
+                             &= (\alpha_1+\beta_1)+\cdots+(n-1)(\alpha_{n-1}+\beta_{n-1})x^{n-2}+n(\alpha_n+\beta_n)x^{n-1}\\
+            \begin{split}
+                &=(\alpha_1+\cdots+(n-1)\alpha_{n-1}x^{n-2}+n\alpha_nx^{n-1})+\\
+                &+(\beta_1+\cdots+(n-1)\beta_{n-1}x^{n-2}+n\beta_nx^{n-1})
+            \end{split}\\
+            &= f'(x)+g'(x)
+            \end{align*}
+            \item Sea 
+                \begin{align*}
+                    (af(x))' &= (a\left(\alpha_0+\alpha_1x+\cdots+\alpha_{n-1}x^{n-1}+\alpha_nx^n\right))'\\
+                    &= a\alpha_1x+\cdots + a(n-1)\alpha_{n-1}x^{n-2}+an\alpha_nx^n\\
+                    &= a\left(\alpha_1+\cdots+(n-1)\alpha_{n-1}x^{n-2}+n\alpha_nx^{n-1}\right)\\
+                    &= af'(x)
+                \end{align*}
+        \end{enumerate}
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 4]
+    Prove that there is no rational function in $F(x)$ such that its square is $x$.
+    \begin{dem}
+        Por reducción al absurdo, supóngase que hay una función racional $h(x)$ en $F[x]$ tal que:
+        \begin{align*}
+            \implies & &\left(h(x)\right)^2&=\left(\frac{f(x)}{g(x)}\right)^2 = x\\
+            \implies & & (f(x))^2 &= xg(x)^2\\
+            \implies & & f(x)f(x) &= xg(x)g(x)\\
+        \end{align*}
+        Ahora bien, considérese los grados de esta igualdad
+        \begin{align*}
+            \operatorname{gr}(f(x)f(x)) &= \operatorname{gr}(f(x))+\operatorname{gr}(f(x))\\
+            &= 2\operatorname{gr}(f(x))\\
+        \end{align*}
+        y por otra parte,
+        \begin{align*}
+            \operatorname{gr}(xg(x)g(x)) &= \operatorname{gr}(xg(x))+\operatorname{gr}(g(x))\\
+            &=\operatorname{gr}(x)+\operatorname{gr}(g(x))+\operatorname{gr}(g(x))\\
+            &= 1+ 2\operatorname{gr}(g(x))
+        \end{align*}
+        Nótese que $2\operatorname{gr}(f(x))$ es par y $1+ 2\operatorname{gr}(g(x))$ es impar $(\to\gets)$. Por lo tanto, no hay una función racional en $F(x)$ tal que su cuadrado es $x$. 
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 5]
+    Complete the induction needed to establish the corollary to Theorem 5.5.1.
+    \begin{dem}
+        El corolario al Teorema 5.5.1 (Teorema $K$ en nuestro caso), dice:\bigbreak
+        \begin{center}
+            Toda extensión finita de un campo de característica 0 es simple.
+        \end{center}
+        
+        A probar: Un argumento inductivo asegura que si $\alpha_1,..., \alpha_n$ son
+        algebraicos sobre $F$ entonces $\exists c \in F(\alpha_1,..., \alpha_n) \ni F(c) = F(\alpha_1,..., \alpha_n)$. Entonces, sea $F$ un campo de característica 0 y procedemos por inducción sobre $n$: 
+        \begin{itemize}
+            \item Cuando $n=1$: $\alpha_1$ es algebraico sobre $F$ entonces $\exists c\in F(\alpha_1)\ni F(c)=F(\alpha)$, el cual se cumple por el Teorema $K$ directamente.
+            \item Supóngase que la propiedad se cumple para $k<n$, entonces si $\alpha_1,\cdots, \alpha_{n-1}$ son algebraicos sobre $F$, entonces $\exists c^*\in F(\alpha,\cdots, \alpha_{n-1})\ni F(c^*)=F(\alpha,\cdots,\alpha_{n-1})$
+            \item Paso inductivo, comprobaremos que la propiedades se cumple para cualquier $n$. Primero, nótese que:
+            \begin{align*}
+                F(\alpha_1,\cdots,\alpha_n) &= (F(\alpha,\cdots,\alpha_{n-1}),a_n)\\
+                &= (F(c^*),a_n)\\
+                &= F(c^*,a_n)
+            \end{align*}
+            Ahora bien, nótese que ahora tenemos la hipótesis del Teorema 5K, lo que nos permite concluir que si $\alpha_1,\cdots,\alpha_n$ son algebraicos sobre $F$, entonces $\exists c\in F(c^*,a_n)\ni$
+            $$F(c)=F(c^*,a_n)=F(\alpha_1,\cdots,\alpha_n).$$
+        \end{itemize}
+
+    \end{dem}
+\end{problema}
+
+\begin{problema}[Problema 14]
+    If $K$ is a finite, separable extension of $F$ prove that $K$ is a simple extension of $F$.
+    \begin{dem}
+        La demostración es por casos. 
+        \begin{itemize}
+            \item Si $F$ es de característica 0, es el mismo caso del \textbf{Problema 5}. 
+            \item Si $F$ es de característica $p\neq 0$, entonces se aplica la \textbf{deducción del  Teorema 5K} modificando el argumento de característica 0 en una de las contenciones: 
+            
+            Sean $f(x), g(x) \in F[x]$ ambos irreducibles sobre $F$ y $f(a)=$ $f(b)=0$. Sea $k$ una extensión de $F$ es la que $f(x)$ y $g(x)$ se factorizan como el producto de polinomios lineales en $K[x]$. Por el corolario al lema 5.6, todas las raíces de $f(x)$ y de $g(x)$ son distintos (i.e. no tienen raíces de multiplicidad 2 o mayor). Sean $\left\{a=a_1, \cdots, a_{g r(f)}\right\} \subseteq K$ las raices de $f(x)$ y $\left\{b=b_1, \cdots, b_{g r(g)}\right\} \subseteq$ $K$ las raíces de $g(x)$.
+
+Si $j \neq 1 \Longrightarrow$ la ecuación $a_i+\lambda b_j=a_1+\lambda b_1=a+\lambda b$ tiene una única solución en $K, a_i-a=\lambda\left(b-b_j\right) \Longrightarrow \lambda=\frac{a_i-a}{b-b_j}$. Además, si $F$ es de característica $p\neq 0$ $\Longrightarrow F$ es infinito $\Longrightarrow \exists \gamma \in F \ni a_i+\gamma b_j \neq a+\gamma b, \forall i=1, \cdots, g r(f)$ y $j \neq 1$. Sea $c=a+\gamma b, c=a+\gamma b \in F(a, b) \Longrightarrow F(c) \subset F(a, b)$.
+
+Como $g(b)=0, b$ es raíz de $g(x) \in F[x] \Longrightarrow b$ es raíz de $g(x) \in F(c)[x]$. Además, si $h(x)=f(c-\gamma x) \in F(c)[x]$ y $h(b)=f(c-\gamma b)=f(a)=0 . \Longrightarrow$ existe una extensión de $F(c)$ sobre la cual $g(x)$ y $h(x)$ tienen a $x-b$ como factor común. Si $j \neq 1 \Longrightarrow b_j \neq b$ es otra raíz de $g(x) \Longrightarrow h\left(b_j\right)=f\left(c-\gamma b_j\right) \neq 0$ ya que $c-\gamma b_j$ no coincide con ninguna raíz de $f(x)$. Además, $(x-b)^2 \not| g(x) \Longrightarrow$ $(x-b)^2 \not|(g(x), h(x)) \Longrightarrow x-b=(g(x), h(x))$ sobre alguna extensión de $F(c)$. Por lema previo al lema $5.6, x-b=(g(x), h(x))$ sobre $F(c)$. Entonces, $x-b \in F(c)[x] \Longrightarrow b \in F(b) \Longrightarrow a=c-\gamma b \in F(x) \Longrightarrow F(a, b) \subseteq F(c) . \mathrm{En}$ resumen, $F(c)=F(a, b)$.
+
+        \end{itemize}
+    \end{dem}
+\end{problema}
 
 %---------------------------
 %\bibliographystyle{apa}

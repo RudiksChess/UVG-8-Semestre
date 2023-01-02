@@ -1,0 +1,124 @@
+Clase: 25/10/2022
+
+\begin{teorema}[Laurent]
+    Sean $0\leq r_1<r_2$, $z_0\in \mathbb{C}$ y considere la región $A=\{z\in \mathbb{C}: r<|z_1-z_0|<r_2\}$. Sea $f$ una función analítica sobre $A$. Entonces, 
+    $$f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n + \sum_{n=1}^\infty \frac{b_n}{(z-z_0)^n}$$
+    donde ambas series convergen absolutamente sobre $A$ y uniformemente sobre los conjuntos 
+    $$B_{\rho_1,\rho_2}=\{z:\rho_1<|z-z_0|<\rho_2\},$$
+    $r_1<\rho_1<\rho_2<r_2$. Si $\gamma$ es un círculo centrado en $z_0$ y con radio $r$, $r_1<r<r_2$, entonces:
+    \begin{align*}
+        a_n&=\frac{1}{2\pi i}\int_\gamma \frac{f(\psi)}{(\psi -z_0)^{n+1}}d\psi, \quad n=0,1,2,\cdots\\
+        b_n&= \frac{1}{2\pi i}\int_\gamma f(\psi)(\psi -z_0)^{n-1}d\psi,\quad n=1,2,\cdots
+    \end{align*}
+    La expansión de Laurent para $f(x)$ es única. 
+    \begin{cajita}
+        Tenemos el residuo de la serie:
+        $$b_1:\operatorname{Res}(f,z_0)$$
+    \end{cajita}
+\end{teorema}
+
+\begin{ejemplo}
+    Encuentre la serie de Laurent de la función $f(z)=\frac{1}{z(z-1)}$, sobre:
+    \begin{enumerate}
+        \item $A=\{z\in \mathbb{C}:|z|>1\}$
+        \begin{sol}
+            Sea 
+            \begin{align*}
+                f(z)&=\frac{1}{z(z-1)}\\
+                    &= \frac{1}{z^2}\cdot\frac{1}{(1-1/z)}
+                    \intertext{Ya que $|z|>\implies \frac{1}{|z|}=|1/z|<1$}
+                    &=\frac{1}{z^2}\sum_{n=0}^\infty \left(\frac{1}{z}\right)^n\\
+                    &= \frac{1}{z^2}\left[1+\frac{1}{z}+\frac{1}{z^2}+\cdots\right]\\
+                    &= \frac{1}{z^2}+\frac{1}{z^3}+\cdots
+            \end{align*}
+        \end{sol}
+        \item $B=\{z\in\mathbb{C}:0<|z|<1\}$
+        \begin{sol}
+            Sea 
+            \begin{align*}
+                f(z) &= \frac{1}{z(z-1)}\\
+                    &= \frac{1}{z(1-z)}\\
+                    &= -\frac{1}{z}\cdot \frac{1}{(1-z)}\\
+                    &= -\frac{1}{z}\sum_{n=0}^\infty z^n, \quad 0<|z|<1\\
+                    &= -\frac{1}{z}\left[1+z+z^2+\cdots\right]\\
+                    &= -\frac{1}{z}-1-z-z^3-\cdots
+            \end{align*}
+        \end{sol}
+    \end{enumerate}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Encuentre la serie de Laurent de 
+    $$f(z)=\frac{z+1}{z},\quad z_0=0,r_1=0,r_2=+\infty$$
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            f(z) &= \frac{z+1}{z} = 1+\frac{1}{z}
+        \end{align*}
+    \end{sol}
+\end{ejemplo}
+
+\begin{ejemplo}
+    Encuentre el desarrollo de Laurent de 
+    $$f(z)=\frac{z}{z^2+1},z_0=i,r_1=0,r_2=2$$
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            f(z) &= \frac{z}{z^2+1} =\frac{A}{z+i}+\frac{B}{z-i}\\
+            &=\frac{1/2}{z+i}+\frac{1/2}{z-i}
+            \intertext{Nótese que $(1/2)/(z+i)$ es una función analítica en una vecindad de $z_0=i$.}
+            \frac{1/2}{z+i}&= \frac{1}{2}\left(\frac{1}{z+i}\right)\\
+            &= \frac{1}{2}\left[\frac{1}{2i+(z-i)}\right]\\
+            &= \frac{1}{4i}\left[\frac{1}{1-\left[-\frac{(z-i)}{2i}\right]}\right]
+            \intertext{Nótese que $\left|-\frac{(z-i)}{2i}\right|=\left|\frac{z-i}{2}\right|<2/2=|$}
+            &= \frac{1}{4i}\sum_{n=0}^{\infty}\left[-\frac{(z-i)}{2i}\right]^n\\
+            &= \sum_{n=0}^\infty \left[\frac{(-1)^n}{4i}\cdot\left(\frac{1}{2i}\right)^n\right](z-i)^n
+        \end{align*}
+        Por lo tanto,
+
+        $$f(z)=\sum_{n=0}^\infty \left[\frac{(-1)^n}{4i}\cdot\left(\frac{1}{2i}\right)^n\right](z-i)^n +\frac{1/2}{z-i}$$
+    \end{sol}
+\end{ejemplo}
+
+\begin{definicion}
+    Tenemos:
+    \begin{enumerate}
+        \item Si $f$ es analítica sobre una región $A$ que contiene una vecindad \textbf{pinchada} de $z_0$, entonces $z_0$ es una \textbf{singularidad} aislada de $f$. 
+        \item Sea $z_0$ una singularidad aislada de $f$ y suponga que un número finito de las $b_n$ son no nulos. Entonces, $z_0$ es un polo de $f$. 
+        $$f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\cdots +\frac{b_k}{(z-\underbrace{z_0}_{\text{polo de orden $k$}})^k}$$
+        \begin{cajita}
+            Si $z_0$ es un polo de orden 1, entonces $z_0$ es un polo simple. 
+        \end{cajita}
+        \item Si un número infinito de $b_k\neq 0$, entonces $z_0$ es una singularidad esencial. 
+        \item Al coeficiente $b_1$ se le llama residuo de $f$ en $z_0$. $\operatorname{Res}(f;z_0)$.
+        \item Si $b_k=0,\forall k =1,2,\cdots$, entonces $z_0$ es una singularidad removible. 
+        \item Una función que es analítica en una región $A$ excepto para polos en $A$ se dice una función \textbf{meromorfa} en $A$.  
+    \end{enumerate} 
+\end{definicion}
+
+\begin{teorema}
+    Sea $f$ una función analítica sobre una región $A$, que tiene una singularidad aislada $z_0$, con residuo $\operatorname{Res}(f;z_0)=b_1$. Si $\gamma$ es cualquier círculo cerrado alrededor de $z_0$ en $A$, cuyo interior, excepto $z_0$, está contenido en $A$, entonces: 
+
+    $$\int_\gamma f(z)dz=b_1\cdot 2\pi i$$
+    \begin{dem}
+        Por el teorema de Laurent,
+        \begin{align*}
+            b_1 &= \frac{1}{2\pi i}\int_\gamma f(\psi)(\psi -z_0)^{1-1}d\psi.
+        \end{align*}
+    \end{dem}
+\end{teorema}
+
+\begin{teorema}
+    Sea $f$ analítica sobre una región $A$ y suponga que $f$ tiene una singularidad aislada en $z_0$. 
+    \begin{enumerate}
+        \item $z_0$ es removible ssi se cumple alguna de las condiciones siguientes:
+        \begin{enumerate}
+            \item $f$ es acotada en una vecindad pinchada de $z_0$ 
+            \item Límite, 
+            $$\lim_{z\to z_0}f(z)\quad \text{existe}$$
+            \item Límite 
+            $$\lim_{z\to z_0}f(z-z_0)f(z) = 0$$
+        \end{enumerate}
+        \item $z_0$ es un polo simple ssi $\lim_{z\to z_0}(z-z_0)f(z)$ existe y no es $0$. Además $\lim_{z\to z_0}(z-z_0)f(z)=\operatorname{Res}(f;z_0)$.
+    \end{enumerate}
+\end{teorema}

@@ -1,0 +1,66 @@
+Clase: 07/07/2022
+
+\begin{teorema}
+    Si $(A,\leq)$ y $(B,\leq')$ son conjuntos parcialmente ordenados, $(A\times B,\leq'')$ es también una relación de orden parcial.
+    $$(a,b)\leq'' (c,d)\iff \underbrace{a\leq c}_{\in A}\wedge \underbrace{b\leq ' d}_{\in B}$$
+    \begin{dem}
+        \begin{itemize}
+            \item Reflexividad. Como $\leq$ y $\leq'$ son reflexivas $\implies a\leq a\wedge b\leq b',\forall a\in A,\forall b\in B\implies (a,b)\leq'' (a,b)$. 
+            \item Antisimetría. Sea $(a,b)\leq'' (c,d)\wedge (c,d)\leq'' (a,b)\implies \left(a\leq \wedge b\leq' d\right)\wedge \left(c\leq a\wedge d\leq' b\right)$ por definición $\leq''\implies (a\leq c\wedge c\leq a)\wedge (b\leq' d\wedge d\leq' b)\implies a=c \wedge b=d$ por ser $\leq$ y $\leq'$ antisimétricas.
+            \item Transitividad. Sea $(a,b)\leq '' (c,d)\wedge (c,d)\leq'' (e,f)\implies (a\leq c \wedge b\leq' d)\wedge (c\leq e\wedge d\leq' f)$ por definción $\leq '' \implies (a\leq c\wedge c\leq e)\leq (b\leq' d\wedge d\leq'f)\implies (a\leq e)\wedge (b\leq'f )$ por transitividad de $\leq$ y $\leq'$. $\implies (a,b)\leq '' (e,f)$.
+        \end{itemize}
+    \end{dem}
+\end{teorema}
+
+\begin{cajita}
+    Investigar orden lexicográfico.
+\end{cajita}
+
+\begin{ejemplo}
+    Un ejemplo random de diagrama de Hasse.
+\end{ejemplo}
+
+
+\begin{definicion}
+    Sea $(A,\leq)$. Un elemento $c\in A$ es una cota superior de $a\wedge b$ si $a\leq c\wedge b\leq c$.
+\end{definicion}
+
+\begin{definicion}
+    Sea $(A,\leq)$. Un elemento  $c\in A$ es una cota inferior de $a$ y $b$ si $c\leq a\wedge c\leq b$.
+\end{definicion}
+
+\begin{definicion}
+    Un retículo es un conjunto parcialmente ordenado en el que cada elemento tiene un ínfimo que es la mayor cota inferior y un supremo que es la menor cota superior.
+\end{definicion}
+
+\begin{nota} Notación para ínfimo y supremo. 
+    \begin{itemize}
+        \item $a\vee b = \sup(a,b)$
+        \item $a\wedge b = \inf(a,b)$
+        \item Sistema algebraico $(A,\vee,\wedge)$.
+    \end{itemize}
+\end{nota}
+
+\begin{teorema}
+    Para cualquier $a$ y $b$ en un retículo $(A,\leq)$, 
+    \begin{itemize}
+        \item $(a\leq a\vee b)$
+        \item $(a\wedge b\leq a)$
+    \end{itemize}
+    \begin{dem}
+        Por la simple definición.
+    \end{dem}    
+\end{teorema}
+
+\begin{teorema}
+    Para cualesquiera $a,b,c$ y $d$ en un retículo $(A,\leq)$, si $a\leq b$ y $c\leq d$ entonces $a\vee c\leq b\vee d$ y $a\wedge c\leq b\wedge d$.
+    \begin{dem}
+        Sea $a,b,c,d\in A$. Supóngase que: $a\leq b$ y  $c\leq d$. Además, se sabe que $b\leq b\vee d$ y $d\leq b\vee d$ por la definición de supremo de $b$ y $d$. 
+
+        $c\leq a\vee c$ y $d\leq b\vee d$. 
+
+        $\implies a\leq b\leq b\vee d$ y $c\leq d\leq b\vee d$.
+
+
+    \end{dem}
+\end{teorema}

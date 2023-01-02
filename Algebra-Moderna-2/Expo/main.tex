@@ -1,0 +1,250 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\section{Contexto histórico}
+
+\subsection{Primera fase }
+\begin{itemize}
+    \item En 1744, Euler demostró que $e$ es irracional. 
+    \item En 1761, Lambert demostró que $\pi$ es irracionall.
+    \item Louville es el precursor de la demostración de que $e$ es trascendental, él fue quien introdujo el concepto de números trascendentes en 1844.
+    \begin{itemize}
+        \item Para cualquier irracional $\alpha\exists $ una sucesión infinita de racionales $p/q (q>0)\ni$
+            $$|\alpha-p/q|<1/q^2$$
+        \item Propuso una generalización para la propiedad anterior:
+        \begin{nota}[Teorema]
+            Para cualquier número algebraico $\alpha$ con grado $n>1$, existe $c=c(\alpha)>0$ tal que $|\alpha-p/q|>c/q^n$ para todos los raciones $p/q (q>0)$.
+        \end{nota}
+        \item Si no es algebraico, es trascendente.
+    \end{itemize}
+    \item En 1874, Cantor introdujo el concepto de contable y esto implicó que \textbf{casi} todos los números son trascendentes.
+\end{itemize}
+
+\subsection{Segunda fase }
+
+\begin{itemize}
+    \item En 1873, Hermite establece la trascendencia de $e$.
+    \item Años despupes, Lindemann hace una generalización de Hermite y demuestra la trascendencia de $\pi$ y resuelve el problema histórico de la cuadratura del círculo. 
+    \item En 1885, Weierstrass simplifica la prueba. 
+    \item Luego Hilbert presenta una prueba mucho más simplificada, la cual es modificada por Hurwitz y Gordan en 1893. 
+    \item Nosotros presentamos la prueba de Alan Baker propuesta en su libro Transcendental Number Theory de 1975. \textbf{Esta prueba es similar a la de Hurwitz (la cual es la que está en el Herstein)}.
+\end{itemize}
+
+\section{Previos}
+\begin{cajita}
+
+\begin{nota}
+    Sea $\sum_{j=0}^{r}f^{(j)}(x)$, considerando que $f^{(r+1)}(x)=0$ y que $(d/dx)e^x=e^x$, entonces
+        \begin{align*}
+            \frac{d}{du}\left[-e^{-u}\left(\sum_{j=0}^{r}f^{(j)}(u)\right)\right] &= -e^{-u}\left(\sum_{j=1}^{r+1}f^{(j)}(u)- \sum_{j=0}^{r}f^{(j)}(u)\right)\\
+            &= e^{-u}f(u)
+        \end{align*}
+
+        Entonces 
+        \begin{align*}
+            e^t\int_0^t e^{-u} f(u) d u &= e^t\left[-e^{-u}\left(\sum_{j=0}^{r}f^{(j)}(u)\right)\right]_0^t\\
+            &= e^t\left(\sum_{j=0}^{r}f^{(j)}(0)\right)-e^t\left(e^{-t}\sum_{j=0}^{r}f^{(j)}(u)\right)\\
+            &= e^t \sum_{j=0}^m f^{(j)}(0)-\sum_{j=0}^m f^{(j)}(t)
+        \end{align*}
+\end{nota}
+\end{cajita}
+
+\begin{cajita}
+    \begin{lema}
+        Para cualquier polinomio de coeficientes complejos, la función $I: \mathbb{C} \rightarrow \mathbb{C}$ definido por
+$$
+I(t):=\sum_{j=0}^{m}\left(\mathrm{e}^t f^{(j)}(0)-f^{(j)}(t)\right)
+$$
+Cumple con:
+$$
+\forall t \in \mathbb{C} \quad|I(t)| \leq|t| \mathrm{e}^{|t|} \bar{f}(|t|)
+$$
+donde $\bar{f}$ es el polinomio cuyos coeficientes son los módulos (valor absoluto) de $f$.
+
+\begin{dem}
+    El caso de cualquier polinomio resulta del de un monomio $f(x)=x^n$.
+En este caso, según el desarrollo de \textbf{serie de la compleja exponencial},
+
+\begin{align*}
+    I(t)&=\sum_{j=0}^n \left(e^t\frac{n!(0)^{n-j}}{(n-j)!}-\frac{n!t^{n-j}}{(n-j)!}\right)\\
+    &=\mathrm{e}^t n !-\sum_{j=0}^n \frac{n !}{(n-j) !} t^{n-j}\\
+    &=n ! \sum_{k=0}^{\infty} \frac{t^{n+1+k}}{(n+1+k) !}
+\end{align*}
+
+por lo tanto
+$$
+\begin{aligned}
+|I(t)| & \leq \sum_{k=0}^{\infty} \frac{n !}{(n+1+k) !}|t|^{n+1+k} \\
+&=|t|^{n+1} \sum_{k=0}^{\infty} \frac{1}{n+1+k} \frac{n ! k !}{(n+k) !} \frac{|t|^k}{k !} \\
+& \leq \frac{|t|^{n+1}}{n+1} \sum_{k=0}^{\infty} \frac{|t|^k}{k !} \\
+&=\frac{|t|^{n+1}}{n+1} \mathrm{e}^{|t|} \\
+&\leq \mathrm{e}^{|t|} \int_0^{|t|} \bar{f}(s) ds\\
+& \leq|t| \mathrm{e}^{|t|} \bar{f}(|t|) .
+\end{aligned}
+$$
+   \end{dem}
+    \end{lema}
+    
+\end{cajita}
+
+\begin{cajita}
+    \begin{lema}
+Sean $f \in \mathbb{C}[X], I$ como previamente lo definimos y sea $ q_0, \ldots, q_n, \alpha_1, \ldots, \alpha_n \in \mathbb{C}, \alpha_0=0$ y 
+$$
+J:=\sum_{k=1}^n q_k I\left(\alpha_k\right)
+$$
+Si $\sum_{k=0}^n q_k \mathrm{e}^{\alpha_k}=0$ entonces $J=-\sum_{j=0}^{m} \sum_{k=0}^n q_k f^{(j)}\left(\alpha_k\right)$.
+\begin{dem}
+    Ya que $I(0)=0$
+$$
+\begin{aligned}
+J &=\sum_{k=0}^n q_k I\left(\alpha_k\right) \\
+&=\sum_{k=0}^n q_k \sum_{j=0}^{m}\left(\mathrm{e}^{\alpha_k} f^{(j)}(0)-f^{(j)}\left(\alpha_k\right)\right) \\
+&=\sum_{j=0}^{m}\left(f^{(j)}(0) \sum_{k=0}^n q_k \mathrm{e}^{\alpha_k}-\sum_{k=0}^n q_k f^{(j)}\left(\alpha_k\right)\right) \\
+&=-\sum_{j=0}^{m} \sum_{k=0}^n q_k f^{(j)}\left(\alpha_k\right)
+\end{aligned}
+$$
+\end{dem}
+
+    \end{lema}
+\end{cajita}
+
+\begin{cajita}
+    \begin{lema}
+Sea $f(x)=x^{p-1}(Q(x))^p$ con $Q(x) \in \mathbb{Z}[X]$, y sea $j \in \mathbb{N}$.
+Para toda la raíz $\alpha$ de $f$, el entero $f^{(j)}(\alpha)$ es:
+\begin{itemize}
+    \item Igual a $(p-1)! Q(0)^p$ si $(j, \alpha)=(p-1,0)$;
+    \item Divisible por $p!$ de lo contrario.
+\end{itemize}
+
+Si $l, q \in \mathbb{Z}$ y $Q(x)=R(l x)$ con $R(y)=\prod_{k=1}^n\left(y-l \alpha_k\right) \in \mathbb{Z}[y]$, el entero $q f^{(j)}(0)+\sum_{k=1}^n f^{(j)}\left(\alpha_k\right)$ es:
+\begin{itemize}
+    \item Congruente a $q(p-1) ! Q(0)^p$ modulo $p !$ si $j=p-1$;
+    \item Divisible por $p!$ de lo contrario.
+\end{itemize}
+
+
+    \end{lema}
+    \begin{dem}
+        Según la regla de Leibniz para derivadas (generalización de regla del producto),
+
+        \begin{align*}
+            f^{(j)}(x)&=\sum_{k=0}^{\min\{p,j\}-1}\left(\begin{array}{l}
+                j \\
+                k
+                \end{array}\right) \frac{(p-1) !}{(p-1-k) !} x^{p-1-k}\left(Q^p\right)^{(j-k)}\\
+                &=\sum_{k=0}^{\min\{p,j\}-1}\frac{j!}{(j-k)!k!} \frac{(p-1) !}{(p-1-k) !} x^{p-1-k}\left(Q^p\right)^{(j-k)}\\
+                &= \sum_{k=0}^{\min\{p,j\}-1} \frac{(p-1)!}{(p-1-k)!k!}\frac{x^{p-1-k}}{(j-k)!}j!(Q^p)^{(j-k)}\\
+                &=j ! \sum_{k=0}^{\min\{p,j\}-1}\left(\begin{array}{c}
+                p-1 \\
+                k
+                \end{array}\right) x^{p-1-k} \frac{\left(Q^p\right)^{(j-k)}}{(j-k) !}
+        \end{align*}
+        
+        Por lo tanto:
+        \begin{itemize}
+            \item Si $j \geq p$, $p!|f^{(j)}(X)$ y $p!|\sum_{k=1}^n f^{(j)}\left(\alpha_k\right)$, entonces  $$r, \ell \in \mathbb{N}, \frac{\left(y^r\right)^{(\ell)}}{\ell !}=\left(\begin{array}{l}r \\ \ell\end{array}\right) y^{r-\ell} \in \mathbb{Z}[y]$$
+        \end{itemize}
+
+        \begin{itemize}
+            \item Si ($\alpha=0$ y $j<p-1$) o si ($Q(\alpha)=0$ y $j<p$):
+            $$f^{(j)}(\alpha)=0$$
+            \item Si $j=p-1$: 
+                $$f^{(p-1)}(0)=(p-1) ! Q(0)^p$$
+        \end{itemize}
+
+            \end{dem}
+\end{cajita}
+
+\begin{cajita}
+    \begin{lema}
+        Si $a$  es un número real, mostrar $\left(a^m / m !\right) \rightarrow 0$ as $m \rightarrow \infty$.
+        \begin{dem}
+            Sea $x_n=a^n / n!$. Es suficiente probar que  $\left|x_{n+1} / x_n\right| \rightarrow 0$. Nótese que
+$$
+\left|\frac{x_{n+1}}{x_n}\right|=\frac{|a|}{n+1} \rightarrow 0 \quad \text { as } n \rightarrow \infty .
+$$
+Por lo tanto, $x_n \rightarrow 0$ as $n \rightarrow \infty$.
+        \end{dem}
+
+    \end{lema}
+\end{cajita}
+
+\section{Demostración}
+\begin{teorema}
+    $e$ es trascendente.
+    \begin{dem}
+        Sea $f(x)$ cualquier polinomio con  $m=\operatorname{gr}(f(x))$ y sea $f^{(j)}(x)$ la $j-$ésima derivada de $f(x)$, si
+$$
+I(t)=e^t\int_0^t e^{-u} f(u) d u,
+$$
+donde $t$  es un número complejo arbitrario y la integral es de 0 a $t$, entonces por la \textbf{Nota 1}:
+$$
+I(t)=e^t \sum_{j=0}^m f^{(j)}(0)-\sum_{j=0}^m f^{(j)}(t) .
+$$
+Además, si $\bar{f}(x)$ denota el polinomio obtenido de  $f$  al reemplzar cada coeficiente por su valor absoluto (módulo) entonces por \textbf{Lema 1} entonces
+$$
+|I(t)| \leqslant \int_0^t\left|e^{t-u} f(u)\right| d u \leqslant|t| e^{|t|} \vec{f}(|t|) .
+$$
+\textbf{Por reducción al absurdo}, supóngase que $e$ no es trascendente, entonces $e$ es algebraico, tal que 
+$$
+q_0+q_1 e+\ldots+q_n e^n=0
+$$
+para algunos enteros $n>0, q_0 \neq 0, q_1, \ldots, q_n$. Comparamos estimados para 
+$$
+J=q_0 I(0)+q_1 I(1)+\ldots+q_n I(n),
+$$
+donde $I(t)$ es definido como arriba con
+$$
+f(x)=x^{p-1}(x-1)^p \ldots(x-n)^p,
+$$
+donde $p$ denota un primo muy largo. Del \textbf{Lema 2}, tenemos:
+$$
+J=-\sum_{j=0}^m \sum_{k=0}^n q_k f^{(j)}(k),
+$$
+
+en donde por \textbf{Lema 3}, $m=(n+1) p-1$. Ahora claramente$f^{(j)}(k)=0$ if $j<p, k>0$ y si $j<p-1, k=0$, y entonces para todo $j, k$ otro que $j=p-1, k=0, f^{(j)}(k)$ es un entero divisible por $p!$.Además, tenemos que 
+$$
+f^{(p-1)}(0)=(p-1) !(-1)^{n p}(n !)^p,
+$$
+donde, si $p>n, f^{(p-1)}(0)$ es un entero divisible por $(p-1)!$ pero no por $p!$. 
+
+
+Ahora bien, tenemos que si además $p>\left|q_0\right|$, entonces $J$ es un entero no cero divisible por $(p-1)!$ y entonces $|J| \geqslant(p-1) !$. 
+
+Por el \textbf{Lema 1}, 
+$$
+|I(t)|  \leqslant|t| e^{|t|} \vec{f}(|t|) .
+$$
+
+\begin{align*}
+    |J| = \sum_{k=0}^{m}|q_k||I(\alpha_k)|<\sum_{k=0}^m |q_k|e^k
+    \intertext{Si $M=\sum_{k=0}^n|q_k|e^k$ tenemos $|J|\leq Mn\overline{f}(n)$, por lo tanto.}
+    |J|\leq M(n\overline{Q}(n))^p = Mc^p
+\end{align*}
+
+Finalmente, nótese que si para un $i\to \infty$  
+\begin{align*}
+    \frac{Mc^i}{2^{i-i_0}}\to 0
+\end{align*}
+
+
+
+
+
+
+Por \textbf{Lema 4}. Por lo tanto, hay contradicción. $\therefore e$ es trascendente.
+    \end{dem}
+\end{teorema}
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

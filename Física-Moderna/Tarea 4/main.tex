@@ -1,0 +1,262 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+
+\begin{problema}
+    El cloruro de potasio es un cristal con un espaciado entre átomos de 0.314 nm. El primer pico para la difracción de Bragg es observado a $12.8^{\circ}$. 
+    \begin{enumerate}
+        \item ¿Cuál es la energía con la que se difractaron los rayos $X$ ?
+        \begin{sol}
+            Tenemos para $n=1$, 
+            \begin{align*}
+                E &= \frac{hc}{\lambda}\\
+                  &= \frac{hc}{2d\sen \theta}\\
+                  &= \frac{1240 eV\cdot nm}{2\cdot 0.314\cdot \sen 12.8}\\
+                  &= \frac{1240 eV\cdot nm}{0.139 nm}\\
+                  &= 8.92 \times 10^3 eV
+            \end{align*}
+        \end{sol}
+        \item  ¿Qué otros picos de orden se pueden observar $\left(\theta \leq 90^{\circ}\right)$ ?
+        \begin{sol}
+            El máximo de picos se puede calcular con 
+            $$\frac{n\lambda}{2d}<1\implies n<\frac{2d}{\lambda}=4.52\approx 4$$
+        \end{sol}
+    \end{enumerate}
+\end{problema}
+
+\begin{problema}
+    Se utiliza un cristal cúbico con un espaciado interatómico de 0,24 nm para seleccionar rayos $\gamma$ de energía de $100 \mathrm{keV}$ de una fuente radiactivo de energía continua. Si el haz incidente es normal al cristal, ¿en qué ángulo aparecen los rayos $\gamma$ de 100 keV?
+    \begin{sol}
+        Tenemos 
+        \begin{align*}
+            \implies E &= \frac{hc}{\lambda}\\
+              &= \frac{hc}{2d\sen \theta}\\
+              &= \frac{hc}{D\sen \phi}\\
+            \implies \sen \phi &= \frac{hc}{DE}\\
+            \phi &= \sen^{-1}\left(\frac{hc}{DE}\right)\\
+            &= \sen^{-1}\left(\frac{1240 eV\cdot nm}{(0.24 nm)(100\times 10^3 eV)}\right)\\
+            &= 3.0^{\circ}
+        \end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Un microscopio electrónico de transmisión de 3.0-MV ha estado en funcionamiento en la Universidad de Osaka en Japón durante varios años. Los electrones de mayor energía permiten una penetración más profunda en la muestra y una resolución extremadamente alta. ¿Cuál es el límite de resolución para estos electrones?
+    \begin{sol}
+        Sea 
+        \begin{align*}
+            \lambda &= \frac{h}{p}
+            \intertext{Momento relativista}
+                    &= \frac{h}{\sqrt{K^2+2(mc^2)K}}\\
+                    &= \frac{1240 eV\cdot nm}{\sqrt{(3\times 10^6 eV)^2+2(0.511\times 10^6 eV)(3\times 10^6 eV)}}\\
+                    &= 0.357\times 10^{-12}m 
+        \end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    ¿Cuál es la longitud de onda de un electrón con energía cinética:
+    \begin{cajita}
+        Usando: 
+        $$\lambda =\frac{h}{p}=\frac{hc}{\sqrt{K^2+2(mc)^2}}$$
+    \end{cajita}
+    \begin{enumerate}
+        \item (a) $40 \mathrm{eV}$
+        \begin{sol}
+            Tenemos 
+            $$\lambda = 0.194 nm$$
+        \end{sol}
+        \item (b) $400 \mathrm{eV}$
+        \begin{sol}
+            Tenemos 
+            $$\lambda = 6.13\times 10^{-2} nm$$
+        \end{sol}
+        \item (c) $4.0$ $\mathrm{keV}$
+        \begin{sol}
+            Tenemos 
+            $$\lambda = 1.94\times 10^{-2} nm$$
+        \end{sol}
+        \item (d) $40 \mathrm{keV}$
+        \begin{sol}
+            Tenemos 
+            $$\lambda = 6.02\times 10^{-3} nm$$
+        \end{sol}
+        \item (e) $0.40 \mathrm{MeV}$
+        \begin{sol}
+            Tenemos 
+            $$\lambda = 1.64\times 10^{-3} nm$$
+        \end{sol}
+        \item (f) $4.0 \mathrm{MeV}$
+        \begin{sol}
+            Tenemos 
+            $$\lambda = 2.77\times 10^{-4} nm$$
+        \end{sol}
+        \item ¿Cuál de estas energías es la más adecuada para el estudio de la estructura cristalina de $\mathrm{NaCl}$ ?
+        \begin{sol}
+            El NaCL tiene $\lambda=0.282 nm$, entonces todas las energías son adecuadas. 
+        \end{sol}
+    \end{enumerate}
+
+
+\end{problema}
+
+\begin{problema}
+    Un haz de neutrones térmicos (energía cinética $=0.025 \mathrm{eV}$ ) se dispersa desde un cristal con espaciado interatómico $0.45 \mathrm{~nm}$. ¿Cuál es el ángulo del pico de Bragg de primer orden?
+    \begin{sol}
+        Se tiene 
+        \begin{align*}
+            \lambda &= D\sen \phi\\
+            \sen\phi &= \frac{\lambda}{D}\\
+            \phi &= \sen ^{-1}\left(\frac{\lambda}{D}\right)\\
+            &= \sen ^{-1}\left(\frac{\frac{h}{\sqrt{2mK}}}{D}\right)\\
+            &= \sen ^{-1}\left(\frac{\frac{hc^2}{\sqrt{2mc^2K}}}{D}\right)\\
+            &= 23.7^{\circ}
+        \end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Una onda que se propaga a lo largo de la dirección $x$ tiene un desplazamiento máximo de $4,0 \mathrm{~cm}$ en $x=0$ y $t=0$. La velocidad de onda es de $5,0 \mathrm{~cm} / \mathrm{s}$, y la longitud de onda es de 7,0 cm. 
+    \begin{enumerate}
+        \item (a) ¿Cuál es la frecuencia? 
+        \begin{sol}
+            Se tiene:
+            $$f=\frac{v}{\lambda}=0.714 Hz$$
+        \end{sol}
+        \item (b) ¿Cuál es la amplitud de la onda a $x=10 \mathrm{~cm}$ y $\mathrm{t}=13 \mathrm{~s}$ ?
+        \begin{sol}
+            Se tiene: 
+            \begin{align*}
+                \psi &= A\cos\left[\left(\frac{2\pi}{\lambda}\right)(x-vt)\right]\\
+                &= (4cm)\cos\left[\left(\frac{2\pi}{7cm}\right)(10cm-(5)(13))\right]\\
+                &= 2.49 cm
+            \end{align*}
+        \end{sol}
+    \end{enumerate}
+    
+\end{problema}
+
+\begin{problema}
+    Un paquete de ondas describe a una partícula que tiene momento $p$. Comenzando con $E^{2}=p^{2} c^{2}+E_{0}^{2}$ (relación relativista), muestre que la velocidad del grupo es $\beta c \quad$ y la velocidad de fase es $c / \beta$ (donde $\beta=v / c)$. ¿Cómo puede la velocidad de fase ser físicamente mayor que c?
+    \begin{sol}
+        Para encontrar la velocidad del grupo únicamente se deriva para $E$, es decir: 
+        \begin{align*}
+            v_{grupo} &= \sqrt{p^{2} c^{2}+E_{0}^{2}}\\
+            v'_{grupo} &=\frac{pc^2}{p^2c^2+E_0^2}\\
+            &= \frac{pc^2}{E}\\
+            &= \beta c
+        \end{align*}
+        y la velocidad de fase es:
+        \begin{align*}
+            v_{fase} &= \lambda v\\
+                     &= \frac{h}{p}\frac{\omega}{2\pi}\\
+                     &=\frac{E}{p}\\
+                     &= \frac{pc^2/v}{p}\\
+                     &= \frac{c^2}{v}\\
+                     &= \frac{c}{\beta}
+        \end{align*}
+        La velocidad de fase no está directamente relacionado con la partícula, entonces no está afectando en nada a la partícula.
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Se desea diseñar un experimento similar al realizado por Jönsson que no requiera la ampliación del patrón de interferencia para poder ser visto. Sean dos rendijas estén separadas por $2000 \mathrm{~nm}$. Suponga que puede discriminar visualmente entre máximos que están separados 0,3 $\mathrm{mm}$. Usted tiene a tu disposición un laboratorio que permite colocar la pantalla a $80 \mathrm{~cm}$ de distancia de las rendijas.  Energía en reposo de electrones $511 \mathrm{keV}$.
+    \begin{enumerate}
+        \item ¿Qué energía necesitaran los electrones? 
+        \begin{sol}
+            Tenemos,
+            \begin{align*}
+                K &= E-E_0\\
+                  &= \sqrt{p^2c^2+E_0^2}-E_0\\
+                  &= \sqrt{\left(\frac{h}{\lambda}\right)^2c^2+E_0^2}-E_0\\
+                  &= \sqrt{\left(\frac{hc}{\lambda c}\right)^2c^2+E_0^2}-E_0\\
+                  &= \sqrt{\left(\frac{hc}{\left(d\sin \theta\right) c}\right)^2c^2+E_0^2}-E_0\\
+                  &\approx \sqrt{\left(\frac{hc}{\left(d\tan \theta\right) c}\right)^2c^2+E_0^2}-E_0\\
+                  &= \sqrt{\left(\frac{1240 eV\cdot nm}{\left(0.75nm\cdot \frac{0.3mm}{0.8m}\right) c}\right)^2c^2+(511keV)^2}-511keV\\
+                  &= 2.67eV
+            \end{align*}
+        \end{sol}
+        \item ¿Cree que tales electrones de baja energía representarán un problema? Explicar.
+        \begin{sol}
+            Sí, habrá una desviación grande. 
+        \end{sol}
+    \end{enumerate}
+\end{problema}
+
+\begin{problema}
+    Un neutrón está confinado en un núcleo de deuterio (deuterón) de diámetro $3.1 \times 10^{-15}$ m. Utilice el cálculo del nivel de energía de una caja unidimensional para calcular la energía cinética mínima del neutrón. ¿Cuál es la energía cinética mínima del neutrón según el principio de incertidumbre?
+    \begin{sol}
+        La energía para $n=1$: 
+        \begin{align*}
+            E &= \frac{h^2}{8md}\\
+              &= \frac{h^2c^2}{8mc^2d^2}\\
+              &= 21 MeV
+        \end{align*}
+        y la energía mínima no relativista tenemos $\Delta p d = h/2$, 
+        tal que: 
+        \begin{align*}
+            E_{\min} &= \frac{(\Delta p)^2}{2m}\\
+                   &= \frac{h^2}{8md^3}\\
+                   &= 0.539 MeV 
+        \end{align*}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    El criterio de Rayleigh se utiliza para determinar cuándo dos objetos apenas se resuelven con una lente de diámetro $\mathrm{d}$. La separación angular debe ser mayor que $\theta_{R}$ donde
+    $$\theta_{R}=1.22 \frac{\lambda}{d}$$
+    Para dos objetos que están separados a $4000 \mathrm{~nm}$ a una distancia de $20 \mathrm{~cm}$ con una lente de $5 \mathrm{~cm}$ de diámetro, ¿qué energía (a) fotones o (b) electrones deben usarse? ¿Es esto coherente con el principio de incertidumbre?
+    \begin{sol}
+        Se tiene 
+        $$\lambda =\frac{d\theta_R}{1.22} \approx\frac{d\tan \theta R}{1.22}=\frac{d\frac{4000nm}{20cm}}{1.22}=2\times 10^5 $$
+        \begin{itemize}
+            \item (a) fotones, 
+            $$E=\frac{hc}{\lambda} = 1.51eV$$
+            \item (b) Electrones (no relativistas)
+            $$K=\frac{h^2c^2}{2mc^2\lambda^2}= 2.24\times 10^{-6}eV$$
+        \end{itemize}
+        \item Principio de incertidumbre: 
+        \begin{itemize}
+            \item Se tiene
+            \begin{align*}
+                \Delta p\geq \frac{h}{2\Delta x}&= 1.32\times 10^{-29}kg\cdot m/s\\
+                p&=\frac{h}{\lambda} =8.08\times 10^{-28}kg\cdot m/s
+            \end{align*}
+            Entonces $p>\Delta p$, entonces es coherente con el principio de incertidumbre.
+        \end{itemize}
+    \end{sol}
+\end{problema}
+
+\begin{problema}
+    Una partícula en una caja unidimensional de longitud L tiene una energía cinética mucho mayor que su energía en reposo. ¿Cuál es la relación de los siguientes niveles de energía $E_{n}: \frac{E_{2}}{E_{1}}, \frac{E_{3}}{E_{1}}, \frac{E_{4}}{E_{1}}$ ? ¿Cómo se comparan sus respuestas con el caso no relativista?
+    \begin{sol}
+        Los niveles de energía se ven modelados por 
+        \begin{align*}
+            \lambda &= \frac{2L}{n}\implies
+            p_n = \frac{nh}{2L}\\
+            E_n &= \sqrt{\left(p_n\right)^2c^2+E_0^2}
+        \end{align*}
+        Tal que 
+        \begin{align*}
+            \frac{E_2}{E_1} &= \left[\frac{\sqrt{\left(p_2\right)^2c^2+E_0^2}}{\sqrt{\left(p_1\right)^2c^2+E_0^2}}\right]\\
+            \frac{E_3}{E_1} &= \left[\frac{\sqrt{\left(p_3\right)^2c^2+E_0^2}}{\sqrt{\left(p_1\right)^2c^2+E_0^2}}\right]\\
+            \frac{E_4}{E_1} &= \left[\frac{\sqrt{\left(p_4\right)^2c^2+E_0^2}}{\sqrt{\left(p_1\right)^2c^2+E_0^2}}\right]
+        \end{align*}
+        Para energías pequeñas, las razones se asemejan a las energías no relativistas. 
+    \end{sol}
+\end{problema}
+
+
+
+
+
+
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

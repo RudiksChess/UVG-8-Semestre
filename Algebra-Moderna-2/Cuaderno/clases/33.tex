@@ -1,0 +1,84 @@
+Clase: 22/11/2022
+
+\begin{teorema}[5N]
+    Si $F$ es un campo, entonces:
+    \begin{enumerate}
+        \item $[F(x_1,\cdots, x_n):S]=n!$
+        \item $G[F(x_1,\cdots, x_n),S]=S_n$
+        \item Si $a_1,\cdots, a_n$ son las funciones simétricas elementos de $x_1,\cdots,x_n$ entonces $S=F(a_1,\cdots,a_n)$
+        \item $F(x_1,\cdots,x_n)$ es el campo de descomposición de 
+        $$p(t)=\sum_{i=0}^n (-1)^i a_i t^{n-i}$$
+        sobre $F(a_1,\cdots,a_n)=S$
+    \end{enumerate}
+    \begin{dem}
+        Sea 
+        \begin{align*}
+            [F(x_1,\cdots,x_n):S]\geq o(G(F(x_1,\cdots,x_n),S))\geq o(S_n)=n!
+        \end{align*}
+        Se sabe que $F(x_1,\cdots, x_n)$ contiene todas las raíces $p(t)=\sum_{i=0}^n(-1)^i a_i t^{n-i}\in F(a_1,\cdots,a_n)[t],a_0=1$,ya que $p(t)=\sum_{i}^n (-1)^i a_i t^{n-1}=\prod_{i=1}^n(t-x_i)\implies F(x_1,\cdots,x_n)$ contien al campo de descomposición sobre $F(a_1,\cdots,a_n)$. Pero, por otro lado, $F(x_1,\cdots,x_n)$ es la extensión más pequeña de $F$ que contiene a $x_1,\cdots, x_n\implies F(x_1,\cdots,x_n)$ es el campo de descomposición de $p(t)$ sobre $F(a_1,\cdots,a_n)\implies$ por el teorema 5H, siendo $n=gr(p)$, entonces $[F(x_1,\cdots,x_n):F(a_1,\cdots, a_n)]\leq n!$ Ahora bien, $F(a_1,\cdots,a_n)$ es un subcampo de $S$. Entonces, por el teorema 5A, $n!\geq [F(x_1,\cdots,x_n):F(a_1,\cdots,a_n)]=[F(x_1,\cdots,x_n):S][S:F(a_1,\cdots,a_n)]\geq n![S:F(a_1,\cdots,a_n)]\implies 1\geq [S:F(a_1,\cdots,a_n)]\implies [S:F(a_1,\cdots,a_n)]=1\implies S=F(a_1,\cdots,a_n)$ (parte (iii)) $\implies n!\geq [F(x_1,\cdots,x_n):F(a_1,\cdots, a_n)]=[F(x_1,\cdots, x_n):S]\geq o(G(F(x_1,\cdots, x_n),S))\geq n!$ (parte (i)) y $G(F(x_1,\cdots,x_n),S)=S_n$ (parte 2).
+    \end{dem}
+\end{teorema}
+
+\begin{cajita}
+    \begin{nota}
+        En los comentarios al teorema 5H se mencionó que dado $n\in\mathbb{Z}^+$, es posible construir un campo $F$ y un polinomio sobre $F$ de grado $n$ cuyo campo de descomposición alcanza la cota superior $[E:F]=n!$. El teorema 5N muestra lo aseverado. $S=F(a_1,\cdots,a_n)$ es el campo de descomposición de 
+        $$p(t)=\sum_{i=0}^n (-1)^i a_i t^{n-1}\in F(a_1,\cdots,a_n)[t]$$
+        sobre $F(a_1,\cdots, a_n)$ y $[F(x_1,\cdots,x_n):F(a_1,\cdots,a_n)]= n!$.
+    \end{nota}
+\end{cajita}
+
+\begin{definicion}
+    Un campo $K$ es una extensión normal de un campo $F$, si $[K:F]\in \mathbb{Z}^+$ y $F$ es el subcampo de $K$ fijado por $G(K,F)$.
+\end{definicion}
+
+\begin{prop}
+    Un campo $K$ es una extensión normal de un campo $F$, si y solo si, $k\in K-F$ no queda invariante por ningún elemento de $F(K,F)$. 
+\end{prop}
+\begin{ejemplo}
+    En los ejemplos anteriores, 1 y 3 muestran extensiones normales, mientras que 2 es una extensión normal. 
+\end{ejemplo}
+\begin{cajita}
+    Sea $F$ un campo, $K$ no es una extensión de $F$ y $H$ es un subgrupo de $G(K,F)$, entonces $K_H=\{k\in K:\sigma(k)=k,\forall \sigma \in H\}$, el subcampo de $K$ fijado por $H$. 
+\end{cajita}
+
+\begin{teorema}[5O]
+    Sean $F$ un campo de característica 0, $K$ es una extensión normal de $F$ y $H$ es un subgrupo de $G(K,F)$, entonces: 
+    \begin{enumerate}
+        \item $[K:K_H]=o(H)$
+        \item $H=G(K,K_H)$
+    \end{enumerate}
+    \begin{dem}
+        
+    \end{dem}
+\end{teorema}
+
+\begin{corolario}
+    Si $F$ es un campo de característica 0, $K$ es una extensión normal de $F$, entonces $[K:F]=o(G(K,F))$
+    \begin{dem}
+        Es el caso especial del teorema 5O, $H=G(K,F)$, con lo cual $K_H=K_{G(K,F)}=F$.
+    \end{dem}
+\end{corolario}
+
+\begin{lema}[5.9]
+    Si $F$ es un campo, $K$ el campo de descomposición sobre $F$ de $f(x)\in F[x]$ y $p(x)\in F[x]$ es un factor de $f(x)$ irreducible sobre $F$ y $\alpha_1,\cdots,\alpha_{gr(p)}\in K$ son las raíces de $p(x)$, entonces para cada $\alpha_i$ existe $\sigma_i\in G(K,F)$ tal que $\sigma_i(\alpha_i)=\alpha_i$.
+    \begin{dem}
+        Por el teorema 5I, existe un isomorfismo $i:F(\alpha_i)\to F(\alpha_i)\ni i(\alpha_i)=\alpha_i$ e $I$ deja fijo a $F$. Por el argumento usado en la prueba del teorema 5J, si $K$ es el campo de descomposición de $f(x)$ sobre $F\implies K$ es el campo de descomposición de $f(x)$ sobre $F(\alpha_i)$ y sobre $F(\alpha_i)\implies$ por el teorema 5J, existe un isomorfismo $\sigma_i:K\to K\ni \sigma_i$ deja fijo a $F$, es decir $\sigma_i\in G(K,F)$ y coincide en $i$ en $F(\alpha_1)\implies F(\alpha_i)=i(\alpha_i)=\alpha_i$.
+    \end{dem}
+\end{lema}
+
+\begin{teorema}[5P]
+    Si $F$ es un campo de característica 0, entonces $K$ es una extensión normal de $F$ si y solo si, $K$ es el campo de descomposición de algún polinomio sobre $F$.
+    \begin{dem}
+        Sea
+        \begin{itemize}
+            \item ($\implies$) $F$ tiene característica 0 $\implies K$ tiene característica 0 $\implies$ por el corolario al teorema 5K, $K$ es una extensión simple de $F\implies \exists \gamma \in K\ni K=F(a)$. Además, $K$ es una extensión normal de $F\implies [K:F]=[F(\gamma):F]\in\mathbb{Z}^+\implies a$ es algebraico sobre $F$ de grado $[F(a):F]=_{cor. 5O}=o(G(F(a),F))$. Sea $G(F(a),F)=\{\sigma_1,\cdots,\sigma_[F(a):F]\}$ y $p(x)=\prod_{i=1}^{[F(a):F]}(x-\sigma_i(a))=\sum_{i=0}^{[F(a):F]}(-1)^i \alpha_i x^{[F(a):F]-i}\in F(a)[x], \alpha_0=1,\alpha_1,\cdots,\alpha_{[F(a):F]}$ las funciones simétricas elementales en $\alpha_1(a)=a_1,\cdots,\alpha_{[F(a):F]}(a)$. Nótese que si $\sigma\in G(F(a),F)\implies \sigma(\alpha_i)=\alpha_i\implies \alpha_i\in F(a)_{G(F(a),F)}=F\implies p(x)\in F[x]$. Ahora bien, $\sigma_i(a)=a_1,\cdots, \sigma_{[F(a):F]}(a)\in F(a)$ contiene al campo de descomposición de $p(x)$ sobre $F$. Pero siendo $a$ raíz de $p(x)$, $F(a)$ debe a su vez estar contenido en el campo de descomposición de $f(x)$ sobre $F$. En resumen, $K=F(a)$ es el campo de descomposición de $f(x)$ sobre $F$. 
+            \item $(\impliedby)$ Supóngase que existe $f(x)\in F[x]\ni K$ es el campo de descomposición de $f(x)$ sobre $F$.Procediendo por inducción sobre $[K:F]$  
+            \begin{itemize}
+                \item $[K:F]=1\implies K=F\implies K_{G(k,k)}=K=F\implies K$ es extensión normal de $K$. 
+                \item Supónganse el teorema válido para todo par de campos $F$, $K_1$ extensión de $F_1$ y $[K_1:F_1]<[K:F]$
+                \item Si $F$ no es un campo de descomposición de $f(x)$ sobre $F\implies \exists p(x)\in F[x]$, irreducible sobre $F$, $p(x)|f(x)$, $1<gr(p)$ y todas las raíces de $p(x)$ y $[F(\alpha_1):F]=gr(p)$ (teorema 5BC). Por el arguemnto usado en las demostraciones del teorema 5J, $K$ es el campo de descomposición de $f(x)$ sobre $F\implies K$ es el campo de descomposición de $f(x)$ sobre $F(\alpha_1)$. Entonces, por el teorema 5A, $[K:F]=[K:F(\alpha_1)][F(\alpha_1):F]=[K:F(\alpha_1)]gr(p)>[K:F(\alpha_1)]\implies$ por la hipótesis inductiva, $K$ es una extensión normal de $F(\alpha_1)$.
+                Por definición, $F\subseteq K_{G(K,F)}$. Sea $\theta\in K_{G(K,F)}\implies \theta\in K_{G(K,F(\alpha_1))}\implies$ por la normalidad de $K$ sobre $F(\alpha_1)$, $\theta \in K_{G(K,F(\alpha_1))}=F(\alpha_1)\implies$ por el teorema 5BC, existen $\lambda_0,\cdots, \lambda_{gr(p)}\in F\ni \theta=\sum_{j=0}^{gr(p)-1}\lambda_j\alpha_i^j$. Por lema 5.9 $\exists \sigma_i\in G(K,F)$ tal que $\sigma_i\in G(K,F)\ni \sigma_i(\alpha_i)=\alpha_i$ y además que $\theta \in K_{G(K,F)}\implies \sigma_i(\theta)=\theta$ y $\sigma_i(\lambda_j)$ por $j=0,\cdots, gr(p)-1$ entonces $\theta=\sigma(\theta)=\sigma_i\left(\right)$ 
+            \end{itemize}
+        \end{itemize}
+    \end{dem}
+\end{teorema}

@@ -1,0 +1,111 @@
+Clase: 24/11/2022
+
+\subsubsection{Solubilidad por radicales}
+
+\begin{nota}
+    Si $x^3+3x+4\in \mathbb{Q}[x]$ usando la fórmula cuadrática de Viete se sabe que sus raíces son:
+    $$-\frac{3}{2}\pm \frac{1}{2}\sqrt{7}i$$
+    Entonces, $\mathbb{Q}(\sqrt{7}i)$ es el campo de descomposición de $x^2+3x+4$ sobre $\mathbb{Q}$. Es decir si $\gamma=-7\in \mathbb{Q}\implies \mathbb{Q}(w)$, con $w^2=\gamma$, es campo de descomposición de $x^2+3x+4$.
+    Dado el polinomio cuadrático general $p(x)=x^2+a_1x+a_2\in F[x]$, en particular también $x^2+a_1x+a_2\in F(a_1,a_2)[x]$, donde $F(a_1,a_2)$ es el campo de todas las funciones racionales en dos variables evaluadas en $a_1,a_2$, con coeficientes en $F$. Entonces, si $w^2=a^2-4a_2\in F(a_1,a_2)\implies \mathbb{Q}(w)$ contiene a las raíces $x^2+a_1x+a_2$, y con ela, el campo de descomposición de este polinomio sobre $F$. De hecho, la fórmula de Vietta expresa las raíces de $x^2+a_1x+a_2$ en términos de $a_1$ y $a_2$, y raíces cuadradad de funciones racionales en $F(a_1,a_2)$. 
+    Para el polinomio cúbico general $p(x)=x^3+a_1x^2+a_2x+a_3$, la situación es similar, las fórmulas de Cardano expresa las raíces $p(x)$ en términos de $a_1,a_2$ y $a_3$ y combinaciones cuadradas y cúbicas de funciones raciones en $F(a_1,a_2,a_3)$. Si 
+    $p=a_2-\frac{1}{3}a_1^2,q=\frac{2}{27}a_1^3-\frac{1}{3}a_1a_2+a_3$. De esto
+    \begin{align*}
+        p&=\sqrt{-\frac{1}{2}q+\sqrt{\frac{1}{27}p^3+\frac{1}{4}q^2}}\\
+        q&= \sqrt[3]{-\frac{1}{2}q-\sqrt{\frac{1}{27}p^3+\frac{1}{4}q^3}}
+    \end{align*} 
+    raíces cúbicas a conveniencia, entonces las tres raíces de $p(x)$ son $x_1=P+Q-\frac{1}{3}a_1$, $x_2=wP+w^2Q-\frac{1}{3}a$ y $x^3=w^2P+wQ-\frac{1}{3}a_1$, donde $w$ es una raíz cúbica de la unidad y $w\neq 1$. Estas fórmulas ilustran que, extendiendo $\mathbb{Q}$ con la adjunción de cierta raíz cuadrada y luego una raíz cúbica de elementos de $\mathbb{Q}(a_1,a_2,a_3)$ se tiene una extensión finita de $\mathbb{Q}$ que contiene al campo de descomposición de $p(x)$. 
+    Se puede demostrar que usando funciones racionales sobre $\mathbb{Q}$ evaluadas en los cuatro coeficientes y raíces cuadradas, el problema de encontrar las cuatro raíces se reduce a buscar las raíces de cierto polinomio cúbico, usando las fórmulas de Cardano, las cuatro raíces se pueden expresar con fórmulas en términos de radicales de funciones racionales sobre $\mathbb{Q}$ evaluadas en los coeficientes (ejercicio). 
+    Se demostrará que para polinomios generales de grado 5 o superior no existen fórmulas para las raíces en términos de radicales de funciones racionales sobre $\mathbb{Q}$ evaluadas en los coeficientes.
+\end{nota}
+
+\begin{definicion}
+    Si $F$ es un campo y $p(x)\in F[x]$, entonces $p(x)$ es soluble por radicales sobre $F$ si existe una colección finita de campos, $F=F(w_1),\cdots, F_k=F_{k-1}(w_k)$, donde $w_1^{r_1}\in F, w_2^{r_2}\in F_1,\cdots, w_k^{r_k}\in F_k, r_1,\cdots, r_k\in \mathbb{Z}^+$ tales que $F_k$ contiene al campo de descomposición de $p(x)$ sobre $F$. 
+\end{definicion}
+
+\begin{prop}
+    Si $F$ es un campo de característica 0, $p(x)\in F[x]$ es soluble por radicales sobre $F$, etnonces $F_k$ es es una extensión normal de $F$.
+\end{prop}
+\begin{definicion}
+    Si $F$ es un campo, $p(x)\in \sum_{i=0}^na_ix^i\in F[x]$,$a_0=1$, es el \textbf{polinomio general de grado $n$ sobre $F$}. En particular $p(x)\in F(a_1,\cdots,a_k)[x]$. Además, $p(x)$ es soluble por radicales si es soluble por radicales sobre $F(a_1,\cdots,a_k)$
+\end{definicion}
+
+\begin{nota}
+    Esta definición formaliza la idea intuitiva de fórmula para las raíces de $p(x)$ que las expresan en términos de radicales de elementos de $F(a_1,\cdots,a_n)$. Se mencionó que estas fórmulas existen para todos los polinomios de grado 1,2,3 y 4. Abel demostró no existen para todos los polinomios de grado 4 o superior. Lo que se desea investigar es si para un polinomio $p(x)\in \mathbb{Q}[x]$, $gr(p)\geq 5$ particular es específico, existen fórmulas que expresen $n$ raíces como radicales de funciones racionales de sus coeficientes.  
+\end{nota}
+
+\begin{nota}
+    Objetivo: usando el grupo de Galois, desarroar un criterio para determinar cuando un polinomio es soluble por radicales. 
+\end{nota}
+\begin{definicion}
+    Un grupo es soluble si existe una cadena finita de subgrupos 
+    $$G=N_0\supseteq N_1\subseteq\cdots \subseteq N_k=(e),$$
+    es lo que cada $N_i$ es un subgrupo normal de $N_{i-1}$ y $N_{i-1}/N$ es abeliano.
+\end{definicion}
+
+\begin{ejemplo}
+    Tenemos:
+    \begin{enumerate}
+        \item Todo grupo abeliano es solubrle sea $N_0=G$ y $N_1=(e)$
+        \item $S_3$ es soluble; sean $N=\{e,(123),(132,132)\}$ es un subgrupo normal de $S_3\implies$
+        \begin{align*}
+            o\left(S_3/N_1\right) = \frac{o(S_3)}{o(N_1)}=\frac{6}{3}=2
+        \end{align*}
+        Entonces, $S_3/N_1$ es abeliano y sea $N_2=(e)$ subgrupo normal de $N_1$ y $N_1/N_2\approx N_1$ un grupo cíclico y por lo tanto, abeliano. 
+        \item $S_4$ es soluble. 
+        \item En el teorema 5R se demostrará que $S_5$ no es soluble. 
+    \end{enumerate}
+\end{ejemplo}
+
+\begin{definicion}
+    Dados un grupo $G$, $g_1,g_2\in G$, el conmutador de $g_1$ y $g_2$ es $g_1^{-1}g_2^{-1}g_1g_2$. El subgrupo conmutador de $G$ es $G'=\langle\{g_1^{-1}g_2^{-1}g_1g_2:g_1g_2\in G\}\rangle$
+\end{definicion}
+
+\begin{prop}
+    Si $G$ es un grupo, entonces $G'$ es un subgrupo normal de $G$.
+    \begin{dem}
+        tarea
+    \end{dem}
+\end{prop}
+
+\begin{prop}
+    Si $G$ es un grupo, entonces $G/G'$ es abeliano. 
+    \begin{dem}
+        Si $G'g_1,G'g_2\in G/G'\implies (G'g_1)(G'g_2)=G'(g_1G')g_2=G'(G'g_1)g_2=(G'G')g_1g_2=G'g_1g_2=g_1g_2G'=g_1g_2(g_2^{-1}g_1^{-1}g_2g_1G')=g_1(g_2g_2^{-1})g_1^{-1}g_2g_1G'=g_1eg_1^{-1}g_2g_1G'= g_2g_1^{-1}g_2g_1G' = eg_2g_2G'=g_2g_1G'=G'g_2g_1=(G'g_2)(G'g_1)$
+    \end{dem}
+\end{prop}
+
+\begin{prop}
+    Si $G$ es grupo, $M$ es subgrupo normal de $G$ tal que $G/M$ es abeliano, entonces $G'\subseteq M$.
+    \begin{dem}
+        Si $g_1,g_2\in G\implies Mg_2g_1=(Mg_1)(Mg_2)=(Mg_2)(Mg_1)=Mg_2g_1\implies g_1g_2(g_2g_1)^{-1}\in M\implies g_1g_2g_1^{-1}g_2^{-1}\in M,\forall g_1,g_2\in G\implies G'\subseteq M$. (Hay que arreglar los inversos de la demostración)
+    \end{dem}
+\end{prop}
+
+\begin{prop}
+    Si $G$ es un grupo, entonces $G''=(G')'$ es subgrupo normal de $G$. 
+    \begin{dem}
+        Tarea.
+    \end{dem}
+\end{prop}
+
+\begin{prop}
+    Si $G$ es un grupo, $G^{(m)}=(G^{(m-1)})^1$ es un subgrupo normal de $G$ y $G^{(m-1)}/G^{(m)}$ es abeliano. 
+\end{prop}
+
+\begin{lema}[5.10]
+    $G$ es un grupo soluble, si y solo si, $\exists k\in \mathbb{N}\ni G^{(k)}=(e)$.
+    \begin{dem}
+        Sea 
+        \begin{itemize}
+            \item $(\implies)$ Si $G$ es soluble $\implies\exists$ una cadena $G=N_0\supseteq N_1\supseteq_1 \supseteq\cdots \supseteq N_k=(e)$, donde $N_i$ es un subgrupo normal de $N_{i-1}$ y $N_{i-1}/N_i$ es abeliano, $\forall i=0,\cdots, k$. Ahora bien, la propiedad, como $N_i$ es subgrupo normal de $N_{i-1}$ y $N_{i-1}/N_i$ es abeliano $\implies N_{i-1}'\subseteq N_i,\forall i=0,\cdots,k$ en particular, $N_1\supseteq N_0'=G', N_2\supseteq N_1'\subseteq G'',N_3\supseteq N_2'\supseteq G''',\cdots, N^i\supseteq N_{i-1}'\supseteq G^{(i)},\cdots, (e)=N_k\supseteq N_{k-1}'\supseteq G^{(k)}\implies G^{(k)}=(e)$
+            \item $(\impliedby)$ Si $G^{(k)}=(e)$, sean $N_0=G,N_1=G',\cdots, N_i=G^{i}, \cdots, N_k=G^{(k)}=(e)\implies G=N_0\subseteq G'\supseteq \cdots \supseteq G^{(i)}\supseteq \cdots \supseteq G^{(k)}=(e)$, $G^{(i)}$ es un subgrupo normal de $G^{(i-1)}$ y $G^{i-1}/G^{(i)}$ es abeliano $\implies G$ es soluble. 
+         \end{itemize}
+    \end{dem}
+\end{lema}
+
+\begin{corolario}
+    Si $G$ es un grupo soluble y $\overline{G}$ es una imagen homomórfica de $G$, entonces $\overline{G}$ es soluble. 
+    \begin{dem}
+        Nótese qeu si $\phi:G\to \overline{G}$ es un homomorfismo sobreyectivo y $g_1,g_2\in G\implies\phi(g_1^{-1}g_2^{-1}g_1g_2)=\phi(g_1^{-1})(g_1g_2)=\phi(g_1^{-1})\phi(g_2^{-1})\phi(g_1)\phi(g_2)=\phi(g_1)^{-1}\phi(g_2)^{-1}\phi(g_1)\phi(g_2)$. Es decir, $\phi(G)=\phi(\overline{G}')=\overline{G}'\implies$ por el lema 5.10, $\exists k\in \mathbb{N}\ni G^{(k)}=(e)\implies (\overline{e})=\phi((e))=\phi(G^{k})=\overline{G}^{(k)}\implies$ por el lema 5.10, $\overline{G}$ es soluble. 
+    \end{dem}
+\end{corolario}

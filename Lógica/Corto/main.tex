@@ -1,0 +1,38 @@
+\input{Configuraciones/paquetes}
+
+%--------------------------
+
+\begin{document}
+\input{Configuraciones/nombres}
+%--------------------------
+ 
+\begin{problema}
+    Demuestre $\forall n \in Z^{+}, 20 \mid\left(79^n-19^n\right)$
+    \begin{dem}
+        Sea 
+        \begin{enumerate}
+            \item Paso base $n=1$: 
+            \begin{align*}
+                \implies &20|(79^1-19^1)\\
+                \implies & 20|(60)
+            \end{align*}
+            Por lo tanto, 20 es divisor de 60.
+            \item Paso inductivo, supóngase que el problema es verdadero para $n=k$ tal que  $20|(79^k-19^k)$. Debemos probar que se cumple para $n=k+1$ tal que $20|(79^{k+1}-19^{k+1})$. Tenemos: 
+            \begin{align*}
+                \implies & 20|(79^k-19^k)\\
+                \implies & 20C(79+19)= (79^k-19^k)(79+19)\\
+                \implies & 20C(79+19) =  79^{k+1}+79^k\cdot19 -19^k\cdot 79 -19^{k+1}\\
+                \implies & 20C(79+19)-79^k\cdot19 +19^k\cdot 79 =  79^{k+1} -19^{k+1}\\
+                \implies & 20C79+20C19-79^k\cdot19 +19^k\cdot 79 =  79^{k+1} -19^{k+1}\\
+                \implies & 19(20C -79^k)+79(20C+19^k)=  79^{k+1} -19^{k+1}\\
+                \vdots
+            \end{align*}
+        \end{enumerate}
+    \end{dem}
+
+\end{problema}
+%---------------------------
+%\bibliographystyle{apa}
+%\bibliography{referencias.bib}
+
+\end{document}

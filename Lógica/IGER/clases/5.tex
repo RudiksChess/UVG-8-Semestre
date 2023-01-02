@@ -1,0 +1,82 @@
+Clase: 19/07/2022
+
+\subsection{Enfoque axiomático de álgebra booleana}
+
+\begin{definicion}
+    Sea $B$ no vacío que contiene $Z$ elementos especiales 0 (el cero como elemento neutro) y 1 (el uno o elemento unidad), sobre el cual se define, las operaciones binarias $+,\cdot$ y una operación unaria $-$. Entonces, $(B,+,\cdot, -,0,1)$ es un álgebra booleana. 
+    \begin{itemize}
+        \item Leyes conmutativas: 
+            \begin{itemize}
+                \item $\forall x,y\in, x+y=y+v$
+                \item $\forall x,y\in B, x\cdot y = y\cdot x$
+            \end{itemize}
+        \item Leyes distributivas 
+            \begin{itemize}
+                \item $\forall x,y\in B, x(y+z)=(x\cdot y)+ (x\cdot z)$
+                \item $\forall x,y\in B, x+ (y\cdot z) = (x+y)(x+z)$
+            \end{itemize}
+        \item Leyes de identidad.
+            \begin{itemize}
+                \item $\forall x\in B, x+0=x$
+                \item $\forall x\in B, x\cdot 1 = 0$
+            \end{itemize}
+        \item Leyes de inversos.
+    \end{itemize}
+\end{definicion}
+
+
+\begin{teorema}
+    Teorema 17.
+    \begin{dem}
+        Sea $x\in B$, 
+        \begin{align*}
+            x &= x+0 & \text{ ley de identidad}\\
+            x &= x+(x\cdot \overline{x}) & \text{ ley de inversos}\\
+            x &= (x+x)(x+\overline{x}) & \text{ ley distributiva respecto a $\cdot$}\\
+            x &= (x+x)\cdot 1 & \text{ ley de inversos}\\
+            x &= (x+x) & \text{ ley de identidad}\\
+        \end{align*}
+    \end{dem}
+\end{teorema}
+
+
+\begin{teorema}[Principio de dualidad]
+    Si $s$ es un teorema relativo a un álgebra booleana y $s$ puede demostrarse a partir de los axiomas de la definición del álgebra booleana y de otras propiedades obtenidas a partir de estos mismos axiomas, entonces también es teorema.
+\end{teorema}
+
+\begin{teorema}
+    Dado $B$ un álgebra booleana, si $x,y\in B$, entonces: 
+    \begin{enumerate}
+        \item \textbf{Ley de dominancia}.
+        \begin{enumerate}
+            \item $x\cdot 0 = 0$
+            \item $x+1 =1$
+        \end{enumerate}
+        \item \textbf{Ley de absorción}. 
+        \begin{enumerate}
+            \item $x\cdot (x+y)=x$
+            \item $x+(x\cdot y)=x$
+        \end{enumerate}
+        \item \textbf{Ley de cancelación}. 
+        \begin{enumerate}
+            \item $(x\cdot y = x\cdot z)$ y $(\overline{x}\cdot y) =  \overline{x}\cdot z$ entonces $y=z$.
+        \end{enumerate} 
+        \item \textbf{Ley de asociatividad}.
+        \item  \textbf{Unicidad de inversos}.
+    \end{enumerate}
+\end{teorema}
+
+\begin{definicion}[24]
+    asd
+\end{definicion}
+
+\begin{teorema}
+    La relación $\leq$ es una relación de orden parcial. 
+    \begin{dem}
+        \begin{itemize}
+            \item Sea $x\in B$ como $x\cdot x=x$ por teorema 17, entonces $x\leq x$ por definición 24. 
+            \item Sea $x,y\in B$ supóngase $x\leq y$ y $y\leq x$, entonces: $x\cdot y =x$ y $y\cdot x =y$ por def. 24. Luego, $x=x\cdot  y = y\cdot x = y$ por ley de conmutatividad. 
+            \item Sea $x,y,z\in B$. Supóngase $x\leq y$ y $y\leq z$. Entonces, $x\cdot y=\underline{x}$ y $y\cdot z = y$. Luego, $x\cdot z = (x\cdot y)\cdot z = x\cdot (y\cdot z) = x\cdot y = x$ por asociatividad del $\cdot$ y  igualdades anteriores con lo cual $x\leq z$ por definición 24. 
+        \end{itemize}
+    \end{dem}
+\end{teorema}

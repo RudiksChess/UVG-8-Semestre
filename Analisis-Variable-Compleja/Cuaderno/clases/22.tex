@@ -1,0 +1,48 @@
+Clase: 18/10/2022
+
+
+\begin{lema}
+    Suponga que $r_0\geq 0$ y es tal que $|a_n|r_0^n\leq M$,$\forall n\in \mathbb{N}$, con $M\geq 0$. Entonces, para $r<r_0$, la serie $\sum_{n=0}^\infty a_n(z-z_0)^n$, converge absoluta y uniformemente sobre los conjuntos:
+    $$A_r=\{z:|z-z_0|\leq r\}$$
+\end{lema}
+
+\begin{teorema}
+    Suponga que $\sum_{n=0}^\infty a_nz^n$ converge para $z=z_0\neq 0$. Entonces, la serie converge
+    \begin{enumerate}
+        \item absolutamente para $|z|<|z_0|$
+        \item uniformemente para $|z|\leq |z_1|$ donde $|z_1|<|z_0|$
+    \end{enumerate}
+    \begin{dem}
+        Como la serie $\sum_{n=0}^\infty a_nz_0^n$ converge $\implies \lim_{n\to\infty}a_nz_0^n=0$
+        \begin{dem}
+            Dado $\varepsilon=1\exists N\in \mathbb{Z}^+\ni$ si $n\geq N\implies |a_nz_0^n -0|<1\implies |a_n|<|/|z_0|^n,\forall n\geq N$
+        \end{dem}
+    \end{dem}
+\end{teorema}
+
+\begin{prop}
+    La serie de potencias $\sum_{n=0}^\infty a_nz^n$ y la serie $\sum_{n=1}^{\infty}na_nz^{n-1}$ tienen el mismo radio de convergencia y sea $0<|z_0|<R$. Como la serie converge en $z=z_0\neq 0$, entonces, $\exists N\in \mathbb{Z}^+\ni |a_n|<1/|z_0|^n,\forall n\geq N$. Por otro lado, 
+    \begin{align*}
+        |na_nz^{n-1}|\leq n\cdot 1/|z_0|^n \cdot |z|^{n-1},\forall n\geq N
+    \end{align*}
+    Nótese que 
+    \begin{align*}
+        \lim_{n\to\infty}\frac{(n+1)\frac{1}{|z_0|^{n+1}|z|^n}}{n\cdot \frac{1}{|z_0|^n}|z|^{n-1}} = \lim_{n\to\infty}\left(\frac{n+1}{n}\right)\left|\frac{z}{z_0}\right| <1\implies |z|<|z_0|
+    \end{align*}
+\end{prop}
+
+\begin{teorema}
+    Para cualquier región (disco cerrado) que está contenido en su círculo de convergencia, una serie de potencias: 
+    \begin{enumerate}
+        \item Representa una función continua $f(z)$
+        \item Puede integrarse término a término y se obtiene la integral de $f(z)$
+        \item Puede derivarse término a término y se obtiene $f'(z)$
+    \end{enumerate}
+    \begin{cajita}
+        Si $f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\implies f$ es analítica en $z_0$
+    \end{cajita}
+\end{teorema}
+
+
+\subsection{Serie de Laurent}
+
